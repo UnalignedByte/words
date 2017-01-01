@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Lesson 11</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>restaurant</string>
+			<key>pinyin</key>
+			<string>fàn diàn</string>
+			<key>hanzi</key>
+			<string>饭店</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>menu</string>
+			<key>pinyin</key>
+			<string>cài dān</string>
+			<key>hanzi</key>
+			<string>菜单</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to order</string>
+			<key>pinyin</key>
+			<string>diǎn cài</string>
+			<key>hanzi</key>
+			<string>点菜</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>customer</string>
+			<key>pinyin</key>
+			<string>kè rén</string>
+			<key>hanzi</key>
+			<string>客人</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>waiter</string>
+			<key>pinyin</key>
+			<string>fú wù yuán</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>cold dishes</string>
+			<key>pinyin</key>
+			<string>liáng cài</string>
+			<key>hanzi</key>
+			<string>凉菜</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>hot dishes</string>
+			<key>pinyin</key>
+			<string>rè cài</string>
+			<key>hanzi</key>
+			<string>热菜</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>roast duck</string>
+			<key>pinyin</key>
+			<string>kǎo yā</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>chicken</string>
+			<key>pinyin</key>
+			<string>jī ròu</string>
+			<key>hanzi</key>
+			<string>鸡肉</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>pork</string>
+			<key>pinyin</key>
+			<string>zhū ròu</string>
+			<key>hanzi</key>
+			<string>猪肉</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>beef</string>
+			<key>pinyin</key>
+			<string>niú ròu</string>
+			<key>hanzi</key>
+			<string>牛肉</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>lamb</string>
+			<key>pinyin</key>
+			<string>yáng ròu</string>
+			<key>hanzi</key>
+			<string>羊肉</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>vegetables</string>
+			<key>pinyin</key>
+			<string>sù cài</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>green vegetables</string>
+			<key>pinyin</key>
+			<string>qīng cài</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>fish</string>
+			<key>pinyin</key>
+			<string>yú</string>
+			<key>hanzi</key>
+			<string>鱼</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>prawn/shrimp</string>
+			<key>pinyin</key>
+			<string>xiā</string>
+			<key>hanzi</key>
+			<string>虾</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>main course</string>
+			<key>pinyin</key>
+			<string>zhǔ shí</string>
+			<key>hanzi</key>
+			<string>主食</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>fried rice</string>
+			<key>pinyin</key>
+			<string>chǎo fàn</string>
+			<key>hanzi</key>
+			<string>炒饭</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>plain rice</string>
+			<key>pinyin</key>
+			<string>bái fàn</string>
+			<key>hanzi</key>
+			<string>白饭</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>noodles</string>
+			<key>pinyin</key>
+			<string>miàn tiáo</string>
+			<key>hanzi</key>
+			<string>面条</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>soup</string>
+			<key>pinyin</key>
+			<string>tāng</string>
+			<key>hanzi</key>
+			<string>汤</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to eat</string>
+			<key>pinyin</key>
+			<string>chī</string>
+			<key>hanzi</key>
+			<string>吃</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to drink</string>
+			<key>pinyin</key>
+			<string>hē</string>
+			<key>hanzi</key>
+			<string>喝</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>more?</string>
+			<key>pinyin</key>
+			<string>bié de ma</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>cooked rice</string>
+			<key>pinyin</key>
+			<string>mǐ fàn</string>
+			<key>hanzi</key>
+			<string>米饭</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>please</string>
+			<key>pinyin</key>
+			<string>qǐng</string>
+			<key>hanzi</key>
+			<string>请</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to order</string>
+			<key>pinyin</key>
+			<string>diǎn</string>
+			<key>hanzi</key>
+			<string>点</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>again</string>
+			<key>pinyin</key>
+			<string>zài</string>
+			<key>hanzi</key>
+			<string>再</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>bowl</string>
+			<key>pinyin</key>
+			<string>wǎn</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>pot</string>
+			<key>pinyin</key>
+			<string>hú</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>dumpling</string>
+			<key>pinyin</key>
+			<string>jiǎo zi</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>

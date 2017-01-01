@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Basic Chinese 5 - 2</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>video game</string>
+			<key>pinyin</key>
+			<string>diàn zi yóu xì</string>
+			<key>hanzi</key>
+			<string>电子游戏</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>electric light</string>
+			<key>pinyin</key>
+			<string>diàn dēng</string>
+			<key>hanzi</key>
+			<string>电灯</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to turn on</string>
+			<key>pinyin</key>
+			<string>huì kāi</string>
+			<key>hanzi</key>
+			<string>会开</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>night</string>
+			<key>pinyin</key>
+			<string>yè wǎn</string>
+			<key>hanzi</key>
+			<string>夜晚</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>road</string>
+			<key>pinyin</key>
+			<string>mǎ lù</string>
+			<key>hanzi</key>
+			<string>马路</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>safely</string>
+			<key>pinyin</key>
+			<string>ān quán</string>
+			<key>hanzi</key>
+			<string>安全</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>yesterday</string>
+			<key>pinyin</key>
+			<string>zuó tiān</string>
+			<key>hanzi</key>
+			<string>昨天</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to visit</string>
+			<key>pinyin</key>
+			<string>kàn wàng</string>
+			<key>hanzi</key>
+			<string>看望</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>why</string>
+			<key>pinyin</key>
+			<string>wèi shén me</string>
+			<key>hanzi</key>
+			<string>为什么</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>it turned out that</string>
+			<key>pinyin</key>
+			<string>yuán lái</string>
+			<key>hanzi</key>
+			<string>原来</string>
+		</dict>
+	</array>
+</dict>
+</plist>

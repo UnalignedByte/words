@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Basic Chinese 4 - 1</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>to change</string>
+			<key>pinyin</key>
+			<string>biàn</string>
+			<key>hanzi</key>
+			<string>变</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>because</string>
+			<key>pinyin</key>
+			<string>yīn wèi</string>
+			<key>hanzi</key>
+			<string>因为</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>gold</string>
+			<key>pinyin</key>
+			<string>jīn</string>
+			<key>hanzi</key>
+			<string>金</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>autumn</string>
+			<key>pinyin</key>
+			<string>qiū tiān</string>
+			<key>hanzi</key>
+			<string>秋天</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>nature</string>
+			<key>pinyin</key>
+			<string>dà zì rán</string>
+			<key>hanzi</key>
+			<string>大自然</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>extremely</string>
+			<key>pinyin</key>
+			<string>fēi cháng</string>
+			<key>hanzi</key>
+			<string>非常</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>cold</string>
+			<key>pinyin</key>
+			<string>lěng</string>
+			<key>hanzi</key>
+			<string>冷</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>sick</string>
+			<key>pinyin</key>
+			<string>shēng bìng</string>
+			<key>hanzi</key>
+			<string>生病</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to be careful</string>
+			<key>pinyin</key>
+			<string>xiǎo xīn</string>
+			<key>hanzi</key>
+			<string>小心</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to chase</string>
+			<key>pinyin</key>
+			<string>zhuī</string>
+			<key>hanzi</key>
+			<string>追</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to crawl</string>
+			<key>pinyin</key>
+			<string>pá</string>
+			<key>hanzi</key>
+			<string>爬</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to chase away</string>
+			<key>pinyin</key>
+			<string>gǎn zǒu</string>
+			<key>hanzi</key>
+			<string>赶走</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>table</string>
+			<key>pinyin</key>
+			<string>zhuō</string>
+			<key>hanzi</key>
+			<string>桌</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>peach</string>
+			<key>pinyin</key>
+			<string>táo</string>
+			<key>hanzi</key>
+			<string>桃</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>next to</string>
+			<key>pinyin</key>
+			<string>páng</string>
+			<key>hanzi</key>
+			<string>旁</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to wear</string>
+			<key>pinyin</key>
+			<string>chuān</string>
+			<key>hanzi</key>
+			<string>穿</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>shoe</string>
+			<key>pinyin</key>
+			<string>xié</string>
+			<key>hanzi</key>
+			<string>鞋</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to pick</string>
+			<key>pinyin</key>
+			<string>cǎi</string>
+			<key>hanzi</key>
+			<string>采</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to climb</string>
+			<key>pinyin</key>
+			<string>jiù pá</string>
+			<key>hanzi</key>
+			<string>就爬</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to hurt</string>
+			<key>pinyin</key>
+			<string>shāng</string>
+			<key>hanzi</key>
+			<string>伤</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to carry/back</string>
+			<key>pinyin</key>
+			<string>bēi</string>
+			<key>hanzi</key>
+			<string>背</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>package</string>
+			<key>pinyin</key>
+			<string>bāo</string>
+			<key>hanzi</key>
+			<string>包</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to blow</string>
+			<key>pinyin</key>
+			<string>chuī</string>
+			<key>hanzi</key>
+			<string>吹</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to float</string>
+			<key>pinyin</key>
+			<string>piāo</string>
+			<key>hanzi</key>
+			<string>飘</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to hold/to handle</string>
+			<key>pinyin</key>
+			<string>bǎ</string>
+			<key>hanzi</key>
+			<string>把</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to put in</string>
+			<key>pinyin</key>
+			<string>fàng jìn</string>
+			<key>hanzi</key>
+			<string>放进</string>
+		</dict>
+	</array>
+</dict>
+</plist>

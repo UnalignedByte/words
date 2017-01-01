@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Lesson 4</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>two</string>
+			<key>pinyin</key>
+			<string>liǎng</string>
+			<key>hanzi</key>
+			<string>两</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to (hour)</string>
+			<key>pinyin</key>
+			<string>chà</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>half</string>
+			<key>pinyin</key>
+			<string>bàn</string>
+			<key>hanzi</key>
+			<string>半</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>minute</string>
+			<key>pinyin</key>
+			<string>fēn</string>
+			<key>hanzi</key>
+			<string>分</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>o&apos;clock</string>
+			<key>pinyin</key>
+			<string>diǎn</string>
+			<key>hanzi</key>
+			<string>点</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>how many</string>
+			<key>pinyin</key>
+			<string>jǐ</string>
+			<key>hanzi</key>
+			<string>几</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>now</string>
+			<key>pinyin</key>
+			<string>xiàn zài</string>
+			<key>hanzi</key>
+			<string>现在</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>What time is it now?</string>
+			<key>pinyin</key>
+			<string>xiàn zài jǐ diǎn</string>
+			<key>hanzi</key>
+			<string>现在几点</string>
+		</dict>
+	</array>
+</dict>
+</plist>

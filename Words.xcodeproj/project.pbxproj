@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B516F0711D58FD490091B459 /* Basic Chinese 3.1 - 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B516F0701D58FD490091B459 /* Basic Chinese 3.1 - 2.plist */; };
+		B52FDC2F1E03D66A00C88652 /* Basic Chinese 5 - 5.plist in Resources */ = {isa = PBXBuildFile; fileRef = B52FDC2E1E03D66A00C88652 /* Basic Chinese 5 - 5.plist */; };
+		B53C8F701D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B53C8F6F1D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist */; };
+		B5422F911D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5422F901D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist */; };
+		B545E9621DDAF40E00A146E0 /* Basic Chinese 5 - 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B545E9611DDAF40E00A146E0 /* Basic Chinese 5 - 1.plist */; };
+		B549E4C41D6E3B1F00290AA7 /* Basic Chinese 3.1 - 4.plist in Resources */ = {isa = PBXBuildFile; fileRef = B549E4C31D6E3B1F00290AA7 /* Basic Chinese 3.1 - 4.plist */; };
+		B54D26461DAF64930020DB13 /* Basic Chinese 4 - 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B54D26451DAF64930020DB13 /* Basic Chinese 4 - 3.plist */; };
+		B5567AA41CA5328E00E8E4D8 /* Lesson 8.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5567AA31CA5328E00E8E4D8 /* Lesson 8.plist */; };
+		B5572B361C8581CF00A95A53 /* Lesson 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5572B351C8581CF00A95A53 /* Lesson 2.plist */; };
+		B5572B381C85850000A95A53 /* Lesson 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5572B371C85850000A95A53 /* Lesson 3.plist */; };
+		B55EE91A1D7CCB360066E88D /* Basic Chinese 3.2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55EE9191D7CCB360066E88D /* Basic Chinese 3.2.plist */; };
+		B567EBAA1E09117F00078A08 /* Basic Chinese 5 - 6.plist in Resources */ = {isa = PBXBuildFile; fileRef = B567EBA91E09117F00078A08 /* Basic Chinese 5 - 6.plist */; };
+		B5698F531CE766180000A3CB /* Lesson 13.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5698F521CE766180000A3CB /* Lesson 13.plist */; };
+		B573B1D81CF9DF4B004B9863 /* Lesson 15.plist in Resources */ = {isa = PBXBuildFile; fileRef = B573B1D71CF9DF4B004B9863 /* Lesson 15.plist */; };
+		B575687F1D0DB19F00D757EF /* Lesson 17.plist in Resources */ = {isa = PBXBuildFile; fileRef = B575687E1D0DB19F00D757EF /* Lesson 17.plist */; };
+		B57D85951CCFF1610022791D /* Basic Chinese 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57D85941CCFF1610022791D /* Basic Chinese 1.plist */; };
+		B57FCD541DD45CC5003EEAF9 /* Grammar 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57FCD531DD45CC5003EEAF9 /* Grammar 1.plist */; };
+		B58991BD1D9B14B9005F2DE8 /* Useful 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B58991BC1D9B14B9005F2DE8 /* Useful 2.plist */; };
+		B59131091D4CB0AF00755FBF /* Basic Chinese 3.1 - 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B59131081D4CB0AF00755FBF /* Basic Chinese 3.1 - 1.plist */; };
+		B59D0C1D1CF0897600EAE698 /* Lesson 14.plist in Resources */ = {isa = PBXBuildFile; fileRef = B59D0C1C1CF0897600EAE698 /* Lesson 14.plist */; };
+		B5A610D61D8FCCB700EBA6D5 /* Basic Chinese 4 - 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A610D51D8FCCB700EBA6D5 /* Basic Chinese 4 - 1.plist */; };
+		B5ADCBA01CB31081005B90A0 /* Lesson 10.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ADCB9F1CB31081005B90A0 /* Lesson 10.plist */; };
+		B5B8F1401D0313A800EBC1A1 /* Lesson 16.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5B8F13F1D0313A800EBC1A1 /* Lesson 16.plist */; };
+		B5BF51CC1D84562C003AE676 /* Useful 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5BF51CB1D84562C003AE676 /* Useful 1.plist */; };
+		B5C958131DDD963E0012F607 /* Basic Chinese 5 - 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5C958121DDD963E0012F607 /* Basic Chinese 5 - 2.plist */; };
+		B5CCCEA61DE825E600A7A02B /* Basic Chinese 5 - 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5CCCEA51DE825E600A7A02B /* Basic Chinese 5 - 3.plist */; };
+		B5D4F9891CE061F50098ACFE /* Lesson 11.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5D4F9881CE061F50098ACFE /* Lesson 11.plist */; };
+		B5D8905B1DED69B100A248FD /* Basic Chinese 5 - 4.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5D8905A1DED69B100A248FD /* Basic Chinese 5 - 4.plist */; };
+		B5E7F93E1DB89EAD0018466D /* Read 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5E7F93D1DB89EAD0018466D /* Read 1.plist */; };
+		B5EC21FE1C7F999F00C5D782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */; };
+		B5EC22001C7F999F00C5D782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC21FF1C7F999F00C5D782 /* ViewController.swift */; };
+		B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22041C7F999F00C5D782 /* Images.xcassets */; };
+		B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */; };
+		B5EC22141C7F9A8600C5D782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22131C7F9A8600C5D782 /* Main.storyboard */; };
+		B5EC22171C7F9ACC00C5D782 /* WordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5EC22151C7F9ACC00C5D782 /* WordsModel.xcdatamodeld */; };
+		B5EC22191C7F9B5800C5D782 /* WordsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC22181C7F9B5800C5D782 /* WordsDataSource.swift */; };
+		B5EC22211C7FA21C00C5D782 /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC22201C7FA21C00C5D782 /* ChineseWord.swift */; };
+		B5EC22231C7FB87800C5D782 /* Lesson 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22221C7FB87800C5D782 /* Lesson 1.plist */; };
+		B5EC22251C7FC24D00C5D782 /* ChineseWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */; };
+		B5EC22271C80FDEC00C5D782 /* Lesson 5.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22261C80FDEC00C5D782 /* Lesson 5.plist */; };
+		B5EC22291C81040C00C5D782 /* Lesson 4.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22281C81040C00C5D782 /* Lesson 4.plist */; };
+		B5EC222B1C8125CE00C5D782 /* GroupSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC222A1C8125CE00C5D782 /* GroupSelectionViewController.swift */; };
+		B5EC222D1C81E88700C5D782 /* Lesson 6.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5EC222C1C81E88700C5D782 /* Lesson 6.plist */; };
+		B5ECCA121C8B3432005FE4FA /* Lesson 7.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ECCA111C8B3432005FE4FA /* Lesson 7.plist */; };
+		B5ED75981CA7E415000D8E6F /* Lesson 9.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ED75971CA7E415000D8E6F /* Lesson 9.plist */; };
+		B5ED759A1CA7E703000D8E6F /* Lesson 9.5.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ED75991CA7E703000D8E6F /* Lesson 9.5.plist */; };
+		B5F534AE1DC32B69004C32BD /* Useful 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F534AD1DC32B69004C32BD /* Useful 3.plist */; };
+		B5FBF9221D76263700EE21C0 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBF9211D76263700EE21C0 /* StatisticsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B516F0701D58FD490091B459 /* Basic Chinese 3.1 - 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.1 - 2.plist"; path = "Words/Assets/Basic Chinese 3.1 - 2.plist"; sourceTree = "<group>"; };
+		B52FDC2E1E03D66A00C88652 /* Basic Chinese 5 - 5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 5.plist"; path = "Words/Assets/Basic Chinese 5 - 5.plist"; sourceTree = "<group>"; };
+		B53C8F6F1D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.1 - 3.plist"; path = "Words/Assets/Basic Chinese 3.1 - 3.plist"; sourceTree = "<group>"; };
+		B5422F901D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 4 - 2.plist"; path = "Words/Assets/Basic Chinese 4 - 2.plist"; sourceTree = "<group>"; };
+		B545E9611DDAF40E00A146E0 /* Basic Chinese 5 - 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 1.plist"; path = "Words/Assets/Basic Chinese 5 - 1.plist"; sourceTree = "<group>"; };
+		B549E4C31D6E3B1F00290AA7 /* Basic Chinese 3.1 - 4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.1 - 4.plist"; path = "Words/Assets/Basic Chinese 3.1 - 4.plist"; sourceTree = "<group>"; };
+		B54D26451DAF64930020DB13 /* Basic Chinese 4 - 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 4 - 3.plist"; path = "Words/Assets/Basic Chinese 4 - 3.plist"; sourceTree = "<group>"; };
+		B5567AA31CA5328E00E8E4D8 /* Lesson 8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 8.plist"; path = "Words/Assets/Lesson 8.plist"; sourceTree = "<group>"; };
+		B5572B351C8581CF00A95A53 /* Lesson 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 2.plist"; path = "Words/Assets/Lesson 2.plist"; sourceTree = "<group>"; };
+		B5572B371C85850000A95A53 /* Lesson 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 3.plist"; path = "Words/Assets/Lesson 3.plist"; sourceTree = "<group>"; };
+		B55EE9191D7CCB360066E88D /* Basic Chinese 3.2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.2.plist"; path = "Words/Assets/Basic Chinese 3.2.plist"; sourceTree = "<group>"; };
+		B567EBA91E09117F00078A08 /* Basic Chinese 5 - 6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 6.plist"; path = "Words/Assets/Basic Chinese 5 - 6.plist"; sourceTree = "<group>"; };
+		B5698F521CE766180000A3CB /* Lesson 13.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 13.plist"; path = "Words/Assets/Lesson 13.plist"; sourceTree = "<group>"; };
+		B573B1D71CF9DF4B004B9863 /* Lesson 15.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 15.plist"; path = "Words/Assets/Lesson 15.plist"; sourceTree = "<group>"; };
+		B575687E1D0DB19F00D757EF /* Lesson 17.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 17.plist"; path = "Words/Assets/Lesson 17.plist"; sourceTree = "<group>"; };
+		B57D85941CCFF1610022791D /* Basic Chinese 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 1.plist"; path = "Words/Assets/Basic Chinese 1.plist"; sourceTree = "<group>"; };
+		B57FCD531DD45CC5003EEAF9 /* Grammar 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Grammar 1.plist"; path = "Words/Assets/Grammar 1.plist"; sourceTree = "<group>"; };
+		B58991BC1D9B14B9005F2DE8 /* Useful 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Useful 2.plist"; path = "Words/Assets/Useful 2.plist"; sourceTree = "<group>"; };
+		B59131081D4CB0AF00755FBF /* Basic Chinese 3.1 - 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.1 - 1.plist"; path = "Words/Assets/Basic Chinese 3.1 - 1.plist"; sourceTree = "<group>"; };
+		B59D0C1C1CF0897600EAE698 /* Lesson 14.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 14.plist"; path = "Words/Assets/Lesson 14.plist"; sourceTree = "<group>"; };
+		B5A610D51D8FCCB700EBA6D5 /* Basic Chinese 4 - 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 4 - 1.plist"; path = "Words/Assets/Basic Chinese 4 - 1.plist"; sourceTree = "<group>"; };
+		B5ADCB9F1CB31081005B90A0 /* Lesson 10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 10.plist"; path = "Words/Assets/Lesson 10.plist"; sourceTree = "<group>"; };
+		B5B8F13F1D0313A800EBC1A1 /* Lesson 16.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 16.plist"; path = "Words/Assets/Lesson 16.plist"; sourceTree = "<group>"; };
+		B5BF51CB1D84562C003AE676 /* Useful 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Useful 1.plist"; path = "Words/Assets/Useful 1.plist"; sourceTree = "<group>"; };
+		B5C958121DDD963E0012F607 /* Basic Chinese 5 - 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 2.plist"; path = "Words/Assets/Basic Chinese 5 - 2.plist"; sourceTree = "<group>"; };
+		B5CCCEA51DE825E600A7A02B /* Basic Chinese 5 - 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 3.plist"; path = "Words/Assets/Basic Chinese 5 - 3.plist"; sourceTree = "<group>"; };
+		B5D4F9881CE061F50098ACFE /* Lesson 11.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 11.plist"; path = "Words/Assets/Lesson 11.plist"; sourceTree = "<group>"; };
+		B5D8905A1DED69B100A248FD /* Basic Chinese 5 - 4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 4.plist"; path = "Words/Assets/Basic Chinese 5 - 4.plist"; sourceTree = "<group>"; };
+		B5E7F93D1DB89EAD0018466D /* Read 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Read 1.plist"; path = "Words/Assets/Read 1.plist"; sourceTree = "<group>"; };
+		B5EC21FA1C7F999F00C5D782 /* Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Source/AppDelegate.swift; sourceTree = "<group>"; };
+		B5EC21FF1C7F999F00C5D782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Source/ViewController.swift; sourceTree = "<group>"; };
+		B5EC22041C7F999F00C5D782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Words/Assets/Images.xcassets; sourceTree = "<group>"; };
+		B5EC22091C7F999F00C5D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Words/Supporting Files/Info.plist"; sourceTree = "<group>"; };
+		B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Words/Assets/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5EC22131C7F9A8600C5D782 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Source/Main.storyboard; sourceTree = "<group>"; };
+		B5EC22161C7F9ACC00C5D782 /* WordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsModel.xcdatamodel; sourceTree = "<group>"; };
+		B5EC22181C7F9B5800C5D782 /* WordsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsDataSource.swift; path = Source/WordsDataSource.swift; sourceTree = "<group>"; };
+		B5EC22201C7FA21C00C5D782 /* ChineseWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChineseWord.swift; path = Source/ChineseWord.swift; sourceTree = "<group>"; };
+		B5EC22221C7FB87800C5D782 /* Lesson 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 1.plist"; path = "Words/Assets/Lesson 1.plist"; sourceTree = "<group>"; };
+		B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChineseWordCell.swift; path = Source/ChineseWordCell.swift; sourceTree = "<group>"; };
+		B5EC22261C80FDEC00C5D782 /* Lesson 5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 5.plist"; path = "Words/Assets/Lesson 5.plist"; sourceTree = "<group>"; };
+		B5EC22281C81040C00C5D782 /* Lesson 4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 4.plist"; path = "Words/Assets/Lesson 4.plist"; sourceTree = "<group>"; };
+		B5EC222A1C8125CE00C5D782 /* GroupSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupSelectionViewController.swift; path = Source/GroupSelectionViewController.swift; sourceTree = "<group>"; };
+		B5EC222C1C81E88700C5D782 /* Lesson 6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 6.plist"; path = "Words/Assets/Lesson 6.plist"; sourceTree = "<group>"; };
+		B5ECCA111C8B3432005FE4FA /* Lesson 7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 7.plist"; path = "Words/Assets/Lesson 7.plist"; sourceTree = "<group>"; };
+		B5ED75971CA7E415000D8E6F /* Lesson 9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 9.plist"; path = "Words/Assets/Lesson 9.plist"; sourceTree = "<group>"; };
+		B5ED75991CA7E703000D8E6F /* Lesson 9.5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 9.5.plist"; path = "Words/Assets/Lesson 9.5.plist"; sourceTree = "<group>"; };
+		B5F534AD1DC32B69004C32BD /* Useful 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Useful 3.plist"; path = "Words/Assets/Useful 3.plist"; sourceTree = "<group>"; };
+		B5FBF9211D76263700EE21C0 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticsViewController.swift; path = Source/StatisticsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5EC21F71C7F999F00C5D782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5EC21F11C7F999F00C5D782 = {
+			isa = PBXGroup;
+			children = (
+				B5EC21FC1C7F999F00C5D782 /* Source */,
+				B5EC220F1C7F99AA00C5D782 /* Assets */,
+				B5EC22101C7F99AE00C5D782 /* Supporting Files */,
+				B5EC21FB1C7F999F00C5D782 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5EC21FB1C7F999F00C5D782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5EC21FA1C7F999F00C5D782 /* Words.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5EC21FC1C7F999F00C5D782 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B5EC22131C7F9A8600C5D782 /* Main.storyboard */,
+				B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */,
+				B5EC21FF1C7F999F00C5D782 /* ViewController.swift */,
+				B5EC22181C7F9B5800C5D782 /* WordsDataSource.swift */,
+				B5EC22201C7FA21C00C5D782 /* ChineseWord.swift */,
+				B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */,
+				B5EC222A1C8125CE00C5D782 /* GroupSelectionViewController.swift */,
+				B5FBF9211D76263700EE21C0 /* StatisticsViewController.swift */,
+			);
+			name = Source;
+			path = Words;
+			sourceTree = "<group>";
+		};
+		B5EC220F1C7F99AA00C5D782 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */,
+				B5EC22041C7F999F00C5D782 /* Images.xcassets */,
+				B5EC22151C7F9ACC00C5D782 /* WordsModel.xcdatamodeld */,
+				B57FCD531DD45CC5003EEAF9 /* Grammar 1.plist */,
+				B5E7F93D1DB89EAD0018466D /* Read 1.plist */,
+				B5BF51CB1D84562C003AE676 /* Useful 1.plist */,
+				B58991BC1D9B14B9005F2DE8 /* Useful 2.plist */,
+				B5F534AD1DC32B69004C32BD /* Useful 3.plist */,
+				B57D85941CCFF1610022791D /* Basic Chinese 1.plist */,
+				B59131081D4CB0AF00755FBF /* Basic Chinese 3.1 - 1.plist */,
+				B516F0701D58FD490091B459 /* Basic Chinese 3.1 - 2.plist */,
+				B53C8F6F1D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist */,
+				B549E4C31D6E3B1F00290AA7 /* Basic Chinese 3.1 - 4.plist */,
+				B55EE9191D7CCB360066E88D /* Basic Chinese 3.2.plist */,
+				B5A610D51D8FCCB700EBA6D5 /* Basic Chinese 4 - 1.plist */,
+				B5422F901D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist */,
+				B54D26451DAF64930020DB13 /* Basic Chinese 4 - 3.plist */,
+				B545E9611DDAF40E00A146E0 /* Basic Chinese 5 - 1.plist */,
+				B5C958121DDD963E0012F607 /* Basic Chinese 5 - 2.plist */,
+				B5CCCEA51DE825E600A7A02B /* Basic Chinese 5 - 3.plist */,
+				B5D8905A1DED69B100A248FD /* Basic Chinese 5 - 4.plist */,
+				B52FDC2E1E03D66A00C88652 /* Basic Chinese 5 - 5.plist */,
+				B567EBA91E09117F00078A08 /* Basic Chinese 5 - 6.plist */,
+				B5EC22221C7FB87800C5D782 /* Lesson 1.plist */,
+				B5572B351C8581CF00A95A53 /* Lesson 2.plist */,
+				B5572B371C85850000A95A53 /* Lesson 3.plist */,
+				B5EC22281C81040C00C5D782 /* Lesson 4.plist */,
+				B5EC22261C80FDEC00C5D782 /* Lesson 5.plist */,
+				B5EC222C1C81E88700C5D782 /* Lesson 6.plist */,
+				B5ECCA111C8B3432005FE4FA /* Lesson 7.plist */,
+				B5567AA31CA5328E00E8E4D8 /* Lesson 8.plist */,
+				B5ED75971CA7E415000D8E6F /* Lesson 9.plist */,
+				B5ED75991CA7E703000D8E6F /* Lesson 9.5.plist */,
+				B5ADCB9F1CB31081005B90A0 /* Lesson 10.plist */,
+				B5D4F9881CE061F50098ACFE /* Lesson 11.plist */,
+				B5698F521CE766180000A3CB /* Lesson 13.plist */,
+				B59D0C1C1CF0897600EAE698 /* Lesson 14.plist */,
+				B573B1D71CF9DF4B004B9863 /* Lesson 15.plist */,
+				B5B8F13F1D0313A800EBC1A1 /* Lesson 16.plist */,
+				B575687E1D0DB19F00D757EF /* Lesson 17.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		B5EC22101C7F99AE00C5D782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5EC22091C7F999F00C5D782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5EC21F91C7F999F00C5D782 /* Words */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5EC220C1C7F999F00C5D782 /* Build configuration list for PBXNativeTarget "Words" */;
+			buildPhases = (
+				B5EC21F61C7F999F00C5D782 /* Sources */,
+				B5EC21F71C7F999F00C5D782 /* Frameworks */,
+				B5EC21F81C7F999F00C5D782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Words;
+			productName = Words;
+			productReference = B5EC21FA1C7F999F00C5D782 /* Words.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5EC21F21C7F999F00C5D782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = UnalignedByte;
+				TargetAttributes = {
+					B5EC21F91C7F999F00C5D782 = {
+						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = B5EC21F51C7F999F00C5D782 /* Build configuration list for PBXProject "Words" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B5EC21F11C7F999F00C5D782;
+			productRefGroup = B5EC21FB1C7F999F00C5D782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5EC21F91C7F999F00C5D782 /* Words */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5EC21F81C7F999F00C5D782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C958131DDD963E0012F607 /* Basic Chinese 5 - 2.plist in Resources */,
+				B53C8F701D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist in Resources */,
+				B545E9621DDAF40E00A146E0 /* Basic Chinese 5 - 1.plist in Resources */,
+				B5B8F1401D0313A800EBC1A1 /* Lesson 16.plist in Resources */,
+				B5ADCBA01CB31081005B90A0 /* Lesson 10.plist in Resources */,
+				B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */,
+				B59D0C1D1CF0897600EAE698 /* Lesson 14.plist in Resources */,
+				B5ED75981CA7E415000D8E6F /* Lesson 9.plist in Resources */,
+				B516F0711D58FD490091B459 /* Basic Chinese 3.1 - 2.plist in Resources */,
+				B5EC22231C7FB87800C5D782 /* Lesson 1.plist in Resources */,
+				B59131091D4CB0AF00755FBF /* Basic Chinese 3.1 - 1.plist in Resources */,
+				B57D85951CCFF1610022791D /* Basic Chinese 1.plist in Resources */,
+				B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */,
+				B5EC22141C7F9A8600C5D782 /* Main.storyboard in Resources */,
+				B5567AA41CA5328E00E8E4D8 /* Lesson 8.plist in Resources */,
+				B52FDC2F1E03D66A00C88652 /* Basic Chinese 5 - 5.plist in Resources */,
+				B5EC22291C81040C00C5D782 /* Lesson 4.plist in Resources */,
+				B5EC222D1C81E88700C5D782 /* Lesson 6.plist in Resources */,
+				B549E4C41D6E3B1F00290AA7 /* Basic Chinese 3.1 - 4.plist in Resources */,
+				B5BF51CC1D84562C003AE676 /* Useful 1.plist in Resources */,
+				B567EBAA1E09117F00078A08 /* Basic Chinese 5 - 6.plist in Resources */,
+				B57FCD541DD45CC5003EEAF9 /* Grammar 1.plist in Resources */,
+				B5572B361C8581CF00A95A53 /* Lesson 2.plist in Resources */,
+				B54D26461DAF64930020DB13 /* Basic Chinese 4 - 3.plist in Resources */,
+				B5E7F93E1DB89EAD0018466D /* Read 1.plist in Resources */,
+				B5A610D61D8FCCB700EBA6D5 /* Basic Chinese 4 - 1.plist in Resources */,
+				B575687F1D0DB19F00D757EF /* Lesson 17.plist in Resources */,
+				B5572B381C85850000A95A53 /* Lesson 3.plist in Resources */,
+				B5EC22271C80FDEC00C5D782 /* Lesson 5.plist in Resources */,
+				B58991BD1D9B14B9005F2DE8 /* Useful 2.plist in Resources */,
+				B573B1D81CF9DF4B004B9863 /* Lesson 15.plist in Resources */,
+				B5ED759A1CA7E703000D8E6F /* Lesson 9.5.plist in Resources */,
+				B5698F531CE766180000A3CB /* Lesson 13.plist in Resources */,
+				B5CCCEA61DE825E600A7A02B /* Basic Chinese 5 - 3.plist in Resources */,
+				B5F534AE1DC32B69004C32BD /* Useful 3.plist in Resources */,
+				B5ECCA121C8B3432005FE4FA /* Lesson 7.plist in Resources */,
+				B5D8905B1DED69B100A248FD /* Basic Chinese 5 - 4.plist in Resources */,
+				B5422F911D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist in Resources */,
+				B5D4F9891CE061F50098ACFE /* Lesson 11.plist in Resources */,
+				B55EE91A1D7CCB360066E88D /* Basic Chinese 3.2.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5EC21F61C7F999F00C5D782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5EC22001C7F999F00C5D782 /* ViewController.swift in Sources */,
+				B5EC21FE1C7F999F00C5D782 /* AppDelegate.swift in Sources */,
+				B5EC22211C7FA21C00C5D782 /* ChineseWord.swift in Sources */,
+				B5FBF9221D76263700EE21C0 /* StatisticsViewController.swift in Sources */,
+				B5EC22251C7FC24D00C5D782 /* ChineseWordCell.swift in Sources */,
+				B5EC22191C7F9B5800C5D782 /* WordsDataSource.swift in Sources */,
+				B5EC222B1C8125CE00C5D782 /* GroupSelectionViewController.swift in Sources */,
+				B5EC22171C7F9ACC00C5D782 /* WordsModel.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B5EC220A1C7F999F00C5D782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5EC220B1C7F999F00C5D782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5EC220D1C7F999F00C5D782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X7G47FFC9G;
+				INFOPLIST_FILE = "$(SRCROOT)/Words/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unalignedbyte.words;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Any iOS App Development";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B5EC220E1C7F999F00C5D782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X7G47FFC9G;
+				INFOPLIST_FILE = "$(SRCROOT)/Words/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unalignedbyte.words;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Any iOS App Development";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5EC21F51C7F999F00C5D782 /* Build configuration list for PBXProject "Words" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5EC220A1C7F999F00C5D782 /* Debug */,
+				B5EC220B1C7F999F00C5D782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5EC220C1C7F999F00C5D782 /* Build configuration list for PBXNativeTarget "Words" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5EC220D1C7F999F00C5D782 /* Debug */,
+				B5EC220E1C7F999F00C5D782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5EC22151C7F9ACC00C5D782 /* WordsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5EC22161C7F9ACC00C5D782 /* WordsModel.xcdatamodel */,
+			);
+			currentVersion = B5EC22161C7F9ACC00C5D782 /* WordsModel.xcdatamodel */;
+			name = WordsModel.xcdatamodeld;
+			path = Words/Assets/WordsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B5EC21F21C7F999F00C5D782 /* Project object */;
+}

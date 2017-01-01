@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Basic Chinese 5 - 4</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>market</string>
+			<key>pinyin</key>
+			<string>shì chǎng</string>
+			<key>hanzi</key>
+			<string>市场</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>therefore</string>
+			<key>pinyin</key>
+			<string>suǒ yǐ</string>
+			<key>hanzi</key>
+			<string>所以</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to take home</string>
+			<key>pinyin</key>
+			<string>ná huí jiā</string>
+			<key>hanzi</key>
+			<string>拿回家</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>street</string>
+			<key>pinyin</key>
+			<string>jiē</string>
+			<key>hanzi</key>
+			<string>街</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to hold</string>
+			<key>pinyin</key>
+			<string>bào</string>
+			<key>hanzi</key>
+			<string>抱</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>as a result</string>
+			<key>pinyin</key>
+			<string>jié guǒ</string>
+			<key>hanzi</key>
+			<string>结果</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to feel</string>
+			<key>pinyin</key>
+			<string>gǎn</string>
+			<key>hanzi</key>
+			<string>感</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>sad</string>
+			<key>pinyin</key>
+			<string>nán guò</string>
+			<key>hanzi</key>
+			<string>难过</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>some</string>
+			<key>pinyin</key>
+			<string>yǒu xiē</string>
+			<key>hanzi</key>
+			<string>有些</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>bad</string>
+			<key>pinyin</key>
+			<string>huài</string>
+			<key>hanzi</key>
+			<string>坏</string>
+		</dict>
+	</array>
+</dict>
+</plist>

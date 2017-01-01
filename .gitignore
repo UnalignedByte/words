@@ -1,0 +1,18 @@
+# macOS Specific
+.DS_Store
+
+# iOS Specific
+xcuserdata/
+
+# Android Specific
+.gradle/
+build/
+.externalNativeBuild/
+
+*.iml
+.idea/
+
+local.properties
+
+captures/
+

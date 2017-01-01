@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Basic Chinese 5 - 3</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>to close</string>
+			<key>pinyin</key>
+			<string>guān</string>
+			<key>hanzi</key>
+			<string>关</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>window</string>
+			<key>pinyin</key>
+			<string>chuāng</string>
+			<key>hanzi</key>
+			<string>窗</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>currently/now</string>
+			<key>pinyin</key>
+			<string>zhèng zài</string>
+			<key>hanzi</key>
+			<string>正在</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>difficult</string>
+			<key>pinyin</key>
+			<string>nán</string>
+			<key>hanzi</key>
+			<string>难</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to understand</string>
+			<key>pinyin</key>
+			<string>míng bái</string>
+			<key>hanzi</key>
+			<string>明白</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to ask</string>
+			<key>pinyin</key>
+			<string>wèn</string>
+			<key>hanzi</key>
+			<string>问</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to teach</string>
+			<key>pinyin</key>
+			<string>jiào</string>
+			<key>hanzi</key>
+			<string>教</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>bow tie</string>
+			<key>pinyin</key>
+			<string>hú dié jié</string>
+			<key>hanzi</key>
+			<string>蝴蝶结</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>sweet</string>
+			<key>pinyin</key>
+			<string>tián</string>
+			<key>hanzi</key>
+			<string>甜</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>if, in case</string>
+			<key>pinyin</key>
+			<string>rú guǒ</string>
+			<key>hanzi</key>
+			<string>如果</string>
+		</dict>
+	</array>
+</dict>
+</plist>

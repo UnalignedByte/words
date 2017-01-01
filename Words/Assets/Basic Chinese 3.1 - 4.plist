@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Basic Chinese 3.1 - 4</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>pinyin</string>
+			<key>pinyin</key>
+			<string>pīn yīn</string>
+			<key>hanzi</key>
+			<string>拼音</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>more</string>
+			<key>pinyin</key>
+			<string>gèng</string>
+			<key>hanzi</key>
+			<string>更</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to jump</string>
+			<key>pinyin</key>
+			<string>tiào</string>
+			<key>hanzi</key>
+			<string>跳</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>train</string>
+			<key>pinyin</key>
+			<string>huǒ chē</string>
+			<key>hanzi</key>
+			<string>火车</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to grow</string>
+			<key>pinyin</key>
+			<string>zhǎng</string>
+			<key>hanzi</key>
+			<string>长</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>de particle</string>
+			<key>pinyin</key>
+			<string>de</string>
+			<key>hanzi</key>
+			<string>得</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>duck</string>
+			<key>pinyin</key>
+			<string>yā zi</string>
+			<key>hanzi</key>
+			<string>鸭子</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to swim</string>
+			<key>pinyin</key>
+			<string>yóu</string>
+			<key>hanzi</key>
+			<string>游</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>together</string>
+			<key>pinyin</key>
+			<string>yì qǐ</string>
+			<key>hanzi</key>
+			<string>一起</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to become</string>
+			<key>pinyin</key>
+			<string>jiù chéng</string>
+			<key>hanzi</key>
+			<string>就成</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>feather/hair</string>
+			<key>pinyin</key>
+			<string>máo</string>
+			<key>hanzi</key>
+			<string>毛</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>body</string>
+			<key>pinyin</key>
+			<string>shēn</string>
+			<key>hanzi</key>
+			<string>身</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>chicken</string>
+			<key>pinyin</key>
+			<string>jī</string>
+			<key>hanzi</key>
+			<string>鸡</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>foot</string>
+			<key>pinyin</key>
+			<string>jiǎo</string>
+			<key>hanzi</key>
+			<string>脚</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>the same</string>
+			<key>pinyin</key>
+			<string>yí yàng</string>
+			<key>hanzi</key>
+			<string>一样</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>comparision/than</string>
+			<key>pinyin</key>
+			<string>bǐ</string>
+			<key>hanzi</key>
+			<string>比</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>but/however</string>
+			<key>pinyin</key>
+			<string>kě shì</string>
+			<key>hanzi</key>
+			<string>可是</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>helper</string>
+			<key>pinyin</key>
+			<string>bāng shǒu</string>
+			<key>hanzi</key>
+			<string>帮手</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to live</string>
+			<key>pinyin</key>
+			<string>zhù</string>
+			<key>hanzi</key>
+			<string>住</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>house</string>
+			<key>pinyin</key>
+			<string>wū</string>
+			<key>hanzi</key>
+			<string>屋</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to help</string>
+			<key>pinyin</key>
+			<string>bāng máng</string>
+			<key>hanzi</key>
+			<string>帮忙</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>doorway</string>
+			<key>pinyin</key>
+			<string>mén kǒu</string>
+			<key>hanzi</key>
+			<string>门口</string>
+		</dict>
+	</array>
+</dict>
+</plist>

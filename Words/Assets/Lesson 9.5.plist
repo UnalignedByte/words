@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Lesson 9.5</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>that</string>
+			<key>pinyin</key>
+			<string>nà</string>
+			<key>hanzi</key>
+			<string>那</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>clothes meassure</string>
+			<key>pinyin</key>
+			<string>jiàn</string>
+			<key>hanzi</key>
+			<string>件</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>big</string>
+			<key>pinyin</key>
+			<string>dà</string>
+			<key>hanzi</key>
+			<string>大</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>sweater</string>
+			<key>pinyin</key>
+			<string>máo yī</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>how</string>
+			<key>pinyin</key>
+			<string>zěn me</string>
+			<key>hanzi</key>
+			<string>怎么</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to have</string>
+			<key>pinyin</key>
+			<string>yǒu</string>
+			<key>hanzi</key>
+			<string>有</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to try</string>
+			<key>pinyin</key>
+			<string>shì</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>this</string>
+			<key>pinyin</key>
+			<string>zhè</string>
+			<key>hanzi</key>
+			<string>这</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>red</string>
+			<key>pinyin</key>
+			<string>hóng</string>
+			<key>hanzi</key>
+			<string>红</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>black</string>
+			<key>pinyin</key>
+			<string>hēi</string>
+			<key>hanzi</key>
+			<string>黑</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>yellow</string>
+			<key>pinyin</key>
+			<string>huáng</string>
+			<key>hanzi</key>
+			<string>黄</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>green</string>
+			<key>pinyin</key>
+			<string>lǜ</string>
+			<key>hanzi</key>
+			<string>绿</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>white</string>
+			<key>pinyin</key>
+			<string>bái</string>
+			<key>hanzi</key>
+			<string>白</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>blue</string>
+			<key>pinyin</key>
+			<string>lán</string>
+			<key>hanzi</key>
+			<string>蓝</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>gray</string>
+			<key>pinyin</key>
+			<string>huī</string>
+			<key>hanzi</key>
+			<string>灰</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>color</string>
+			<key>pinyin</key>
+			<string>yán sè</string>
+			<key>hanzi</key>
+			<string>颜色</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>de particle</string>
+			<key>pinyin</key>
+			<string>de</string>
+			<key>hanzi</key>
+			<string>的</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to wear</string>
+			<key>pinyin</key>
+			<string>chuān</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>pants</string>
+			<key>pinyin</key>
+			<string>kù zi</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>suit</string>
+			<key>pinyin</key>
+			<string>xī fú</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>jacket</string>
+			<key>pinyin</key>
+			<string>jiā kè</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>jeans</string>
+			<key>pinyin</key>
+			<string>niú zǎi kú</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>T-shirt</string>
+			<key>pinyin</key>
+			<string>T xù</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>shirt</string>
+			<key>pinyin</key>
+			<string>chèn shān</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>dress</string>
+			<key>pinyin</key>
+			<string>tào qún</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>leather shoes</string>
+			<key>pinyin</key>
+			<string>pí xié</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>sneakers</string>
+			<key>pinyin</key>
+			<string>lǚ yóu xié</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>short</string>
+			<key>pinyin</key>
+			<string>duǎn</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>long</string>
+			<key>pinyin</key>
+			<string>cháng</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>thin</string>
+			<key>pinyin</key>
+			<string>shòu, báo</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>loose</string>
+			<key>pinyin</key>
+			<string>féi</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>thick</string>
+			<key>pinyin</key>
+			<string>hòu</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Useful 2</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>ba question</string>
+			<key>pinyin</key>
+			<string>ba</string>
+			<key>hanzi</key>
+			<string>吧</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>ne question</string>
+			<key>pinyin</key>
+			<string>ne</string>
+			<key>hanzi</key>
+			<string>呢</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to allow</string>
+			<key>pinyin</key>
+			<string>yǔn xǔ</string>
+			<key>hanzi</key>
+			<string>允许</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>main page</string>
+			<key>pinyin</key>
+			<string>shǒu yè</string>
+			<key>hanzi</key>
+			<string>首页</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>copy</string>
+			<key>pinyin</key>
+			<string>kǎo bèi</string>
+			<key>hanzi</key>
+			<string>拷贝</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>paste</string>
+			<key>pinyin</key>
+			<string>zhān tiē</string>
+			<key>hanzi</key>
+			<string>粘贴</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>we</string>
+			<key>pinyin</key>
+			<string>zán men</string>
+			<key>hanzi</key>
+			<string>咱们</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>ten thousand</string>
+			<key>pinyin</key>
+			<string>wàn</string>
+			<key>hanzi</key>
+			<string>万</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>hundred million</string>
+			<key>pinyin</key>
+			<string>yì</string>
+			<key>hanzi</key>
+			<string>亿</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>no</string>
+			<key>pinyin</key>
+			<string>fǒu</string>
+			<key>hanzi</key>
+			<string>否</string>
+		</dict>
+	</array>
+</dict>
+</plist>

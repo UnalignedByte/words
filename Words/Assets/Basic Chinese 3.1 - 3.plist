@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Basic Chinese 3.1 - 3</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>boats meassure word</string>
+			<key>pinyin</key>
+			<string>tiáo</string>
+			<key>hanzi</key>
+			<string>条</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>boat</string>
+			<key>pinyin</key>
+			<string>chuán</string>
+			<key>hanzi</key>
+			<string>船</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to row/shake</string>
+			<key>pinyin</key>
+			<string>yáo</string>
+			<key>hanzi</key>
+			<string>摇</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>loudly</string>
+			<key>pinyin</key>
+			<string>gāo shēng</string>
+			<key>hanzi</key>
+			<string>高声</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to sing</string>
+			<key>pinyin</key>
+			<string>chàng</string>
+			<key>hanzi</key>
+			<string>唱</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>as if</string>
+			<key>pinyin</key>
+			<string>hǎo xiàng</string>
+			<key>hanzi</key>
+			<string>好像</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>for</string>
+			<key>pinyin</key>
+			<string>wèi</string>
+			<key>hanzi</key>
+			<string>为</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to encourage</string>
+			<key>pinyin</key>
+			<string>dǎ qi</string>
+			<key>hanzi</key>
+			<string>打气</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to move forward</string>
+			<key>pinyin</key>
+			<string>qián jìn</string>
+			<key>hanzi</key>
+			<string>前进</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>quickly</string>
+			<key>pinyin</key>
+			<string>fēi kuài</string>
+			<key>hanzi</key>
+			<string>飞快</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to move</string>
+			<key>pinyin</key>
+			<string>dòng</string>
+			<key>hanzi</key>
+			<string>动</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>will</string>
+			<key>pinyin</key>
+			<string>jiù huì</string>
+			<key>hanzi</key>
+			<string>就会</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>sheep</string>
+			<key>pinyin</key>
+			<string>yáng</string>
+			<key>hanzi</key>
+			<string>羊</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>and</string>
+			<key>pinyin</key>
+			<string>hé</string>
+			<key>hanzi</key>
+			<string>和</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>stump</string>
+			<key>pinyin</key>
+			<string>mù tóu</string>
+			<key>hanzi</key>
+			<string>木头</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>leaf</string>
+			<key>pinyin</key>
+			<string>yè</string>
+			<key>hanzi</key>
+			<string>叶</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>tree</string>
+			<key>pinyin</key>
+			<string>shù</string>
+			<key>hanzi</key>
+			<string>树</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to like</string>
+			<key>pinyin</key>
+			<string>xǐ huan</string>
+			<key>hanzi</key>
+			<string>喜欢</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>school</string>
+			<key>pinyin</key>
+			<string>xué</string>
+			<key>hanzi</key>
+			<string>学</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to read</string>
+			<key>pinyin</key>
+			<string>kàn</string>
+			<key>hanzi</key>
+			<string>看</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>book</string>
+			<key>pinyin</key>
+			<string>shū</string>
+			<key>hanzi</key>
+			<string>书</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>sun</string>
+			<key>pinyin</key>
+			<string>tài yáng</string>
+			<key>hanzi</key>
+			<string>太阳</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>can</string>
+			<key>pinyin</key>
+			<string>néng</string>
+			<key>hanzi</key>
+			<string>能</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>joy</string>
+			<key>pinyin</key>
+			<string>huān lè</string>
+			<key>hanzi</key>
+			<string>欢乐</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>most</string>
+			<key>pinyin</key>
+			<string>zuì</string>
+			<key>hanzi</key>
+			<string>最</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>red</string>
+			<key>pinyin</key>
+			<string>hóng</string>
+			<key>hanzi</key>
+			<string>红</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>green</string>
+			<key>pinyin</key>
+			<string>lǜ</string>
+			<key>hanzi</key>
+			<string>绿</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>fragrant</string>
+			<key>pinyin</key>
+			<string>xiāng</string>
+			<key>hanzi</key>
+			<string>香</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Lesson 1</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>I</string>
+			<key>pinyin</key>
+			<string>wǒ</string>
+			<key>hanzi</key>
+			<string>我</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>you</string>
+			<key>pinyin</key>
+			<string>nǐ</string>
+			<key>hanzi</key>
+			<string>你</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>he</string>
+			<key>pinyin</key>
+			<string>tā</string>
+			<key>hanzi</key>
+			<string>他</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>she</string>
+			<key>pinyin</key>
+			<string>tā</string>
+			<key>hanzi</key>
+			<string>她</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>it</string>
+			<key>pinyin</key>
+			<string>tā</string>
+			<key>hanzi</key>
+			<string>它</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>we</string>
+			<key>pinyin</key>
+			<string>wǒ men</string>
+			<key>hanzi</key>
+			<string>我们</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>you (pl.)</string>
+			<key>pinyin</key>
+			<string>nǐ men</string>
+			<key>hanzi</key>
+			<string>你们</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to be</string>
+			<key>pinyin</key>
+			<string>shì</string>
+			<key>hanzi</key>
+			<string>是</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>no</string>
+			<key>pinyin</key>
+			<string>bù</string>
+			<key>hanzi</key>
+			<string>不</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>I am called</string>
+			<key>pinyin</key>
+			<string>wǒ jiào</string>
+			<key>hanzi</key>
+			<string>我叫</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>I am</string>
+			<key>pinyin</key>
+			<string>wǒ shì</string>
+			<key>hanzi</key>
+			<string>我是</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>this is</string>
+			<key>pinyin</key>
+			<string>zhè shì</string>
+			<key>hanzi</key>
+			<string>这是</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>see you tomorrow</string>
+			<key>pinyin</key>
+			<string>míng tiān jiàn</string>
+			<key>hanzi</key>
+			<string>明天见</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>Chinese (spoken)</string>
+			<key>pinyin</key>
+			<string>hàn yǔ</string>
+			<key>hanzi</key>
+			<string>汉语</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>Chinese (written)</string>
+			<key>pinyin</key>
+			<string>zhōng wén</string>
+			<key>hanzi</key>
+			<string>中文</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to buy</string>
+			<key>pinyin</key>
+			<string>mǎi</string>
+			<key>hanzi</key>
+			<string>买</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>love</string>
+			<key>pinyin</key>
+			<string>ài</string>
+			<key>hanzi</key>
+			<string>爱</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>horse</string>
+			<key>pinyin</key>
+			<string>mǎ</string>
+			<key>hanzi</key>
+			<string>马</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>day</string>
+			<key>pinyin</key>
+			<string>tiān</string>
+			<key>hanzi</key>
+			<string>天</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>hello</string>
+			<key>pinyin</key>
+			<string>nǐ hǎo</string>
+			<key>hanzi</key>
+			<string>你好</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>hello (polite)</string>
+			<key>pinyin</key>
+			<string>nín hǎo</string>
+			<key>hanzi</key>
+			<string>您好</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>how are you</string>
+			<key>pinyin</key>
+			<string>nǐ hǎo ma?</string>
+			<key>hanzi</key>
+			<string>你好吗</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>I am very well</string>
+			<key>pinyin</key>
+			<string>wǒ hěn hǎo</string>
+			<key>hanzi</key>
+			<string>我很好</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>and you?</string>
+			<key>pinyin</key>
+			<string>nǐ ne</string>
+			<key>hanzi</key>
+			<string>你呢</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>I am very well too</string>
+			<key>pinyin</key>
+			<string>wǒ yě hěn hǎo</string>
+			<key>hanzi</key>
+			<string>我也很好</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>thank you</string>
+			<key>pinyin</key>
+			<string>xiè xiè</string>
+			<key>hanzi</key>
+			<string>谢谢</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>sorry</string>
+			<key>pinyin</key>
+			<string>duì bù qǐ</string>
+			<key>hanzi</key>
+			<string>对不起</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>you are welcome</string>
+			<key>pinyin</key>
+			<string>bù kè qi</string>
+			<key>hanzi</key>
+			<string>不客气</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>goodbye</string>
+			<key>pinyin</key>
+			<string>zài jiàn</string>
+			<key>hanzi</key>
+			<string>再见</string>
+		</dict>
+	</array>
+</dict>
+</plist>

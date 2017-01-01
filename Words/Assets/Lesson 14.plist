@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Lesson 14</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>grandfather</string>
+			<key>pinyin</key>
+			<string>yé ye</string>
+			<key>hanzi</key>
+			<string>爷爷</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>grandmother</string>
+			<key>pinyin</key>
+			<string>nǎi nai</string>
+			<key>hanzi</key>
+			<string>奶奶</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>dad</string>
+			<key>pinyin</key>
+			<string>bà ba</string>
+			<key>hanzi</key>
+			<string>爸爸</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>mom</string>
+			<key>pinyin</key>
+			<string>mā ma</string>
+			<key>hanzi</key>
+			<string>妈妈</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>husband</string>
+			<key>pinyin</key>
+			<string>zhàng fu</string>
+			<key>hanzi</key>
+			<string>丈夫</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>wife</string>
+			<key>pinyin</key>
+			<string>qī zi</string>
+			<key>hanzi</key>
+			<string>妻子</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>husband/mr.</string>
+			<key>pinyin</key>
+			<string>xiāng sheng</string>
+			<key>hanzi</key>
+			<string>先生</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>wife/mrs.</string>
+			<key>pinyin</key>
+			<string>tài tai</string>
+			<key>hanzi</key>
+			<string>太太</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>child</string>
+			<key>pinyin</key>
+			<string>hái zi</string>
+			<key>hanzi</key>
+			<string>孩子</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>son</string>
+			<key>pinyin</key>
+			<string>ér zi</string>
+			<key>hanzi</key>
+			<string>儿子</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>daughter</string>
+			<key>pinyin</key>
+			<string>nǚ er</string>
+			<key>hanzi</key>
+			<string>女儿</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>older brother</string>
+			<key>pinyin</key>
+			<string>gē ge</string>
+			<key>hanzi</key>
+			<string>哥哥</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>younger brother</string>
+			<key>pinyin</key>
+			<string>dì di</string>
+			<key>hanzi</key>
+			<string>弟弟</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>younger sister</string>
+			<key>pinyin</key>
+			<string>mèi mei</string>
+			<key>hanzi</key>
+			<string>妹妹</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>older sister</string>
+			<key>pinyin</key>
+			<string>jiě jie</string>
+			<key>hanzi</key>
+			<string>姐姐</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>spouse</string>
+			<key>pinyin</key>
+			<string>ài rén</string>
+			<key>hanzi</key>
+			<string>爱人</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>parents</string>
+			<key>pinyin</key>
+			<string>fù mǔ qīn</string>
+			<key>hanzi</key>
+			<string>父母亲</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>father</string>
+			<key>pinyin</key>
+			<string>fù qīn</string>
+			<key>hanzi</key>
+			<string>父亲</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>mother</string>
+			<key>pinyin</key>
+			<string>mǔ qīn</string>
+			<key>hanzi</key>
+			<string>母亲</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>friend</string>
+			<key>pinyin</key>
+			<string>péng yǒu</string>
+			<key>hanzi</key>
+			<string>朋友</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>boyfriend</string>
+			<key>pinyin</key>
+			<string>nán péng yǒu</string>
+			<key>hanzi</key>
+			<string>男朋友</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>girlfriend</string>
+			<key>pinyin</key>
+			<string>nǚ péng yǒu</string>
+			<key>hanzi</key>
+			<string>女朋友</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>who</string>
+			<key>pinyin</key>
+			<string>shéi</string>
+			<key>hanzi</key>
+			<string>谁</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>policeman</string>
+			<key>pinyin</key>
+			<string>jǐng chá</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>engineer</string>
+			<key>pinyin</key>
+			<string>gōng chéng shī</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>lawyer</string>
+			<key>pinyin</key>
+			<string>lǜ shī</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>actor</string>
+			<key>pinyin</key>
+			<string>yǎn yuán</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>professor</string>
+			<key>pinyin</key>
+			<string>jiào shòu</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>worker</string>
+			<key>pinyin</key>
+			<string>gōng rén</string>
+			<key>hanzi</key>
+			<string>工人</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>bussinesman</string>
+			<key>pinyin</key>
+			<string>shāng rén</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>boss</string>
+			<key>pinyin</key>
+			<string>lǎo bǎn</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>chairman</string>
+			<key>pinyin</key>
+			<string>zǒng cái</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>postman/courrier</string>
+			<key>pinyin</key>
+			<string>yóu dì yuán</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>mouth/meassure word</string>
+			<key>pinyin</key>
+			<string>kǒu</string>
+			<key>hanzi</key>
+			<string>口</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>and</string>
+			<key>pinyin</key>
+			<string>hé</string>
+			<key>hanzi</key>
+			<string>和</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>where</string>
+			<key>pinyin</key>
+			<string>nǎr/nǎ er</string>
+			<key>hanzi</key>
+			<string>哪儿</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to work</string>
+			<key>pinyin</key>
+			<string>gōng zuò</string>
+			<key>hanzi</key>
+			<string>工作</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>school</string>
+			<key>pinyin</key>
+			<string>xué xiào</string>
+			<key>hanzi</key>
+			<string>学校</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>teacher</string>
+			<key>pinyin</key>
+			<string>lǎo shī</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to do</string>
+			<key>pinyin</key>
+			<string>zuò</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>doctor</string>
+			<key>pinyin</key>
+			<string>yī shēng</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>nurse</string>
+			<key>pinyin</key>
+			<string>hù shi</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>accountant</string>
+			<key>pinyin</key>
+			<string>kuài jì</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>office worker</string>
+			<key>pinyin</key>
+			<string>zhí yuán</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>driver</string>
+			<key>pinyin</key>
+			<string>sī jī</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>secretary</string>
+			<key>pinyin</key>
+			<string>mì shū</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>chef</string>
+			<key>pinyin</key>
+			<string>chú shī</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>guard</string>
+			<key>pinyin</key>
+			<string>bǎo&apos;ān</string>
+			<key>hanzi</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>

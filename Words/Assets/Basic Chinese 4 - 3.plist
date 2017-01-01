@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Basic Chinese 4 - 3</string>
+	<key>words</key>
+	<array>
+		<dict>
+			<key>english</key>
+			<string>to stop</string>
+			<key>pinyin</key>
+			<string>tíng</string>
+			<key>hanzi</key>
+			<string>停</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>clear day</string>
+			<key>pinyin</key>
+			<string>tiān qíng</string>
+			<key>hanzi</key>
+			<string>天晴</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>long</string>
+			<key>pinyin</key>
+			<string>jiǔ</string>
+			<key>hanzi</key>
+			<string>久</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>more and more</string>
+			<key>pinyin</key>
+			<string>yuè lái yuè</string>
+			<key>hanzi</key>
+			<string>越来越</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>egg</string>
+			<key>pinyin</key>
+			<string>dàn</string>
+			<key>hanzi</key>
+			<string>蛋</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to fall/drop</string>
+			<key>pinyin</key>
+			<string>diào</string>
+			<key>hanzi</key>
+			<string>掉</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>hen</string>
+			<key>pinyin</key>
+			<string>mǔ jī</string>
+			<key>hanzi</key>
+			<string>母鸡</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>body</string>
+			<key>pinyin</key>
+			<string>shēn</string>
+			<key>hanzi</key>
+			<string>身</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>to grow</string>
+			<key>pinyin</key>
+			<string>zhòng</string>
+			<key>hanzi</key>
+			<string>种</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>grandfather</string>
+			<key>pinyin</key>
+			<string>wài gōng</string>
+			<key>hanzi</key>
+			<string>外公</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>zoo</string>
+			<key>pinyin</key>
+			<string>dòng wù yuán</string>
+			<key>hanzi</key>
+			<string>动物园</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>animal</string>
+			<key>pinyin</key>
+			<string>dòng wù</string>
+			<key>hanzi</key>
+			<string>动物</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>then</string>
+			<key>pinyin</key>
+			<string>rán hòu</string>
+			<key>hanzi</key>
+			<string>然后</string>
+		</dict>
+		<dict>
+			<key>english</key>
+			<string>only</string>
+			<key>pinyin</key>
+			<string>cái</string>
+			<key>hanzi</key>
+			<string>才</string>
+		</dict>
+	</array>
+</dict>
+</plist>
