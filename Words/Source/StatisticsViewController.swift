@@ -14,9 +14,9 @@ class StatisticsViewController: UIViewController
     @IBOutlet fileprivate weak var wordsCountLabel: UILabel!
     @IBOutlet fileprivate weak var hanziCountLabel: UILabel!
 
-    override func viewDidLoad()
+    /*override func viewDidLoad()
     {
         self.wordsCountLabel.text = "Words Count: \(WordsDataSource.sharedInstance.wordsCount())"
         self.hanziCountLabel.text = "Hanzi Count: \(WordsDataSource.sharedInstance.hanziCount())"
-    }
+    }*/
 }

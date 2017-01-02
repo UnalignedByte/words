@@ -10,17 +10,17 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate
+class ViewController: UIViewController//, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate
 {
-    var resultsController: NSFetchedResultsController<ChineseWord>!
-    var wordDisplayStyle: ChineseWordDisplayStyle!
+    //var resultsController: NSFetchedResultsController<ChineseWord>!
+    //var wordDisplayStyle: ChineseWordDisplayStyle!
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var filterSegment: UISegmentedControl!
     @IBOutlet var filterButton: UIButton!
 
 
-    override func viewDidLoad()
+    /*override func viewDidLoad()
     {
         self.wordDisplayStyle = .all
         self.filterSegment.selectedSegmentIndex = self.wordDisplayStyle.rawValue
@@ -181,6 +181,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         } catch {
         }
-    }
+    }*/
 }
 

@@ -14,10 +14,10 @@ class WordsDataSource
 {
     static let sharedInstance = WordsDataSource()
 
-    var model: NSManagedObjectModel!
-    var storeCoordinator: NSPersistentStoreCoordinator!
-    var persistentStore: NSPersistentStore!
-    var context: NSManagedObjectContext!
+    private var model: NSManagedObjectModel!
+    private var storeCoordinator: NSPersistentStoreCoordinator!
+    private var persistentStore: NSPersistentStore!
+    private var context: NSManagedObjectContext!
 
     init()
     {
@@ -27,14 +27,15 @@ class WordsDataSource
     }
 
 
-    fileprivate func setupModel()
+    private func setupModel()
     {
-        let modelUrl = Bundle.main.url(forResource: "WordsModel", withExtension: "momd")
-        self.model = NSManagedObjectModel.init(contentsOf: modelUrl!)
+        //let modelUrl = Bundle.main.url(forResource: "WordsModel", withExtension: "momd")
+        self.model = NSManagedObjectModel.mergedModel(from: [Bundle.main])
+        //self.model = NSManagedObjectModel.init(contentsOf: modelUrl!)
     }
 
 
-    fileprivate func setupStoreCoordinator()
+    private func setupStoreCoordinator()
     {
         self.storeCoordinator = NSPersistentStoreCoordinator.init(managedObjectModel: self.model)
 
@@ -49,27 +50,40 @@ class WordsDataSource
     }
 
 
-    fileprivate func setupContext()
+    private func setupContext()
     {
         self.context = NSManagedObjectContext.init(concurrencyType: .mainQueueConcurrencyType)
         self.context.persistentStoreCoordinator = self.storeCoordinator
     }
 
 
-    func addNewChineseWord() -> ChineseWord
+    private func entityName(forLanguageCode languageCode: String) -> String
     {
-        let word = NSEntityDescription.insertNewObject(forEntityName: "ChineseWord",
-                                                                       into: self.context) as! ChineseWord
+        let entityForCode = ["cn" : "ChineseWord"]
+
+        if entityForCode[languageCode] != nil {
+            return entityForCode[languageCode]!
+        }
+
+        return "Word"
+    }
+
+
+    func newWord(languageCode: String) -> Word
+    {
+        let entityName = self.entityName(forLanguageCode: languageCode)
+        let word = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.context) as! Word
 
         var randomNumber: Int32 = 0
         arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
-        word.order = randomNumber
+        word.order = NSNumber(value: randomNumber)
+        word.languageCode = languageCode
 
         return word
     }
 
 
-    func groupNames() -> [String]
+    /*func groupNames() -> [String]
     {
         let fetchRequest: NSFetchRequest<ChineseWord> = NSFetchRequest()
         let entityDescription = NSEntityDescription.entity(forEntityName: "ChineseWord",
@@ -164,5 +178,5 @@ class WordsDataSource
         }
         
         return count
-    }
+    }*/
 }
