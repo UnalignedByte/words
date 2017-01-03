@@ -12,9 +12,16 @@ import XCTest
 
 class WordsDataSourceTests: XCTestCase
 {
+    func testGetContext()
+    {
+        let context = WordsDataSource.sharedInstance.context
+        XCTAssertNotNil(context)
+    }
+
+
     func testNewWord()
     {
-        let word = WordsDataSource.sharedInstance.newWord(languageCode: "en")
+        let word = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en")
         word.word = "Test English"
         word.translation = "Test Translation"
 

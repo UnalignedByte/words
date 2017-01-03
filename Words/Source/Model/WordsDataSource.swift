@@ -12,74 +12,59 @@ import CoreData
 
 class WordsDataSource
 {
+    // MARK: - Public Properties
     static let sharedInstance = WordsDataSource()
 
-    private var model: NSManagedObjectModel!
-    private var storeCoordinator: NSPersistentStoreCoordinator!
-    private var persistentStore: NSPersistentStore!
-    private var context: NSManagedObjectContext!
-
-    init()
-    {
-        self.setupModel()
-        self.setupStoreCoordinator()
-        self.setupContext()
-    }
-
-
-    private func setupModel()
-    {
-        //let modelUrl = Bundle.main.url(forResource: "WordsModel", withExtension: "momd")
-        self.model = NSManagedObjectModel.mergedModel(from: [Bundle.main])
-        //self.model = NSManagedObjectModel.init(contentsOf: modelUrl!)
-    }
-
-
-    private func setupStoreCoordinator()
-    {
-        self.storeCoordinator = NSPersistentStoreCoordinator.init(managedObjectModel: self.model)
-
-        do {
-            try self.persistentStore = self.storeCoordinator.addPersistentStore(ofType: NSInMemoryStoreType,
-                                                                                        configurationName: nil,
-                                                                                        at: nil,
-                                                                                        options: nil)
-        } catch {
-            abort()
+    var context: NSManagedObjectContext {
+        get {
+            return storeContainer.viewContext
         }
     }
 
+    // MARK: - Private Properties
+    private lazy var storeContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "WordsModel")
+        container.loadPersistentStores { (storeDescription, error) in
+            if let error = error {
 
-    private func setupContext()
+            }
+        }
+        return container
+    }()
+
+
+    // MARK: - Initialization
+    private init()
     {
-        self.context = NSManagedObjectContext.init(concurrencyType: .mainQueueConcurrencyType)
-        self.context.persistentStoreCoordinator = self.storeCoordinator
     }
 
 
-    private func entityName(forLanguageCode languageCode: String) -> String
+    // MARK: - Public Control
+    func newWord(forLanguageCode code: String) -> Word
+    {
+        let entityName = self.entityName(forLanguageCode: code)
+        let word = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.context) as! Word
+
+        word.languageCode = code
+
+        var randomNumber = Int32(0)
+        arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
+        word.order = NSNumber(value: randomNumber)
+
+        return word
+    }
+
+
+    // MARK: - Private Utils
+    private func entityName(forLanguageCode code: String) -> String
     {
         let entityForCode = ["cn" : "ChineseWord"]
 
-        if entityForCode[languageCode] != nil {
-            return entityForCode[languageCode]!
+        if entityForCode[code] != nil {
+            return entityForCode[code]!
         }
 
         return "Word"
-    }
-
-
-    func newWord(languageCode: String) -> Word
-    {
-        let entityName = self.entityName(forLanguageCode: languageCode)
-        let word = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.context) as! Word
-
-        var randomNumber: Int32 = 0
-        arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
-        word.order = NSNumber(value: randomNumber)
-        word.languageCode = languageCode
-
-        return word
     }
 
 

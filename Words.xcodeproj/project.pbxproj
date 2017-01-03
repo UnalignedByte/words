@@ -10,12 +10,12 @@
 		B516F0711D58FD490091B459 /* Basic Chinese 3.1 - 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B516F0701D58FD490091B459 /* Basic Chinese 3.1 - 2.plist */; };
 		B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B381E1A950C00F6B1A8 /* WordsDataSource.swift */; };
 		B51A5B3F1E1A953600F6B1A8 /* ChineseWord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B3B1E1A953600F6B1A8 /* ChineseWord+CoreDataClass.swift */; };
-		B51A5B411E1A953600F6B1A8 /* ChineseWord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B3C1E1A953600F6B1A8 /* ChineseWord+CoreDataProperties.swift */; };
 		B51A5B431E1A953600F6B1A8 /* Word+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B3D1E1A953600F6B1A8 /* Word+CoreDataClass.swift */; };
-		B51A5B451E1A953600F6B1A8 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B3E1E1A953600F6B1A8 /* Word+CoreDataProperties.swift */; };
 		B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */; };
 		B51A5B791E1AC8C800F6B1A8 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBF9211D76263700EE21C0 /* StatisticsViewController.swift */; };
 		B51A5B7A1E1AC8F700F6B1A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC21FF1C7F999F00C5D782 /* ViewController.swift */; };
+		B51A5B7D1E1B23AC00F6B1A8 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B7B1E1B23AC00F6B1A8 /* Word+CoreDataProperties.swift */; };
+		B51A5B7E1E1B23AC00F6B1A8 /* ChineseWord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B7C1E1B23AC00F6B1A8 /* ChineseWord+CoreDataProperties.swift */; };
 		B52FDC2F1E03D66A00C88652 /* Basic Chinese 5 - 5.plist in Resources */ = {isa = PBXBuildFile; fileRef = B52FDC2E1E03D66A00C88652 /* Basic Chinese 5 - 5.plist */; };
 		B53C8F701D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B53C8F6F1D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist */; };
 		B5422F911D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5422F901D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist */; };
@@ -73,9 +73,9 @@
 		B516F0701D58FD490091B459 /* Basic Chinese 3.1 - 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.1 - 2.plist"; path = "Words/Assets/Basic Chinese 3.1 - 2.plist"; sourceTree = "<group>"; };
 		B51A5B381E1A950C00F6B1A8 /* WordsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsDataSource.swift; path = Source/Model/WordsDataSource.swift; sourceTree = "<group>"; };
 		B51A5B3B1E1A953600F6B1A8 /* ChineseWord+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChineseWord+CoreDataClass.swift"; path = "Source/Model/ChineseWord+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B51A5B3C1E1A953600F6B1A8 /* ChineseWord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChineseWord+CoreDataProperties.swift"; path = "Source/Model/ChineseWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B51A5B3D1E1A953600F6B1A8 /* Word+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Word+CoreDataClass.swift"; path = "Source/Model/Word+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B51A5B3E1E1A953600F6B1A8 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Word+CoreDataProperties.swift"; path = "Source/Model/Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B51A5B7B1E1B23AC00F6B1A8 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Word+CoreDataProperties.swift"; path = "Source/Model/Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B51A5B7C1E1B23AC00F6B1A8 /* ChineseWord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChineseWord+CoreDataProperties.swift"; path = "Source/Model/ChineseWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B52FDC2E1E03D66A00C88652 /* Basic Chinese 5 - 5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 5.plist"; path = "Words/Assets/Basic Chinese 5 - 5.plist"; sourceTree = "<group>"; };
 		B53C8F6F1D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.1 - 3.plist"; path = "Words/Assets/Basic Chinese 3.1 - 3.plist"; sourceTree = "<group>"; };
 		B5422F901D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 4 - 2.plist"; path = "Words/Assets/Basic Chinese 4 - 2.plist"; sourceTree = "<group>"; };
@@ -151,9 +151,9 @@
 			children = (
 				B51A5B381E1A950C00F6B1A8 /* WordsDataSource.swift */,
 				B51A5B3D1E1A953600F6B1A8 /* Word+CoreDataClass.swift */,
-				B51A5B3E1E1A953600F6B1A8 /* Word+CoreDataProperties.swift */,
+				B51A5B7B1E1B23AC00F6B1A8 /* Word+CoreDataProperties.swift */,
 				B51A5B3B1E1A953600F6B1A8 /* ChineseWord+CoreDataClass.swift */,
-				B51A5B3C1E1A953600F6B1A8 /* ChineseWord+CoreDataProperties.swift */,
+				B51A5B7C1E1B23AC00F6B1A8 /* ChineseWord+CoreDataProperties.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -430,14 +430,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B51A5B451E1A953600F6B1A8 /* Word+CoreDataProperties.swift in Sources */,
 				B51A5B431E1A953600F6B1A8 /* Word+CoreDataClass.swift in Sources */,
 				B51A5B3F1E1A953600F6B1A8 /* ChineseWord+CoreDataClass.swift in Sources */,
+				B51A5B7D1E1B23AC00F6B1A8 /* Word+CoreDataProperties.swift in Sources */,
 				B51A5B7A1E1AC8F700F6B1A8 /* ViewController.swift in Sources */,
 				B51A5B791E1AC8C800F6B1A8 /* StatisticsViewController.swift in Sources */,
 				B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */,
+				B51A5B7E1E1B23AC00F6B1A8 /* ChineseWord+CoreDataProperties.swift in Sources */,
 				B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */,
-				B51A5B411E1A953600F6B1A8 /* ChineseWord+CoreDataProperties.swift in Sources */,
 				B5EC22171C7F9ACC00C5D782 /* WordsModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
