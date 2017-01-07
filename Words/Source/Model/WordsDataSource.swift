@@ -42,16 +42,45 @@ class WordsDataSource
     // MARK: - Public Control
     func newWord(forLanguageCode code: String) -> Word
     {
-        let entityName = self.entityName(forLanguageCode: code)
-        let word = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.context) as! Word
+        //let entityName = self.entityName(forLanguageCode: code)
+        //let word = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.context) as! Word
 
+        let word = Word(context: self.context)
         word.languageCode = code
 
         var randomNumber = Int32(0)
         arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
         word.order = NSNumber(value: randomNumber)
 
+        do {
+            try self.storeContainer.viewContext.save();
+        } catch let error {
+            print("Error: \(error)")
+        }
+
         return word
+    }
+
+
+    func languageCodes() -> [String]
+    {
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Word")
+        fetchRequest.resultType = .dictionaryResultType
+        fetchRequest.propertiesToFetch = ["languageCode"]
+        fetchRequest.returnsDistinctResults = true
+
+        let fetchResults = try? self.context.fetch(fetchRequest)
+
+        // Extract just the codes into an array
+        var languageCodes = [String]()
+        for property in fetchResults! {
+            languageCodes.append(property.object(forKey: "languageCode") as! String)
+        }
+
+        // TODO: Can't get this to work :(
+        //let languageCodes: [String] = fetchResults.map{$0.object(forKey: "languageCode") as! String}
+
+        return languageCodes
     }
 
 

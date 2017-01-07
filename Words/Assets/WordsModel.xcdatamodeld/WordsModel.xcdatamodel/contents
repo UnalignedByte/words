@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ChineseWord" representedClassName=".ChineseWord" parentEntity="Word" syncable="YES">
-        <attribute name="pinyin" attributeType="String" syncable="YES"/>
+        <attribute name="pinyin" attributeType="String" defaultValueString="empty" syncable="YES"/>
     </entity>
     <entity name="Word" representedClassName="Word" syncable="YES">
-        <attribute name="groupName" attributeType="String" syncable="YES"/>
-        <attribute name="languageCode" attributeType="String" syncable="YES"/>
+        <attribute name="groupName" attributeType="String" defaultValueString="Recent" syncable="YES"/>
+        <attribute name="languageCode" attributeType="String" defaultValueString="en" syncable="YES"/>
         <attribute name="order" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="translation" attributeType="String" syncable="YES"/>
-        <attribute name="word" attributeType="String" syncable="YES"/>
+        <attribute name="translation" attributeType="String" defaultValueString="empty" syncable="YES"/>
+        <attribute name="word" attributeType="String" defaultValueString="empty" syncable="YES"/>
     </entity>
     <elements>
         <element name="ChineseWord" positionX="-63" positionY="-18" width="128" height="60"/>

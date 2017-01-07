@@ -29,4 +29,36 @@ class WordsDataSourceTests: XCTestCase
         XCTAssertEqual(word.translation, "Test Translation")
         XCTAssertEqual(word.languageCode, "en")
     }
+
+
+    func testAvailableLangageCodes()
+    {
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "fr")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de")
+
+        let codes = WordsDataSource.sharedInstance.languageCodes()
+
+        XCTAssertEqual(codes.count, 3)
+
+        var containsEn = false
+        var containsFr = false
+        var containsDe = false
+
+        for code in codes {
+            switch code {
+                case "en":
+                    containsEn = true
+                case "fr":
+                    containsFr = true
+                case "de":
+                    containsDe = true
+            default:
+                XCTFail()
+            }
+        }
+
+        XCTAssertTrue(containsEn && containsFr && containsDe)
+    }
 }
