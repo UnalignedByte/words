@@ -40,13 +40,11 @@ class WordsDataSource
 
 
     // MARK: - Public Control
-    func newWord(forLanguageCode code: String) -> Word
+    func newWord(forLanguageCode code: String, group: String) -> Word
     {
-        //let entityName = self.entityName(forLanguageCode: code)
-        //let word = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.context) as! Word
-
         let word = Word(context: self.context)
         word.languageCode = code
+        word.group = group
 
         var randomNumber = Int32(0)
         arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
@@ -55,10 +53,26 @@ class WordsDataSource
         do {
             try self.storeContainer.viewContext.save();
         } catch let error {
-            print("Error: \(error)")
+            print("Context saving error: \(error)")
         }
 
         return word
+    }
+
+
+    func deleteAllWords()
+    {
+        let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
+
+        let fetchResults = try? self.context.fetch(fetchRequest)
+
+        if let fetchResults = fetchResults {
+            for word in fetchResults {
+                self.context.delete(word)
+            }
+        }
+
+        // TODO: This should be done with NSBatchDeleteRequest
     }
 
 
@@ -73,14 +87,38 @@ class WordsDataSource
 
         // Extract just the codes into an array
         var languageCodes = [String]()
-        for property in fetchResults! {
-            languageCodes.append(property.object(forKey: "languageCode") as! String)
+        if let fetchResults = fetchResults {
+            for property in fetchResults {
+                languageCodes.append(property.object(forKey: "languageCode") as! String)
+            }
         }
 
         // TODO: Can't get this to work :(
         //let languageCodes: [String] = fetchResults.map{$0.object(forKey: "languageCode") as! String}
 
         return languageCodes
+    }
+
+
+    func groups(forLanguageCode code: String) -> [String]
+    {
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Word")
+        fetchRequest.resultType = .dictionaryResultType
+        fetchRequest.propertiesToFetch = ["group"]
+        fetchRequest.returnsDistinctResults = true
+        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", code)
+
+        let fetchResults = try? self.context.fetch(fetchRequest)
+
+        // Extract just the groups into an array
+        var groups = [String]()
+        if let fetchResults = fetchResults {
+            for property in fetchResults {
+                groups.append(property.object(forKey: "group") as! String)
+            }
+        }
+
+        return groups
     }
 
 

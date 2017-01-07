@@ -12,6 +12,12 @@ import XCTest
 
 class WordsDataSourceTests: XCTestCase
 {
+    override func setUp()
+    {
+        WordsDataSource.sharedInstance.deleteAllWords()
+    }
+
+
     func testGetContext()
     {
         let context = WordsDataSource.sharedInstance.context
@@ -21,7 +27,7 @@ class WordsDataSourceTests: XCTestCase
 
     func testNewWord()
     {
-        let word = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en")
+        let word = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "Test")
         word.word = "Test English"
         word.translation = "Test Translation"
 
@@ -31,12 +37,12 @@ class WordsDataSourceTests: XCTestCase
     }
 
 
-    func testAvailableLangageCodes()
+    func testLangageCodes()
     {
-        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en")
-        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "fr")
-        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de")
-        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "Test")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "fr", group: "Test")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "Test")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "Test")
 
         let codes = WordsDataSource.sharedInstance.languageCodes()
 
@@ -54,11 +60,38 @@ class WordsDataSourceTests: XCTestCase
                     containsFr = true
                 case "de":
                     containsDe = true
-            default:
-                XCTFail()
+                default:
+                    XCTFail()
             }
         }
 
         XCTAssertTrue(containsEn && containsFr && containsDe)
+    }
+
+
+    func testGroups()
+    {
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group2")
+
+        let groups = WordsDataSource.sharedInstance.groups(forLanguageCode: "en")
+        XCTAssertEqual(groups.count, 2)
+
+        var containsGroup1 = false
+        var containsGroup2 = false
+
+        for group in groups {
+            switch group {
+                case "group1":
+                    containsGroup1 = true
+                case "group2":
+                        containsGroup2 = true
+                default:
+                    XCTFail()
+            }
+        }
+
+        XCTAssertTrue(containsGroup1 && containsGroup2)
     }
 }
