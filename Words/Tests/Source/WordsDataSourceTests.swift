@@ -30,6 +30,7 @@ class WordsDataSourceTests: XCTestCase
         let word = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "Test")
         word.word = "Test English"
         word.translation = "Test Translation"
+        WordsDataSource.sharedInstance.saveContext()
 
         XCTAssertEqual(word.word, "Test English")
         XCTAssertEqual(word.translation, "Test Translation")
@@ -44,6 +45,7 @@ class WordsDataSourceTests: XCTestCase
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "fr", group: "Test")
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "Test")
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "Test")
+        WordsDataSource.sharedInstance.saveContext()
 
         let codes = WordsDataSource.sharedInstance.languageCodes()
 
@@ -75,6 +77,7 @@ class WordsDataSourceTests: XCTestCase
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group2")
+        WordsDataSource.sharedInstance.saveContext()
 
         let groups = WordsDataSource.sharedInstance.groups(forLanguageCode: "en")
         XCTAssertEqual(groups.count, 2)
@@ -104,6 +107,7 @@ class WordsDataSourceTests: XCTestCase
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group2")
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group2")
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
+        WordsDataSource.sharedInstance.saveContext()
 
         let words1 = WordsDataSource.sharedInstance.words(forLanguageCode: "de", group: "group1")
         XCTAssertEqual(words1.count, 2)
@@ -121,6 +125,7 @@ class WordsDataSourceTests: XCTestCase
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "fr", group: "group1")
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "fr", group: "group1")
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "fr", group: "group1")
+        WordsDataSource.sharedInstance.saveContext()
 
         let wordsCount = WordsDataSource.sharedInstance.wordsCount(forLanguageCode: "fr", group: "group1")
         XCTAssertEqual(wordsCount, 3)

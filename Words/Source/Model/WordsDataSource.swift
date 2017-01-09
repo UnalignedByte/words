@@ -36,10 +36,25 @@ class WordsDataSource
     // MARK: - Initialization
     private init()
     {
+        NotificationCenter.default.addObserver(self, selector: #selector(saveContext),
+                                               name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
+                                               object: self.context)
     }
 
 
     // MARK: - Public Control
+    @objc func saveContext()
+    {
+        if self.context.hasChanges {
+            do {
+                try self.storeContainer.viewContext.save();
+            } catch let error {
+                print("Context saving error: \(error)")
+            }
+        }
+    }
+
+
     func newWord(forLanguageCode code: String, group: String) -> Word
     {
         let word = Word(context: self.context)
@@ -49,12 +64,6 @@ class WordsDataSource
         var randomNumber = Int32(0)
         arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
         word.order = NSNumber(value: randomNumber)
-
-        do {
-            try self.storeContainer.viewContext.save();
-        } catch let error {
-            print("Context saving error: \(error)")
-        }
 
         return word
     }
