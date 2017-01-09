@@ -122,6 +122,32 @@ class WordsDataSource
     }
 
 
+    func words(forLanguageCode languageCode: String, group: String) -> [Word]
+    {
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "languageCode == %@ AND group == %@", languageCode, group)
+
+        if let fetchResults = try? self.context.fetch(fetchRequest) {
+            return fetchResults
+        }
+
+        return [Word]()
+    }
+
+
+    func wordsCount(forLanguageCode languageCode: String, group: String) -> Int
+    {
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "languageCode == %@ AND group == %@", languageCode, group)
+
+        if let count = try? self.context.count(for: fetchRequest) {
+            return count
+        }
+
+        return 0
+    }
+
+
     // MARK: - Private Utils
     private func entityName(forLanguageCode code: String) -> String
     {
@@ -135,59 +161,7 @@ class WordsDataSource
     }
 
 
-    /*func groupNames() -> [String]
-    {
-        let fetchRequest: NSFetchRequest<ChineseWord> = NSFetchRequest()
-        let entityDescription = NSEntityDescription.entity(forEntityName: "ChineseWord",
-                                                                  in: self.context)!
-        fetchRequest.entity = entityDescription
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "groupName", ascending: true)]
-
-        var allWords: [ChineseWord]!
-        do {
-            allWords = try self.context.fetch(fetchRequest)
-        } catch {
-        }
-
-        var groupNames = Array<String>()
-
-        for word in allWords {
-            if !groupNames.contains(word.groupName) {
-                groupNames.append(word.groupName)
-            }
-        }
-
-        return groupNames
-    }
-
-
-    func wordsCount() -> Int
-    {
-        do {
-         try self.context.save()
-        } catch {
-
-        }
-
-        let fetchRequest: NSFetchRequest<ChineseWord> = NSFetchRequest()
-        let entityDescription = NSEntityDescription.entity(forEntityName: "ChineseWord", in: self.context)
-        fetchRequest.entity = entityDescription
-
-        var count = 0
-
-        do {
-            let result = try self.context.fetch(fetchRequest)
-            let chineseResult = result 
-            let chineseSet = Set(chineseResult.map{$0.english})
-            count = chineseSet.count
-        } catch {
-
-        }
-
-        return count
-    }
-
-
+    /*
     func hanziCount() -> Int
     {
         do {
