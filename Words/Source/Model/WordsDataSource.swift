@@ -157,6 +157,39 @@ class WordsDataSource
     }
 
 
+    func loadWords(fromFile file: String)
+    {
+        var file = file
+
+        // Remove trailing .plist from filename (if present)
+        if let range = file.range(of: ".plist") {
+            if range.upperBound == file.endIndex {
+                file = file.replacingCharacters(in: range, with: "")
+            }
+        }
+
+        for bundle in Bundle.allBundles {
+            if let plistUrl = bundle.url(forResource: file, withExtension: "plist") {
+                if let groups = NSArray(contentsOf: plistUrl) as? Array<Dictionary<String,Any>> {
+                    for groupDict in groups {
+                        let languageCode = groupDict["languageCode"] as? String
+                        let group = groupDict["group"] as? String
+                        let wordDicts = groupDict["words"] as? [Dictionary<String, String>]
+
+                        guard languageCode != nil && group != nil && wordDicts != nil else {
+                            continue
+                        }
+
+                        for wordDict in wordDicts! {
+                            newWord(forLanguageCode: languageCode!, group: group!, wordDict: wordDict)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
     // MARK: - Private Utils
     private func entityName(forLanguageCode code: String) -> String
     {
@@ -167,6 +200,21 @@ class WordsDataSource
         }
 
         return "Word"
+    }
+
+
+    private func newWord(forLanguageCode languageCode: String, group: String, wordDict: Dictionary<String, String>)
+    {
+        let word = newWord(forLanguageCode: languageCode, group: group)
+        word.word = wordDict["word"]
+        word.translation = wordDict["translation"]
+
+        switch languageCode {
+            case "cn":
+                (word as! ChineseWord).pinyin = wordDict["pinyin"]
+            default:
+                break
+        }
     }
 
 

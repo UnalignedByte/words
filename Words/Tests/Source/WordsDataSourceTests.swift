@@ -130,4 +130,20 @@ class WordsDataSourceTests: XCTestCase
         let wordsCount = WordsDataSource.sharedInstance.wordsCount(forLanguageCode: "fr", group: "group1")
         XCTAssertEqual(wordsCount, 3)
     }
+
+
+    func testLoadWords()
+    {
+        WordsDataSource.sharedInstance.loadWords(fromFile: "Test.plist")
+        WordsDataSource.sharedInstance.saveContext()
+
+        let languageCodes = WordsDataSource.sharedInstance.languageCodes()
+        XCTAssertEqual(languageCodes.count, 1)
+
+        let groups = WordsDataSource.sharedInstance.groups(forLanguageCode: "en")
+        XCTAssertEqual(groups.count, 2)
+
+        let wordsCount = WordsDataSource.sharedInstance.wordsCount(forLanguageCode: "en", group: "Test 1")
+        XCTAssertEqual(wordsCount, 3)
+    }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B516F0711D58FD490091B459 /* Basic Chinese 3.1 - 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B516F0701D58FD490091B459 /* Basic Chinese 3.1 - 2.plist */; };
+		B51994BD1E244856005089DF /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = B51994BC1E244856005089DF /* Test.plist */; };
 		B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B381E1A950C00F6B1A8 /* WordsDataSource.swift */; };
 		B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */; };
 		B51A5B791E1AC8C800F6B1A8 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBF9211D76263700EE21C0 /* StatisticsViewController.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		B516F0701D58FD490091B459 /* Basic Chinese 3.1 - 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.1 - 2.plist"; path = "Words/Assets/Basic Chinese 3.1 - 2.plist"; sourceTree = "<group>"; };
+		B51994BC1E244856005089DF /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Test.plist; path = Words/Tests/Assets/Test.plist; sourceTree = SOURCE_ROOT; };
 		B51A5B381E1A950C00F6B1A8 /* WordsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsDataSource.swift; path = Source/Model/WordsDataSource.swift; sourceTree = "<group>"; };
 		B52FDC2E1E03D66A00C88652 /* Basic Chinese 5 - 5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 5.plist"; path = "Words/Assets/Basic Chinese 5 - 5.plist"; sourceTree = "<group>"; };
 		B53C8F6F1D6239A50027E0BD /* Basic Chinese 3.1 - 3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 3.1 - 3.plist"; path = "Words/Assets/Basic Chinese 3.1 - 3.plist"; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B51994BB1E244847005089DF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B51994BC1E244856005089DF /* Test.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		B5BC9C071E199442006A5CCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B5BC9C191E1997E2006A5CCC /* Source */,
+				B51994BB1E244847005089DF /* Assets */,
 				B5BC9C1A1E1997E7006A5CCC /* Supporting Files */,
 			);
 			path = WordsTests;
@@ -353,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51994BD1E244856005089DF /* Test.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
