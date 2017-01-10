@@ -156,20 +156,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		B5BC9C0C1E19979E006A5CCC /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
-		B5BC9C121E1997CD006A5CCC /* WordsTests */ = {
+		B5BC9C121E1997CD006A5CCC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				B5BC9C191E1997E2006A5CCC /* Source */,
 				B51994BB1E244847005089DF /* Assets */,
 				B5BC9C1A1E1997E7006A5CCC /* Supporting Files */,
 			);
+			name = Tests;
 			path = WordsTests;
 			sourceTree = "<group>";
 		};
@@ -194,9 +188,8 @@
 			children = (
 				B5EC21FC1C7F999F00C5D782 /* Source */,
 				B5EC220F1C7F99AA00C5D782 /* Assets */,
-				B5BC9C0C1E19979E006A5CCC /* Tests */,
 				B5EC22101C7F99AE00C5D782 /* Supporting Files */,
-				B5BC9C121E1997CD006A5CCC /* WordsTests */,
+				B5BC9C121E1997CD006A5CCC /* Tests */,
 				B5EC21FB1C7F999F00C5D782 /* Products */,
 			);
 			sourceTree = "<group>";
