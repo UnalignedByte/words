@@ -27,6 +27,11 @@
 		B5698F531CE766180000A3CB /* Lesson 13.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5698F521CE766180000A3CB /* Lesson 13.plist */; };
 		B573B1D81CF9DF4B004B9863 /* Lesson 15.plist in Resources */ = {isa = PBXBuildFile; fileRef = B573B1D71CF9DF4B004B9863 /* Lesson 15.plist */; };
 		B575687F1D0DB19F00D757EF /* Lesson 17.plist in Resources */ = {isa = PBXBuildFile; fileRef = B575687E1D0DB19F00D757EF /* Lesson 17.plist */; };
+		B578B6101E2662100028CBCF /* WordsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B578B60F1E2662100028CBCF /* WordsList.storyboard */; };
+		B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6121E26625B0028CBCF /* WordsListViewController.swift */; };
+		B578B6161E26647E0028CBCF /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6151E26647E0028CBCF /* WordCell.swift */; };
+		B578B6181E2664910028CBCF /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B578B6171E2664910028CBCF /* WordCell.xib */; };
+		B578B61A1E266AAB0028CBCF /* ChineseWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B578B6191E266AAB0028CBCF /* ChineseWordCell.xib */; };
 		B57D85951CCFF1610022791D /* Basic Chinese 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57D85941CCFF1610022791D /* Basic Chinese 1.plist */; };
 		B57FCD541DD45CC5003EEAF9 /* Grammar 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57FCD531DD45CC5003EEAF9 /* Grammar 1.plist */; };
 		B58991BD1D9B14B9005F2DE8 /* Useful 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B58991BC1D9B14B9005F2DE8 /* Useful 2.plist */; };
@@ -84,6 +89,11 @@
 		B5698F521CE766180000A3CB /* Lesson 13.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 13.plist"; path = "Words/Assets/Lesson 13.plist"; sourceTree = "<group>"; };
 		B573B1D71CF9DF4B004B9863 /* Lesson 15.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 15.plist"; path = "Words/Assets/Lesson 15.plist"; sourceTree = "<group>"; };
 		B575687E1D0DB19F00D757EF /* Lesson 17.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 17.plist"; path = "Words/Assets/Lesson 17.plist"; sourceTree = "<group>"; };
+		B578B60F1E2662100028CBCF /* WordsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = WordsList.storyboard; path = "Source/Words List/WordsList.storyboard"; sourceTree = "<group>"; };
+		B578B6121E26625B0028CBCF /* WordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsListViewController.swift; path = "Source/Words List/WordsListViewController.swift"; sourceTree = "<group>"; };
+		B578B6151E26647E0028CBCF /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordCell.swift; path = "Source/Words List/Cells/WordCell.swift"; sourceTree = "<group>"; };
+		B578B6171E2664910028CBCF /* WordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordCell.xib; path = "Source/Words List/Cells/WordCell.xib"; sourceTree = "<group>"; };
+		B578B6191E266AAB0028CBCF /* ChineseWordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChineseWordCell.xib; path = "Source/Words List/Cells/ChineseWordCell.xib"; sourceTree = "<group>"; };
 		B57D85941CCFF1610022791D /* Basic Chinese 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 1.plist"; path = "Words/Assets/Basic Chinese 1.plist"; sourceTree = "<group>"; };
 		B57FCD531DD45CC5003EEAF9 /* Grammar 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Grammar 1.plist"; path = "Words/Assets/Grammar 1.plist"; sourceTree = "<group>"; };
 		B58991BC1D9B14B9005F2DE8 /* Useful 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Useful 2.plist"; path = "Words/Assets/Useful 2.plist"; sourceTree = "<group>"; };
@@ -102,7 +112,7 @@
 		B5D8905A1DED69B100A248FD /* Basic Chinese 5 - 4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Basic Chinese 5 - 4.plist"; path = "Words/Assets/Basic Chinese 5 - 4.plist"; sourceTree = "<group>"; };
 		B5E7F93D1DB89EAD0018466D /* Read 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Read 1.plist"; path = "Words/Assets/Read 1.plist"; sourceTree = "<group>"; };
 		B5EC21FA1C7F999F00C5D782 /* Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Source/AppDelegate.swift; sourceTree = "<group>"; };
+		B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Source/Core/AppDelegate.swift; sourceTree = "<group>"; };
 		B5EC21FF1C7F999F00C5D782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Source/ViewController.swift; sourceTree = "<group>"; };
 		B5EC22041C7F999F00C5D782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Words/Assets/Images.xcassets; sourceTree = "<group>"; };
 		B5EC22091C7F999F00C5D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Words/Supporting Files/Info.plist"; sourceTree = "<group>"; };
@@ -110,7 +120,7 @@
 		B5EC22131C7F9A8600C5D782 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Source/Main.storyboard; sourceTree = "<group>"; };
 		B5EC22161C7F9ACC00C5D782 /* WordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsModel.xcdatamodel; sourceTree = "<group>"; };
 		B5EC22221C7FB87800C5D782 /* Lesson 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 1.plist"; path = "Words/Assets/Lesson 1.plist"; sourceTree = "<group>"; };
-		B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChineseWordCell.swift; path = Source/ChineseWordCell.swift; sourceTree = "<group>"; };
+		B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChineseWordCell.swift; path = "Source/Words List/Cells/ChineseWordCell.swift"; sourceTree = "<group>"; };
 		B5EC22261C80FDEC00C5D782 /* Lesson 5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 5.plist"; path = "Words/Assets/Lesson 5.plist"; sourceTree = "<group>"; };
 		B5EC22281C81040C00C5D782 /* Lesson 4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Lesson 4.plist"; path = "Words/Assets/Lesson 4.plist"; sourceTree = "<group>"; };
 		B5EC222A1C8125CE00C5D782 /* GroupSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupSelectionViewController.swift; path = Source/GroupSelectionViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +156,35 @@
 				B51994BC1E244856005089DF /* Test.plist */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		B578B60E1E2661F00028CBCF /* Words List */ = {
+			isa = PBXGroup;
+			children = (
+				B578B6141E26646A0028CBCF /* Cells */,
+				B578B60F1E2662100028CBCF /* WordsList.storyboard */,
+				B578B6121E26625B0028CBCF /* WordsListViewController.swift */,
+			);
+			name = "Words List";
+			sourceTree = "<group>";
+		};
+		B578B6111E26621E0028CBCF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B578B6141E26646A0028CBCF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B578B6151E26647E0028CBCF /* WordCell.swift */,
+				B578B6171E2664910028CBCF /* WordCell.xib */,
+				B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */,
+				B578B6191E266AAB0028CBCF /* ChineseWordCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		B5BC9C071E199442006A5CCC /* Model */ = {
@@ -206,11 +245,11 @@
 		B5EC21FC1C7F999F00C5D782 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B578B6111E26621E0028CBCF /* Core */,
 				B5BC9C071E199442006A5CCC /* Model */,
+				B578B60E1E2661F00028CBCF /* Words List */,
 				B5EC22131C7F9A8600C5D782 /* Main.storyboard */,
-				B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */,
 				B5EC21FF1C7F999F00C5D782 /* ViewController.swift */,
-				B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */,
 				B5EC222A1C8125CE00C5D782 /* GroupSelectionViewController.swift */,
 				B5FBF9211D76263700EE21C0 /* StatisticsViewController.swift */,
 			);
@@ -384,10 +423,12 @@
 				B5EC22291C81040C00C5D782 /* Lesson 4.plist in Resources */,
 				B5EC222D1C81E88700C5D782 /* Lesson 6.plist in Resources */,
 				B549E4C41D6E3B1F00290AA7 /* Basic Chinese 3.1 - 4.plist in Resources */,
+				B578B6181E2664910028CBCF /* WordCell.xib in Resources */,
 				B5BF51CC1D84562C003AE676 /* Useful 1.plist in Resources */,
 				B567EBAA1E09117F00078A08 /* Basic Chinese 5 - 6.plist in Resources */,
 				B57FCD541DD45CC5003EEAF9 /* Grammar 1.plist in Resources */,
 				B5572B361C8581CF00A95A53 /* Lesson 2.plist in Resources */,
+				B578B6101E2662100028CBCF /* WordsList.storyboard in Resources */,
 				B54D26461DAF64930020DB13 /* Basic Chinese 4 - 3.plist in Resources */,
 				B5E7F93E1DB89EAD0018466D /* Read 1.plist in Resources */,
 				B5A610D61D8FCCB700EBA6D5 /* Basic Chinese 4 - 1.plist in Resources */,
@@ -402,6 +443,7 @@
 				B5F534AE1DC32B69004C32BD /* Useful 3.plist in Resources */,
 				B5ECCA121C8B3432005FE4FA /* Lesson 7.plist in Resources */,
 				B5D8905B1DED69B100A248FD /* Basic Chinese 5 - 4.plist in Resources */,
+				B578B61A1E266AAB0028CBCF /* ChineseWordCell.xib in Resources */,
 				B5422F911D9F0C710085F8A0 /* Basic Chinese 4 - 2.plist in Resources */,
 				B5D4F9891CE061F50098ACFE /* Lesson 11.plist in Resources */,
 				B55EE91A1D7CCB360066E88D /* Basic Chinese 3.2.plist in Resources */,
@@ -425,6 +467,8 @@
 			files = (
 				B51A5B7A1E1AC8F700F6B1A8 /* ViewController.swift in Sources */,
 				B51A5B791E1AC8C800F6B1A8 /* StatisticsViewController.swift in Sources */,
+				B578B6161E26647E0028CBCF /* WordCell.swift in Sources */,
+				B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */,
 				B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */,
 				B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */,
 				B5EC22171C7F9ACC00C5D782 /* WordsModel.xcdatamodeld in Sources */,

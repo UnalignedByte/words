@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChineseWordCell" rowHeight="90" id="KgJ-yo-7kO" customClass="ChineseWordCell" customModule="Words" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KgJ-yo-7kO" id="W2O-4R-KZr">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="4d8-Gd-cJk">
+                        <rect key="frame" x="8" y="8" width="175.5" height="32.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拼音" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="K2E-S5-ta8">
+                        <rect key="frame" x="8" y="48.5" width="175.5" height="32.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="汉字" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="Ca9-IM-GnZ">
+                        <rect key="frame" x="191.5" y="8" width="175.5" height="73"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="K2E-S5-ta8" firstAttribute="leading" secondItem="W2O-4R-KZr" secondAttribute="leading" constant="8" id="CUk-fi-jSJ"/>
+                    <constraint firstAttribute="bottom" secondItem="K2E-S5-ta8" secondAttribute="bottom" constant="8" id="OUd-WI-xv5"/>
+                    <constraint firstItem="Ca9-IM-GnZ" firstAttribute="top" secondItem="W2O-4R-KZr" secondAttribute="top" constant="8" id="YKr-mP-3Q2"/>
+                    <constraint firstItem="Ca9-IM-GnZ" firstAttribute="width" secondItem="4d8-Gd-cJk" secondAttribute="width" priority="750" id="c7R-y6-5NO"/>
+                    <constraint firstItem="4d8-Gd-cJk" firstAttribute="top" secondItem="W2O-4R-KZr" secondAttribute="top" constant="8" id="f2g-1R-Nod"/>
+                    <constraint firstAttribute="trailing" secondItem="Ca9-IM-GnZ" secondAttribute="trailing" constant="8" id="fEz-uf-Zye"/>
+                    <constraint firstItem="K2E-S5-ta8" firstAttribute="height" secondItem="4d8-Gd-cJk" secondAttribute="height" priority="750" id="fMM-cw-Dw5"/>
+                    <constraint firstAttribute="bottom" secondItem="Ca9-IM-GnZ" secondAttribute="bottom" constant="8" id="nzS-gd-toY"/>
+                    <constraint firstItem="K2E-S5-ta8" firstAttribute="top" secondItem="4d8-Gd-cJk" secondAttribute="bottom" constant="8" id="pO3-FG-zRl"/>
+                    <constraint firstItem="K2E-S5-ta8" firstAttribute="width" secondItem="4d8-Gd-cJk" secondAttribute="width" id="vP0-64-BPg"/>
+                    <constraint firstItem="4d8-Gd-cJk" firstAttribute="leading" secondItem="W2O-4R-KZr" secondAttribute="leading" constant="8" id="vSJ-pc-PaE"/>
+                    <constraint firstItem="Ca9-IM-GnZ" firstAttribute="leading" secondItem="K2E-S5-ta8" secondAttribute="trailing" constant="8" id="zX6-p9-4Es"/>
+                </constraints>
+            </tableViewCellContentView>
+            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+            <connections>
+                <outlet property="englishLabel" destination="4d8-Gd-cJk" id="PbE-9e-lAW"/>
+                <outlet property="hanziLabel" destination="Ca9-IM-GnZ" id="lxb-w4-Eng"/>
+                <outlet property="pinyinLabel" destination="K2E-S5-ta8" id="NHT-6a-uYx"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

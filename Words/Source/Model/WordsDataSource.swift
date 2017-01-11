@@ -63,12 +63,46 @@ class WordsDataSource
 
         var randomNumber = Int32(0)
         arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
-        word.order = NSNumber(value: randomNumber)
+        word.order = randomNumber
 
         return word
     }
 
 
+    func loadWords(fromFile file: String)
+    {
+        var file = file
+
+        // Remove trailing .plist from filename (if present)
+        if let range = file.range(of: ".plist") {
+            if range.upperBound == file.endIndex {
+                file = file.replacingCharacters(in: range, with: "")
+            }
+        }
+
+        for bundle in Bundle.allBundles {
+            if let plistUrl = bundle.url(forResource: file, withExtension: "plist") {
+                if let groups = NSArray(contentsOf: plistUrl) as? Array<Dictionary<String,Any>> {
+                    for groupDict in groups {
+                        let languageCode = groupDict["languageCode"] as? String
+                        let group = groupDict["group"] as? String
+                        let wordDicts = groupDict["words"] as? [Dictionary<String, String>]
+
+                        guard languageCode != nil && group != nil && wordDicts != nil else {
+                            continue
+                        }
+
+                        for wordDict in wordDicts! {
+                            newWord(forLanguageCode: languageCode!, group: group!, wordDict: wordDict)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    // MARK: - Public Utils
     func deleteAllWords()
     {
         let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
@@ -157,36 +191,23 @@ class WordsDataSource
     }
 
 
-    func loadWords(fromFile file: String)
+    func fetchRequest(forLanguageCode languageCode: String, group: String? = nil) -> NSFetchRequest<Word>
     {
-        var file = file
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        fetchRequest.fetchBatchSize = 10
 
-        // Remove trailing .plist from filename (if present)
-        if let range = file.range(of: ".plist") {
-            if range.upperBound == file.endIndex {
-                file = file.replacingCharacters(in: range, with: "")
-            }
+        // Only words in a given group
+        if let group = group {
+            fetchRequest.predicate = NSPredicate(format: "languageCode == %@ AND group == %@", languageCode, group)
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
+        // All words for given language code
+        } else {
+            fetchRequest.predicate = NSPredicate(format: "languageCode == %@", languageCode)
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "group", ascending: true),
+                                            NSSortDescriptor(key: "order", ascending: true)]
         }
 
-        for bundle in Bundle.allBundles {
-            if let plistUrl = bundle.url(forResource: file, withExtension: "plist") {
-                if let groups = NSArray(contentsOf: plistUrl) as? Array<Dictionary<String,Any>> {
-                    for groupDict in groups {
-                        let languageCode = groupDict["languageCode"] as? String
-                        let group = groupDict["group"] as? String
-                        let wordDicts = groupDict["words"] as? [Dictionary<String, String>]
-
-                        guard languageCode != nil && group != nil && wordDicts != nil else {
-                            continue
-                        }
-
-                        for wordDict in wordDicts! {
-                            newWord(forLanguageCode: languageCode!, group: group!, wordDict: wordDict)
-                        }
-                    }
-                }
-            }
-        }
+        return fetchRequest
     }
 
 

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreData
 @testable import Words
 
 
@@ -145,5 +146,50 @@ class WordsDataSourceTests: XCTestCase
 
         let wordsCount = WordsDataSource.sharedInstance.wordsCount(forLanguageCode: "en", group: "Test 1")
         XCTAssertEqual(wordsCount, 3)
+    }
+
+
+    func testFetchRequestWordsInGroup()
+    {
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group1")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group1")
+        let word1 = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group2")
+        word1.word = "Word 1"
+        let word2 = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group2")
+        word2.word = "Word 2"
+        let word3 = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group2")
+        word3.word = "Word 3"
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
+
+        let fetchRequest = WordsDataSource.sharedInstance.fetchRequest(forLanguageCode: "en", group: "group2")
+        let words = try? WordsDataSource.sharedInstance.context.fetch(fetchRequest)
+
+        XCTAssertNotNil(words)
+
+        XCTAssertEqual(words!.count, 3)
+        XCTAssertTrue(words![0].order < words![1].order && words![1].order < words![2].order)
+    }
+
+
+    func testFetchRequestWords()
+    {
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group1")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group1")
+        let word1 = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group2")
+        word1.word = "Word 1"
+        let word2 = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group2")
+        word2.word = "Word 2"
+        let word3 = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group2")
+        word3.word = "Word 3"
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
+
+        let fetchRequest = WordsDataSource.sharedInstance.fetchRequest(forLanguageCode: "en")
+        let words = try? WordsDataSource.sharedInstance.context.fetch(fetchRequest)
+
+        XCTAssertNotNil(words)
+
+        XCTAssertEqual(words!.count, 4)
+        XCTAssertTrue(words![0].group! < words![1].group!)
+        XCTAssertTrue(words![1].order < words![2].order && words![2].order < words![3].order)
     }
 }
