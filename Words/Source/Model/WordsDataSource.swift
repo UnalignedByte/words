@@ -69,7 +69,41 @@ class WordsDataSource
     }
 
 
-    func loadWords(fromFile file: String)
+    func loadWords(fromFilePath filePath: String)
+    {
+        if let groups = NSArray(contentsOfFile: filePath) as? Array<Dictionary<String,Any>> {
+            for groupDict in groups {
+                let languageCode = groupDict["languageCode"] as? String
+                let group = groupDict["group"] as? String
+                let wordDicts = groupDict["words"] as? [Dictionary<String, String>]
+
+                guard languageCode != nil && group != nil && wordDicts != nil else {
+                    continue
+                }
+
+                for wordDict in wordDicts! {
+                    newWord(forLanguageCode: languageCode!, group: group!, wordDict: wordDict)
+                }
+            }
+        }
+    }
+
+
+    func loadAllSharedFiles()
+    {
+        let documentDirectories = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
+                                                                      FileManager.SearchPathDomainMask.userDomainMask,
+                                                                      true)
+
+        if let documentFilePaths = try? FileManager.default.contentsOfDirectory(atPath: documentDirectories.first!) {
+            for documentFilePath in documentFilePaths {
+                loadWords(fromFilePath: documentDirectories.first! + "/" + documentFilePath)
+            }
+        }
+    }
+
+
+    func loadWords(fromBundledFile file: String)
     {
         var file = file
 
@@ -81,22 +115,8 @@ class WordsDataSource
         }
 
         for bundle in Bundle.allBundles {
-            if let plistUrl = bundle.url(forResource: file, withExtension: "plist") {
-                if let groups = NSArray(contentsOf: plistUrl) as? Array<Dictionary<String,Any>> {
-                    for groupDict in groups {
-                        let languageCode = groupDict["languageCode"] as? String
-                        let group = groupDict["group"] as? String
-                        let wordDicts = groupDict["words"] as? [Dictionary<String, String>]
-
-                        guard languageCode != nil && group != nil && wordDicts != nil else {
-                            continue
-                        }
-
-                        for wordDict in wordDicts! {
-                            newWord(forLanguageCode: languageCode!, group: group!, wordDict: wordDict)
-                        }
-                    }
-                }
+            if let plistFilePath = bundle.path(forResource: file, ofType: "plist") {
+                loadWords(fromFilePath: plistFilePath)
             }
         }
     }
@@ -145,7 +165,10 @@ class WordsDataSource
 
     func languageCodesCount() -> Int
     {
-        return 0
+        // TODO: Ideally it would be implemented using NManagedObject.count
+        // or with NSExpression, but I'm not sure how to get it done
+
+        return languageCodes().count
     }
 
 
@@ -173,7 +196,9 @@ class WordsDataSource
 
     func groupsCount(forLanguageCode code: String) -> Int
     {
-        return 0
+        // TODO: The same comment applies as in languageCodesCount
+
+        return groups(forLanguageCode: code).count
     }
 
 
@@ -249,50 +274,4 @@ class WordsDataSource
                 break
         }
     }
-
-
-    /*
-    func hanziCount() -> Int
-    {
-        do {
-            try self.context.save()
-        } catch {
-
-        }
-
-        let fetchRequest: NSFetchRequest<ChineseWord> = NSFetchRequest()
-        let entityDescription = NSEntityDescription.entity(forEntityName: "ChineseWord", in: self.context)
-        fetchRequest.entity = entityDescription
-
-        var count = 0
-
-        do {
-            let result = try self.context.fetch(fetchRequest)
-            let chineseResult = result 
-
-            //let chin = chineseResult[0]
-            //chin.hanzi.characters.map{$0}
-            //chin.hanzi.characters.map{String($0)}
-
-            //let chineseSet = [chineseResult.map{$0.hanzi.characters.map{$0}}]
-            var hanziSet = Set<String>()
-
-            let hanziAr = chineseResult.map{$0.hanzi}
-
-            for hanzi in hanziAr {
-                let hanzis = hanzi.characters.map{String($0)}
-                for hanz in hanzis {
-                    hanziSet.insert(hanz)
-                }
-            }
-
-            ///let chineseSet = chineseResult.map{$0.hanzi.characters.map{String($0)}}
-
-            count = hanziSet.count
-        } catch {
-            
-        }
-        
-        return count
-    }*/
 }

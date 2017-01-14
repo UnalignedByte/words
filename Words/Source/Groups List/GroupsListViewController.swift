@@ -18,6 +18,7 @@ class GroupsListViewController: UIViewController
         self.tableView.estimatedRowHeight = 20
 
         registerCells()
+        loadData()
     }
 
 
@@ -25,6 +26,12 @@ class GroupsListViewController: UIViewController
     {
         self.tableView.register(UINib(nibName: "GroupCell", bundle: nil),
                                 forCellReuseIdentifier: GroupCell.identifier)
+    }
+
+
+    private func loadData()
+    {
+        WordsDataSource.sharedInstance.loadAllSharedFiles()
     }
 }
 

@@ -13,7 +13,6 @@ class GroupCell: UITableViewCell
 {
     @IBOutlet private var nameLabel: UILabel!
 
-
     static var identifier: String {
         get {
             return "GroupCell"

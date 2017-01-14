@@ -75,7 +75,14 @@ class WordsDataSourceTests: XCTestCase
 
     func testLanguageCodesCount()
     {
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "Test")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "fr", group: "Test")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "Test")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "Test")
+        WordsDataSource.sharedInstance.saveContext()
 
+        let count = WordsDataSource.sharedInstance.languageCodesCount()
+        XCTAssertEqual(count, 3)
     }
 
 
@@ -109,7 +116,18 @@ class WordsDataSourceTests: XCTestCase
 
     func testGroupsCount()
     {
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group1")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group1")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group2")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "de", group: "group2")
+        _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
+        WordsDataSource.sharedInstance.saveContext()
 
+        let countDe = WordsDataSource.sharedInstance.groupsCount(forLanguageCode: "de")
+        XCTAssertEqual(countDe, 2)
+
+        let countEn = WordsDataSource.sharedInstance.groupsCount(forLanguageCode: "en")
+        XCTAssertEqual(countEn, 1)
     }
 
 
@@ -145,9 +163,9 @@ class WordsDataSourceTests: XCTestCase
     }
 
 
-    func testLoadWords()
+    func testLoadBundledWords()
     {
-        WordsDataSource.sharedInstance.loadWords(fromFile: "Test.plist")
+        WordsDataSource.sharedInstance.loadWords(fromBundledFile: "Test.plist")
         WordsDataSource.sharedInstance.saveContext()
 
         let languageCodes = WordsDataSource.sharedInstance.languageCodes()
