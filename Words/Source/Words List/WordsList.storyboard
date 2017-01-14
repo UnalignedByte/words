@@ -1,7 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jXz-hT-NqM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Words List View Controller-->
+        <scene sceneID="Vva-a1-LpT">
+            <objects>
+                <viewController id="jXz-hT-NqM" customClass="WordsListViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sRm-U0-Fni"/>
+                        <viewControllerLayoutGuide type="bottom" id="l0i-xn-8XV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UeK-hr-yrw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jxs-8d-xck">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jXz-hT-NqM" id="oWj-T1-maM"/>
+                                    <outlet property="delegate" destination="jXz-hT-NqM" id="qCc-nf-ozA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jxs-8d-xck" firstAttribute="leading" secondItem="UeK-hr-yrw" secondAttribute="leading" id="L0y-PG-Pt2"/>
+                            <constraint firstItem="l0i-xn-8XV" firstAttribute="top" secondItem="jxs-8d-xck" secondAttribute="bottom" id="ZHL-92-R62"/>
+                            <constraint firstItem="jxs-8d-xck" firstAttribute="top" secondItem="sRm-U0-Fni" secondAttribute="bottom" id="jAJ-i4-4hd"/>
+                            <constraint firstAttribute="trailing" secondItem="jxs-8d-xck" secondAttribute="trailing" id="lpg-VJ-J0N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="jxs-8d-xck" id="SnL-Yw-wH7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8d-hV-4Hv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="164"/>
+        </scene>
+    </scenes>
 </document>

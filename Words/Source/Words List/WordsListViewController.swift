@@ -10,11 +10,11 @@ import UIKit
 import CoreData
 
 
-class WordsList: UIViewController
+class WordsListViewController: UIViewController
 {
     @IBOutlet fileprivate var tableView: UITableView!
 
-    fileprivate var resultsController: NSFetchedResultsController<Word>!
+    fileprivate var resultsController = NSFetchedResultsController<Word>()
     fileprivate var identifiersForLanguageCode = Dictionary<String, String>()
 
 
@@ -26,13 +26,29 @@ class WordsList: UIViewController
 
     private func registerCells()
     {
-        self.tableView.register(UINib(nibName: "Word", bundle: nil),
+        self.tableView.register(UINib(nibName: "WordCell", bundle: nil),
                                 forCellReuseIdentifier: WordCell.identifier)
+    }
+
+
+    func setup(forLanguageCode code: String, group: String)
+    {
+        self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequest(forLanguageCode: code, group: group),
+                                                            managedObjectContext: WordsDataSource.sharedInstance.context,
+                                                            sectionNameKeyPath: nil,
+                                                            cacheName: nil)
+
+        do {
+            try self.resultsController.performFetch()
+        } catch {
+            print("\(error)")
+            abort()
+        }
     }
 }
 
 
-extension WordsList: UITableViewDataSource
+extension WordsListViewController: UITableViewDataSource
 {
 
     func numberOfSections(in tableView: UITableView) -> Int
@@ -65,7 +81,7 @@ extension WordsList: UITableViewDataSource
 }
 
 
-extension WordsList: UITableViewDelegate
+extension WordsListViewController: UITableViewDelegate
 {
     
 }

@@ -41,11 +41,20 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="kxA-GW-LJm" id="czw-WF-49r"/>
+                        <segue destination="VRd-39-idf" kind="show" identifier="WordsListViewController" id="lHu-qY-lTP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfK-yR-4tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="160"/>
+            <point key="canvasLocation" x="-167" y="150"/>
+        </scene>
+        <!--WordsList-->
+        <scene sceneID="BgU-1a-Nvf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WordsList" id="VRd-39-idf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dor-ld-Du1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="149"/>
         </scene>
     </scenes>
 </document>

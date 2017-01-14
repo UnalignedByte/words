@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cau-iw-VSd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2jg-GU-8HQ">
+            <objects>
+                <navigationController id="Cau-iw-VSd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCu-SR-hI2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wgA-mX-rOH" kind="relationship" relationship="rootViewController" id="QOg-yd-O41"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ek-oz-bIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="396"/>
+        </scene>
+        <!--GroupsList-->
+        <scene sceneID="Giw-Db-j4U">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGf-y9-yLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="GroupsList" id="wgA-mX-rOH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EMp-ys-eBe"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="1468" y="395"/>
+        </scene>
+    </scenes>
+</document>
