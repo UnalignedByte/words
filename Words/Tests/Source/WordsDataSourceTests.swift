@@ -73,6 +73,12 @@ class WordsDataSourceTests: XCTestCase
     }
 
 
+    func testLanguageCodesCount()
+    {
+
+    }
+
+
     func testFetchGroups()
     {
         _ = WordsDataSource.sharedInstance.newWord(forLanguageCode: "en", group: "group1")
@@ -98,6 +104,12 @@ class WordsDataSourceTests: XCTestCase
         }
 
         XCTAssertTrue(containsGroup1 && containsGroup2)
+    }
+
+
+    func testGroupsCount()
+    {
+
     }
 
 

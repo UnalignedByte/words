@@ -143,6 +143,12 @@ class WordsDataSource
     }
 
 
+    func languageCodesCount() -> Int
+    {
+        return 0
+    }
+
+
     func groups(forLanguageCode code: String) -> [String]
     {
         let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Word")
@@ -162,6 +168,12 @@ class WordsDataSource
         }
 
         return groups
+    }
+
+
+    func groupsCount(forLanguageCode code: String) -> Int
+    {
+        return 0
     }
 
 
