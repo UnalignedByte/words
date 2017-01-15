@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Ultrathin.otf">
+            <string>SFUIText-Ultrathin</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,12 +20,15 @@
             <rect key="frame" x="0.0" y="0.0" width="330" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t1-Fc-Fnm">
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="44"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wr-3f-oXD">
                     <rect key="frame" x="0.0" y="0.0" width="330" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="PgS-Hc-trS"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Ultrathin" family="SF UI Text" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -32,17 +40,25 @@
                 </button>
             </subviews>
             <constraints>
+                <constraint firstItem="2t1-Fc-Fnm" firstAttribute="top" secondItem="Is4-RK-JPG" secondAttribute="top" id="CDR-EI-CeF"/>
                 <constraint firstAttribute="bottom" secondItem="3Wr-3f-oXD" secondAttribute="bottom" id="ECf-Yh-kfE"/>
                 <constraint firstAttribute="trailing" secondItem="3Wr-3f-oXD" secondAttribute="trailing" id="H2e-m4-8OD"/>
+                <constraint firstItem="2t1-Fc-Fnm" firstAttribute="leading" secondItem="Is4-RK-JPG" secondAttribute="leading" id="Hmo-GT-Cdc"/>
                 <constraint firstAttribute="trailing" secondItem="nGg-cH-hmK" secondAttribute="trailing" id="IOr-WM-yar"/>
+                <constraint firstAttribute="trailing" secondItem="2t1-Fc-Fnm" secondAttribute="trailing" id="Op1-mh-t3G"/>
+                <constraint firstAttribute="bottom" secondItem="2t1-Fc-Fnm" secondAttribute="bottom" id="UwN-yC-iOR"/>
                 <constraint firstItem="nGg-cH-hmK" firstAttribute="leading" secondItem="Is4-RK-JPG" secondAttribute="leading" id="XdR-6j-Ia4"/>
                 <constraint firstItem="3Wr-3f-oXD" firstAttribute="leading" secondItem="Is4-RK-JPG" secondAttribute="leading" id="def-Zy-TaN"/>
                 <constraint firstAttribute="bottom" secondItem="nGg-cH-hmK" secondAttribute="bottom" id="gWN-Tj-TSg"/>
                 <constraint firstItem="nGg-cH-hmK" firstAttribute="top" secondItem="Is4-RK-JPG" secondAttribute="top" id="khd-PE-O2S"/>
                 <constraint firstItem="3Wr-3f-oXD" firstAttribute="top" secondItem="Is4-RK-JPG" secondAttribute="top" id="pDU-fA-b3i"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="gradientView" destination="2t1-Fc-Fnm" id="QMA-1d-qTc"/>
                 <outlet property="label" destination="3Wr-3f-oXD" id="7Bc-h6-odv"/>
             </connections>
             <point key="canvasLocation" x="-32" y="-300"/>

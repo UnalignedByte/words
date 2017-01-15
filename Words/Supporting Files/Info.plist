@@ -24,7 +24,9 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>SFUIText-Ultrathin.otf</string>
 		<string>SFUIText-Light.otf</string>
+		<string>SFUIText-Medium.otf</string>
 	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>

@@ -17,12 +17,24 @@ class GroupHeader: UITableViewHeaderFooterView
     }
 
     @IBOutlet private var label: UILabel!
+    @IBOutlet private var gradientView: UIView!
     private var callback: (() -> Void)!
+
+
+    override func awakeFromNib()
+    {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.gradientView.bounds
+        gradientLayer.colors = [UIColor.clear.cgColor,
+                                UIColor.lightGray.withAlphaComponent(0.1).cgColor]
+        gradientLayer.locations = [0.2, 1.0]
+        self.gradientView.layer.insertSublayer(gradientLayer, at: 0)
+    }
 
 
     func setup(withLanguageCode code: String, callback: @escaping () -> Void)
     {
-        self.label.text = code
+        self.label.text = NSLocalizedString(code, comment: "Language Name")
         self.callback = callback
     }
 

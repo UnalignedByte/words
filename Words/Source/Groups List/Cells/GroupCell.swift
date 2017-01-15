@@ -24,8 +24,6 @@ class GroupCell: UITableViewCell
 
     override func awakeFromNib()
     {
-        self.gradientView.backgroundColor = UIColor.clear
-
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.gradientView.bounds
         gradientLayer.colors = [UIColor.lightGray.withAlphaComponent(0.1).cgColor,
