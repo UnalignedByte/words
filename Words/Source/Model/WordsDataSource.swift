@@ -94,10 +94,14 @@ class WordsDataSource
         let documentDirectories = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
                                                                       FileManager.SearchPathDomainMask.userDomainMask,
                                                                       true)
+        let documentDirectoryPath = documentDirectories.first!
 
-        if let documentFilePaths = try? FileManager.default.contentsOfDirectory(atPath: documentDirectories.first!) {
-            for documentFilePath in documentFilePaths {
-                loadWords(fromFilePath: documentDirectories.first! + "/" + documentFilePath)
+        if let documentFiles = try? FileManager.default.contentsOfDirectory(atPath: documentDirectoryPath) {
+            for documentFile in documentFiles {
+                let filePath = documentDirectoryPath + "/" + documentFile
+
+                loadWords(fromFilePath: filePath)
+                try? FileManager.default.removeItem(atPath: filePath)
             }
         }
     }
