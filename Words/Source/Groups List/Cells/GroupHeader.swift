@@ -24,6 +24,7 @@ class GroupHeader: UITableViewHeaderFooterView
     override func awakeFromNib()
     {
         let gradientLayer = CAGradientLayer()
+        gradientLayer.cornerRadius = 8.0
         gradientLayer.frame = self.gradientView.bounds
         gradientLayer.colors = [UIColor.clear.cgColor,
                                 UIColor.lightGray.withAlphaComponent(0.1).cgColor]

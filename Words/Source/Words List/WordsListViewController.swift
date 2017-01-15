@@ -20,6 +20,9 @@ class WordsListViewController: UIViewController
 
     override func viewDidLoad()
     {
+        self.tableView.estimatedRowHeight = 20.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+
         registerCells()
     }
 
@@ -33,6 +36,8 @@ class WordsListViewController: UIViewController
 
     func setup(forLanguageCode code: String, group: String)
     {
+        self.title = group
+
         self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequest(forLanguageCode: code, group: group),
                                                             managedObjectContext: WordsDataSource.sharedInstance.context,
                                                             sectionNameKeyPath: nil,

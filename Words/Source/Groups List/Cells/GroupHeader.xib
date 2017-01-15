@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SFUIText-Ultrathin.otf">
-            <string>SFUIText-Ultrathin</string>
+        <array key="SFUIText-Medium.otf">
+            <string>SFUIText-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -22,10 +22,11 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t1-Fc-Fnm">
                     <rect key="frame" x="0.0" y="0.0" width="330" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wr-3f-oXD">
                     <rect key="frame" x="0.0" y="0.0" width="330" height="44"/>
-                    <fontDescription key="fontDescription" name="SFUIText-Ultrathin" family="SF UI Text" pointSize="22"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -36,6 +37,7 @@
                     </connections>
                 </button>
             </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="2t1-Fc-Fnm" firstAttribute="top" secondItem="Is4-RK-JPG" secondAttribute="top" id="CDR-EI-CeF"/>
                 <constraint firstAttribute="bottom" secondItem="3Wr-3f-oXD" secondAttribute="bottom" id="ECf-Yh-kfE"/>

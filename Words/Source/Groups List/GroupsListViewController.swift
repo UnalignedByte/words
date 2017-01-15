@@ -17,9 +17,7 @@ class GroupsListViewController: UIViewController
     override func viewDidLoad()
     {
         self.tableView.estimatedRowHeight = 20
-        //self.tableView.estimatedSectionHeaderHeight = 20
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        //self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
         self.tableView.sectionHeaderHeight = 44.0
 
         registerCells()
@@ -128,6 +126,7 @@ extension GroupsListViewController: UITableViewDelegate
 
         tableView.reloadSections(indexesToRefresh as IndexSet, with: .automatic)
     }
+
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
