@@ -17,9 +17,10 @@ class GroupsListViewController: UIViewController
     override func viewDidLoad()
     {
         self.tableView.estimatedRowHeight = 20
-        self.tableView.estimatedSectionHeaderHeight = 20
+        //self.tableView.estimatedSectionHeaderHeight = 20
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        //self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.tableView.sectionHeaderHeight = 44.0
 
         registerCells()
         loadData()
