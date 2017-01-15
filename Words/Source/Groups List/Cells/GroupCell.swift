@@ -17,11 +17,32 @@ class GroupCell: UITableViewCell
         }
     }
 
-    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var groupLabel: UILabel!
+    @IBOutlet private var wordsCountLabel: UILabel!
+    @IBOutlet private var gradientView: UIView!
 
 
-    func setup(withName name: String)
+    override func awakeFromNib()
     {
-        self.nameLabel.text = name
+        self.gradientView.backgroundColor = UIColor.clear
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.gradientView.bounds
+        gradientLayer.colors = [UIColor.lightGray.withAlphaComponent(0.1).cgColor,
+                                UIColor.lightGray.withAlphaComponent(0.25).cgColor]
+        gradientLayer.locations = [0.2, 1.0]
+        self.gradientView.layer.insertSublayer(gradientLayer, at: 0)
+    }
+
+
+    func setup(withLanguageCode code: String, group: String)
+    {
+        self.groupLabel.text = group
+        let wordsCount = WordsDataSource.sharedInstance.wordsCount(forLanguageCode: code, group: group)
+        if wordsCount == 1 {
+            self.wordsCountLabel.text = "1 Word"
+        } else {
+            self.wordsCountLabel.text = "\(wordsCount) Words"
+        }
     }
 }

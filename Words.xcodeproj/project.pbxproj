@@ -22,6 +22,8 @@
 		B5BC9C1C1E19B6D3006A5CCC /* WordsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BC9C1B1E19B6D3006A5CCC /* WordsDataSourceTests.swift */; };
 		B5C733F21E2ABA4500CB9201 /* GroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C733F11E2ABA4500CB9201 /* GroupHeader.swift */; };
 		B5C733F41E2ABB7D00CB9201 /* GroupHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C733F31E2ABB7D00CB9201 /* GroupHeader.xib */; };
+		B5C733F61E2AF64D00CB9201 /* SFUIText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5C733F51E2AF64D00CB9201 /* SFUIText-Light.otf */; };
+		B5C733F91E2AFD9900CB9201 /* SFUIText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5C733F81E2AFD9900CB9201 /* SFUIText-Medium.otf */; };
 		B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22041C7F999F00C5D782 /* Images.xcassets */; };
 		B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */; };
 		B5EC22141C7F9A8600C5D782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22131C7F9A8600C5D782 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		B5BC9C1B1E19B6D3006A5CCC /* WordsDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsDataSourceTests.swift; path = Words/Tests/Source/WordsDataSourceTests.swift; sourceTree = SOURCE_ROOT; };
 		B5C733F11E2ABA4500CB9201 /* GroupHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupHeader.swift; path = "Source/Groups List/Cells/GroupHeader.swift"; sourceTree = "<group>"; };
 		B5C733F31E2ABB7D00CB9201 /* GroupHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupHeader.xib; path = "Source/Groups List/Cells/GroupHeader.xib"; sourceTree = "<group>"; };
+		B5C733F51E2AF64D00CB9201 /* SFUIText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFUIText-Light.otf"; path = "Words/Assets/Fonts/SFUIText-Light.otf"; sourceTree = "<group>"; };
+		B5C733F81E2AFD9900CB9201 /* SFUIText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFUIText-Medium.otf"; path = "Words/Assets/Fonts/SFUIText-Medium.otf"; sourceTree = "<group>"; };
 		B5EC21FA1C7F999F00C5D782 /* Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Source/Core/AppDelegate.swift; sourceTree = "<group>"; };
 		B5EC22041C7F999F00C5D782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Words/Assets/Images.xcassets; sourceTree = "<group>"; };
@@ -177,6 +181,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B5C733F71E2AF65100CB9201 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B5C733F51E2AF64D00CB9201 /* SFUIText-Light.otf */,
+				B5C733F81E2AFD9900CB9201 /* SFUIText-Medium.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		B5EC21F11C7F999F00C5D782 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +228,7 @@
 				B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */,
 				B5EC22041C7F999F00C5D782 /* Images.xcassets */,
 				B5EC22151C7F9ACC00C5D782 /* WordsModel.xcdatamodeld */,
+				B5C733F71E2AF65100CB9201 /* Fonts */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -319,8 +333,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C733F61E2AF64D00CB9201 /* SFUIText-Light.otf in Resources */,
 				B5230B281E299D48000A3819 /* GroupCell.xib in Resources */,
 				B52EAFB91E28419F001A46FF /* GroupsList.storyboard in Resources */,
+				B5C733F91E2AFD9900CB9201 /* SFUIText-Medium.otf in Resources */,
 				B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */,
 				B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */,
 				B5EC22141C7F9A8600C5D782 /* Main.storyboard in Resources */,

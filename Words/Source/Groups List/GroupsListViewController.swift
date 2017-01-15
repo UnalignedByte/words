@@ -67,7 +67,7 @@ extension GroupsListViewController: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if section == activeSection {
+        if section == activeSection || WordsDataSource.sharedInstance.languageCodesCount() <= 1 {
             let languageCodes = WordsDataSource.sharedInstance.languageCodes()
             return WordsDataSource.sharedInstance.groupsCount(forLanguageCode: languageCodes[section])
         }
@@ -83,7 +83,7 @@ extension GroupsListViewController: UITableViewDataSource
         let languageCodes = WordsDataSource.sharedInstance.languageCodes()
         let groups = WordsDataSource.sharedInstance.groups(forLanguageCode: languageCodes[indexPath.section])
 
-        cell.setup(withName: groups[indexPath.row])
+        cell.setup(withLanguageCode: languageCodes[indexPath.section], group: groups[indexPath.row])
 
         return cell
     }
@@ -94,6 +94,10 @@ extension GroupsListViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
+        if WordsDataSource.sharedInstance.languageCodesCount() <= 1 {
+            return nil
+        }
+
         let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: GroupHeader.identifier) as! GroupHeader
 
         let languageCodes = WordsDataSource.sharedInstance.languageCodes()
