@@ -26,6 +26,8 @@
 		B5C733F91E2AFD9900CB9201 /* SFUIText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5C733F81E2AFD9900CB9201 /* SFUIText-Medium.otf */; };
 		B5C733FB1E2B02A600CB9201 /* SFUIText-Ultrathin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5C733FA1E2B02A600CB9201 /* SFUIText-Ultrathin.otf */; };
 		B5C733FE1E2B079700CB9201 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5C734001E2B079700CB9201 /* Localizable.strings */; };
+		B5C734211E2C366600CB9201 /* WordConfigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C734201E2C366600CB9201 /* WordConfigCell.xib */; };
+		B5C734231E2C367B00CB9201 /* WordConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C734221E2C367B00CB9201 /* WordConfigCell.swift */; };
 		B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22041C7F999F00C5D782 /* Images.xcassets */; };
 		B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */; };
 		B5EC22141C7F9A8600C5D782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22131C7F9A8600C5D782 /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		B5C733FA1E2B02A600CB9201 /* SFUIText-Ultrathin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFUIText-Ultrathin.otf"; path = "Words/Assets/Fonts/SFUIText-Ultrathin.otf"; sourceTree = "<group>"; };
 		B5C733FF1E2B079700CB9201 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5C734011E2B07AD00CB9201 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5C734201E2C366600CB9201 /* WordConfigCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordConfigCell.xib; path = "Source/Words List/Cells/WordConfigCell.xib"; sourceTree = "<group>"; };
+		B5C734221E2C367B00CB9201 /* WordConfigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordConfigCell.swift; path = "Source/Words List/Cells/WordConfigCell.swift"; sourceTree = "<group>"; };
 		B5EC21FA1C7F999F00C5D782 /* Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Source/Core/AppDelegate.swift; sourceTree = "<group>"; };
 		B5EC22041C7F999F00C5D782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Words/Assets/Images.xcassets; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			children = (
 				B578B6151E26647E0028CBCF /* WordCell.swift */,
 				B578B6171E2664910028CBCF /* WordCell.xib */,
+				B5C734221E2C367B00CB9201 /* WordConfigCell.swift */,
+				B5C734201E2C366600CB9201 /* WordConfigCell.xib */,
 				B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */,
 				B578B6191E266AAB0028CBCF /* ChineseWordCell.xib */,
 			);
@@ -342,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C733FE1E2B079700CB9201 /* Localizable.strings in Resources */,
+				B5C734211E2C366600CB9201 /* WordConfigCell.xib in Resources */,
 				B5C733F61E2AF64D00CB9201 /* SFUIText-Light.otf in Resources */,
 				B5230B281E299D48000A3819 /* GroupCell.xib in Resources */,
 				B52EAFB91E28419F001A46FF /* GroupsList.storyboard in Resources */,
@@ -377,6 +384,7 @@
 				B578B6161E26647E0028CBCF /* WordCell.swift in Sources */,
 				B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */,
 				B52EAFBB1E2841B5001A46FF /* GroupsListViewController.swift in Sources */,
+				B5C734231E2C367B00CB9201 /* WordConfigCell.swift in Sources */,
 				B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */,
 				B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */,
 				B5EC22171C7F9ACC00C5D782 /* WordsModel.xcdatamodeld in Sources */,

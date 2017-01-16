@@ -16,6 +16,10 @@ class WordsListViewController: UIViewController
 
     fileprivate var resultsController = NSFetchedResultsController<Word>()
     fileprivate var identifiersForLanguageCode = Dictionary<String, String>()
+    fileprivate var configIdentifiersForLanguageCode = Dictionary<String, String>()
+
+    fileprivate var languageCode: String!
+    fileprivate var cellConfig = 0
 
 
     override func viewDidLoad()
@@ -31,12 +35,19 @@ class WordsListViewController: UIViewController
     {
         self.tableView.register(UINib(nibName: "WordCell", bundle: nil),
                                 forCellReuseIdentifier: WordCell.identifier)
+        self.tableView.register(UINib(nibName: "WordConfigCell", bundle: nil),
+                                forCellReuseIdentifier: WordConfigCell.identifier)
+        WordConfigCell.configChangedCallback = { (config) in
+            self.cellConfig = config
+            self.tableView.reloadData()
+        }
     }
 
 
     func setup(forLanguageCode code: String, group: String)
     {
         self.title = group
+        self.languageCode = code
 
         self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequest(forLanguageCode: code, group: group),
                                                             managedObjectContext: WordsDataSource.sharedInstance.context,
@@ -58,28 +69,44 @@ extension WordsListViewController: UITableViewDataSource
 
     func numberOfSections(in tableView: UITableView) -> Int
     {
-        return self.resultsController.sections!.count
+        // Additional section for configuration cell
+        return self.resultsController.sections!.count + 1
     }
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        let sectionInfo = self.resultsController.sections![section]
+        if section == 0 {
+            return 1
+        }
+
+        let sectionInfo = self.resultsController.sections![section - 1]
         return sectionInfo.numberOfObjects
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let word = self.resultsController.object(at: indexPath)
+        // Get a configuration cell
+        if indexPath.section == 0 {
+            var identifier = WordConfigCell.identifier
+            if let identifierForLanguageCode = self.configIdentifiersForLanguageCode[self.languageCode] {
+                identifier = identifierForLanguageCode
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
 
-        var identifier = WordCell.identifier
-        if let identifierForLanguageCode = self.identifiersForLanguageCode[word.languageCode!] {
-            identifier = identifierForLanguageCode
+            return cell
         }
 
+        // Get a normal word cell
+        var identifier = WordCell.identifier
+        if let identifierForLanguageCode = self.identifiersForLanguageCode[self.languageCode] {
+            identifier = identifierForLanguageCode
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! WordCell
-        cell.setup(withWord: word)
+
+        let word = self.resultsController.object(at: IndexPath(row: indexPath.row, section: indexPath.section - 1))
+        cell.setup(withWord: word, config: self.cellConfig)
 
         return cell
     }
@@ -88,5 +115,4 @@ extension WordsListViewController: UITableViewDataSource
 
 extension WordsListViewController: UITableViewDelegate
 {
-    
 }
