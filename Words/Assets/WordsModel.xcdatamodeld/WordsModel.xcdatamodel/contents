@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ChineseWord" representedClassName=".ChineseWord" parentEntity="Word" syncable="YES" codeGenerationType="class">
         <attribute name="pinyin" attributeType="String" defaultValueString="Banana" syncable="YES"/>
     </entity>
+    <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
+        <attribute name="languageCode" attributeType="String" defaultValueString="en" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString="Banana" syncable="YES"/>
+        <relationship name="words" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="group" inverseEntity="Word" syncable="YES"/>
+    </entity>
     <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
-        <attribute name="group" attributeType="String" defaultValueString="Banana" syncable="YES"/>
-        <attribute name="languageCode" attributeType="String" defaultValueString="Banana" syncable="YES"/>
         <attribute name="order" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="translation" attributeType="String" defaultValueString="Banana" syncable="YES"/>
         <attribute name="word" attributeType="String" defaultValueString="Banana" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="words" inverseEntity="Group" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ChineseWord" positionX="-63" positionY="-18" width="128" height="60"/>
-        <element name="Word" positionX="-54" positionY="36" width="128" height="120"/>
+        <element name="ChineseWord" positionX="-45" positionY="192" width="128" height="60"/>
+        <element name="Group" positionX="-297" positionY="-0" width="128" height="28"/>
+        <element name="Word" positionX="-65" positionY="0" width="128" height="28"/>
     </elements>
 </model>

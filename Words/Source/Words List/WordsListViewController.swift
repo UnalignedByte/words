@@ -44,12 +44,12 @@ class WordsListViewController: UIViewController
     }
 
 
-    func setup(forLanguageCode code: String, group: String)
+    func setup(forGroup group: Group)
     {
-        self.title = group
-        self.languageCode = code
+        self.title = group.name
+        self.languageCode = group.languageCode
 
-        self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequest(forLanguageCode: code, group: group),
+        self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequest(forGroup: group),
                                                             managedObjectContext: WordsDataSource.sharedInstance.context,
                                                             sectionNameKeyPath: nil,
                                                             cacheName: nil)

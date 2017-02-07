@@ -34,10 +34,10 @@ class GroupCell: UITableViewCell
     }
 
 
-    func setup(withLanguageCode code: String, group: String)
+    func setup(withGroup group: Group)
     {
-        self.groupLabel.text = group
-        let wordsCount = WordsDataSource.sharedInstance.wordsCount(forLanguageCode: code, group: group)
+        self.groupLabel.text = group.name
+        let wordsCount = group.words?.count
         if wordsCount == 1 {
             self.wordsCountLabel.text = "1 Word"
         } else {

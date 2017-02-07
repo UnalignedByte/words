@@ -18,7 +18,6 @@ class GroupsListViewController: UIViewController
     {
         self.tableView.estimatedRowHeight = 20
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.sectionHeaderHeight = 44.0
 
         registerCells()
         loadData()
@@ -48,8 +47,7 @@ class GroupsListViewController: UIViewController
             if let indexPath = sender as? IndexPath {
                 let languageCodes = WordsDataSource.sharedInstance.languageCodes()
                 let groups = WordsDataSource.sharedInstance.groups(forLanguageCode: languageCodes[indexPath.section])
-                destination.setup(forLanguageCode: languageCodes[indexPath.section],
-                                            group: groups[indexPath.row])
+                destination.setup(forGroup: groups[indexPath.row])
             }
         }
     }
@@ -82,15 +80,40 @@ extension GroupsListViewController: UITableViewDataSource
         let languageCodes = WordsDataSource.sharedInstance.languageCodes()
         let groups = WordsDataSource.sharedInstance.groups(forLanguageCode: languageCodes[indexPath.section])
 
-        cell.setup(withLanguageCode: languageCodes[indexPath.section], group: groups[indexPath.row])
+        cell.setup(withGroup: groups[indexPath.row])
 
         return cell
+    }
+
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete {
+            let languageCode = WordsDataSource.sharedInstance.languageCodes()[indexPath.section]
+            let groups = WordsDataSource.sharedInstance.groups(forLanguageCode: languageCode)
+
+            if groups.count == 1 {
+                tableView.deleteSections(IndexSet([indexPath.section]), with: .automatic)
+            } else {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        }
     }
 }
 
 
 extension GroupsListViewController: UITableViewDelegate
 {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        if WordsDataSource.sharedInstance.languageCodesCount() > 1 {
+            return 44.0
+        }
+
+        return 0.0
+    }
+
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
         if WordsDataSource.sharedInstance.languageCodesCount() <= 1 {
