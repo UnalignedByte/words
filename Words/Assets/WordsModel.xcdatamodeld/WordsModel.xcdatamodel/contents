@@ -16,7 +16,7 @@
     </entity>
     <elements>
         <element name="ChineseWord" positionX="-45" positionY="192" width="128" height="60"/>
-        <element name="Group" positionX="-297" positionY="-0" width="128" height="28"/>
+        <element name="Group" positionX="-297" positionY="-0" width="128" height="90"/>
         <element name="Word" positionX="-65" positionY="0" width="128" height="28"/>
     </elements>
 </model>

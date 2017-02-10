@@ -14,6 +14,7 @@
 		B5230B281E299D48000A3819 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5230B271E299D48000A3819 /* GroupCell.xib */; };
 		B52EAFB91E28419F001A46FF /* GroupsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52EAFB81E28419F001A46FF /* GroupsList.storyboard */; };
 		B52EAFBB1E2841B5001A46FF /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52EAFBA1E2841B5001A46FF /* GroupsListViewController.swift */; };
+		B5627A771E4D0A04000533F2 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */; };
 		B578B6101E2662100028CBCF /* WordsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B578B60F1E2662100028CBCF /* WordsList.storyboard */; };
 		B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6121E26625B0028CBCF /* WordsListViewController.swift */; };
 		B578B6161E26647E0028CBCF /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6151E26647E0028CBCF /* WordCell.swift */; };
@@ -51,6 +52,7 @@
 		B5230B271E299D48000A3819 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupCell.xib; path = "Source/Groups List/Cells/GroupCell.xib"; sourceTree = "<group>"; };
 		B52EAFB81E28419F001A46FF /* GroupsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GroupsList.storyboard; path = "Source/Groups List/GroupsList.storyboard"; sourceTree = "<group>"; };
 		B52EAFBA1E2841B5001A46FF /* GroupsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsListViewController.swift; path = "Source/Groups List/GroupsListViewController.swift"; sourceTree = "<group>"; };
+		B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewGroupViewController.swift; path = "Source/Groups List/NewGroupViewController.swift"; sourceTree = "<group>"; };
 		B578B60F1E2662100028CBCF /* WordsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = WordsList.storyboard; path = "Source/Words List/WordsList.storyboard"; sourceTree = "<group>"; };
 		B578B6121E26625B0028CBCF /* WordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsListViewController.swift; path = "Source/Words List/WordsListViewController.swift"; sourceTree = "<group>"; };
 		B578B6151E26647E0028CBCF /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordCell.swift; path = "Source/Words List/Cells/WordCell.swift"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				B5230B241E299D02000A3819 /* Cells */,
 				B52EAFB81E28419F001A46FF /* GroupsList.storyboard */,
 				B52EAFBA1E2841B5001A46FF /* GroupsListViewController.swift */,
+				B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */,
 			);
 			name = "Groups List";
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				B578B6161E26647E0028CBCF /* WordCell.swift in Sources */,
 				B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */,
 				B52EAFBB1E2841B5001A46FF /* GroupsListViewController.swift in Sources */,
+				B5627A771E4D0A04000533F2 /* NewGroupViewController.swift in Sources */,
 				B5C734231E2C367B00CB9201 /* WordConfigCell.swift in Sources */,
 				B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */,
 				B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */,

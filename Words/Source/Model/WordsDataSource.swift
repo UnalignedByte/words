@@ -182,33 +182,12 @@ class WordsDataSource
     // MARK: - Language Codes
     func languageCodes() -> [String]
     {
-        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Group")
-        fetchRequest.resultType = .dictionaryResultType
-        fetchRequest.propertiesToFetch = ["languageCode"]
-        fetchRequest.returnsDistinctResults = true
-
-        let fetchResults = try? self.context.fetch(fetchRequest)
-
-        // Extract just the codes into an array
-        var languageCodes = [String]()
-        if let fetchResults = fetchResults {
-            for property in fetchResults {
-                languageCodes.append(property.object(forKey: "languageCode") as! String)
-            }
-        }
-
-        // TODO: Can't get this to work :(
-        //let languageCodes: [String] = fetchResults.map{$0.object(forKey: "languageCode") as! String}
-
-        return languageCodes
+        return ["cn", "de", "en", "fr", "pl"]
     }
 
 
     func languageCodesCount() -> Int
     {
-        // TODO: Ideally it would be implemented using NManagedObject.count
-        // or with NSExpression, but I'm not sure how to get it done
-
         return languageCodes().count
     }
 
@@ -273,7 +252,17 @@ class WordsDataSource
     }
 
 
-    func fetchRequest(forGroup group: Group) -> NSFetchRequest<Word>
+    func fetchRequestGroups() -> NSFetchRequest<Group>
+    {
+        let fetchRequest = NSFetchRequest<Group>(entityName: "Group")
+        fetchRequest.fetchBatchSize = 10
+
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "languageCode", ascending: false)]
+
+        return fetchRequest
+    }
+
+    func fetchRequestWords(forGroup group: Group) -> NSFetchRequest<Word>
     {
         let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
         fetchRequest.fetchBatchSize = 10
@@ -285,14 +274,14 @@ class WordsDataSource
     }
 
 
-    func fetchRequest(forLanguageCode languageCode: String) -> NSFetchRequest<Word>
+    func fetchRequestWords(forLanguageCode languageCode: String) -> NSFetchRequest<Word>
     {
         let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
         fetchRequest.fetchBatchSize = 10
 
         fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", languageCode)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "group.name", ascending: true),
-                                        NSSortDescriptor(key: "order", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "group.name", ascending: false),
+                                        NSSortDescriptor(key: "order", ascending: false)]
 
         return fetchRequest
     }

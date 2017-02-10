@@ -49,7 +49,7 @@ class WordsListViewController: UIViewController
         self.title = group.name
         self.languageCode = group.languageCode
 
-        self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequest(forGroup: group),
+        self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequestWords(forGroup: group),
                                                             managedObjectContext: WordsDataSource.sharedInstance.context,
                                                             sectionNameKeyPath: nil,
                                                             cacheName: nil)
