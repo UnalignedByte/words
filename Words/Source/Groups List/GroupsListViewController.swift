@@ -88,7 +88,7 @@ extension GroupsListViewController: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if section == activeSection || self.resultsController.sections!.count <= 1 {
+        if section == activeSection {
             let section = self.resultsController.sections![section]
             return section.numberOfObjects
         }
@@ -213,12 +213,7 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
                     tableView.insertRows(at: [newIndexPath!], with: .automatic)
                 }
             case .delete:
-                let languageCode = (anObject as! Group).languageCode!
-                let groupsCount = WordsDataSource.sharedInstance.groupsCount(forLanguageCode: languageCode)
-
-                if activeSection == indexPath!.section && groupsCount > 0 {
-                    tableView.deleteRows(at: [indexPath!], with: .automatic)
-                }
+                tableView.deleteRows(at: [indexPath!], with: .automatic)
             default:
                 break
         }
@@ -228,5 +223,9 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
     {
         self.tableView.endUpdates()
+        if self.activeSection == -1 && self.resultsController.sections!.count == 1 {
+            self.activeSection = 0
+            self.tableView.reloadData()
+        }
     }
 }
