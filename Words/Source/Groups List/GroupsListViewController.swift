@@ -26,9 +26,16 @@ class GroupsListViewController: UIViewController
 
         self.addGroupButton.layer.cornerRadius = self.addGroupButton.frame.size.width/2.0
 
+        setupEditButton()
         registerCells()
         loadData()
         setupDataSource()
+    }
+
+
+    fileprivate func setupEditButton()
+    {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: .plain, target: self, action: #selector(editButtonPressed))
     }
 
 
@@ -75,6 +82,16 @@ class GroupsListViewController: UIViewController
             }
         }
     }
+
+
+    func editButtonPressed()
+    {
+        self.tableView.setEditing(!self.tableView.isEditing, animated: true)
+        let title = self.tableView.isEditing ? NSLocalizedString("Done", comment: "") : NSLocalizedString("Edit", comment: "")
+        self.navigationItem.rightBarButtonItem?.title = title
+        self.addGroupButton.isEnabled = !self.tableView.isEditing
+        self.addGroupButton.alpha = self.addGroupButton.isEnabled ? 0.75 : 0.25
+    }
 }
 
 
@@ -113,7 +130,56 @@ extension GroupsListViewController: UITableViewDataSource
         if editingStyle == .delete {
             let group = self.resultsController.object(at: indexPath)
             WordsDataSource.sharedInstance.delete(group: group)
+
         }
+    }
+
+
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+
+
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    {
+        let endRow = sourceIndexPath.row > destinationIndexPath.row ? sourceIndexPath.row : destinationIndexPath.row
+
+        var groups = [Group]()
+        for i in 0...endRow {
+            let group = self.resultsController.object(at: IndexPath(row: i, section: sourceIndexPath.section))
+            groups.append(group)
+        }
+
+        var groupIndex = 0
+        for i in 0...endRow {
+            if i == sourceIndexPath.row {
+                if destinationIndexPath.row > sourceIndexPath.row {
+                    groupIndex += 1
+                    groups[groupIndex].order = Int32(i)
+                    groupIndex += 1
+                } else {
+                    groups[groupIndex].order = Int32(i)
+                    groupIndex += 1
+                }
+            } else if i == destinationIndexPath.row {
+                groups[sourceIndexPath.row].order = Int32(i)
+            } else {
+                groups[groupIndex].order = Int32(i)
+                groupIndex += 1
+            }
+        }
+    }
+
+
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath,
+                   toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath
+    {
+        if sourceIndexPath.section == proposedDestinationIndexPath.section {
+            return proposedDestinationIndexPath
+        }
+
+        return sourceIndexPath
     }
 }
 

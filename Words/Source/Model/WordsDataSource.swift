@@ -61,6 +61,30 @@ class WordsDataSource
         let group = Group(context: self.context)
         group.languageCode = code
 
+        let orderExp = NSExpression(forKeyPath: #keyPath(Group.order))
+        let maxOrderExp = NSExpression(forFunction: "max:", arguments: [orderExp])
+        let maxOrderExpDesc = NSExpressionDescription()
+        maxOrderExpDesc.name = "maxOrder"
+        maxOrderExpDesc.expression = maxOrderExp
+        maxOrderExpDesc.expressionResultType = .integer32AttributeType
+
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Group")
+        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", code)
+        fetchRequest.resultType = .dictionaryResultType
+        fetchRequest.propertiesToFetch = [maxOrderExpDesc]
+
+        var maxGroupOrder = Int32(0)
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            let resultsDict = results.first!
+            maxGroupOrder = resultsDict["maxOrder"] as! Int32
+        } catch let error {
+            print("Context fetch error: \(error)")
+        }
+
+        group.order = maxGroupOrder + 1
+
         return group
     }
 
@@ -69,6 +93,7 @@ class WordsDataSource
     {
         let fetchRequest: NSFetchRequest<Group> = Group.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "languageCode = %@", code)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
 
         if let fetchResults = try? self.context.fetch(fetchRequest) {
             return fetchResults
@@ -257,7 +282,8 @@ class WordsDataSource
         let fetchRequest = NSFetchRequest<Group>(entityName: "Group")
         fetchRequest.fetchBatchSize = 10
 
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "languageCode", ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "languageCode", ascending: true),
+                                        NSSortDescriptor(key: "order", ascending: true)]
 
         return fetchRequest
     }
