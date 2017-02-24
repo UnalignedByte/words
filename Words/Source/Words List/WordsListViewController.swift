@@ -13,12 +13,13 @@ import CoreData
 class WordsListViewController: UIViewController
 {
     @IBOutlet fileprivate var tableView: UITableView!
+    @IBOutlet fileprivate weak var addWordButton: UIButton!
 
     fileprivate var resultsController = NSFetchedResultsController<Word>()
     fileprivate var identifiersForLanguageCode = Dictionary<String, String>()
     fileprivate var configIdentifiersForLanguageCode = Dictionary<String, String>()
 
-    fileprivate var languageCode: String!
+    fileprivate var group: Group?
     fileprivate var cellConfig = 0
 
 
@@ -26,6 +27,8 @@ class WordsListViewController: UIViewController
     {
         self.tableView.estimatedRowHeight = 20.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
+
+        self.addWordButton.layer.cornerRadius = self.addWordButton.frame.size.width/2.0
 
         registerCells()
     }
@@ -46,13 +49,14 @@ class WordsListViewController: UIViewController
 
     func setup(forGroup group: Group)
     {
-        self.title = group.name
-        self.languageCode = group.languageCode
+        self.group = group
 
+        self.title = group.name
         self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequestWords(forGroup: group),
                                                             managedObjectContext: WordsDataSource.sharedInstance.context,
                                                             sectionNameKeyPath: nil,
                                                             cacheName: nil)
+        resultsController.delegate = self
 
         do {
             try self.resultsController.performFetch()
@@ -61,12 +65,24 @@ class WordsListViewController: UIViewController
             abort()
         }
     }
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        guard group != nil else {
+            return
+        }
+
+        if segue.identifier == String(describing: NewWordViewController.self) {
+            let viewController = segue.destination as! NewWordViewController
+            viewController.setup(forGroup: group!)
+        }
+    }
 }
 
 
 extension WordsListViewController: UITableViewDataSource
 {
-
     func numberOfSections(in tableView: UITableView) -> Int
     {
         // Additional section for configuration cell
@@ -90,7 +106,7 @@ extension WordsListViewController: UITableViewDataSource
         // Get a configuration cell
         if indexPath.section == 0 {
             var identifier = WordConfigCell.identifier
-            if let identifierForLanguageCode = self.configIdentifiersForLanguageCode[self.languageCode] {
+            if let identifierForLanguageCode = self.configIdentifiersForLanguageCode[group!.languageCode!] {
                 identifier = identifierForLanguageCode
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
@@ -100,7 +116,7 @@ extension WordsListViewController: UITableViewDataSource
 
         // Get a normal word cell
         var identifier = WordCell.identifier
-        if let identifierForLanguageCode = self.identifiersForLanguageCode[self.languageCode] {
+        if let identifierForLanguageCode = self.identifiersForLanguageCode[group!.languageCode!] {
             identifier = identifierForLanguageCode
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! WordCell
@@ -113,6 +129,31 @@ extension WordsListViewController: UITableViewDataSource
 }
 
 
-extension WordsListViewController: UITableViewDelegate
+extension WordsListViewController: NSFetchedResultsControllerDelegate
 {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
+    {
+        self.tableView.beginUpdates()
+    }
+
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any,
+                    at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?)
+    {
+        switch(type) {
+            case .insert:
+                let index = IndexPath(row: newIndexPath!.row, section: 1)
+                tableView.insertRows(at: [index], with: .automatic)
+            case .delete:
+                tableView.deleteRows(at: [indexPath!], with: .automatic)
+            default:
+                break
+        }
+    }
+
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
+    {
+        self.tableView.endUpdates()
+    }
 }

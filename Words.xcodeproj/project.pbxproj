@@ -20,6 +20,9 @@
 		B578B6161E26647E0028CBCF /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6151E26647E0028CBCF /* WordCell.swift */; };
 		B578B6181E2664910028CBCF /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B578B6171E2664910028CBCF /* WordCell.xib */; };
 		B578B61A1E266AAB0028CBCF /* ChineseWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B578B6191E266AAB0028CBCF /* ChineseWordCell.xib */; };
+		B5A1CAB31E564B51004958EE /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A1CAB21E564B51004958EE /* NewWordViewController.swift */; };
+		B5A1CAB51E56526D004958EE /* EditWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A1CAB41E56526D004958EE /* EditWordViewController.swift */; };
+		B5A1CAB71E565716004958EE /* EditEnglishWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A1CAB61E565716004958EE /* EditEnglishWordViewController.swift */; };
 		B5BC9C1C1E19B6D3006A5CCC /* WordsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BC9C1B1E19B6D3006A5CCC /* WordsDataSourceTests.swift */; };
 		B5C733F21E2ABA4500CB9201 /* GroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C733F11E2ABA4500CB9201 /* GroupHeader.swift */; };
 		B5C733F41E2ABB7D00CB9201 /* GroupHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C733F31E2ABB7D00CB9201 /* GroupHeader.xib */; };
@@ -58,6 +61,9 @@
 		B578B6151E26647E0028CBCF /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordCell.swift; path = "Source/Words List/Cells/WordCell.swift"; sourceTree = "<group>"; };
 		B578B6171E2664910028CBCF /* WordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordCell.xib; path = "Source/Words List/Cells/WordCell.xib"; sourceTree = "<group>"; };
 		B578B6191E266AAB0028CBCF /* ChineseWordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChineseWordCell.xib; path = "Source/Words List/Cells/ChineseWordCell.xib"; sourceTree = "<group>"; };
+		B5A1CAB21E564B51004958EE /* NewWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewWordViewController.swift; path = "Source/Words List/NewWordViewController.swift"; sourceTree = "<group>"; };
+		B5A1CAB41E56526D004958EE /* EditWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditWordViewController.swift; path = "Source/Words List/EditWordViewController.swift"; sourceTree = "<group>"; };
+		B5A1CAB61E565716004958EE /* EditEnglishWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditEnglishWordViewController.swift; path = "Source/Words List/EditEnglishWordViewController.swift"; sourceTree = "<group>"; };
 		B5BC9C111E1997CD006A5CCC /* WordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BC9C151E1997CD006A5CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Words/Tests/Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		B5BC9C1B1E19B6D3006A5CCC /* WordsDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsDataSourceTests.swift; path = Words/Tests/Source/WordsDataSourceTests.swift; sourceTree = SOURCE_ROOT; };
@@ -134,6 +140,9 @@
 				B578B6141E26646A0028CBCF /* Cells */,
 				B578B60F1E2662100028CBCF /* WordsList.storyboard */,
 				B578B6121E26625B0028CBCF /* WordsListViewController.swift */,
+				B5A1CAB21E564B51004958EE /* NewWordViewController.swift */,
+				B5A1CAB41E56526D004958EE /* EditWordViewController.swift */,
+				B5A1CAB61E565716004958EE /* EditEnglishWordViewController.swift */,
 			);
 			name = "Words List";
 			sourceTree = "<group>";
@@ -230,8 +239,8 @@
 			children = (
 				B578B6111E26621E0028CBCF /* Core */,
 				B5BC9C071E199442006A5CCC /* Model */,
-				B578B60E1E2661F00028CBCF /* Words List */,
 				B52EAFB71E28416F001A46FF /* Groups List */,
+				B578B60E1E2661F00028CBCF /* Words List */,
 			);
 			name = Source;
 			path = Words;
@@ -383,10 +392,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C733F21E2ABA4500CB9201 /* GroupHeader.swift in Sources */,
+				B5A1CAB31E564B51004958EE /* NewWordViewController.swift in Sources */,
 				B5230B261E299D37000A3819 /* GroupCell.swift in Sources */,
 				B578B6161E26647E0028CBCF /* WordCell.swift in Sources */,
 				B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */,
+				B5A1CAB51E56526D004958EE /* EditWordViewController.swift in Sources */,
 				B52EAFBB1E2841B5001A46FF /* GroupsListViewController.swift in Sources */,
+				B5A1CAB71E565716004958EE /* EditEnglishWordViewController.swift in Sources */,
 				B5627A771E4D0A04000533F2 /* NewGroupViewController.swift in Sources */,
 				B5C734231E2C367B00CB9201 /* WordConfigCell.swift in Sources */,
 				B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */,
