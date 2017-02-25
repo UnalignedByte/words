@@ -105,7 +105,7 @@ extension WordsListViewController: UITableViewDataSource
         // Get a configuration cell
         if indexPath.section == 0 {
             var identifier = WordConfigCell.identifier
-            if let identifierForLanguageCode = self.configIdentifiersForLanguageCode[group!.languageCode!] {
+            if let identifierForLanguageCode = self.configIdentifiersForLanguageCode[group!.languageCode] {
                 identifier = identifierForLanguageCode
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
@@ -115,7 +115,7 @@ extension WordsListViewController: UITableViewDataSource
 
         // Get a normal word cell
         var identifier = WordCell.identifier
-        if let identifierForLanguageCode = self.identifiersForLanguageCode[group!.languageCode!] {
+        if let identifierForLanguageCode = self.identifiersForLanguageCode[group!.languageCode] {
             identifier = identifierForLanguageCode
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! WordCell

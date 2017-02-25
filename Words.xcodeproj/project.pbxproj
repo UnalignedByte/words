@@ -24,6 +24,12 @@
 		B5A1CAB71E565716004958EE /* EditEnglishWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A1CAB61E565716004958EE /* EditEnglishWordViewController.swift */; };
 		B5A743521E619CE100926A09 /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A743511E619CE100926A09 /* LanguageTests.swift */; };
 		B5A743541E619DB700926A09 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A743531E619DB700926A09 /* Language.swift */; };
+		B5A7435B1E61BE2D00926A09 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A743551E61BE2D00926A09 /* Group+CoreDataClass.swift */; };
+		B5A7435C1E61BE2D00926A09 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A743561E61BE2D00926A09 /* Group+CoreDataProperties.swift */; };
+		B5A7435D1E61BE2D00926A09 /* Word+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A743571E61BE2D00926A09 /* Word+CoreDataClass.swift */; };
+		B5A7435E1E61BE2D00926A09 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A743581E61BE2D00926A09 /* Word+CoreDataProperties.swift */; };
+		B5A7435F1E61BE2D00926A09 /* ChineseWord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A743591E61BE2D00926A09 /* ChineseWord+CoreDataClass.swift */; };
+		B5A743601E61BE2D00926A09 /* ChineseWord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7435A1E61BE2D00926A09 /* ChineseWord+CoreDataProperties.swift */; };
 		B5BC9C1C1E19B6D3006A5CCC /* WordsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BC9C1B1E19B6D3006A5CCC /* WordsDataSourceTests.swift */; };
 		B5C733F21E2ABA4500CB9201 /* GroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C733F11E2ABA4500CB9201 /* GroupHeader.swift */; };
 		B5C733F41E2ABB7D00CB9201 /* GroupHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C733F31E2ABB7D00CB9201 /* GroupHeader.xib */; };
@@ -66,6 +72,12 @@
 		B5A1CAB61E565716004958EE /* EditEnglishWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditEnglishWordViewController.swift; path = "Source/Words List/Edit Word/EditEnglishWordViewController.swift"; sourceTree = "<group>"; };
 		B5A743511E619CE100926A09 /* LanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageTests.swift; path = Words/Tests/Source/LanguageTests.swift; sourceTree = SOURCE_ROOT; };
 		B5A743531E619DB700926A09 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Language.swift; path = Source/Model/Language.swift; sourceTree = "<group>"; };
+		B5A743551E61BE2D00926A09 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Group+CoreDataClass.swift"; path = "Source/Model/Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B5A743561E61BE2D00926A09 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Group+CoreDataProperties.swift"; path = "Source/Model/Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B5A743571E61BE2D00926A09 /* Word+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Word+CoreDataClass.swift"; path = "Source/Model/Word+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B5A743581E61BE2D00926A09 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Word+CoreDataProperties.swift"; path = "Source/Model/Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B5A743591E61BE2D00926A09 /* ChineseWord+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChineseWord+CoreDataClass.swift"; path = "Source/Model/ChineseWord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B5A7435A1E61BE2D00926A09 /* ChineseWord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChineseWord+CoreDataProperties.swift"; path = "Source/Model/ChineseWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B5BC9C111E1997CD006A5CCC /* WordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BC9C151E1997CD006A5CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Words/Tests/Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		B5BC9C1B1E19B6D3006A5CCC /* WordsDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsDataSourceTests.swift; path = Words/Tests/Source/WordsDataSourceTests.swift; sourceTree = SOURCE_ROOT; };
@@ -183,6 +195,12 @@
 			children = (
 				B51A5B381E1A950C00F6B1A8 /* WordsDataSource.swift */,
 				B5A743531E619DB700926A09 /* Language.swift */,
+				B5A743551E61BE2D00926A09 /* Group+CoreDataClass.swift */,
+				B5A743561E61BE2D00926A09 /* Group+CoreDataProperties.swift */,
+				B5A743571E61BE2D00926A09 /* Word+CoreDataClass.swift */,
+				B5A743581E61BE2D00926A09 /* Word+CoreDataProperties.swift */,
+				B5A743591E61BE2D00926A09 /* ChineseWord+CoreDataClass.swift */,
+				B5A7435A1E61BE2D00926A09 /* ChineseWord+CoreDataProperties.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -403,17 +421,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C733F21E2ABA4500CB9201 /* GroupHeader.swift in Sources */,
+				B5A7435C1E61BE2D00926A09 /* Group+CoreDataProperties.swift in Sources */,
 				B5A1CAB31E564B51004958EE /* NewWordViewController.swift in Sources */,
 				B5230B261E299D37000A3819 /* GroupCell.swift in Sources */,
 				B5A743541E619DB700926A09 /* Language.swift in Sources */,
+				B5A7435D1E61BE2D00926A09 /* Word+CoreDataClass.swift in Sources */,
+				B5A7435F1E61BE2D00926A09 /* ChineseWord+CoreDataClass.swift in Sources */,
 				B578B6161E26647E0028CBCF /* WordCell.swift in Sources */,
 				B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */,
 				B5A1CAB51E56526D004958EE /* EditWordViewController.swift in Sources */,
 				B52EAFBB1E2841B5001A46FF /* GroupsListViewController.swift in Sources */,
 				B5A1CAB71E565716004958EE /* EditEnglishWordViewController.swift in Sources */,
+				B5A7435E1E61BE2D00926A09 /* Word+CoreDataProperties.swift in Sources */,
 				B5627A771E4D0A04000533F2 /* NewGroupViewController.swift in Sources */,
+				B5A7435B1E61BE2D00926A09 /* Group+CoreDataClass.swift in Sources */,
 				B5C734231E2C367B00CB9201 /* WordConfigCell.swift in Sources */,
 				B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */,
+				B5A743601E61BE2D00926A09 /* ChineseWord+CoreDataProperties.swift in Sources */,
 				B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */,
 				B5EC22171C7F9ACC00C5D782 /* WordsModel.xcdatamodeld in Sources */,
 			);

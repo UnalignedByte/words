@@ -40,7 +40,7 @@ class NewGroupViewController: UIViewController
         let selectedRow = self.languagePicker.selectedRow(inComponent: 0)
         let languageCode = Language.languages[selectedRow].code
         let group = WordsDataSource.sharedInstance.newGroup(forLanguageCode: languageCode)
-        group.name = nameField.text
+        group.name = nameField.text!
 
         self.dismiss(animated: true, completion: nil)
     }

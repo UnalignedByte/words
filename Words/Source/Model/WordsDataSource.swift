@@ -196,10 +196,8 @@ class WordsDataSource
 
     func deleteAllWords(forGroup group: Group)
     {
-        if let words = group.words {
-            for word in words {
-                self.context.delete(word as! NSManagedObject)
-            }
+        for word in group.words {
+            self.context.delete(word as! NSManagedObject)
         }
     }
 
@@ -217,7 +215,7 @@ class WordsDataSource
                 }
 
                 let group = newGroup(forLanguageCode: languageCode!)
-                group.name = groupName
+                group.name = groupName!
 
                 for wordDict in wordDicts! {
                     newWord(forGroup: group, wordDict: wordDict)
@@ -316,12 +314,12 @@ class WordsDataSource
     private func newWord(forGroup group: Group, wordDict: Dictionary<String, String>)
     {
         let word = newWord(forGroup: group)
-        word.word = wordDict["word"]
-        word.translation = wordDict["translation"]
+        word.word = wordDict["word"]!
+        word.translation = wordDict["translation"]!
 
-        switch group.languageCode! {
+        switch group.languageCode {
             case "cn":
-                (word as! ChineseWord).pinyin = wordDict["pinyin"]
+                (word as! ChineseWord).pinyin = wordDict["pinyin"]!
             default:
                 break
         }

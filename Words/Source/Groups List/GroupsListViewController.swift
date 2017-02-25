@@ -208,7 +208,7 @@ extension GroupsListViewController: UITableViewDelegate
 
         let firstGroup = self.resultsController.object(at: IndexPath(row: 0, section: section))
 
-        cell.setup(withLanguageCode: firstGroup.languageCode!, callback: { [weak self] in
+        cell.setup(withLanguageCode: firstGroup.languageCode, callback: { [weak self] in
             self?.tableView(tableView, didSelectHeaderInSection: section)
         })
 
