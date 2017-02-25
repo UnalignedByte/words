@@ -1,39 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cau-iw-VSd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cau-iw-VSd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Light.otf">
+            <string>SFUIText-Light</string>
+        </array>
+        <array key="SFUIText-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="2jg-GU-8HQ">
             <objects>
                 <navigationController id="Cau-iw-VSd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCu-SR-hI2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CCu-SR-hI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="wgA-mX-rOH" kind="relationship" relationship="rootViewController" id="QOg-yd-O41"/>
+                        <segue destination="ptI-NE-n73" kind="relationship" relationship="rootViewController" id="Hvw-kN-c5s"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ek-oz-bIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="714" y="396"/>
         </scene>
-        <!--GroupsList-->
-        <scene sceneID="Giw-Db-j4U">
+        <!--Groups List View Controller-->
+        <scene sceneID="e4J-WE-QHq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IGf-y9-yLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="GroupsList" id="wgA-mX-rOH" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="EMp-ys-eBe"/>
-                </viewControllerPlaceholder>
+                <viewController title="Groups" id="ptI-NE-n73" userLabel="Groups List View Controller" customClass="GroupsListViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hII-KJ-DxX"/>
+                        <viewControllerLayoutGuide type="bottom" id="xvt-Eb-Mb2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hej-na-uMg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7As-l7-iDl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ptI-NE-n73" id="tvr-NJ-wCQ"/>
+                                    <outlet property="delegate" destination="ptI-NE-n73" id="9mm-pd-n2K"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eez-7M-vaD">
+                                <rect key="frame" x="164" y="603" width="48" height="48"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="DxH-Nb-9IC"/>
+                                    <constraint firstAttribute="height" constant="48" id="oWl-HY-WhQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="k5e-h5-xAj" kind="presentation" modalPresentationStyle="overCurrentContext" id="FD4-4G-aa4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7As-l7-iDl" secondAttribute="trailing" id="B2h-Ct-4A2"/>
+                            <constraint firstItem="eez-7M-vaD" firstAttribute="centerX" secondItem="hej-na-uMg" secondAttribute="centerX" id="FFP-GM-fmv"/>
+                            <constraint firstItem="7As-l7-iDl" firstAttribute="top" secondItem="hej-na-uMg" secondAttribute="top" id="JcR-el-HIZ"/>
+                            <constraint firstItem="xvt-Eb-Mb2" firstAttribute="top" secondItem="7As-l7-iDl" secondAttribute="bottom" id="fCE-MM-Og2"/>
+                            <constraint firstItem="xvt-Eb-Mb2" firstAttribute="top" secondItem="eez-7M-vaD" secondAttribute="bottom" constant="16" id="yao-Ej-i2G"/>
+                            <constraint firstItem="7As-l7-iDl" firstAttribute="leading" secondItem="hej-na-uMg" secondAttribute="leading" id="zAz-T7-Xem"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="10D-8K-Ro2"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="addGroupButton" destination="eez-7M-vaD" id="ArZ-WW-kPP"/>
+                        <outlet property="tableView" destination="7As-l7-iDl" id="KGq-cp-4VP"/>
+                        <segue destination="XBO-eA-rm9" kind="show" identifier="WordsListViewController" id="yfZ-jn-Tmf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8d-WL-8O7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="395"/>
+            <point key="canvasLocation" x="1463" y="395"/>
+        </scene>
+        <!--New Group View Controller-->
+        <scene sceneID="joa-rM-wI7">
+            <objects>
+                <viewController id="k5e-h5-xAj" customClass="NewGroupViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="DUL-MT-gDp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FB5-A9-XyJ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bR1-Wz-rVF" userLabel="Background View">
+                                    <rect key="frame" x="12" y="20" width="351" height="289"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lmv-g4-ze8">
+                                    <rect key="frame" x="16" y="24" width="343" height="281"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efc-0L-sCo">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="21.5"/>
+                                            <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpI-WM-Gaa" userLabel="Name Field">
+                                            <rect key="frame" x="0.0" y="29.5" width="343" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6A-K2-Zzl">
+                                            <rect key="frame" x="0.0" y="67.5" width="343" height="21.5"/>
+                                            <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLq-Gl-5Mz">
+                                            <rect key="frame" x="0.0" y="97" width="343" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="agh-ki-pNe"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="dataSource" destination="k5e-h5-xAj" id="DJ4-NL-SWD"/>
+                                                <outlet property="delegate" destination="k5e-h5-xAj" id="k32-Z0-P1Q"/>
+                                            </connections>
+                                        </pickerView>
+                                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPP-gj-0mt">
+                                            <rect key="frame" x="0.0" y="205" width="343" height="34"/>
+                                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                            <state key="normal" title="Add Group"/>
+                                            <connections>
+                                                <action selector="doneButtonPressedWithSender:" destination="k5e-h5-xAj" eventType="touchUpInside" id="7Sb-hO-AOr"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p58-8T-12p">
+                                            <rect key="frame" x="0.0" y="247" width="343" height="34"/>
+                                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" red="0.74535912280000005" green="0.078854762019999997" blue="0.12286714460000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelButtonPressedWithSender:" destination="k5e-h5-xAj" eventType="touchUpInside" id="Gbn-Ii-Vf0"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="bR1-Wz-rVF" firstAttribute="centerX" secondItem="lmv-g4-ze8" secondAttribute="centerX" id="1kX-LR-Niu"/>
+                                <constraint firstAttribute="trailing" secondItem="lmv-g4-ze8" secondAttribute="trailing" constant="16" id="3J0-N5-KUn"/>
+                                <constraint firstItem="bR1-Wz-rVF" firstAttribute="centerY" secondItem="lmv-g4-ze8" secondAttribute="centerY" id="JB5-Gb-xyP"/>
+                                <constraint firstItem="lmv-g4-ze8" firstAttribute="top" secondItem="FB5-A9-XyJ" secondAttribute="topMargin" constant="16" id="QuW-1f-Dh5"/>
+                                <constraint firstItem="lmv-g4-ze8" firstAttribute="leading" secondItem="FB5-A9-XyJ" secondAttribute="leading" constant="16" id="af5-kg-KOO"/>
+                                <constraint firstItem="bR1-Wz-rVF" firstAttribute="width" secondItem="lmv-g4-ze8" secondAttribute="width" constant="8" id="jgk-NH-HlU"/>
+                                <constraint firstItem="bR1-Wz-rVF" firstAttribute="height" secondItem="lmv-g4-ze8" secondAttribute="height" constant="8" id="yCd-SY-MhU"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="dark"/>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="addGroupButton" destination="sPP-gj-0mt" id="vZs-ls-U4F"/>
+                        <outlet property="backgroundView" destination="bR1-Wz-rVF" id="yP7-iF-4wL"/>
+                        <outlet property="languagePicker" destination="lLq-Gl-5Mz" id="cW9-W7-vka"/>
+                        <outlet property="nameField" destination="hpI-WM-Gaa" id="Z6E-X7-OhI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yre-51-Zcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="1101"/>
+        </scene>
+        <!--Words List View Controller-->
+        <scene sceneID="nlO-W1-E5e">
+            <objects>
+                <viewController id="XBO-eA-rm9" customClass="WordsListViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R0T-h8-pTR"/>
+                        <viewControllerLayoutGuide type="bottom" id="git-bg-SVv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bbq-rp-dse">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ygS-xM-rUR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XBO-eA-rm9" id="6Dg-db-39r"/>
+                                    <outlet property="delegate" destination="XBO-eA-rm9" id="Cjf-8y-XxX"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzC-w1-7fl">
+                                <rect key="frame" x="164" y="603" width="48" height="48"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="WEf-gZ-bxP"/>
+                                    <constraint firstAttribute="height" constant="48" id="Xza-wt-3PA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lm0-vC-Bxj" kind="presentation" identifier="NewWordViewController" modalPresentationStyle="overCurrentContext" id="LJx-KA-mce"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ygS-xM-rUR" firstAttribute="leading" secondItem="Bbq-rp-dse" secondAttribute="leading" id="2yw-aw-1KV"/>
+                            <constraint firstItem="git-bg-SVv" firstAttribute="top" secondItem="ygS-xM-rUR" secondAttribute="bottom" id="7u0-KQ-QHg"/>
+                            <constraint firstItem="git-bg-SVv" firstAttribute="top" secondItem="mzC-w1-7fl" secondAttribute="bottom" constant="16" id="GXm-xW-qet"/>
+                            <constraint firstItem="ygS-xM-rUR" firstAttribute="top" secondItem="Bbq-rp-dse" secondAttribute="top" id="Ppr-XZ-w0y"/>
+                            <constraint firstAttribute="trailing" secondItem="ygS-xM-rUR" secondAttribute="trailing" id="a1m-rm-g7L"/>
+                            <constraint firstItem="mzC-w1-7fl" firstAttribute="centerX" secondItem="Bbq-rp-dse" secondAttribute="centerX" id="sOe-dB-MF7"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="addWordButton" destination="mzC-w1-7fl" id="Y0Q-eQ-2C0"/>
+                        <outlet property="tableView" destination="ygS-xM-rUR" id="nu1-z0-Ety"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36O-So-um6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2223" y="395"/>
+        </scene>
+        <!--New Word View Controller-->
+        <scene sceneID="Jn4-VP-d1F">
+            <objects>
+                <viewController id="lm0-vC-Bxj" customClass="NewWordViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="mlI-QK-cRB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zNU-fs-aXT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0C-4A-zeR" userLabel="Background View">
+                                    <rect key="frame" x="12" y="20" width="351" height="84"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LYj-cA-58q">
+                                    <rect key="frame" x="16" y="24" width="343" height="76"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Md-ik2">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
+                                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                            <state key="normal" title="Add Word"/>
+                                            <connections>
+                                                <action selector="addWordButtonPressedWithSender:" destination="lm0-vC-Bxj" eventType="touchUpInside" id="Eg8-en-zcO"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjC-kv-DJV">
+                                            <rect key="frame" x="0.0" y="42" width="343" height="34"/>
+                                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" red="0.74535912280000005" green="0.078854762019999997" blue="0.12286714460000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelButtonPressedWithSender:" destination="lm0-vC-Bxj" eventType="touchUpInside" id="xvp-D2-Fd8"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="LYj-cA-58q" firstAttribute="top" secondItem="zNU-fs-aXT" secondAttribute="topMargin" constant="16" id="6G3-Ey-ZDG"/>
+                                <constraint firstAttribute="trailing" secondItem="LYj-cA-58q" secondAttribute="trailing" constant="16" id="73T-zW-Xdu"/>
+                                <constraint firstItem="z0C-4A-zeR" firstAttribute="centerY" secondItem="LYj-cA-58q" secondAttribute="centerY" id="FiJ-uP-Jr9"/>
+                                <constraint firstItem="z0C-4A-zeR" firstAttribute="centerX" secondItem="LYj-cA-58q" secondAttribute="centerX" id="Nno-l2-QCg"/>
+                                <constraint firstItem="z0C-4A-zeR" firstAttribute="width" secondItem="LYj-cA-58q" secondAttribute="width" constant="8" id="QDs-jY-526"/>
+                                <constraint firstItem="LYj-cA-58q" firstAttribute="leading" secondItem="zNU-fs-aXT" secondAttribute="leading" constant="16" id="TXa-oq-tjb"/>
+                                <constraint firstItem="z0C-4A-zeR" firstAttribute="height" secondItem="LYj-cA-58q" secondAttribute="height" constant="8" id="WuQ-hH-jmO"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="dark"/>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="addWordButton" destination="gJy-Md-ik2" id="CQf-9D-bAz"/>
+                        <outlet property="backgroundView" destination="z0C-4A-zeR" id="LVE-N8-Pse"/>
+                        <outlet property="stackView" destination="LYj-cA-58q" id="pcb-tp-maY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pir-bO-A1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="1101"/>
         </scene>
     </scenes>
 </document>

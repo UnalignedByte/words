@@ -67,7 +67,7 @@ extension NewWordViewController
     fileprivate func setupEditView()
     {
         guard group != nil else {
-            return
+            fatalError("Group cannot be nil")
         }
 
         if let viewController = editWordViewController(forGroup: group!) {
@@ -83,9 +83,7 @@ extension NewWordViewController
 
     fileprivate func editWordViewController(forGroup group: Group) -> EditWordViewController?
     {
-        let identifier = String(describing: EditEnglishWordViewController.self)
-
-        let controller = UIStoryboard(name: "WordsList", bundle: nil).instantiateViewController(withIdentifier: identifier)
+        let controller = UIStoryboard(name: "EditEnglishWord", bundle: nil).instantiateInitialViewController()
         return controller as? EditWordViewController
     }
 }

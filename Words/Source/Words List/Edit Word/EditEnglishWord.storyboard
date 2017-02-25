@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YSt-y7-4DB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Light.otf">
+            <string>SFUIText-Light</string>
+        </array>
+        <array key="SFUIText-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Edit English Word View Controller-->
+        <scene sceneID="FpS-iq-kaB">
+            <objects>
+                <viewController storyboardIdentifier="EditEnglishWordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YSt-y7-4DB" customClass="EditEnglishWordViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0uA-IS-U79"/>
+                        <viewControllerLayoutGuide type="bottom" id="iGX-9Z-SDk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9hd-rt-4I2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEW-uH-syj" userLabel="Word Label">
+                                <rect key="frame" x="0.0" y="20" width="375" height="21"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-51-414">
+                                <rect key="frame" x="0.0" y="87" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Zj8-eq-AqR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-mr-yvE">
+                                <rect key="frame" x="0.0" y="116" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CcL-CQ-jcw"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Csm-N4-csL">
+                                <rect key="frame" x="0.0" y="49" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Fp6-fo-eu5"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jEW-uH-syj" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="2h4-gI-ILY"/>
+                            <constraint firstAttribute="trailing" secondItem="3Rt-mr-yvE" secondAttribute="trailing" id="Bzb-Uy-vWm"/>
+                            <constraint firstItem="Soe-51-414" firstAttribute="top" secondItem="Csm-N4-csL" secondAttribute="bottom" constant="8" id="GqF-q1-6zi"/>
+                            <constraint firstItem="Soe-51-414" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="HcB-LD-D5a"/>
+                            <constraint firstItem="iGX-9Z-SDk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3Rt-mr-yvE" secondAttribute="bottom" constant="8" id="Ihr-B9-Xwo"/>
+                            <constraint firstAttribute="trailing" secondItem="Csm-N4-csL" secondAttribute="trailing" id="KZw-Ah-Ef2"/>
+                            <constraint firstItem="3Rt-mr-yvE" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="MyG-Kb-vyR"/>
+                            <constraint firstItem="jEW-uH-syj" firstAttribute="top" secondItem="0uA-IS-U79" secondAttribute="bottom" id="Otu-mq-NzT"/>
+                            <constraint firstItem="Csm-N4-csL" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="SF9-wc-kA6"/>
+                            <constraint firstItem="Csm-N4-csL" firstAttribute="top" secondItem="jEW-uH-syj" secondAttribute="bottom" constant="8" id="TIa-ct-1Ow"/>
+                            <constraint firstAttribute="trailing" secondItem="jEW-uH-syj" secondAttribute="trailing" id="TQN-fa-h66"/>
+                            <constraint firstAttribute="trailing" secondItem="Soe-51-414" secondAttribute="trailing" id="Wao-yV-LYG"/>
+                            <constraint firstItem="3Rt-mr-yvE" firstAttribute="top" secondItem="Soe-51-414" secondAttribute="bottom" constant="8" id="oLy-Nl-AT9"/>
+                            <constraint firstItem="3Rt-mr-yvE" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="tYL-0m-EsM"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="translationField" destination="3Rt-mr-yvE" id="EvC-3K-VVS"/>
+                        <outlet property="wordField" destination="Csm-N4-csL" id="HDt-1Z-nBd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZo-dX-GY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="668"/>
+        </scene>
+    </scenes>
+</document>

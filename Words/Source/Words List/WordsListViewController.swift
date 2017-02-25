@@ -61,8 +61,7 @@ class WordsListViewController: UIViewController
         do {
             try self.resultsController.performFetch()
         } catch {
-            print("\(error)")
-            abort()
+            fatalError("Error performing fetch")
         }
     }
 
@@ -70,7 +69,7 @@ class WordsListViewController: UIViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         guard group != nil else {
-            return
+            fatalError("Group cannot be nil")
         }
 
         if segue.identifier == String(describing: NewWordViewController.self) {

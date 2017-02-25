@@ -12,13 +12,15 @@ import CoreData
 
 class GroupsListViewController: UIViewController
 {
+    // MARK: - Private Properites
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet fileprivate weak var addGroupButton: UIButton!
 
     fileprivate var resultsController = NSFetchedResultsController<Group>()
-    var activeSection: Int = -1
+    fileprivate var activeSection: Int = -1
 
 
+    // MARK: - Initialization
     override func viewDidLoad()
     {
         self.tableView.estimatedRowHeight = 20
@@ -35,16 +37,23 @@ class GroupsListViewController: UIViewController
 
     fileprivate func setupEditButton()
     {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: .plain, target: self, action: #selector(editButtonPressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: .plain,
+                                                                 target: self, action: #selector(editButtonPressed))
     }
 
 
-    private func registerCells()
+    fileprivate func registerCells()
     {
         self.tableView.register(UINib(nibName: "GroupHeader", bundle: nil),
                                 forHeaderFooterViewReuseIdentifier: GroupHeader.identifier)
         self.tableView.register(UINib(nibName: "GroupCell", bundle: nil),
                                 forCellReuseIdentifier: GroupCell.identifier)
+    }
+
+
+    fileprivate func loadData()
+    {
+        WordsDataSource.sharedInstance.loadAllSharedFiles()
     }
 
 
@@ -59,21 +68,14 @@ class GroupsListViewController: UIViewController
         do {
             try self.resultsController.performFetch()
         } catch {
-            print("\(error)")
-            abort()
+            fatalError("Error performing fetch")
         }
-    }
-
-
-    private func loadData()
-    {
-        WordsDataSource.sharedInstance.loadAllSharedFiles()
     }
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "WordsListViewController" {
+        if segue.identifier == String(describing: WordsListViewController.self) {
             let destination = segue.destination as! WordsListViewController
 
             if let indexPath = sender as? IndexPath {
@@ -84,7 +86,7 @@ class GroupsListViewController: UIViewController
     }
 
 
-    func editButtonPressed()
+    @objc fileprivate func editButtonPressed()
     {
         self.tableView.setEditing(!self.tableView.isEditing, animated: true)
         let title = self.tableView.isEditing ? NSLocalizedString("Done", comment: "") : NSLocalizedString("Edit", comment: "")
