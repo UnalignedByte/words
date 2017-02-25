@@ -204,19 +204,6 @@ class WordsDataSource
     }
 
 
-    // MARK: - Language Codes
-    func languageCodes() -> [String]
-    {
-        return ["cn", "de", "en", "fr", "pl"]
-    }
-
-
-    func languageCodesCount() -> Int
-    {
-        return languageCodes().count
-    }
-
-
     func loadWords(fromFilePath filePath: String)
     {
         if let groups = NSArray(contentsOfFile: filePath) as? Array<Dictionary<String,Any>> {

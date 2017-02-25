@@ -37,7 +37,8 @@ class NewGroupViewController: UIViewController
     {
         self.nameField.resignFirstResponder()
 
-        let languageCode = WordsDataSource.sharedInstance.languageCodes()[self.languagePicker.selectedRow(inComponent: 0)]
+        let selectedRow = self.languagePicker.selectedRow(inComponent: 0)
+        let languageCode = Language.languages[selectedRow].code
         let group = WordsDataSource.sharedInstance.newGroup(forLanguageCode: languageCode)
         group.name = nameField.text
 
@@ -71,7 +72,7 @@ extension NewGroupViewController: UIPickerViewDataSource
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return WordsDataSource.sharedInstance.languageCodesCount()
+        return Language.languages.count
     }
 }
 
@@ -80,8 +81,7 @@ extension NewGroupViewController: UIPickerViewDelegate
 {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        let languageCode = WordsDataSource.sharedInstance.languageCodes()[row]
-
+        let languageCode = Language.languages[row].code
         return NSLocalizedString(languageCode, comment: "")
     }
 }

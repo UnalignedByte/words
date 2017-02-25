@@ -20,6 +20,9 @@ extension Language
         return self.rawValue
     }
 
+    static var languages: [Language] {
+        return [.en, .cn]
+    }
 
     var editWordViewController: EditWordViewController {
         var viewController: EditWordViewController!
