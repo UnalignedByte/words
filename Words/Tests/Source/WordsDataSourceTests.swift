@@ -239,7 +239,7 @@ class WordsDataSourceTests: XCTestCase
         let word3 = WordsDataSource.sharedInstance.newWord(forGroup: groupEn2)
         word3.word = "Word 3"
 
-        let fetchRequest = WordsDataSource.sharedInstance.fetchRequest(forGroup: groupEn2)
+        let fetchRequest = WordsDataSource.sharedInstance.fetchRequestWords(forGroup: groupEn2)
         let words = try? WordsDataSource.sharedInstance.context.fetch(fetchRequest)
 
         XCTAssertNotNil(words)
@@ -271,7 +271,7 @@ class WordsDataSourceTests: XCTestCase
         let word3 = WordsDataSource.sharedInstance.newWord(forGroup: groupEn2)
         word3.word = "Word 3"
 
-        let fetchRequest = WordsDataSource.sharedInstance.fetchRequest(forLanguageCode: "en")
+        let fetchRequest = WordsDataSource.sharedInstance.fetchRequestWords(forLanguageCode: "en")
         let words = try? WordsDataSource.sharedInstance.context.fetch(fetchRequest)
 
         XCTAssertNotNil(words)
