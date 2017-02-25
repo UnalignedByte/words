@@ -51,18 +51,25 @@ extension Language
         return titles
     }
 
+    var wordCellIdentifier: String {
+        get {
+            var wordCellIdentifier: String!
+
+            switch self {
+                case .en:
+                    wordCellIdentifier = "WordCell"
+                case .cn:
+                    wordCellIdentifier = "WordCell"
+            }
+
+            return wordCellIdentifier
+        }
+    }
+
 
     func registerWordCell(forTableView tableView: UITableView)
     {
-        var wordCellIdentifier: String!
-
-        switch self {
-            case .en:
-                wordCellIdentifier = "EnglishWordCell"
-            case .cn:
-                wordCellIdentifier = "ChineseWordCell"
-        }
-
-        tableView.register(UINib(nibName: wordCellIdentifier, bundle: nil), forCellReuseIdentifier: wordCellIdentifier)
+        tableView.register(UINib(nibName: wordCellIdentifier, bundle: nil),
+                           forCellReuseIdentifier: wordCellIdentifier)
     }
 }

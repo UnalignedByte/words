@@ -38,8 +38,8 @@ class NewGroupViewController: UIViewController
         self.nameField.resignFirstResponder()
 
         let selectedRow = self.languagePicker.selectedRow(inComponent: 0)
-        let languageCode = Language.languages[selectedRow].code
-        let group = WordsDataSource.sharedInstance.newGroup(forLanguageCode: languageCode)
+        let language = Language.languages[selectedRow]
+        let group = WordsDataSource.sharedInstance.newGroup(forLanguage: language)
         group.name = nameField.text!
 
         self.dismiss(animated: true, completion: nil)

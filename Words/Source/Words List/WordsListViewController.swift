@@ -12,17 +12,16 @@ import CoreData
 
 class WordsListViewController: UIViewController
 {
+    // MARK: - Private Properties
     @IBOutlet fileprivate var tableView: UITableView!
     @IBOutlet fileprivate weak var addWordButton: UIButton!
 
     fileprivate var resultsController = NSFetchedResultsController<Word>()
-    fileprivate var identifiersForLanguageCode = Dictionary<String, String>()
-    fileprivate var configIdentifiersForLanguageCode = Dictionary<String, String>()
-
     fileprivate var group: Group?
     fileprivate var cellConfig = 0
 
 
+    // MARK: - Initialization
     override func viewDidLoad()
     {
         self.tableView.estimatedRowHeight = 20.0
@@ -36,10 +35,13 @@ class WordsListViewController: UIViewController
 
     private func registerCells()
     {
-        self.tableView.register(UINib(nibName: "WordCell", bundle: nil),
-                                forCellReuseIdentifier: WordCell.identifier)
-        self.tableView.register(UINib(nibName: "WordConfigCell", bundle: nil),
-                                forCellReuseIdentifier: WordConfigCell.identifier)
+        guard group != nil else {
+            fatalError("Group is nil")
+        }
+
+        self.group!.language.registerWordCell(forTableView: self.tableView)
+        self.tableView.register(UINib(nibName: String(describing: WordConfigCell.self), bundle: nil),
+                                forCellReuseIdentifier: String(describing: WordConfigCell.self))
         WordConfigCell.configChangedCallback = { (config) in
             self.cellConfig = config
             self.tableView.reloadData()
@@ -102,22 +104,21 @@ extension WordsListViewController: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        guard group != nil else {
+            fatalError("Group cannot be nil")
+        }
+
         // Get a configuration cell
         if indexPath.section == 0 {
-            var identifier = WordConfigCell.identifier
-            if let identifierForLanguageCode = self.configIdentifiersForLanguageCode[group!.languageCode] {
-                identifier = identifierForLanguageCode
-            }
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+            let identifier = String(describing: WordConfigCell.self)
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! WordConfigCell
+            cell.setup(withLanguage: group!.language)
 
             return cell
         }
 
         // Get a normal word cell
-        var identifier = WordCell.identifier
-        if let identifierForLanguageCode = self.identifiersForLanguageCode[group!.languageCode] {
-            identifier = identifierForLanguageCode
-        }
+        let identifier = self.group!.language.wordCellIdentifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! WordCell
 
         let word = self.resultsController.object(at: IndexPath(row: indexPath.row, section: indexPath.section - 1))

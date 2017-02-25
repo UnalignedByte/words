@@ -11,16 +11,15 @@ import UIKit
 
 class WordConfigCell: UITableViewCell
 {
-    static var identifier: String {
-        get {
-            return "WordConfigCell"
-        }
-    }
+    // MARK: - Private Properties
+    @IBOutlet fileprivate var gradientView: UIView!
+    @IBOutlet fileprivate var configSegment: UISegmentedControl!
+    fileprivate var language: Language?
+
+    // MARK: - Public Properties
     static var configChangedCallback: ((Int) -> Void)?
 
-    @IBOutlet var gradientView: UIView!
-
-
+    // MARK: - Initialization
     override func awakeFromNib()
     {
         let gradientLayer = CAGradientLayer()
@@ -33,7 +32,26 @@ class WordConfigCell: UITableViewCell
     }
 
 
-    @IBAction func visibilitySegmentChanged(sender: UISegmentedControl)
+    func setup(withLanguage language: Language)
+    {
+        guard language != self.language else {
+            return
+        }
+        self.language = language
+
+        configSegment.removeAllSegments()
+
+        for i in 0..<language.wordConfigCellTitles.count {
+            let title = language.wordConfigCellTitles[i]
+            configSegment.insertSegment(withTitle: title, at: i, animated: false)
+        }
+
+        configSegment.selectedSegmentIndex = 0
+    }
+
+
+    // MARK: - Actions
+    @IBAction fileprivate func visibilitySegmentChanged(sender: UISegmentedControl)
     {
         if let callback = WordConfigCell.configChangedCallback {
             callback(sender.selectedSegmentIndex)

@@ -150,7 +150,7 @@
 		B578B60E1E2661F00028CBCF /* Words List */ = {
 			isa = PBXGroup;
 			children = (
-				B578B6141E26646A0028CBCF /* Cells */,
+				B578B6141E26646A0028CBCF /* Word Cells */,
 				B578B6121E26625B0028CBCF /* WordsListViewController.swift */,
 				B5A1CAB21E564B51004958EE /* NewWordViewController.swift */,
 				B5A743501E619A3C00926A09 /* Edit Word */,
@@ -167,7 +167,7 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		B578B6141E26646A0028CBCF /* Cells */ = {
+		B578B6141E26646A0028CBCF /* Word Cells */ = {
 			isa = PBXGroup;
 			children = (
 				B5C734221E2C367B00CB9201 /* WordConfigCell.swift */,
@@ -177,7 +177,7 @@
 				B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */,
 				B578B6191E266AAB0028CBCF /* ChineseWordCell.xib */,
 			);
-			name = Cells;
+			name = "Word Cells";
 			sourceTree = "<group>";
 		};
 		B5A743501E619A3C00926A09 /* Edit Word */ = {

@@ -42,171 +42,15 @@ class WordsDataSource
     }
 
 
-    // MARK: - Public Control
-    @objc func saveContext()
-    {
-        if self.context.hasChanges {
-            do {
-                try self.storeContainer.viewContext.save();
-            } catch let error {
-                print("Context saving error: \(error)")
-            }
-        }
-    }
-
-
-    // MARK: - Groups
-    func newGroup(forLanguageCode code: String) -> Group
-    {
-        let group = Group(context: self.context)
-        group.languageCode = code
-
-        let orderExp = NSExpression(forKeyPath: #keyPath(Group.order))
-        let maxOrderExp = NSExpression(forFunction: "max:", arguments: [orderExp])
-        let maxOrderExpDesc = NSExpressionDescription()
-        maxOrderExpDesc.name = "maxOrder"
-        maxOrderExpDesc.expression = maxOrderExp
-        maxOrderExpDesc.expressionResultType = .integer32AttributeType
-
-        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Group")
-        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", code)
-        fetchRequest.resultType = .dictionaryResultType
-        fetchRequest.propertiesToFetch = [maxOrderExpDesc]
-
-        var maxGroupOrder = Int32(0)
-
-        do {
-            let results = try context.fetch(fetchRequest)
-            let resultsDict = results.first!
-            maxGroupOrder = resultsDict["maxOrder"] as! Int32
-        } catch let error {
-            print("Context fetch error: \(error)")
-        }
-
-        group.order = maxGroupOrder + 1
-
-        return group
-    }
-
-
-    func groups(forLanguageCode code: String) -> [Group]
-    {
-        let fetchRequest: NSFetchRequest<Group> = Group.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", code)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
-
-        if let fetchResults = try? self.context.fetch(fetchRequest) {
-            return fetchResults
-        }
-
-        return [Group]()
-    }
-
-
-    func groupsCount(forLanguageCode code: String) -> Int
-    {
-        // TODO: The same comment applies as in languageCodesCount
-
-        return groups(forLanguageCode: code).count
-    }
-
-
-    func delete(group: Group)
-    {
-        self.context.delete(group)
-    }
-
-
-    func deleteAllGroups(forLanguageCode code: String)
-    {
-        let fetchRequest: NSFetchRequest<Group> = Group.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", code)
-
-        let fetchResults = try? self.context.fetch(fetchRequest)
-
-        if let fetchResults = fetchResults {
-            for group in fetchResults {
-                self.context.delete(group)
-            }
-        }
-        // TODO: This should be done with NSBatchDeleteRequest
-    }
-
-
-    // MARK: - Words
-    func newWord(forGroup group: Group) -> Word
-    {
-        let word = Word(context: self.context)
-        var randomNumber = Int32(0)
-        arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
-        word.order = randomNumber
-
-        group.addToWords(word)
-
-        return word
-    }
-
-
-    func words(forLanguageCode languageCode: String) -> [Word]
-    {
-        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
-        fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", languageCode)
-
-        if let fetchResults = try? self.context.fetch(fetchRequest) {
-            return fetchResults
-        }
-
-        return [Word]()
-    }
-
-
-    func wordsCount(forLanguageCode languageCode: String) -> Int
-    {
-        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
-        fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", languageCode)
-
-        if let count = try? self.context.count(for: fetchRequest) {
-            return count
-        }
-        
-        return 0
-    }
-
-
-    func delete(word: Word)
-    {
-        self.context.delete(word)
-    }
-
-
-    func deleteAllWords(forLanguageCode languageCode: String)
-    {
-        let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
-
-        let fetchResults = try? self.context.fetch(fetchRequest)
-
-        if let fetchResults = fetchResults {
-            for word in fetchResults {
-                self.context.delete(word)
-            }
-        }
-        // TODO: This should be done with NSBatchDeleteRequest
-    }
-
-
-    func deleteAllWords(forGroup group: Group)
-    {
-        for word in group.words {
-            self.context.delete(word as! NSManagedObject)
-        }
-    }
-
-
     func loadWords(fromFilePath filePath: String)
     {
         if let groups = NSArray(contentsOfFile: filePath) as? Array<Dictionary<String,Any>> {
             for groupDict in groups {
                 let languageCode = groupDict["languageCode"] as? String
+                guard languageCode != nil else {
+                    continue
+                }
+                let language = Language(rawValue: languageCode!)
                 let groupName = groupDict["group"] as? String
                 let wordDicts = groupDict["words"] as? [Dictionary<String, String>]
 
@@ -214,7 +58,7 @@ class WordsDataSource
                     continue
                 }
 
-                let group = newGroup(forLanguageCode: languageCode!)
+                let group = newGroup(forLanguage: language!)
                 group.name = groupName!
 
                 for wordDict in wordDicts! {
@@ -262,6 +106,166 @@ class WordsDataSource
     }
 
 
+    // MARK: - Public Functions
+    @objc func saveContext()
+    {
+        if self.context.hasChanges {
+            do {
+                try self.storeContainer.viewContext.save();
+            } catch let error {
+                fatalError("Context saving error: \(error)")
+            }
+        }
+    }
+
+
+    // MARK: - Groups
+    func newGroup(forLanguage language: Language) -> Group
+    {
+        let group = Group(context: self.context)
+        group.language = language
+
+        let orderExp = NSExpression(forKeyPath: #keyPath(Group.order))
+        let maxOrderExp = NSExpression(forFunction: "max:", arguments: [orderExp])
+        let maxOrderExpDesc = NSExpressionDescription()
+        maxOrderExpDesc.name = "maxOrder"
+        maxOrderExpDesc.expression = maxOrderExp
+        maxOrderExpDesc.expressionResultType = .integer32AttributeType
+
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Group")
+        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", language.code)
+        fetchRequest.resultType = .dictionaryResultType
+        fetchRequest.propertiesToFetch = [maxOrderExpDesc]
+
+        var maxGroupOrder = Int32(0)
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            let resultsDict = results.first!
+            maxGroupOrder = resultsDict["maxOrder"] as! Int32
+        } catch let error {
+            fatalError("Context fetch error: \(error)")
+        }
+
+        group.order = maxGroupOrder + 1
+
+        return group
+    }
+
+
+    func groups(forLanguage language: Language) -> [Group]
+    {
+        let fetchRequest: NSFetchRequest<Group> = Group.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", language.code)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
+
+        if let fetchResults = try? self.context.fetch(fetchRequest) {
+            return fetchResults
+        }
+
+        return [Group]()
+    }
+
+
+    func groupsCount(forLanguage language: Language) -> Int
+    {
+        return groups(forLanguage: language).count
+    }
+
+
+    func delete(group: Group)
+    {
+        self.context.delete(group)
+    }
+
+
+    func deleteGroups(forLanguage language: Language)
+    {
+        let fetchRequest: NSFetchRequest<Group> = Group.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", language.code)
+
+        let fetchResults = try? self.context.fetch(fetchRequest)
+
+        if let fetchResults = fetchResults {
+            for group in fetchResults {
+                self.context.delete(group)
+            }
+        }
+        // TODO: This should be done with NSBatchDeleteRequest
+    }
+
+
+    // MARK: - Words
+    func newWord(forGroup group: Group) -> Word
+    {
+        let word = Word(context: self.context)
+        var randomNumber = Int32(0)
+        arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
+        word.order = randomNumber
+
+        group.addToWords(word)
+
+        return word
+    }
+
+
+    func words(forLanguage language: Language) -> [Word]
+    {
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", language.code)
+
+        if let fetchResults = try? self.context.fetch(fetchRequest) {
+            return fetchResults
+        }
+
+        return [Word]()
+    }
+
+
+    func wordsCount(forLanguage language: Language) -> Int
+    {
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", language.code)
+
+        if let count = try? self.context.count(for: fetchRequest) {
+            return count
+        }
+        
+        return 0
+    }
+
+
+    func delete(word: Word)
+    {
+        self.context.delete(word)
+    }
+
+
+    func deleteWords(forLanguage language: Language)
+    {
+        let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", language.code)
+
+        let fetchResults = try? self.context.fetch(fetchRequest)
+
+        if let fetchResults = fetchResults {
+            for word in fetchResults {
+                self.context.delete(word)
+            }
+        }
+        // TODO: This should be done with NSBatchDeleteRequest
+    }
+
+
+    func deleteWords(forGroup group: Group)
+    {
+        for word in group.words {
+            self.context.delete(word as! NSManagedObject)
+        }
+    }
+
+
+    // MARK: - Fetch Requests
     func fetchRequestGroups() -> NSFetchRequest<Group>
     {
         let fetchRequest = NSFetchRequest<Group>(entityName: "Group")
@@ -272,6 +276,7 @@ class WordsDataSource
 
         return fetchRequest
     }
+
 
     func fetchRequestWords(forGroup group: Group) -> NSFetchRequest<Word>
     {
@@ -285,12 +290,12 @@ class WordsDataSource
     }
 
 
-    func fetchRequestWords(forLanguageCode languageCode: String) -> NSFetchRequest<Word>
+    func fetchRequestWords(forLanguage language: Language) -> NSFetchRequest<Word>
     {
         let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
         fetchRequest.fetchBatchSize = 10
 
-        fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", languageCode)
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", language.code)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "group.name", ascending: false),
                                         NSSortDescriptor(key: "order", ascending: false)]
 
@@ -299,19 +304,7 @@ class WordsDataSource
 
 
     // MARK: - Private Utils
-    private func entityName(forLanguageCode code: String) -> String
-    {
-        let entityForCode = ["cn" : "ChineseWord"]
-
-        if entityForCode[code] != nil {
-            return entityForCode[code]!
-        }
-
-        return "Word"
-    }
-
-
-    private func newWord(forGroup group: Group, wordDict: Dictionary<String, String>)
+    fileprivate func newWord(forGroup group: Group, wordDict: Dictionary<String, String>)
     {
         let word = newWord(forGroup: group)
         word.word = wordDict["word"]!

@@ -33,9 +33,9 @@ class GroupHeader: UITableViewHeaderFooterView
     }
 
 
-    func setup(withLanguageCode code: String, callback: @escaping () -> Void)
+    func setup(withLanguage language: Language, callback: @escaping () -> Void)
     {
-        self.label.text = NSLocalizedString(code, comment: "Language Name")
+        self.label.text = NSLocalizedString(language.code, comment: "Language Name")
         self.callback = callback
     }
 
