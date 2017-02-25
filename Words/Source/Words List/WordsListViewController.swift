@@ -126,6 +126,21 @@ extension WordsListViewController: UITableViewDataSource
 
         return cell
     }
+
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return indexPath.section == 1
+    }
+
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && editingStyle == .delete {
+            let index = IndexPath(row: indexPath.row, section: 0)
+            let word = resultsController.object(at: index)
+            WordsDataSource.sharedInstance.delete(word: word)
+        }
+    }
 }
 
 
@@ -145,7 +160,8 @@ extension WordsListViewController: NSFetchedResultsControllerDelegate
                 let index = IndexPath(row: newIndexPath!.row, section: 1)
                 tableView.insertRows(at: [index], with: .automatic)
             case .delete:
-                tableView.deleteRows(at: [indexPath!], with: .automatic)
+                let index = IndexPath(row: indexPath!.row, section: 1)
+                tableView.deleteRows(at: [index], with: .automatic)
             default:
                 break
         }
