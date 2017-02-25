@@ -15,5 +15,6 @@ class EditWordViewController: UIViewController
 
     func createWord(forGroup group: Group)
     {
+        fatalError("Abstract Class")
     }
 }

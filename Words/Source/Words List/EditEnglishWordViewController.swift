@@ -11,20 +11,23 @@ import UIKit
 
 class EditEnglishWordViewController: EditWordViewController
 {
-    @IBOutlet weak var wordField: UITextField!
-    @IBOutlet weak var translationField: UITextField!
+    // MARK: - Private Properties
+    @IBOutlet fileprivate weak var wordField: UITextField!
+    @IBOutlet fileprivate weak var translationField: UITextField!
 
-    var isWordFieldValid = false {
+    fileprivate var isWordFieldValid = false {
         didSet {
             valuesChanged()
         }
     }
-    var isTranslationFieldValid = false {
+    fileprivate var isTranslationFieldValid = false {
         didSet {
             valuesChanged()
         }
     }
 
+
+    // MARK: - Initialization
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -36,6 +39,28 @@ class EditEnglishWordViewController: EditWordViewController
     }
 
 
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        wordField.becomeFirstResponder()
+    }
+
+
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        wordField.resignFirstResponder()
+        translationField.resignFirstResponder()
+    }
+
+
+    // MARK: - Private functions
     @objc fileprivate func wordFieldChanged(notification: Notification)
     {
         let noSpacesWord = self.wordField.text?.replacingOccurrences(of: " ", with: "")
@@ -57,6 +82,7 @@ class EditEnglishWordViewController: EditWordViewController
         }
     }
 
+    // MARK: - Public functions
     override func createWord(forGroup group: Group)
     {
         let word = WordsDataSource.sharedInstance.newWord(forGroup: group)
