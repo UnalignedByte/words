@@ -57,12 +57,27 @@ extension Language
 
             switch self {
                 case .en:
-                    wordCellIdentifier = "WordCell"
+                    wordCellIdentifier = String(describing: EnglishWordCell.self)
                 case .cn:
-                    wordCellIdentifier = "WordCell"
+                    wordCellIdentifier = String(describing: ChineseWordCell.self)
             }
 
             return wordCellIdentifier
+        }
+    }
+
+    var wordEntity: String {
+        get {
+            var entity: String!
+
+            switch self {
+                case .en:
+                    entity = "Word"
+                case .cn:
+                    entity = "ChineseWord"
+            }
+
+            return entity
         }
     }
 

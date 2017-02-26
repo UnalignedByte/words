@@ -9,146 +9,91 @@
 import UIKit
 
 
-enum ChineseWordDisplayStyle: Int {
-    case all
-    case english
-    case pinyin
-    case hanzi
-}
-
-
-class ChineseWordCell: UITableViewCell
+class ChineseWordCell: WordCell
 {
-    @IBOutlet weak var englishLabel: UILabel!
-    @IBOutlet weak var pinyinLabel: UILabel!
-    @IBOutlet weak var hanziLabel: UILabel!
+    // MARK: - Private Properties
+    @IBOutlet fileprivate weak var gradientView: UIView!
+    @IBOutlet fileprivate weak var wordLabel: UILabel!
+    @IBOutlet fileprivate weak var pinyinLabel: UILabel!
+    @IBOutlet fileprivate weak var translationLabel: UILabel!
+    @IBOutlet fileprivate weak var verticalStack: UIStackView!
 
-    var pinyinWidthConstraint: NSLayoutConstraint!
-    var hanziWidthConstraint: NSLayoutConstraint!
-    var englishHeightConstraint: NSLayoutConstraint!
-    var pinyinHeightConstraint: NSLayoutConstraint!
+    fileprivate var config = 0
 
-    var isTouching: Bool = false
-    var currentWord: ChineseWord!
-    var currentStyle: ChineseWordDisplayStyle!
-
-    required init?(coder aDecoder: NSCoder)
+    
+    // MARK: - Initialization
+    override func awakeFromNib()
     {
-        super.init(coder: aDecoder)
-    }
-
-    func setupWithChineseWord(_ word: ChineseWord, style: ChineseWordDisplayStyle)
-    {
-        self.currentWord = word
-        self.currentStyle = style
-
-        self.englishLabel.text = word.english
-        self.pinyinLabel.text = word.pinyin
-        self.hanziLabel.text = word.hanzi
-
-        self.englishLabel.isHidden = true
-        self.pinyinLabel.isHidden = true
-        self.hanziLabel.isHidden = true
-
-        if self.pinyinWidthConstraint != nil {
-            self.removeConstraint(self.pinyinWidthConstraint)
-            self.pinyinWidthConstraint = nil
-        }
-
-        if self.hanziWidthConstraint != nil {
-            self.removeConstraint(self.hanziWidthConstraint)
-            self.hanziWidthConstraint = nil
-        }
-
-        if self.englishHeightConstraint != nil {
-            self.removeConstraint(self.englishHeightConstraint)
-            self.englishHeightConstraint = nil
-        }
-
-        if self.pinyinHeightConstraint != nil {
-            self.removeConstraint(self.pinyinHeightConstraint)
-            self.pinyinHeightConstraint = nil
-        }
-
-        if self.isTouching {
-            self.englishLabel.isHidden = false
-            self.pinyinLabel.isHidden = false
-            self.hanziLabel.isHidden = false
-        } else {
-        switch style {
-            case .all:
-                self.englishLabel.isHidden = false
-                self.pinyinLabel.isHidden = false
-                self.hanziLabel.isHidden = false
-            case .english:
-                self.englishLabel.isHidden = false
-
-                self.hanziWidthConstraint = NSLayoutConstraint(item: self.hanziLabel,
-                                                               attribute: .width,
-                                                               relatedBy: .equal,
-                                                               toItem: nil,
-                                                               attribute: .notAnAttribute,
-                                                               multiplier: 1.0,
-                                                               constant: 0.0)
-                self.addConstraint(self.hanziWidthConstraint)
-
-                self.pinyinHeightConstraint = NSLayoutConstraint(item: self.pinyinLabel,
-                                                                 attribute: .height,
-                                                                 relatedBy: .equal,
-                                                                 toItem: nil,
-                                                                 attribute: .notAnAttribute,
-                                                                 multiplier: 1.0,
-                                                                 constant: 0.0)
-                self.addConstraint(self.pinyinHeightConstraint)
-            case .pinyin:
-                self.pinyinLabel.isHidden = false
-                self.hanziWidthConstraint = NSLayoutConstraint(item: self.hanziLabel,
-                                                               attribute: .width,
-                                                               relatedBy: .equal,
-                                                               toItem: nil,
-                                                               attribute: .notAnAttribute,
-                                                               multiplier: 1.0,
-                                                               constant: 0.0)
-                self.addConstraint(self.hanziWidthConstraint)
-
-                self.englishHeightConstraint = NSLayoutConstraint(item: self.englishLabel,
-                                                                  attribute: .height,
-                                                                  relatedBy: .equal,
-                                                                  toItem: nil,
-                                                                  attribute: .notAnAttribute,
-                                                                  multiplier: 1.0,
-                                                                  constant: 0.0)
-                self.addConstraint(self.englishHeightConstraint)
-            case .hanzi:
-                self.hanziLabel.isHidden = false
-                self.pinyinWidthConstraint = NSLayoutConstraint(item: self.pinyinLabel,
-                                                    attribute: .width,
-                                                    relatedBy: .equal,
-                                                    toItem: nil,
-                                                    attribute: .notAnAttribute,
-                                                    multiplier: 1.0,
-                                                    constant: 0.0)
-                self.addConstraint(self.pinyinWidthConstraint)
-        }
-        }
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.cornerRadius = 8.0
+        gradientLayer.frame = self.gradientView.bounds
+        gradientLayer.colors = [UIColor.lightGray.withAlphaComponent(0.1).cgColor,
+                                UIColor.lightGray.withAlphaComponent(0.25).cgColor]
+        gradientLayer.locations = [0.2, 1.0]
+        self.gradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
 
 
+    // MARK: - Public Functions
+    override func setup(withWord word: Word, config: Int)
+    {
+        let chineseWord = word as? ChineseWord
+        guard chineseWord != nil else {
+            fatalError("Passed in word isn't an instance of ChineseWord")
+        }
+
+        wordLabel.text = chineseWord!.word
+        pinyinLabel.text = chineseWord!.pinyin
+        translationLabel.text = chineseWord!.translation
+        self.config = config
+        setup(withConfig: config)
+    }
+
+
+    // MARK: - Private Functions
+    fileprivate func setup(withConfig config: Int)
+    {
+        switch config {
+            // Word
+            case 1:
+                wordLabel.isHidden = false
+                pinyinLabel.isHidden = true
+                translationLabel.isHidden = true
+            // Pinyin
+            case 2:
+                wordLabel.isHidden = true
+                pinyinLabel.isHidden = false
+                translationLabel.isHidden = true
+            // Translation
+            case 3:
+                wordLabel.isHidden = true
+                pinyinLabel.isHidden = true
+                translationLabel.isHidden = false
+            // All
+            default:
+                wordLabel.isHidden = false
+                pinyinLabel.isHidden = false
+                translationLabel.isHidden = false
+        }
+
+        verticalStack.isHidden = translationLabel.isHidden && pinyinLabel.isHidden
+    }
+
+
+    // MARK: - Events
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        self.isTouching = true
-        self.setupWithChineseWord(self.currentWord, style: self.currentStyle)
+        setup(withConfig: 0)
     }
 
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        self.touchesEnded(touches, with: event)
+        setup(withConfig: config)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        self.isTouching = false
-        self.setupWithChineseWord(self.currentWord, style: self.currentStyle)
+        setup(withConfig: config)
     }
 }

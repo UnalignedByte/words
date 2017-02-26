@@ -198,7 +198,7 @@ class WordsDataSource
     // MARK: - Words
     func newWord(forGroup group: Group) -> Word
     {
-        let word = Word(context: self.context)
+        let word = NSEntityDescription.insertNewObject(forEntityName: group.language.wordEntity, into: context) as! Word
         var randomNumber = Int32(0)
         arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
         word.order = randomNumber

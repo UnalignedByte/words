@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Edit English Word View Controller-->
+        <!--Edit Chinese Word View Controller-->
         <scene sceneID="FpS-iq-kaB">
             <objects>
-                <viewController id="YSt-y7-4DB" customClass="EditEnglishWordViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YSt-y7-4DB" customClass="EditChineseWordViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0uA-IS-U79"/>
                         <viewControllerLayoutGuide type="bottom" id="iGX-9Z-SDk"/>
@@ -29,32 +29,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEW-uH-syj" userLabel="Word Label">
-                                <rect key="frame" x="0.0" y="20" width="375" height="21"/>
-                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-51-414">
-                                <rect key="frame" x="0.0" y="87" width="375" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="汉字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEW-uH-syj" userLabel="Word Label">
+                                <rect key="frame" x="0.0" y="20" width="375" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Zj8-eq-AqR"/>
+                                    <constraint firstAttribute="height" constant="22" id="xKC-z2-klN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-mr-yvE">
-                                <rect key="frame" x="0.0" y="116" width="375" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="CcL-CQ-jcw"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Csm-N4-csL">
-                                <rect key="frame" x="0.0" y="49" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Fp6-fo-eu5"/>
                                 </constraints>
@@ -62,29 +47,72 @@
                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拼音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-51-414" userLabel="Pinyin Label">
+                                <rect key="frame" x="0.0" y="88" width="375" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Zj8-eq-AqR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-mr-yvE">
+                                <rect key="frame" x="0.0" y="118" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CcL-CQ-jcw"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se9-Bg-rPg">
+                                <rect key="frame" x="0.0" y="156" width="375" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="HbE-zX-M2o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTC-8b-ryC">
+                                <rect key="frame" x="0.0" y="186" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0li-8L-7oS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jEW-uH-syj" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="2h4-gI-ILY"/>
+                            <constraint firstItem="se9-Bg-rPg" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="82d-EE-Lev"/>
+                            <constraint firstItem="iTC-8b-ryC" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="A7k-lS-A3r"/>
                             <constraint firstAttribute="trailing" secondItem="3Rt-mr-yvE" secondAttribute="trailing" id="Bzb-Uy-vWm"/>
                             <constraint firstItem="Soe-51-414" firstAttribute="top" secondItem="Csm-N4-csL" secondAttribute="bottom" constant="8" id="GqF-q1-6zi"/>
                             <constraint firstItem="Soe-51-414" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="HcB-LD-D5a"/>
-                            <constraint firstItem="iGX-9Z-SDk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3Rt-mr-yvE" secondAttribute="bottom" constant="8" id="Ihr-B9-Xwo"/>
                             <constraint firstAttribute="trailing" secondItem="Csm-N4-csL" secondAttribute="trailing" id="KZw-Ah-Ef2"/>
                             <constraint firstItem="3Rt-mr-yvE" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="MyG-Kb-vyR"/>
+                            <constraint firstItem="iGX-9Z-SDk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iTC-8b-ryC" secondAttribute="bottom" constant="8" id="Np2-Ug-kO2"/>
                             <constraint firstItem="jEW-uH-syj" firstAttribute="top" secondItem="0uA-IS-U79" secondAttribute="bottom" id="Otu-mq-NzT"/>
                             <constraint firstItem="Csm-N4-csL" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="SF9-wc-kA6"/>
                             <constraint firstItem="Csm-N4-csL" firstAttribute="top" secondItem="jEW-uH-syj" secondAttribute="bottom" constant="8" id="TIa-ct-1Ow"/>
                             <constraint firstAttribute="trailing" secondItem="jEW-uH-syj" secondAttribute="trailing" id="TQN-fa-h66"/>
                             <constraint firstAttribute="trailing" secondItem="Soe-51-414" secondAttribute="trailing" id="Wao-yV-LYG"/>
+                            <constraint firstAttribute="trailing" secondItem="iTC-8b-ryC" secondAttribute="trailing" id="XBq-bT-VGQ"/>
+                            <constraint firstAttribute="trailing" secondItem="se9-Bg-rPg" secondAttribute="trailing" id="iWn-KY-hlb"/>
+                            <constraint firstItem="se9-Bg-rPg" firstAttribute="top" secondItem="3Rt-mr-yvE" secondAttribute="bottom" constant="8" id="jOh-Ts-OON"/>
                             <constraint firstItem="3Rt-mr-yvE" firstAttribute="top" secondItem="Soe-51-414" secondAttribute="bottom" constant="8" id="oLy-Nl-AT9"/>
+                            <constraint firstItem="iTC-8b-ryC" firstAttribute="top" secondItem="se9-Bg-rPg" secondAttribute="bottom" constant="8" id="rFz-HT-KLk"/>
                             <constraint firstItem="3Rt-mr-yvE" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="tYL-0m-EsM"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="translationField" destination="3Rt-mr-yvE" id="EvC-3K-VVS"/>
+                        <outlet property="pinyinField" destination="3Rt-mr-yvE" id="7l4-Nk-7Iv"/>
+                        <outlet property="translationField" destination="iTC-8b-ryC" id="eS8-Vh-K6K"/>
                         <outlet property="wordField" destination="Csm-N4-csL" id="HDt-1Z-nBd"/>
                     </connections>
                 </viewController>

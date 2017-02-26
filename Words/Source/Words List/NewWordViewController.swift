@@ -70,20 +70,12 @@ extension NewWordViewController
             fatalError("Group cannot be nil")
         }
 
-        if let viewController = editWordViewController(forGroup: group!) {
-            viewController.valuesChangedCallback = { [weak self] isValid in
-                self?.wordValuesChanged(isValid: isValid)
-            }
-            addChildViewController(viewController)
-            stackView.insertArrangedSubview(viewController.view, at: 0)
-            self.editWordViewController = viewController
+        let viewController = group!.language.editWordViewController
+        viewController.valuesChangedCallback = { [weak self] isValid in
+            self?.wordValuesChanged(isValid: isValid)
         }
-    }
-
-
-    fileprivate func editWordViewController(forGroup group: Group) -> EditWordViewController?
-    {
-        let controller = UIStoryboard(name: "EditEnglishWord", bundle: nil).instantiateInitialViewController()
-        return controller as? EditWordViewController
+        addChildViewController(viewController)
+        stackView.insertArrangedSubview(viewController.view, at: 0)
+        self.editWordViewController = viewController
     }
 }
