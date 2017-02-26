@@ -123,7 +123,10 @@
                                             <rect key="frame" x="0.0" y="29.5" width="343" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="k5e-h5-xAj" id="jGa-wA-Ztu"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6A-K2-Zzl">
                                             <rect key="frame" x="0.0" y="67.5" width="343" height="21.5"/>
@@ -146,7 +149,7 @@
                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
                                             <state key="normal" title="Add Group"/>
                                             <connections>
-                                                <action selector="doneButtonPressedWithSender:" destination="k5e-h5-xAj" eventType="touchUpInside" id="7Sb-hO-AOr"/>
+                                                <action selector="addGroupButtonPressedWithSender:" destination="k5e-h5-xAj" eventType="touchUpInside" id="phR-4W-X0l"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p58-8T-12p">

@@ -111,3 +111,20 @@ class EditChineseWordViewController: EditWordViewController
         word!.translation = translationField.text!
     }
 }
+
+
+extension EditChineseWordViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        if textField == wordField {
+            pinyinField.becomeFirstResponder()
+        } else if textField == pinyinField {
+            translationField.becomeFirstResponder()
+        } else {
+            wordField.becomeFirstResponder()
+        }
+
+        return true
+    }
+}

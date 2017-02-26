@@ -21,7 +21,7 @@ extension Language
     }
 
     static var languages: [Language] {
-        return [.en, .cn]
+        return [.cn, .en]
     }
 
     var editWordViewController: EditWordViewController {

@@ -11,12 +11,14 @@ import UIKit
 
 class NewGroupViewController: UIViewController
 {
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var languagePicker: UIPickerView!
-    @IBOutlet weak var addGroupButton: UIButton!
+    // MARK: - Private Properties
+    @IBOutlet fileprivate weak var backgroundView: UIView!
+    @IBOutlet fileprivate weak var nameField: UITextField!
+    @IBOutlet fileprivate weak var languagePicker: UIPickerView!
+    @IBOutlet fileprivate weak var addGroupButton: UIButton!
 
-    
+
+    // MARK: - Initialization
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -33,7 +35,8 @@ class NewGroupViewController: UIViewController
     }
 
 
-    @IBAction func doneButtonPressed(sender: UIButton)
+    // MARK: - Actions
+    @IBAction fileprivate func addGroupButtonPressed(sender: UIButton)
     {
         self.nameField.resignFirstResponder()
 
@@ -46,14 +49,14 @@ class NewGroupViewController: UIViewController
     }
 
 
-    @IBAction func cancelButtonPressed(sender: UIButton)
+    @IBAction fileprivate func cancelButtonPressed(sender: UIButton)
     {
         self.nameField.resignFirstResponder()
         self.dismiss(animated: true, completion: nil)
     }
 
 
-    func nameFieldChanged(notification: Notification)
+    @objc fileprivate func nameFieldChanged(notification: Notification)
     {
         let noSpacesName = self.nameField.text?.replacingOccurrences(of: " ", with: "")
 
@@ -83,5 +86,18 @@ extension NewGroupViewController: UIPickerViewDelegate
     {
         let languageCode = Language.languages[row].code
         return NSLocalizedString(languageCode, comment: "")
+    }
+}
+
+
+extension NewGroupViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        if addGroupButton.isEnabled {
+            addGroupButtonPressed(sender: addGroupButton)
+        }
+
+        return true
     }
 }

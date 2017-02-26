@@ -90,3 +90,18 @@ class EditEnglishWordViewController: EditWordViewController
         word.translation = translationField.text!
     }
 }
+
+
+extension EditEnglishWordViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        if textField == wordField {
+            translationField.becomeFirstResponder()
+        } else {
+            wordField.becomeFirstResponder()
+        }
+
+        return true
+    }
+}
