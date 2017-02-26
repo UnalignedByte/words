@@ -37,12 +37,11 @@ class GroupCell: UITableViewCell
     func setup(withGroup group: Group)
     {
         self.groupLabel.text = group.name
-        let wordsCount = group.words != nil ? group.words.count : 0
 
-        if wordsCount == 1 {
+        if group.words.count == 1 {
             self.wordsCountLabel.text = "1 Word"
         } else {
-            self.wordsCountLabel.text = "\(wordsCount) Words"
+            self.wordsCountLabel.text = "\(group.words.count) Words"
         }
     }
 }

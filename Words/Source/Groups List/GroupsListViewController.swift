@@ -35,6 +35,13 @@ class GroupsListViewController: UIViewController
     }
 
 
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
+
+
     fileprivate func setupEditButton()
     {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: .plain,
