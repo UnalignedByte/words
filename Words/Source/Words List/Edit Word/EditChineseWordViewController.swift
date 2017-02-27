@@ -16,6 +16,12 @@ class EditChineseWordViewController: EditWordViewController
     @IBOutlet fileprivate weak var pinyinField: UITextField!
     @IBOutlet fileprivate weak var translationField: UITextField!
 
+    fileprivate var toneOneButton: UIButton!
+    fileprivate var toneTwoButton: UIButton!
+    fileprivate var toneThreeButton: UIButton!
+    fileprivate var toneFourButton: UIButton!
+    fileprivate var toneFiveButton: UIButton!
+
     fileprivate var isWordFieldValid = false {
         didSet {
             valuesChanged()
@@ -46,59 +52,96 @@ class EditChineseWordViewController: EditWordViewController
                                                name: Notification.Name.UITextFieldTextDidChange, object: self.translationField)
 
         setupTextAccessoryView()
+        setupToneButtons(forCharacter: nil)
     }
 
 
     fileprivate func setupTextAccessoryView()
     {
-        let buttonColor = UIColor(colorLiteralRed: 202.0/255.0, green: 205.0/255.0, blue: 211.0/255.0, alpha: 1.0)
+        let backgroundColor = UIColor(colorLiteralRed: 202.0/255.0, green: 205.0/255.0, blue: 211.0/255.0, alpha: 1.0)
+        let buttonColor = UIColor(colorLiteralRed: 179.0/255.0, green: 186.0/255.0, blue: 194.0/255.0, alpha: 1.0)
+        let pressedButtonColor = UIColor(colorLiteralRed: 232.0/255.0, green: 234.0/255.0, blue: 237.0/255.0, alpha: 1.0)
+
+        let width = Double(UIScreen.main.bounds.width)
+        let height = 36.0
+
+        // Accessory View
+        let accessoryView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: width, height: height))
+        accessoryView.backgroundColor = backgroundColor
 
         // Buttons Stack
-        let buttonsStack = UIStackView(frame: CGRect(x: 0.0, y: 0.0, width: 40.0, height: 20.0))
-        buttonsStack.distribution = .fillEqually
-        buttonsStack.spacing = 2.0
+        let toneButtonsStack = UIStackView(frame: CGRect(x: 0.0, y: 0.0, width: width, height: height))
+        toneButtonsStack.distribution = .fillEqually
+        toneButtonsStack.spacing = 1.0
+        accessoryView.addSubview(toneButtonsStack)
 
         // ¯
-        let toneOneButton = UIButton(type: .system)
+        toneOneButton = UIButton(type: .system)
         toneOneButton.setTitle("¯", for: .normal)
-        toneOneButton.backgroundColor = buttonColor
-        toneOneButton.layer.cornerRadius = 8.0
+        toneOneButton.setTitleColor(UIColor.white, for: .normal)
+        toneOneButton.setTitleColor(UIColor.black, for: .highlighted)
+        toneOneButton.setNormalBackgroundColor(buttonColor)
+        toneOneButton.setHighlightedBackgroundColor(pressedButtonColor)
         toneOneButton.addTarget(self, action: #selector(toneOneButtonPressed(sender:)), for: .touchUpInside)
-        buttonsStack.insertArrangedSubview(toneOneButton, at: 0)
+        toneButtonsStack.insertArrangedSubview(toneOneButton, at: 0)
 
         // ´
-        let toneTwoButton = UIButton(type: .system)
+        toneTwoButton = UIButton(type: .system)
         toneTwoButton.setTitle("´", for: .normal)
-        toneTwoButton.backgroundColor = buttonColor
-        toneTwoButton.layer.cornerRadius = 8.0
+        toneTwoButton.setTitleColor(UIColor.white, for: .normal)
+        toneTwoButton.setTitleColor(UIColor.black, for: .highlighted)
+        toneTwoButton.setNormalBackgroundColor(buttonColor)
+        toneTwoButton.setHighlightedBackgroundColor(pressedButtonColor)
         toneTwoButton.addTarget(self, action: #selector(toneTwoButtonPressed(sender:)), for: .touchUpInside)
-        buttonsStack.insertArrangedSubview(toneTwoButton, at: 1)
+        toneButtonsStack.insertArrangedSubview(toneTwoButton, at: 1)
 
         // `
-        let toneThreeButton = UIButton(type: .system)
+        toneThreeButton = UIButton(type: .system)
         toneThreeButton.setTitle("`", for: .normal)
-        toneThreeButton.backgroundColor = buttonColor
-        toneThreeButton.layer.cornerRadius = 8.0
+        toneThreeButton.setTitleColor(UIColor.white, for: .normal)
+        toneThreeButton.setTitleColor(UIColor.black, for: .highlighted)
+        toneThreeButton.setNormalBackgroundColor(buttonColor)
+        toneThreeButton.setHighlightedBackgroundColor(pressedButtonColor)
         toneThreeButton.addTarget(self, action: #selector(toneThreeButtonPressed(sender:)), for: .touchUpInside)
-        buttonsStack.insertArrangedSubview(toneThreeButton, at: 2)
+        toneButtonsStack.insertArrangedSubview(toneThreeButton, at: 2)
 
         // ˇ
-        let toneFourButton = UIButton(type: .system)
+        toneFourButton = UIButton(type: .system)
         toneFourButton.setTitle("ˇ", for: .normal)
-        toneFourButton.backgroundColor = buttonColor
-        toneFourButton.layer.cornerRadius = 8.0
+        toneFourButton.setTitleColor(UIColor.white, for: .normal)
+        toneFourButton.setTitleColor(UIColor.black, for: .highlighted)
+        toneFourButton.setNormalBackgroundColor(buttonColor)
+        toneFourButton.setHighlightedBackgroundColor(pressedButtonColor)
         toneFourButton.addTarget(self, action: #selector(toneFourButtonPressed(sender:)), for: .touchUpInside)
-        buttonsStack.insertArrangedSubview(toneFourButton, at: 3)
+        toneButtonsStack.insertArrangedSubview(toneFourButton, at: 3)
 
         //  ̌̈
-        let toneFiveButton = UIButton(type: .system)
+        toneFiveButton = UIButton(type: .system)
         toneFiveButton.setTitle(" ̌̈", for: .normal)
-        toneFiveButton.backgroundColor = buttonColor
-        toneFiveButton.layer.cornerRadius = 8.0
+        toneFiveButton.setTitleColor(UIColor.white, for: .normal)
+        toneFiveButton.setTitleColor(UIColor.black, for: .highlighted)
+        toneFiveButton.setNormalBackgroundColor(buttonColor)
+        toneFiveButton.setHighlightedBackgroundColor(pressedButtonColor)
         toneFiveButton.addTarget(self, action: #selector(toneFiveButtonPressed(sender:)), for: .touchUpInside)
-        buttonsStack.insertArrangedSubview(toneFiveButton, at: 4)
+        toneButtonsStack.insertArrangedSubview(toneFiveButton, at: 4)
 
-        pinyinField.inputAccessoryView = buttonsStack
+        pinyinField.inputAccessoryView = accessoryView
+    }
+
+
+    fileprivate func setupToneButtons(forCharacter character: Character?)
+    {
+        if let character = character {
+            pinyinField.inputAccessoryView?.isHidden = false
+
+            toneOneButton.setTitle("\(character)\u{0304}", for: .normal)
+            toneTwoButton.setTitle("\(character)\u{0341}", for: .normal)
+            toneThreeButton.setTitle("\(character)\u{0340}", for: .normal)
+            toneFourButton.setTitle("\(character)\u{030c}", for: .normal)
+            toneFiveButton.setTitle("\(character)\u{030c}\u{0308}", for: .normal)
+        } else {
+            pinyinField.inputAccessoryView?.isHidden = true
+        }
     }
 
 
@@ -157,31 +200,39 @@ class EditChineseWordViewController: EditWordViewController
     // MARK: - Actions
     func toneOneButtonPressed(sender: UIButton)
     {
-        self.pinyinField.text?.append("\u{0304}")
+        //let cursorOffset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: pinyinField.selectedTextRange!.start)
+        //pinyinField.text?.characters.
+
+        pinyinField.text?.append("\u{0304}")
+        setupToneButtons(forCharacter: nil)
     }
 
 
     func toneTwoButtonPressed(sender: UIButton)
     {
-        self.pinyinField.text?.append("\u{0341}")
+        pinyinField.text?.append("\u{0341}")
+        setupToneButtons(forCharacter: nil)
     }
 
 
     func toneThreeButtonPressed(sender: UIButton)
     {
-        self.pinyinField.text?.append("\u{0340}")
+        pinyinField.text?.append("\u{0340}")
+        setupToneButtons(forCharacter: nil)
     }
 
 
     func toneFourButtonPressed(sender: UIButton)
     {
-        self.pinyinField.text?.append("\u{030c}")
+        pinyinField.text?.append("\u{030c}")
+        setupToneButtons(forCharacter: nil)
     }
 
 
     func toneFiveButtonPressed(sender: UIButton)
     {
-        self.pinyinField.text?.append("\u{030c}\u{0308}")
+        pinyinField.text?.append("\u{030c}\u{0308}")
+        setupToneButtons(forCharacter: nil)
     }
 
 
@@ -212,6 +263,18 @@ extension EditChineseWordViewController: UITextFieldDelegate
             wordField.becomeFirstResponder()
         }
 
+        return true
+    }
+
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        if let character = string.characters.last {
+            setupToneButtons(forCharacter: character)
+        } else {
+            setupToneButtons(forCharacter: nil)
+        }
+        
         return true
     }
 }

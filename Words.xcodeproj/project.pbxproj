@@ -16,6 +16,7 @@
 		B55932CA1E63482E00234D1D /* ChineseWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */; };
 		B55932CC1E634C3300234D1D /* EditChineseWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55932CB1E634C3300234D1D /* EditChineseWordViewController.swift */; };
 		B55932CE1E634F5500234D1D /* EditChineseWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */; };
+		B55CEC091E64B829006DE745 /* UIButton+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CEC081E64B829006DE745 /* UIButton+Color.swift */; };
 		B5627A771E4D0A04000533F2 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */; };
 		B578B6101E2662100028CBCF /* EditEnglishWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B578B60F1E2662100028CBCF /* EditEnglishWord.storyboard */; };
 		B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6121E26625B0028CBCF /* WordsListViewController.swift */; };
@@ -67,6 +68,7 @@
 		B52EAFBA1E2841B5001A46FF /* GroupsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsListViewController.swift; path = "Source/Groups List/GroupsListViewController.swift"; sourceTree = "<group>"; };
 		B55932CB1E634C3300234D1D /* EditChineseWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditChineseWordViewController.swift; path = "Source/Words List/Edit Word/EditChineseWordViewController.swift"; sourceTree = "<group>"; };
 		B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditChineseWord.storyboard; path = "Source/Words List/Edit Word/EditChineseWord.storyboard"; sourceTree = "<group>"; };
+		B55CEC081E64B829006DE745 /* UIButton+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Color.swift"; path = "Source/Utils/UIButton+Color.swift"; sourceTree = "<group>"; };
 		B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewGroupViewController.swift; path = "Source/Groups List/NewGroupViewController.swift"; sourceTree = "<group>"; };
 		B578B60F1E2662100028CBCF /* EditEnglishWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditEnglishWord.storyboard; path = "Source/Words List/Edit Word/EditEnglishWord.storyboard"; sourceTree = "<group>"; };
 		B578B6121E26625B0028CBCF /* WordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsListViewController.swift; path = "Source/Words List/WordsListViewController.swift"; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 				B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */,
 			);
 			name = "Groups List";
+			sourceTree = "<group>";
+		};
+		B55CEC071E64B804006DE745 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B55CEC081E64B829006DE745 /* UIButton+Color.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		B578B60E1E2661F00028CBCF /* Words List */ = {
@@ -280,6 +290,7 @@
 				B5BC9C071E199442006A5CCC /* Model */,
 				B52EAFB71E28416F001A46FF /* Groups List */,
 				B578B60E1E2661F00028CBCF /* Words List */,
+				B55CEC071E64B804006DE745 /* Utils */,
 			);
 			name = Source;
 			path = Words;
@@ -434,6 +445,7 @@
 				B5C733F21E2ABA4500CB9201 /* GroupHeader.swift in Sources */,
 				B5A7435C1E61BE2D00926A09 /* Group+CoreDataProperties.swift in Sources */,
 				B5A1CAB31E564B51004958EE /* NewWordViewController.swift in Sources */,
+				B55CEC091E64B829006DE745 /* UIButton+Color.swift in Sources */,
 				B5230B261E299D37000A3819 /* GroupCell.swift in Sources */,
 				B5A743541E619DB700926A09 /* Language.swift in Sources */,
 				B5A7435D1E61BE2D00926A09 /* Word+CoreDataClass.swift in Sources */,
