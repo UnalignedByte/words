@@ -22,7 +22,7 @@
         <scene sceneID="2jg-GU-8HQ">
             <objects>
                 <navigationController id="Cau-iw-VSd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CCu-SR-hI2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCu-SR-hI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ygS-xM-rUR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <sections/>
                                 <connections>
@@ -210,7 +210,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzC-w1-7fl">
-                                <rect key="frame" x="164" y="603" width="48" height="48"/>
+                                <rect key="frame" x="164" y="559" width="48" height="48"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="WEf-gZ-bxP"/>
@@ -237,7 +237,9 @@
                             <constraint firstItem="mzC-w1-7fl" firstAttribute="centerX" secondItem="Bbq-rp-dse" secondAttribute="centerX" id="sOe-dB-MF7"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addWordButton" destination="mzC-w1-7fl" id="Y0Q-eQ-2C0"/>
                         <outlet property="tableView" destination="ygS-xM-rUR" id="nu1-z0-Ety"/>

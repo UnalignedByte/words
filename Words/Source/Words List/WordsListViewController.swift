@@ -30,10 +30,11 @@ class WordsListViewController: UIViewController
         self.addWordButton.layer.cornerRadius = self.addWordButton.frame.size.width/2.0
 
         registerCells()
+        setupShuffleButton()
     }
 
 
-    private func registerCells()
+    fileprivate func registerCells()
     {
         guard group != nil else {
             fatalError("Group is nil")
@@ -46,6 +47,13 @@ class WordsListViewController: UIViewController
             self.cellConfig = config
             self.tableView.reloadData()
         }
+    }
+
+
+    fileprivate func setupShuffleButton()
+    {
+        let shuffleButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(shuffleButtonPressed(sender:)))
+        navigationItem.rightBarButtonItem = shuffleButton
     }
 
 
@@ -78,6 +86,24 @@ class WordsListViewController: UIViewController
             let viewController = segue.destination as! NewWordViewController
             viewController.setup(forGroup: group!)
         }
+    }
+
+
+    // MARK: - Actions
+    @objc fileprivate func shuffleButtonPressed(sender: Any)
+    {
+        guard group != nil else {
+            fatalError("Group cannot be nil")
+        }
+
+        for word in group!.words
+        {
+            var randomNumber = Int32(0)
+            arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
+            (word as! Word).order = randomNumber
+        }
+
+        tableView.reloadSections(IndexSet([1]), with: .fade)
     }
 }
 

@@ -44,6 +44,61 @@ class EditChineseWordViewController: EditWordViewController
                                                name: Notification.Name.UITextFieldTextDidChange, object: self.pinyinField)
         NotificationCenter.default.addObserver(self, selector: #selector(translationFieldChanged(notification:)),
                                                name: Notification.Name.UITextFieldTextDidChange, object: self.translationField)
+
+        setupTextAccessoryView()
+    }
+
+
+    fileprivate func setupTextAccessoryView()
+    {
+        let buttonColor = UIColor(colorLiteralRed: 202.0/255.0, green: 205.0/255.0, blue: 211.0/255.0, alpha: 1.0)
+
+        // Buttons Stack
+        let buttonsStack = UIStackView(frame: CGRect(x: 0.0, y: 0.0, width: 40.0, height: 20.0))
+        buttonsStack.distribution = .fillEqually
+        buttonsStack.spacing = 2.0
+
+        // ¯
+        let toneOneButton = UIButton(type: .system)
+        toneOneButton.setTitle("¯", for: .normal)
+        toneOneButton.backgroundColor = buttonColor
+        toneOneButton.layer.cornerRadius = 8.0
+        toneOneButton.addTarget(self, action: #selector(toneOneButtonPressed(sender:)), for: .touchUpInside)
+        buttonsStack.insertArrangedSubview(toneOneButton, at: 0)
+
+        // ´
+        let toneTwoButton = UIButton(type: .system)
+        toneTwoButton.setTitle("´", for: .normal)
+        toneTwoButton.backgroundColor = buttonColor
+        toneTwoButton.layer.cornerRadius = 8.0
+        toneTwoButton.addTarget(self, action: #selector(toneTwoButtonPressed(sender:)), for: .touchUpInside)
+        buttonsStack.insertArrangedSubview(toneTwoButton, at: 1)
+
+        // `
+        let toneThreeButton = UIButton(type: .system)
+        toneThreeButton.setTitle("`", for: .normal)
+        toneThreeButton.backgroundColor = buttonColor
+        toneThreeButton.layer.cornerRadius = 8.0
+        toneThreeButton.addTarget(self, action: #selector(toneThreeButtonPressed(sender:)), for: .touchUpInside)
+        buttonsStack.insertArrangedSubview(toneThreeButton, at: 2)
+
+        // ˇ
+        let toneFourButton = UIButton(type: .system)
+        toneFourButton.setTitle("ˇ", for: .normal)
+        toneFourButton.backgroundColor = buttonColor
+        toneFourButton.layer.cornerRadius = 8.0
+        toneFourButton.addTarget(self, action: #selector(toneFourButtonPressed(sender:)), for: .touchUpInside)
+        buttonsStack.insertArrangedSubview(toneFourButton, at: 3)
+
+        //  ̌̈
+        let toneFiveButton = UIButton(type: .system)
+        toneFiveButton.setTitle(" ̌̈", for: .normal)
+        toneFiveButton.backgroundColor = buttonColor
+        toneFiveButton.layer.cornerRadius = 8.0
+        toneFiveButton.addTarget(self, action: #selector(toneFiveButtonPressed(sender:)), for: .touchUpInside)
+        buttonsStack.insertArrangedSubview(toneFiveButton, at: 4)
+
+        pinyinField.inputAccessoryView = buttonsStack
     }
 
 
@@ -97,6 +152,38 @@ class EditChineseWordViewController: EditWordViewController
             callback(isWordFieldValid && isPinyinFieldValid && isTranslationFieldValid)
         }
     }
+
+
+    // MARK: - Actions
+    func toneOneButtonPressed(sender: UIButton)
+    {
+        self.pinyinField.text?.append("\u{0304}")
+    }
+
+
+    func toneTwoButtonPressed(sender: UIButton)
+    {
+        self.pinyinField.text?.append("\u{0341}")
+    }
+
+
+    func toneThreeButtonPressed(sender: UIButton)
+    {
+        self.pinyinField.text?.append("\u{0340}")
+    }
+
+
+    func toneFourButtonPressed(sender: UIButton)
+    {
+        self.pinyinField.text?.append("\u{030c}")
+    }
+
+
+    func toneFiveButtonPressed(sender: UIButton)
+    {
+        self.pinyinField.text?.append("\u{030c}\u{0308}")
+    }
+
 
     // MARK: - Public functions
     override func createWord(forGroup group: Group)
