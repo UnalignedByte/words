@@ -108,7 +108,12 @@ extension GroupsListViewController: UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int
     {
-        return self.resultsController.sections!.count
+        let sectionsCount = self.resultsController.sections!.count
+        if sectionsCount == 1 {
+            activeSection = 0
+        }
+
+        return sectionsCount
     }
 
 

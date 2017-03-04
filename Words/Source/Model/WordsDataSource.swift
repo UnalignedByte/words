@@ -111,7 +111,7 @@ class WordsDataSource
     {
         if self.context.hasChanges {
             do {
-                try self.storeContainer.viewContext.save();
+                try context.save()
             } catch let error {
                 fatalError("Context saving error: \(error)")
             }
