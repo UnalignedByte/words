@@ -1,5 +1,5 @@
 //
-//  EnglishWordCell.swift
+//  GenericWordCell.swift
 //  Words
 //
 //  Created by Rafal Grodzinski on 11/01/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class EnglishWordCell: WordCell
+class GenericWordCell: WordCell
 {
     // MARK: - Private Properties
     @IBOutlet fileprivate weak var gradientView: UIView!

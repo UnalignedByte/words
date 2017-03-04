@@ -10,7 +10,7 @@ import UIKit
 
 enum Language: String
 {
-    case en = "en"
+    case gn = "gn"
     case cn = "cn"
 }
 
@@ -21,15 +21,15 @@ extension Language
     }
 
     static var languages: [Language] {
-        return [.cn, .en]
+        return [.cn, .gn]
     }
 
     var editWordViewController: EditWordViewController {
         var viewController: EditWordViewController!
 
         switch self {
-            case .en:
-                viewController = UIStoryboard(name: "EditEnglishWord", bundle: nil).instantiateInitialViewController() as! EditWordViewController
+            case .gn:
+                viewController = UIStoryboard(name: "EditGenericWord", bundle: nil).instantiateInitialViewController() as! EditWordViewController
             case .cn:
                 viewController = UIStoryboard(name: "EditChineseWord", bundle: nil).instantiateInitialViewController() as! EditWordViewController
         }
@@ -42,7 +42,7 @@ extension Language
         var titles: [String]!
 
         switch self {
-            case .en:
+            case .gn:
                 titles = ["Both", "Word", "Translation"]
             case .cn:
                 titles = ["所有", "汉字", "拼音", "Translation"]
@@ -56,8 +56,8 @@ extension Language
             var wordCellIdentifier: String!
 
             switch self {
-                case .en:
-                    wordCellIdentifier = String(describing: EnglishWordCell.self)
+                case .gn:
+                    wordCellIdentifier = String(describing: GenericWordCell.self)
                 case .cn:
                     wordCellIdentifier = String(describing: ChineseWordCell.self)
             }
@@ -71,7 +71,7 @@ extension Language
             var entity: String!
 
             switch self {
-                case .en:
+                case .gn:
                     entity = "Word"
                 case .cn:
                     entity = "ChineseWord"

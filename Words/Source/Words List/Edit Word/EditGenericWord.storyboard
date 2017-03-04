@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Edit English Word View Controller-->
+        <!--Edit Generic Word View Controller-->
         <scene sceneID="FpS-iq-kaB">
             <objects>
-                <viewController id="YSt-y7-4DB" customClass="EditEnglishWordViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YSt-y7-4DB" customClass="EditGenericWordViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0uA-IS-U79"/>
                         <viewControllerLayoutGuide type="bottom" id="iGX-9Z-SDk"/>

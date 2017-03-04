@@ -1,5 +1,5 @@
 //
-//  EditEnglishWordViewController.swift
+//  EditGenericWordViewController.swift
 //  Words
 //
 //  Created by Rafal Grodzinski on 16/02/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class EditEnglishWordViewController: EditWordViewController
+class EditGenericWordViewController: EditWordViewController
 {
     // MARK: - Private Properties
     @IBOutlet fileprivate weak var wordField: UITextField!
@@ -92,7 +92,7 @@ class EditEnglishWordViewController: EditWordViewController
 }
 
 
-extension EditEnglishWordViewController: UITextFieldDelegate
+extension EditGenericWordViewController: UITextFieldDelegate
 {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
