@@ -53,6 +53,25 @@ class EditChineseWordViewController: EditWordViewController
 
         setupTextAccessoryView()
         setupToneButtons(forCharacter: nil)
+
+        pinyinField.addObserver(self, forKeyPath: #keyPath(UITextField.selectedTextRange), options: .new, context: nil)
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?)
+    {
+        if keyPath == #keyPath(UITextField.selectedTextRange) {
+            if let start = pinyinField.selectedTextRange?.start {
+                let offset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: start)
+                if offset > 0 {
+                    let index = pinyinField.text!.index(pinyinField.text!.startIndex, offsetBy: offset - 1)
+                    let character = pinyinField.text![index]
+                    setupToneButtons(forCharacter: character)
+                } else {
+                    setupToneButtons(forCharacter: nil)
+                }
+            }
+        }
     }
 
 
@@ -76,7 +95,7 @@ class EditChineseWordViewController: EditWordViewController
         accessoryView.addSubview(toneButtonsStack)
 
         // ¯
-        toneOneButton = UIButton(type: .system)
+        toneOneButton = UIButton(type: .custom)
         toneOneButton.setTitle("¯", for: .normal)
         toneOneButton.setTitleColor(UIColor.white, for: .normal)
         toneOneButton.setTitleColor(UIColor.black, for: .highlighted)
@@ -86,7 +105,7 @@ class EditChineseWordViewController: EditWordViewController
         toneButtonsStack.insertArrangedSubview(toneOneButton, at: 0)
 
         // ´
-        toneTwoButton = UIButton(type: .system)
+        toneTwoButton = UIButton(type: .custom)
         toneTwoButton.setTitle("´", for: .normal)
         toneTwoButton.setTitleColor(UIColor.white, for: .normal)
         toneTwoButton.setTitleColor(UIColor.black, for: .highlighted)
@@ -96,7 +115,7 @@ class EditChineseWordViewController: EditWordViewController
         toneButtonsStack.insertArrangedSubview(toneTwoButton, at: 1)
 
         // `
-        toneThreeButton = UIButton(type: .system)
+        toneThreeButton = UIButton(type: .custom)
         toneThreeButton.setTitle("`", for: .normal)
         toneThreeButton.setTitleColor(UIColor.white, for: .normal)
         toneThreeButton.setTitleColor(UIColor.black, for: .highlighted)
@@ -106,7 +125,7 @@ class EditChineseWordViewController: EditWordViewController
         toneButtonsStack.insertArrangedSubview(toneThreeButton, at: 2)
 
         // ˇ
-        toneFourButton = UIButton(type: .system)
+        toneFourButton = UIButton(type: .custom)
         toneFourButton.setTitle("ˇ", for: .normal)
         toneFourButton.setTitleColor(UIColor.white, for: .normal)
         toneFourButton.setTitleColor(UIColor.black, for: .highlighted)
@@ -116,7 +135,7 @@ class EditChineseWordViewController: EditWordViewController
         toneButtonsStack.insertArrangedSubview(toneFourButton, at: 3)
 
         //  ̌̈
-        toneFiveButton = UIButton(type: .system)
+        toneFiveButton = UIButton(type: .custom)
         toneFiveButton.setTitle(" ̌̈", for: .normal)
         toneFiveButton.setTitleColor(UIColor.white, for: .normal)
         toneFiveButton.setTitleColor(UIColor.black, for: .highlighted)
@@ -200,38 +219,40 @@ class EditChineseWordViewController: EditWordViewController
     // MARK: - Actions
     func toneOneButtonPressed(sender: UIButton)
     {
-        //let cursorOffset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: pinyinField.selectedTextRange!.start)
-        //pinyinField.text?.characters.
-
-        pinyinField.text?.append("\u{0304}")
-        setupToneButtons(forCharacter: nil)
+        appendAccent(character: "\u{0304}")
     }
 
 
     func toneTwoButtonPressed(sender: UIButton)
     {
-        pinyinField.text?.append("\u{0341}")
-        setupToneButtons(forCharacter: nil)
+        appendAccent(character: "\u{0341}")
     }
 
 
     func toneThreeButtonPressed(sender: UIButton)
     {
-        pinyinField.text?.append("\u{0340}")
-        setupToneButtons(forCharacter: nil)
+        appendAccent(character: "\u{0340}")
     }
 
 
     func toneFourButtonPressed(sender: UIButton)
     {
-        pinyinField.text?.append("\u{030c}")
-        setupToneButtons(forCharacter: nil)
+        appendAccent(character: "\u{030c}")
     }
 
 
     func toneFiveButtonPressed(sender: UIButton)
     {
-        pinyinField.text?.append("\u{030c}\u{0308}")
+        appendAccent(character: "\u{030c}\u{0308}")
+    }
+
+
+    fileprivate func appendAccent(character: Character)
+    {
+        let cursorOffset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: pinyinField.selectedTextRange!.start)
+        let index = pinyinField.text!.index(pinyinField.text!.startIndex, offsetBy: cursorOffset)
+        pinyinField.text?.characters.insert(character, at: index)
+
         setupToneButtons(forCharacter: nil)
     }
 
