@@ -20,6 +20,8 @@ class WordsListViewController: UIViewController
     fileprivate var group: Group?
     fileprivate var cellConfig = 0
 
+    fileprivate var editWord: Word?
+
 
     // MARK: - Initialization
     override func viewDidLoad()
@@ -82,9 +84,9 @@ class WordsListViewController: UIViewController
             fatalError("Group cannot be nil")
         }
 
-        if segue.identifier == String(describing: NewWordViewController.self) {
-            let viewController = segue.destination as! NewWordViewController
-            viewController.setup(forGroup: group!)
+        if segue.identifier == String(describing: EditWordViewController.self) {
+            let viewController = segue.destination as! EditWordViewController
+            viewController.setup(forGroup: group!, editWord: editWord)
         }
     }
 
@@ -104,6 +106,28 @@ class WordsListViewController: UIViewController
         }
 
         tableView.reloadSections(IndexSet([1]), with: .fade)
+    }
+
+
+    @IBAction fileprivate func addWordButtonPressed(sender: UIButton)
+    {
+        editWord = nil
+        performSegue(withIdentifier: String(describing: EditWordViewController.self), sender: nil)
+    }
+
+
+    @IBAction fileprivate func longPressAction(sender: UIGestureRecognizer)
+    {
+        guard sender.state == .began else {
+            return
+        }
+
+        let location = sender.location(in: tableView)
+        if let indexPath = tableView.indexPathForRow(at: location) {
+            let index = IndexPath(row: indexPath.row, section: 0)
+            editWord = resultsController.object(at: index)
+            performSegue(withIdentifier: String(describing: EditWordViewController.self), sender: nil)
+        }
     }
 }
 
@@ -188,6 +212,9 @@ extension WordsListViewController: NSFetchedResultsControllerDelegate
             case .delete:
                 let index = IndexPath(row: indexPath!.row, section: 1)
                 tableView.deleteRows(at: [index], with: .automatic)
+            case .update:
+                let index = IndexPath(row: indexPath!.row, section: 1)
+                tableView.reloadRows(at: [index], with: .automatic)
             default:
                 break
         }

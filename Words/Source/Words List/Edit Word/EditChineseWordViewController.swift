@@ -9,7 +9,7 @@
 import UIKit
 
 
-class EditChineseWordViewController: EditWordViewController
+class EditChineseWordViewController: EditBaseWordViewController
 {
     // MARK: - Private Properties
     @IBOutlet fileprivate weak var wordField: UITextField!
@@ -55,6 +55,15 @@ class EditChineseWordViewController: EditWordViewController
         setupToneButtons(forCharacter: nil)
 
         pinyinField.addObserver(self, forKeyPath: #keyPath(UITextField.selectedTextRange), options: .new, context: nil)
+
+        if let editWord = editWord as? ChineseWord {
+            wordField.text = editWord.word
+            pinyinField.text = editWord.pinyin
+            translationField.text = editWord.translation
+            isWordFieldValid = true
+            isPinyinFieldValid = true
+            isTranslationFieldValid = true
+        }
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?,
@@ -164,12 +173,6 @@ class EditChineseWordViewController: EditWordViewController
     }
 
 
-    deinit
-    {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -183,6 +186,13 @@ class EditChineseWordViewController: EditWordViewController
         wordField.resignFirstResponder()
         pinyinField.resignFirstResponder()
         translationField.resignFirstResponder()
+    }
+
+
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+        pinyinField.removeObserver(self, forKeyPath: #keyPath(UITextField.selectedTextRange))
     }
 
 
@@ -260,14 +270,20 @@ class EditChineseWordViewController: EditWordViewController
     // MARK: - Public functions
     override func createWord(forGroup group: Group)
     {
-        let word = WordsDataSource.sharedInstance.newWord(forGroup: group) as? ChineseWord
-        guard word != nil  else {
-            fatalError("Couldn't create an instance of ChineseWord")
-        }
+        if let editWord = editWord as? ChineseWord {
+            editWord.word = wordField.text!
+            editWord.pinyin = pinyinField.text!
+            editWord.translation = translationField.text!
+        } else {
+            let word = WordsDataSource.sharedInstance.newWord(forGroup: group) as? ChineseWord
+            guard word != nil  else {
+                fatalError("Couldn't create an instance of ChineseWord")
+            }
 
-        word!.word = wordField.text!
-        word!.pinyin = pinyinField.text!
-        word!.translation = translationField.text!
+            word!.word = wordField.text!
+            word!.pinyin = pinyinField.text!
+            word!.translation = translationField.text!
+        }
     }
 }
 

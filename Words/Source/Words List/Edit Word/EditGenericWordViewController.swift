@@ -9,7 +9,7 @@
 import UIKit
 
 
-class EditGenericWordViewController: EditWordViewController
+class EditGenericWordViewController: EditBaseWordViewController
 {
     // MARK: - Private Properties
     @IBOutlet fileprivate weak var wordField: UITextField!
@@ -36,6 +36,13 @@ class EditGenericWordViewController: EditWordViewController
                                                name: Notification.Name.UITextFieldTextDidChange, object: self.wordField)
         NotificationCenter.default.addObserver(self, selector: #selector(translationFieldChanged(notification:)),
                                                name: Notification.Name.UITextFieldTextDidChange, object: self.translationField)
+
+        if let editWord = editWord {
+            wordField.text = editWord.word
+            translationField.text = editWord.translation
+            isWordFieldValid = true
+            isTranslationFieldValid = true
+        }
     }
 
 
@@ -85,9 +92,14 @@ class EditGenericWordViewController: EditWordViewController
     // MARK: - Public functions
     override func createWord(forGroup group: Group)
     {
-        let word = WordsDataSource.sharedInstance.newWord(forGroup: group)
-        word.word = wordField.text!
-        word.translation = translationField.text!
+        if let editWord = editWord {
+            editWord.word = wordField.text!
+            editWord.translation = translationField.text!
+        } else {
+            let word = WordsDataSource.sharedInstance.newWord(forGroup: group)
+            word.word = wordField.text!
+            word.translation = translationField.text!
+        }
     }
 }
 

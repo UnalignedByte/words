@@ -1,5 +1,5 @@
 //
-//  EditWordViewController.swift
+//  EditBaseWordViewController.swift
 //  Words
 //
 //  Created by Rafal Grodzinski on 16/02/2017.
@@ -9,9 +9,10 @@
 import UIKit
 
 
-class EditWordViewController: UIViewController
+class EditBaseWordViewController: UIViewController
 {
     var valuesChangedCallback: ((Bool) -> Void)?
+    var editWord: Word?
 
     func createWord(forGroup group: Group)
     {
