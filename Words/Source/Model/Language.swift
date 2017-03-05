@@ -24,14 +24,14 @@ extension Language
         return [.cn, .gn]
     }
 
-    var editBaseWordViewController: EditBaseWordViewController {
-        var viewController: EditBaseWordViewController!
+    var editWordControlsViewController: EditWordControlsViewController {
+        var viewController: EditWordControlsViewController!
 
         switch self {
             case .gn:
-                viewController = UIStoryboard(name: "EditGenericWord", bundle: nil).instantiateInitialViewController() as! EditBaseWordViewController
+                viewController = UIStoryboard(name: "EditGenericWord", bundle: nil).instantiateInitialViewController() as! EditWordControlsViewController
             case .cn:
-                viewController = UIStoryboard(name: "EditChineseWord", bundle: nil).instantiateInitialViewController() as! EditBaseWordViewController
+                viewController = UIStoryboard(name: "EditChineseWord", bundle: nil).instantiateInitialViewController() as! EditWordControlsViewController
         }
 
         return viewController

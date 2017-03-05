@@ -15,7 +15,7 @@ class EditWordViewController: UIViewController
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var addWordButton: UIButton!
 
-    fileprivate weak var editWordViewController: EditBaseWordViewController?
+    fileprivate weak var editWordControlsViewController: EditWordControlsViewController?
 
     fileprivate var group: Group?
     fileprivate var editWord: Word?
@@ -48,14 +48,14 @@ class EditWordViewController: UIViewController
             fatalError("Group cannot be nil")
         }
 
-        let viewController = group!.language.editBaseWordViewController
+        let viewController = group!.language.editWordControlsViewController
         viewController.valuesChangedCallback = { [weak self] isValid in
             self?.wordValuesChanged(isValid: isValid)
         }
         viewController.editWord = editWord
         addChildViewController(viewController)
         stackView.insertArrangedSubview(viewController.view, at: 0)
-        self.editWordViewController = viewController
+        editWordControlsViewController = viewController
     }
 
 
@@ -66,7 +66,7 @@ class EditWordViewController: UIViewController
             return
         }
 
-        editWordViewController?.createWord(forGroup: group!)
+        editWordControlsViewController?.createWord(forGroup: group!)
 
         self.dismiss(animated: true, completion: nil)
     }

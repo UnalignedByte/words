@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KgJ-yo-7kO" id="W2O-4R-KZr">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfb-hN-R8q">
@@ -37,8 +37,8 @@
                         <rect key="frame" x="8" y="8" width="359" height="69.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="汉字" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="Ca9-IM-GnZ">
-                                <rect key="frame" x="0.0" y="8" width="179.5" height="54"/>
-                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="45"/>
+                                <rect key="frame" x="0.0" y="11" width="179.5" height="48"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

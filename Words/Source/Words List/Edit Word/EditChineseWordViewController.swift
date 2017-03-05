@@ -9,7 +9,7 @@
 import UIKit
 
 
-class EditChineseWordViewController: EditBaseWordViewController
+class EditChineseWordViewController: EditWordControlsViewController
 {
     // MARK: - Private Properties
     @IBOutlet fileprivate weak var wordField: UITextField!
