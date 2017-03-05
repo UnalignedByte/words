@@ -18,6 +18,7 @@ class GroupsListViewController: UIViewController
 
     fileprivate var resultsController = NSFetchedResultsController<Group>()
     fileprivate var activeSection: Int = -1
+    fileprivate var editGroup: Group?
 
 
     // MARK: - Initialization
@@ -39,6 +40,7 @@ class GroupsListViewController: UIViewController
     {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        editGroup = nil
     }
 
 
@@ -89,10 +91,14 @@ class GroupsListViewController: UIViewController
                 let group = self.resultsController.object(at: indexPath)
                 destination.setup(forGroup: group)
             }
+        } else if segue.identifier == String(describing: EditGroupViewController.self) {
+            let destination = segue.destination as! EditGroupViewController
+            destination.setup(forEditGroup: editGroup)
         }
     }
 
 
+    // MARK: - Actions
     @objc fileprivate func editButtonPressed()
     {
         self.tableView.setEditing(!self.tableView.isEditing, animated: true)
@@ -100,6 +106,27 @@ class GroupsListViewController: UIViewController
         self.navigationItem.rightBarButtonItem?.title = title
         self.addGroupButton.isEnabled = !self.tableView.isEditing
         self.addGroupButton.alpha = self.addGroupButton.isEnabled ? 0.75 : 0.25
+    }
+
+
+    @IBAction fileprivate func addGroupButtonPressed(sender: UIButton)
+    {
+        editGroup = nil
+        performSegue(withIdentifier: String(describing: EditGroupViewController.self), sender: nil)
+    }
+
+
+    @IBAction fileprivate func longPressAction(sender: UIGestureRecognizer)
+    {
+        guard sender.state == .began else {
+            return
+        }
+
+        let location = sender.location(in: tableView)
+        if let indexPath = tableView.indexPathForRow(at: location) {
+            editGroup = resultsController.object(at: indexPath)
+            performSegue(withIdentifier: String(describing: EditGroupViewController.self), sender: nil)
+        }
     }
 }
 
@@ -294,6 +321,8 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
                 }
             case .delete:
                 tableView.deleteRows(at: [indexPath!], with: .automatic)
+            case .update:
+                tableView.reloadRows(at: [indexPath!], with: .automatic)
             default:
                 break
         }

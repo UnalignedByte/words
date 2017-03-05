@@ -22,7 +22,7 @@
         <scene sceneID="2jg-GU-8HQ">
             <objects>
                 <navigationController id="Cau-iw-VSd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCu-SR-hI2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CCu-SR-hI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -69,11 +69,12 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="k5e-h5-xAj" kind="presentation" modalPresentationStyle="overCurrentContext" id="FD4-4G-aa4"/>
+                                    <action selector="addGroupButtonPressedWithSender:" destination="ptI-NE-n73" eventType="touchUpInside" id="5tp-Nc-sSV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7As-l7-iDl" secondAttribute="trailing" id="B2h-Ct-4A2"/>
                             <constraint firstItem="eez-7M-vaD" firstAttribute="centerX" secondItem="hej-na-uMg" secondAttribute="centerX" id="FFP-GM-fmv"/>
@@ -82,6 +83,9 @@
                             <constraint firstItem="xvt-Eb-Mb2" firstAttribute="top" secondItem="eez-7M-vaD" secondAttribute="bottom" constant="16" id="yao-Ej-i2G"/>
                             <constraint firstItem="7As-l7-iDl" firstAttribute="leading" secondItem="hej-na-uMg" secondAttribute="leading" id="zAz-T7-Xem"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="LNL-nW-Q3L" appends="YES" id="cJS-Dh-q5K"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="10D-8K-Ro2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -89,16 +93,22 @@
                         <outlet property="addGroupButton" destination="eez-7M-vaD" id="ArZ-WW-kPP"/>
                         <outlet property="tableView" destination="7As-l7-iDl" id="KGq-cp-4VP"/>
                         <segue destination="XBO-eA-rm9" kind="show" identifier="WordsListViewController" id="yfZ-jn-Tmf"/>
+                        <segue destination="k5e-h5-xAj" kind="presentation" identifier="EditGroupViewController" modalPresentationStyle="overCurrentContext" id="gaw-sq-Xmi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8d-WL-8O7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="LNL-nW-Q3L">
+                    <connections>
+                        <action selector="longPressActionWithSender:" destination="ptI-NE-n73" id="O5g-iW-QzV"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1463" y="395"/>
         </scene>
-        <!--New Group View Controller-->
+        <!--Edit Group View Controller-->
         <scene sceneID="joa-rM-wI7">
             <objects>
-                <viewController id="k5e-h5-xAj" customClass="NewGroupViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k5e-h5-xAj" customClass="EditGroupViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="DUL-MT-gDp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -180,6 +190,7 @@
                     <connections>
                         <outlet property="addGroupButton" destination="sPP-gj-0mt" id="vZs-ls-U4F"/>
                         <outlet property="backgroundView" destination="bR1-Wz-rVF" id="yP7-iF-4wL"/>
+                        <outlet property="languageLabel" destination="M6A-K2-Zzl" id="cFL-u1-647"/>
                         <outlet property="languagePicker" destination="lLq-Gl-5Mz" id="cW9-W7-vka"/>
                         <outlet property="nameField" destination="hpI-WM-Gaa" id="Z6E-X7-OhI"/>
                     </connections>

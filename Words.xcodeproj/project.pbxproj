@@ -17,7 +17,7 @@
 		B55932CC1E634C3300234D1D /* EditChineseWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55932CB1E634C3300234D1D /* EditChineseWordViewController.swift */; };
 		B55932CE1E634F5500234D1D /* EditChineseWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */; };
 		B55CEC091E64B829006DE745 /* UIButton+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CEC081E64B829006DE745 /* UIButton+Color.swift */; };
-		B5627A771E4D0A04000533F2 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */; };
+		B5627A771E4D0A04000533F2 /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627A761E4D0A04000533F2 /* EditGroupViewController.swift */; };
 		B578B6101E2662100028CBCF /* EditGenericWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B578B60F1E2662100028CBCF /* EditGenericWord.storyboard */; };
 		B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6121E26625B0028CBCF /* WordsListViewController.swift */; };
 		B578B6161E26647E0028CBCF /* GenericWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6151E26647E0028CBCF /* GenericWordCell.swift */; };
@@ -69,7 +69,7 @@
 		B55932CB1E634C3300234D1D /* EditChineseWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditChineseWordViewController.swift; path = "Source/Words List/Edit Word/EditChineseWordViewController.swift"; sourceTree = "<group>"; };
 		B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditChineseWord.storyboard; path = "Source/Words List/Edit Word/EditChineseWord.storyboard"; sourceTree = "<group>"; };
 		B55CEC081E64B829006DE745 /* UIButton+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Color.swift"; path = "Source/Utils/UIButton+Color.swift"; sourceTree = "<group>"; };
-		B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewGroupViewController.swift; path = "Source/Groups List/NewGroupViewController.swift"; sourceTree = "<group>"; };
+		B5627A761E4D0A04000533F2 /* EditGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditGroupViewController.swift; path = "Source/Groups List/EditGroupViewController.swift"; sourceTree = "<group>"; };
 		B578B60F1E2662100028CBCF /* EditGenericWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditGenericWord.storyboard; path = "Source/Words List/Edit Word/EditGenericWord.storyboard"; sourceTree = "<group>"; };
 		B578B6121E26625B0028CBCF /* WordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsListViewController.swift; path = "Source/Words List/WordsListViewController.swift"; sourceTree = "<group>"; };
 		B578B6151E26647E0028CBCF /* GenericWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericWordCell.swift; path = "Source/Words List/Cells/GenericWordCell.swift"; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 			children = (
 				B5230B241E299D02000A3819 /* Cells */,
 				B52EAFBA1E2841B5001A46FF /* GroupsListViewController.swift */,
-				B5627A761E4D0A04000533F2 /* NewGroupViewController.swift */,
+				B5627A761E4D0A04000533F2 /* EditGroupViewController.swift */,
 			);
 			name = "Groups List";
 			sourceTree = "<group>";
@@ -459,7 +459,7 @@
 				B55932CC1E634C3300234D1D /* EditChineseWordViewController.swift in Sources */,
 				B5A1CAB71E565716004958EE /* EditGenericWordViewController.swift in Sources */,
 				B5A7435E1E61BE2D00926A09 /* Word+CoreDataProperties.swift in Sources */,
-				B5627A771E4D0A04000533F2 /* NewGroupViewController.swift in Sources */,
+				B5627A771E4D0A04000533F2 /* EditGroupViewController.swift in Sources */,
 				B5A7435B1E61BE2D00926A09 /* Group+CoreDataClass.swift in Sources */,
 				B5C734231E2C367B00CB9201 /* WordConfigCell.swift in Sources */,
 				B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */,

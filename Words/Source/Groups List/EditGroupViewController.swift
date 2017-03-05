@@ -1,5 +1,5 @@
 //
-//  NewGroupViewController.swift
+//  EditGroupViewController.swift
 //  Words
 //
 //  Created by Rafal Grodzinski on 09/02/2017.
@@ -9,13 +9,16 @@
 import UIKit
 
 
-class NewGroupViewController: UIViewController
+class EditGroupViewController: UIViewController
 {
     // MARK: - Private Properties
     @IBOutlet fileprivate weak var backgroundView: UIView!
     @IBOutlet fileprivate weak var nameField: UITextField!
+    @IBOutlet fileprivate weak var languageLabel: UILabel!
     @IBOutlet fileprivate weak var languagePicker: UIPickerView!
     @IBOutlet fileprivate weak var addGroupButton: UIButton!
+
+    fileprivate var editGroup: Group?
 
 
     // MARK: - Initialization
@@ -25,6 +28,13 @@ class NewGroupViewController: UIViewController
         self.backgroundView.layer.cornerRadius = 8.0
         NotificationCenter.default.addObserver(self, selector: #selector(nameFieldChanged(notification:)),
                                                name: Notification.Name.UITextFieldTextDidChange, object: self.nameField)
+
+        if let editGroup = editGroup {
+            addGroupButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+            nameField.text = editGroup.name
+            languageLabel.isHidden = true
+            languagePicker.isHidden = true
+        }
     }
 
 
@@ -35,15 +45,25 @@ class NewGroupViewController: UIViewController
     }
 
 
+    func setup(forEditGroup group: Group?)
+    {
+        editGroup = group
+    }
+
+
     // MARK: - Actions
     @IBAction fileprivate func addGroupButtonPressed(sender: UIButton)
     {
         self.nameField.resignFirstResponder()
 
-        let selectedRow = self.languagePicker.selectedRow(inComponent: 0)
-        let language = Language.languages[selectedRow]
-        let group = WordsDataSource.sharedInstance.newGroup(forLanguage: language)
-        group.name = nameField.text!
+        if let editGroup = editGroup {
+            editGroup.name = nameField.text!
+        } else {
+            let selectedRow = self.languagePicker.selectedRow(inComponent: 0)
+            let language = Language.languages[selectedRow]
+            let group = WordsDataSource.sharedInstance.newGroup(forLanguage: language)
+            group.name = nameField.text!
+        }
 
         self.dismiss(animated: true, completion: nil)
     }
@@ -65,7 +85,7 @@ class NewGroupViewController: UIViewController
 }
 
 
-extension NewGroupViewController: UIPickerViewDataSource
+extension EditGroupViewController: UIPickerViewDataSource
 {
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -80,7 +100,7 @@ extension NewGroupViewController: UIPickerViewDataSource
 }
 
 
-extension NewGroupViewController: UIPickerViewDelegate
+extension EditGroupViewController: UIPickerViewDelegate
 {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
@@ -90,7 +110,7 @@ extension NewGroupViewController: UIPickerViewDelegate
 }
 
 
-extension NewGroupViewController: UITextFieldDelegate
+extension EditGroupViewController: UITextFieldDelegate
 {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
