@@ -72,13 +72,8 @@ class EditChineseWordViewController: EditWordControlsViewController
         if keyPath == #keyPath(UITextField.selectedTextRange) {
             if let start = pinyinField.selectedTextRange?.start {
                 let offset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: start)
-                if offset > 0 {
-                    let index = pinyinField.text!.index(pinyinField.text!.startIndex, offsetBy: offset - 1)
-                    let character = pinyinField.text![index]
-                    setupToneButtons(forCharacter: character)
-                } else {
-                    setupToneButtons(forCharacter: nil)
-                }
+                let character = extractTonedCharacter(fromString: pinyinField.text!, leftFromOffset: offset)
+                setupToneButtons(forCharacter: character)
             }
         }
     }
@@ -154,6 +149,79 @@ class EditChineseWordViewController: EditWordControlsViewController
         toneButtonsStack.insertArrangedSubview(toneFiveButton, at: 4)
 
         pinyinField.inputAccessoryView = accessoryView
+    }
+
+
+    fileprivate func countOfUnicodeTones(inString string: String, leftFromOffset offset: Int) -> Int
+    {
+        guard offset > 0 else {
+            return 0
+        }
+
+        let scalarToTheLeft = string.unicodeScalars[string.unicodeScalars.index(string.unicodeScalars.startIndex, offsetBy: offset - 1)]
+
+        let isToneOne = scalarToTheLeft == UnicodeScalar("\u{0304}")
+        let isToneTwo = scalarToTheLeft == UnicodeScalar("\u{0341}")
+        let isToneThree = scalarToTheLeft == UnicodeScalar("\u{0340}")
+        let isToneFour = scalarToTheLeft == UnicodeScalar("\u{030c}")
+        var isToneFive = false
+        if offset > 1 {
+            let scalarToTheLeftLeft = string.unicodeScalars[string.unicodeScalars.index(string.unicodeScalars.startIndex, offsetBy: offset - 2)]
+            let isToneFiveFirst = scalarToTheLeftLeft == UnicodeScalar("\u{030c}")
+            let isToneFiveSecond = scalarToTheLeft == UnicodeScalar("\u{0308}")
+            isToneFive = isToneFiveFirst && isToneFiveSecond
+        }
+
+        if isToneOne || isToneTwo || isToneThree || isToneFour {
+            return 1
+        } else if isToneFive {
+            return 2
+        } else {
+            return 0
+        }
+    }
+
+
+    fileprivate func extractTonedCharacter(fromString string: String, leftFromOffset offset: Int) -> Character?
+    {
+        guard offset > 0 else {
+            return nil
+        }
+
+        let unicodeTonesCount = countOfUnicodeTones(inString: string, leftFromOffset: offset)
+        let unicodeCharacter = string.unicodeScalars[string.unicodeScalars.index(string.unicodeScalars.startIndex, offsetBy: offset - unicodeTonesCount - 1)]
+        let character = Character(unicodeCharacter)
+        guard character != " " else {
+            return nil
+        }
+
+        return character
+    }
+
+
+    fileprivate func replaceToneCharacter(inString string: inout String, leftFromOffset offset: Int, withToneCharacter toneCharacter: Character)
+    {
+        let unicodeTonesCount = countOfUnicodeTones(inString: string, leftFromOffset: offset)
+        let startOffset = offset - unicodeTonesCount
+
+        // Rmove tone unicodes from the string
+        let unicodeTonesToRemoveStart = string.unicodeScalars.index(string.unicodeScalars.startIndex, offsetBy: startOffset)
+        let unicodeTonesToRemoveEnd = string.unicodeScalars.index(string.unicodeScalars.startIndex, offsetBy: offset)
+        if unicodeTonesToRemoveStart != unicodeTonesToRemoveEnd {
+            let unicodeTonesToRemoveRange = unicodeTonesToRemoveStart..<unicodeTonesToRemoveEnd
+            string.unicodeScalars.removeSubrange(unicodeTonesToRemoveRange)
+        }
+
+        // Insert new tone unicodes
+        let toneCharacterString = "\(toneCharacter)"
+
+        for offset in startOffset..<startOffset+toneCharacterString.unicodeScalars.count {
+            let toneCharacterScalarIndex = toneCharacterString.unicodeScalars.index(toneCharacterString.unicodeScalars.startIndex, offsetBy: offset - startOffset)
+            let toneCharacterScalar = toneCharacterString.unicodeScalars[toneCharacterScalarIndex]
+
+            let insertScalarIndex = string.unicodeScalars.index(string.unicodeScalars.startIndex, offsetBy: offset)
+            string.unicodeScalars.insert(toneCharacterScalar, at: insertScalarIndex)
+        }
     }
 
 
@@ -260,8 +328,7 @@ class EditChineseWordViewController: EditWordControlsViewController
     fileprivate func appendAccent(character: Character)
     {
         let cursorOffset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: pinyinField.selectedTextRange!.start)
-        let index = pinyinField.text!.index(pinyinField.text!.startIndex, offsetBy: cursorOffset)
-        pinyinField.text?.characters.insert(character, at: index)
+        replaceToneCharacter(inString: &pinyinField.text!, leftFromOffset: cursorOffset, withToneCharacter: character)
 
         setupToneButtons(forCharacter: nil)
     }
@@ -306,12 +373,11 @@ extension EditChineseWordViewController: UITextFieldDelegate
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
-        if let character = string.characters.last {
-            setupToneButtons(forCharacter: character)
-        } else {
-            setupToneButtons(forCharacter: nil)
-        }
-        
+        let replacedString = (textField.text! as NSString).replacingCharacters(in: range, with: string) as String
+        let offset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: textField.selectedTextRange!.start) + string.unicodeScalars.count
+        let character = extractTonedCharacter(fromString: replacedString, leftFromOffset: offset)
+        setupToneButtons(forCharacter: character)
+
         return true
     }
 }
