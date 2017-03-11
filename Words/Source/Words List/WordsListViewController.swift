@@ -105,8 +105,6 @@ class WordsListViewController: UIViewController
             arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
             (word as! Word).order = randomNumber
         }
-
-        tableView.reloadSections(IndexSet([1]), with: .fade)
     }
 
 
@@ -215,8 +213,19 @@ extension WordsListViewController: NSFetchedResultsControllerDelegate
                 let index = IndexPath(row: indexPath!.row, section: 1)
                 tableView.deleteRows(at: [index], with: .automatic)
             case .update:
-                let index = IndexPath(row: indexPath!.row, section: 1)
-                tableView.reloadRows(at: [index], with: .automatic)
+                let newIndex = IndexPath(row: newIndexPath!.row, section: 1)
+                let oldIndex = IndexPath(row: indexPath!.row, section: 1)
+                tableView.reloadRows(at: [newIndex, oldIndex], with: .automatic)
+            default:
+                break
+        }
+    }
+
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType)
+    {
+        switch(type) {
             default:
                 break
         }
