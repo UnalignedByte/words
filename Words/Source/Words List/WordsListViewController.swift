@@ -63,8 +63,7 @@ class WordsListViewController: UIViewController
     func setup(forGroup group: Group)
     {
         self.group = group
-
-        self.title = group.name
+        updateTitle()
         self.resultsController = NSFetchedResultsController(fetchRequest: WordsDataSource.sharedInstance.fetchRequestWords(forGroup: group),
                                                             managedObjectContext: WordsDataSource.sharedInstance.context,
                                                             sectionNameKeyPath: nil,
@@ -76,6 +75,16 @@ class WordsListViewController: UIViewController
         } catch {
             fatalError("Error performing fetch")
         }
+    }
+
+
+    func updateTitle()
+    {
+        guard group != nil else {
+            fatalError("Group cannot be nil")
+        }
+
+        self.title = "\(group!.name) (\(group!.words.count))"
     }
 
 
@@ -240,5 +249,7 @@ extension WordsListViewController: NSFetchedResultsControllerDelegate
             tableView.scrollToRow(at: indexToScrollTo, at: .middle, animated: true)
             self.indexToScrollTo = nil
         }
+
+        updateTitle()
     }
 }
