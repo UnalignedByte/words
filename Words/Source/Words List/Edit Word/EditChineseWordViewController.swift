@@ -327,10 +327,21 @@ class EditChineseWordViewController: EditWordControlsViewController
 
     fileprivate func appendAccent(character: Character)
     {
+        // Get info on current state of affairs
         let cursorOffset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: pinyinField.selectedTextRange!.start)
+        let unicodeTonesCount = countOfUnicodeTones(inString: pinyinField.text!, leftFromOffset: cursorOffset)
+
+        // Change the tone scalars
         replaceToneCharacter(inString: &pinyinField.text!, leftFromOffset: cursorOffset, withToneCharacter: character)
 
-        setupToneButtons(forCharacter: nil)
+        // Calculate new cursor offset based on old and new tone unicode scalars
+        let newCursorOffset = cursorOffset + "\(character)".unicodeScalars.count - unicodeTonesCount
+        let newCursorTextPosition = pinyinField.position(from: pinyinField.beginningOfDocument,
+                                                         offset: newCursorOffset)
+        let newCursorTextRange = pinyinField.textRange(from: newCursorTextPosition!,
+                                                       to: newCursorTextPosition!)
+        // Update the cursor position
+        pinyinField.selectedTextRange = newCursorTextRange
     }
 
 
@@ -373,10 +384,15 @@ extension EditChineseWordViewController: UITextFieldDelegate
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
-        let replacedString = (textField.text! as NSString).replacingCharacters(in: range, with: string) as String
-        let offset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: textField.selectedTextRange!.start) + string.unicodeScalars.count
-        let character = extractTonedCharacter(fromString: replacedString, leftFromOffset: offset)
-        setupToneButtons(forCharacter: character)
+        if string != "" {
+            let replacedString = (textField.text! as NSString).replacingCharacters(in: range, with: string) as String
+            let offset = pinyinField.offset(from: pinyinField.beginningOfDocument,
+                                            to: textField.selectedTextRange!.start) + string.unicodeScalars.count
+            let character = extractTonedCharacter(fromString: replacedString, leftFromOffset: offset)
+            setupToneButtons(forCharacter: character)
+        } else {
+            setupToneButtons(forCharacter: nil)
+        }
 
         return true
     }
