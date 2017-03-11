@@ -19,6 +19,7 @@ class GroupsListViewController: UIViewController
     fileprivate var resultsController = NSFetchedResultsController<Group>()
     fileprivate var activeSection: Int = -1
     fileprivate var editGroup: Group?
+    fileprivate var indexToScrollTo: IndexPath?
 
 
     // MARK: - Initialization
@@ -318,6 +319,8 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
             case .insert:
                 if activeSection == newIndexPath!.section || self.resultsController.sections!.count <= 1 {
                     tableView.insertRows(at: [newIndexPath!], with: .automatic)
+
+                    indexToScrollTo = newIndexPath
                 }
             case .delete:
                 tableView.deleteRows(at: [indexPath!], with: .automatic)
@@ -332,9 +335,15 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
     {
         self.tableView.endUpdates()
+
         if self.activeSection == -1 && self.resultsController.sections!.count == 1 {
             self.activeSection = 0
             self.tableView.reloadData()
+        }
+
+        if let indexToScrollTo = indexToScrollTo {
+            tableView.scrollToRow(at: indexToScrollTo, at: .middle, animated: true)
+            self.indexToScrollTo = nil
         }
     }
 }

@@ -21,6 +21,7 @@ class WordsListViewController: UIViewController
     fileprivate var cellConfig = 0
 
     fileprivate var editWord: Word?
+    fileprivate var indexToScrollTo: IndexPath?
 
 
     // MARK: - Initialization
@@ -209,6 +210,7 @@ extension WordsListViewController: NSFetchedResultsControllerDelegate
             case .insert:
                 let index = IndexPath(row: newIndexPath!.row, section: 1)
                 tableView.insertRows(at: [index], with: .automatic)
+                indexToScrollTo = index
             case .delete:
                 let index = IndexPath(row: indexPath!.row, section: 1)
                 tableView.deleteRows(at: [index], with: .automatic)
@@ -224,5 +226,10 @@ extension WordsListViewController: NSFetchedResultsControllerDelegate
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
     {
         self.tableView.endUpdates()
+
+        if let indexToScrollTo = indexToScrollTo {
+            tableView.scrollToRow(at: indexToScrollTo, at: .middle, animated: true)
+            self.indexToScrollTo = nil
+        }
     }
 }
