@@ -17,7 +17,7 @@
         <!--Edit Chinese Word View Controller-->
         <scene sceneID="FpS-iq-kaB">
             <objects>
-                <viewController id="YSt-y7-4DB" customClass="EditChineseWordViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YSt-y7-4DB" customClass="EditChineseWordViewController" customModule="Words" customModuleProvider="target" propertyAccessControl="all" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0uA-IS-U79"/>
                         <viewControllerLayoutGuide type="bottom" id="iGX-9Z-SDk"/>
@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Fp6-fo-eu5"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="YSt-y7-4DB" id="R7K-rv-i1l"/>
@@ -56,13 +56,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-mr-yvE">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-mr-yvE">
                                 <rect key="frame" x="0.0" y="118" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CcL-CQ-jcw"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="YSt-y7-4DB" id="0Kj-zc-3dz"/>
@@ -83,7 +83,7 @@
                                     <constraint firstAttribute="height" constant="30" id="0li-8L-7oS"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="YSt-y7-4DB" id="0Ek-Vk-39E"/>
