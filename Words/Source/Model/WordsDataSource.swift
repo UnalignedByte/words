@@ -124,29 +124,7 @@ class WordsDataSource
     {
         let group = Group(context: self.context)
         group.language = language
-
-        let orderExp = NSExpression(forKeyPath: #keyPath(Group.order))
-        let maxOrderExp = NSExpression(forFunction: "max:", arguments: [orderExp])
-        let maxOrderExpDesc = NSExpressionDescription()
-        maxOrderExpDesc.name = "maxOrder"
-        maxOrderExpDesc.expression = maxOrderExp
-        maxOrderExpDesc.expressionResultType = .integer32AttributeType
-
-        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Group")
-        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", language.code)
-        fetchRequest.resultType = .dictionaryResultType
-        fetchRequest.propertiesToFetch = [maxOrderExpDesc]
-
-        var maxGroupOrder = Int32(0)
-
-        do {
-            let results = try context.fetch(fetchRequest)
-            let resultsDict = results.first!
-            maxGroupOrder = resultsDict["maxOrder"] as! Int32
-        } catch let error {
-            fatalError("Context fetch error: \(error)")
-        }
-
+        let maxGroupOrder = self.maxGroupOrder(forLanguage: language)
         group.order = maxGroupOrder + 1
 
         return group
@@ -199,9 +177,8 @@ class WordsDataSource
     func newWord(forGroup group: Group) -> Word
     {
         let word = NSEntityDescription.insertNewObject(forEntityName: group.language.wordEntity, into: context) as! Word
-        var randomNumber = Int32(0)
-        arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
-        word.order = randomNumber
+        let maxWordOrder = self.maxWordOrder(forGroup: group)
+        word.order = maxWordOrder + 1
 
         group.addToWords(word)
 
@@ -316,5 +293,60 @@ class WordsDataSource
             default:
                 break
         }
+    }
+
+    private func maxGroupOrder(forLanguage language: Language) -> Int32
+    {
+        let orderExp = NSExpression(forKeyPath: #keyPath(Group.order))
+        let maxOrderExp = NSExpression(forFunction: "max:", arguments: [orderExp])
+        let maxOrderExpDesc = NSExpressionDescription()
+        maxOrderExpDesc.name = "maxOrder"
+        maxOrderExpDesc.expression = maxOrderExp
+        maxOrderExpDesc.expressionResultType = .integer32AttributeType
+
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Group")
+        fetchRequest.predicate = NSPredicate(format: "languageCode = %@", language.code)
+        fetchRequest.resultType = .dictionaryResultType
+        fetchRequest.propertiesToFetch = [maxOrderExpDesc]
+
+        var maxGroupOrder = Int32(0)
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            let resultsDict = results.first!
+            maxGroupOrder = resultsDict["maxOrder"] as! Int32
+        } catch let error {
+            fatalError("Context fetch error: \(error)")
+        }
+
+        return maxGroupOrder
+    }
+
+
+    private func maxWordOrder(forGroup group: Group) -> Int32
+    {
+        let orderExp = NSExpression(forKeyPath: #keyPath(Word.order))
+        let maxOrderExp = NSExpression(forFunction: "max:", arguments: [orderExp])
+        let maxOrderExpDesc = NSExpressionDescription()
+        maxOrderExpDesc.name = "maxOrder"
+        maxOrderExpDesc.expression = maxOrderExp
+        maxOrderExpDesc.expressionResultType = .integer32AttributeType
+
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "group = %@", group)
+        fetchRequest.resultType = .dictionaryResultType
+        fetchRequest.propertiesToFetch = [maxOrderExpDesc]
+
+        var maxWordOrder = Int32(0)
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            let resultsDict = results.first!
+            maxWordOrder = resultsDict["maxOrder"] as! Int32
+        } catch let error {
+            fatalError("Context fetch error: \(error)")
+        }
+
+        return maxWordOrder
     }
 }
