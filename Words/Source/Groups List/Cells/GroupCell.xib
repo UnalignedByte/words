@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KcB-Aa-cbH" id="4ZJ-jt-dXS">
-                <rect key="frame" x="0.0" y="0.0" width="287" height="60"/>
+                <rect key="frame" x="0.0" y="0.0" width="287" height="60.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJX-qw-Ot9">
@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0f-Nz-Dgl">
-                        <rect key="frame" x="4" y="34.5" width="279" height="22"/>
+                        <rect key="frame" x="252.5" y="34.5" width="30.5" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="xc3-Ma-RGE"/>
                         </constraints>
@@ -49,7 +49,6 @@
                     <constraint firstItem="WJX-qw-Ot9" firstAttribute="top" secondItem="4ZJ-jt-dXS" secondAttribute="top" id="1xx-9m-GlS"/>
                     <constraint firstAttribute="bottom" secondItem="h0f-Nz-Dgl" secondAttribute="bottom" constant="4" id="Bq9-54-LAI"/>
                     <constraint firstItem="pP3-YS-KME" firstAttribute="leading" secondItem="4ZJ-jt-dXS" secondAttribute="leading" constant="8" id="GYU-MW-xfT"/>
-                    <constraint firstItem="h0f-Nz-Dgl" firstAttribute="leading" secondItem="4ZJ-jt-dXS" secondAttribute="leading" constant="4" id="JM0-oL-ZZc"/>
                     <constraint firstItem="WJX-qw-Ot9" firstAttribute="leading" secondItem="4ZJ-jt-dXS" secondAttribute="leading" id="Lde-Yn-fFD"/>
                     <constraint firstItem="pP3-YS-KME" firstAttribute="top" secondItem="4ZJ-jt-dXS" secondAttribute="top" id="YRY-Au-LWs"/>
                     <constraint firstAttribute="trailing" secondItem="h0f-Nz-Dgl" secondAttribute="trailing" constant="4" id="f8N-hW-fHJ"/>
