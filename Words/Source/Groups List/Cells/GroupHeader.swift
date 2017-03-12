@@ -10,12 +10,6 @@ import UIKit
 
 class GroupHeader: UITableViewHeaderFooterView
 {
-    static var identifier: String {
-        get {
-            return "GroupHeader"
-        }
-    }
-
     @IBOutlet private var label: UILabel!
     @IBOutlet private var gradientView: UIView!
     private var callback: (() -> Void)!

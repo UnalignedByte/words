@@ -11,12 +11,6 @@ import UIKit
 
 class GroupCell: UITableViewCell
 {
-    static var identifier: String {
-        get {
-            return "GroupCell"
-        }
-    }
-
     @IBOutlet private var groupLabel: UILabel!
     @IBOutlet private var wordsCountLabel: UILabel!
     @IBOutlet private var gradientView: UIView!

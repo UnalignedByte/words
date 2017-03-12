@@ -212,6 +212,32 @@ class WordsDataSource
     }
 
 
+    func revisionWords(forLanguage language: Language) -> [Word]
+    {
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)' AND isInRevision = 'TRUE'")
+
+        if let fetchResults = try? context.fetch(fetchRequest) {
+            return fetchResults
+        }
+
+        return [Word]()
+    }
+
+
+    func revisionWordsCount(forLanguage language: Language) -> Int
+    {
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)' AND isInRevision = 'TRUE'")
+
+        if let count = try? context.count(for: fetchRequest) {
+            return count
+        }
+
+        return 0
+    }
+
+
     func delete(word: Word)
     {
         self.context.delete(word)

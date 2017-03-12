@@ -54,10 +54,12 @@ class GroupsListViewController: UIViewController
 
     fileprivate func registerCells()
     {
-        self.tableView.register(UINib(nibName: "GroupHeader", bundle: nil),
-                                forHeaderFooterViewReuseIdentifier: GroupHeader.identifier)
-        self.tableView.register(UINib(nibName: "GroupCell", bundle: nil),
-                                forCellReuseIdentifier: GroupCell.identifier)
+        tableView.register(UINib(nibName: String(describing: GroupHeader.self), bundle: nil),
+                           forHeaderFooterViewReuseIdentifier: String(describing: GroupHeader.self))
+        tableView.register(UINib(nibName: String(describing: GroupCell.self), bundle: nil),
+                           forCellReuseIdentifier: String(describing: GroupCell.self))
+        tableView.register(UINib(nibName: String(describing: RevisionCell.self), bundle: nil),
+                           forCellReuseIdentifier: String(describing: RevisionCell.self))
     }
 
 
@@ -129,6 +131,13 @@ class GroupsListViewController: UIViewController
             performSegue(withIdentifier: String(describing: EditGroupViewController.self), sender: nil)
         }
     }
+
+
+    // MARK: - Utils
+    fileprivate func activeSectionHasReview() -> Bool
+    {
+        return false
+    }
 }
 
 
@@ -158,7 +167,7 @@ extension GroupsListViewController: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: GroupCell.identifier, for: indexPath) as! GroupCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GroupCell.self), for: indexPath) as! GroupCell
 
         let group = self.resultsController.object(at: indexPath)
         cell.setup(withGroup: group)
@@ -244,7 +253,7 @@ extension GroupsListViewController: UITableViewDelegate
             return nil
         }
 
-        let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: GroupHeader.identifier) as! GroupHeader
+        let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing: GroupHeader.self)) as! GroupHeader
 
         let firstGroup = self.resultsController.object(at: IndexPath(row: 0, section: section))
 

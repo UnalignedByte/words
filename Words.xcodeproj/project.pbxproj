@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B51994BD1E244856005089DF /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = B51994BC1E244856005089DF /* Test.plist */; };
+		B519BCC31E75B75E00838106 /* RevisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519BCC21E75B75E00838106 /* RevisionCell.swift */; };
+		B519BCC51E76015600838106 /* RevisionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B519BCC41E76015600838106 /* RevisionCell.xib */; };
 		B51A5B391E1A950C00F6B1A8 /* WordsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A5B381E1A950C00F6B1A8 /* WordsDataSource.swift */; };
 		B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */; };
 		B5230B261E299D37000A3819 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5230B251E299D37000A3819 /* GroupCell.swift */; };
@@ -62,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		B51994BC1E244856005089DF /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Test.plist; path = Words/Tests/Assets/Test.plist; sourceTree = SOURCE_ROOT; };
+		B519BCC21E75B75E00838106 /* RevisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RevisionCell.swift; path = "Source/Groups List/Cells/RevisionCell.swift"; sourceTree = "<group>"; };
+		B519BCC41E76015600838106 /* RevisionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RevisionCell.xib; path = "Source/Groups List/Cells/RevisionCell.xib"; sourceTree = "<group>"; };
 		B51A5B381E1A950C00F6B1A8 /* WordsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsDataSource.swift; path = Source/Model/WordsDataSource.swift; sourceTree = "<group>"; };
 		B5230B251E299D37000A3819 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupCell.swift; path = "Source/Groups List/Cells/GroupCell.swift"; sourceTree = "<group>"; };
 		B5230B271E299D48000A3819 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupCell.xib; path = "Source/Groups List/Cells/GroupCell.xib"; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				B5230B271E299D48000A3819 /* GroupCell.xib */,
 				B5C733F11E2ABA4500CB9201 /* GroupHeader.swift */,
 				B5C733F31E2ABB7D00CB9201 /* GroupHeader.xib */,
+				B519BCC21E75B75E00838106 /* RevisionCell.swift */,
+				B519BCC41E76015600838106 /* RevisionCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				B5C734211E2C366600CB9201 /* WordConfigCell.xib in Resources */,
 				B5C733F61E2AF64D00CB9201 /* SFUIText-Light.otf in Resources */,
 				B5230B281E299D48000A3819 /* GroupCell.xib in Resources */,
+				B519BCC51E76015600838106 /* RevisionCell.xib in Resources */,
 				B5C733F91E2AFD9900CB9201 /* SFUIText-Medium.otf in Resources */,
 				B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */,
 				B5C733FB1E2B02A600CB9201 /* SFUIText-Ultrathin.otf in Resources */,
@@ -446,6 +453,7 @@
 				B5A7435C1E61BE2D00926A09 /* Group+CoreDataProperties.swift in Sources */,
 				B5A1CAB31E564B51004958EE /* EditWordViewController.swift in Sources */,
 				B55CEC091E64B829006DE745 /* UIButton+Color.swift in Sources */,
+				B519BCC31E75B75E00838106 /* RevisionCell.swift in Sources */,
 				B5230B261E299D37000A3819 /* GroupCell.swift in Sources */,
 				B5A743541E619DB700926A09 /* Language.swift in Sources */,
 				B5A7435D1E61BE2D00926A09 /* Word+CoreDataClass.swift in Sources */,
