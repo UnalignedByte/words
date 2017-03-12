@@ -223,10 +223,11 @@ extension WordsListViewController: NSFetchedResultsControllerDelegate
                 tableView.deleteRows(at: [index], with: .automatic)
             case .update:
                 let newIndex = IndexPath(row: newIndexPath!.row, section: 1)
-                let oldIndex = IndexPath(row: indexPath!.row, section: 1)
-                tableView.reloadRows(at: [newIndex, oldIndex], with: .automatic)
-            default:
-                break
+                tableView.reloadRows(at: [newIndex], with: .automatic)
+            case .move:
+                // We don't actually move rows, so technically it should be an update
+                let newIndex = IndexPath(row: newIndexPath!.row, section: 1)
+                tableView.reloadRows(at: [newIndex], with: .automatic)
         }
     }
 
