@@ -21,4 +21,5 @@ extension Word
     @NSManaged public var translation: String
     @NSManaged public var word: String
     @NSManaged public var group: Group
+    @NSManaged public var isInRevision: Bool
 }

@@ -10,6 +10,7 @@
         <relationship name="words" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="group" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="Word" representedClassName="Word" syncable="YES">
+        <attribute name="isInRevision" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="order" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="translation" attributeType="String" defaultValueString="Banana" syncable="YES"/>
         <attribute name="word" attributeType="String" defaultValueString="Banana" syncable="YES"/>
@@ -18,6 +19,6 @@
     <elements>
         <element name="ChineseWord" positionX="-45" positionY="192" width="128" height="60"/>
         <element name="Group" positionX="-297" positionY="-0" width="128" height="105"/>
-        <element name="Word" positionX="-65" positionY="0" width="128" height="105"/>
+        <element name="Word" positionX="-65" positionY="0" width="128" height="120"/>
     </elements>
 </model>

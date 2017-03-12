@@ -14,6 +14,7 @@ class EditWordViewController: UIViewController
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var addWordButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
 
     fileprivate weak var editWordControlsViewController: EditWordControlsViewController?
 
@@ -29,6 +30,7 @@ class EditWordViewController: UIViewController
 
         if editWord != nil {
             addWordButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+            deleteButton.isHidden = false
         }
 
        setupEditView()
@@ -74,6 +76,14 @@ class EditWordViewController: UIViewController
 
     @IBAction func cancelButtonPressed(sender: UIButton)
     {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+
+    @IBAction func deleteButtonPressed(sender: UIButton)
+    {
+        WordsDataSource.sharedInstance.delete(word: editWord!)
+
         self.dismiss(animated: true, completion: nil)
     }
 

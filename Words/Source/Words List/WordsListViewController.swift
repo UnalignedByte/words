@@ -124,18 +124,23 @@ class WordsListViewController: UIViewController
     }
 
 
-    @IBAction fileprivate func longPressAction(sender: UIGestureRecognizer)
+    func revisionActionPressed(_ rowAction: UITableViewRowAction, _ indexPath: IndexPath)
     {
-        guard sender.state == .began else {
-            return
-        }
+        tableView.isEditing = false
 
-        let location = sender.location(in: tableView)
-        if let indexPath = tableView.indexPathForRow(at: location) {
-            let index = IndexPath(row: indexPath.row, section: 0)
-            editWord = resultsController.object(at: index)
-            performSegue(withIdentifier: String(describing: EditWordViewController.self), sender: nil)
-        }
+        let index = IndexPath(row: indexPath.row, section: 0)
+        let word = resultsController.object(at: index)
+        word.isInRevision = !word.isInRevision
+    }
+
+
+    func editActionPressed(_ rowAction: UITableViewRowAction, _ indexPath: IndexPath)
+    {
+        tableView.isEditing = false
+
+        let index = IndexPath(row: indexPath.row, section: 0)
+        editWord = resultsController.object(at: index)
+        performSegue(withIdentifier: String(describing: EditWordViewController.self), sender: nil)
     }
 }
 
@@ -193,11 +198,34 @@ extension WordsListViewController: UITableViewDataSource
 
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 && editingStyle == .delete {
-            let index = IndexPath(row: indexPath.row, section: 0)
-            let word = resultsController.object(at: index)
-            WordsDataSource.sharedInstance.delete(word: word)
+    }
+}
+
+
+extension WordsListViewController: UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+        // Revision
+        let index = IndexPath(row: indexPath.row, section: 0)
+        let word = resultsController.object(at: index)
+
+        var revisionTitle: String!
+        var revisionBackgroundColor: UIColor!
+        if word.isInRevision {
+            revisionTitle = "🗒－"
+            revisionBackgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        } else {
+            revisionTitle = "🗒✚"
+            revisionBackgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
+        let revisionAction = UITableViewRowAction(style: .normal, title: revisionTitle, handler: revisionActionPressed)
+        revisionAction.backgroundColor = revisionBackgroundColor
+
+        // Edit
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editActionPressed)
+
+        return [revisionAction, editAction]
     }
 }
 
