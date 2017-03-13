@@ -215,7 +215,7 @@ class WordsDataSource
     func revisionWords(forLanguage language: Language) -> [Word]
     {
         let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
-        fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)' AND isInRevision = 'TRUE'")
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)' && isInRevision = TRUE")
 
         if let fetchResults = try? context.fetch(fetchRequest) {
             return fetchResults
@@ -228,7 +228,7 @@ class WordsDataSource
     func revisionWordsCount(forLanguage language: Language) -> Int
     {
         let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
-        fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)' AND isInRevision = 'TRUE'")
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)' && isInRevision = TRUE")
 
         if let count = try? context.count(for: fetchRequest) {
             return count
@@ -301,6 +301,18 @@ class WordsDataSource
         fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", language.code)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "group.name", ascending: false),
                                         NSSortDescriptor(key: "order", ascending: false)]
+
+        return fetchRequest
+    }
+
+
+    func fetchRequestRevisionWords(forLanguage language: Language) -> NSFetchRequest<Word>
+    {
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        fetchRequest.fetchBatchSize = 10
+
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)' && isInRevision = TRUE")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: false)]
 
         return fetchRequest
     }

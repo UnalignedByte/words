@@ -91,12 +91,20 @@ class GroupsListViewController: UIViewController
             let destination = segue.destination as! WordsListViewController
 
             if let indexPath = sender as? IndexPath {
-                let group = self.resultsController.object(at: indexPath)
+                var index = indexPath
+                if doesActiveSectionHaveRevision() {
+                    index = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+                }
+                let group = self.resultsController.object(at: index)
                 destination.setup(forGroup: group)
             }
         } else if segue.identifier == String(describing: EditGroupViewController.self) {
             let destination = segue.destination as! EditGroupViewController
             destination.setup(forEditGroup: editGroup)
+        } else if segue.identifier == String(describing: RevisionWordsViewController.self) {
+            let destination = segue.destination as! RevisionWordsViewController
+            let firstGroup = self.resultsController.object(at: IndexPath(row: 0, section: activeSection))
+            destination.setup(forLanguage: firstGroup.language)
         }
     }
 
@@ -134,9 +142,19 @@ class GroupsListViewController: UIViewController
 
 
     // MARK: - Utils
-    fileprivate func activeSectionHasReview() -> Bool
+    fileprivate func doesActiveSectionHaveRevision() -> Bool
     {
-        return false
+        var activeSection = 0
+        if resultsController.sections!.count > 1 && self.activeSection >= 0 {
+            activeSection = self.activeSection
+        } else if resultsController.sections!.count > 1 {
+            return false
+        }
+
+        let firstGroup = self.resultsController.object(at: IndexPath(row: 0, section: activeSection))
+        let revisonWordsCount = WordsDataSource.sharedInstance.revisionWordsCount(forLanguage: firstGroup.language)
+
+        return revisonWordsCount > 0
     }
 }
 
@@ -158,7 +176,12 @@ extension GroupsListViewController: UITableViewDataSource
     {
         if section == activeSection {
             let section = self.resultsController.sections![section]
-            return section.numberOfObjects
+            var rowsCount = section.numberOfObjects
+            if doesActiveSectionHaveRevision() {
+                rowsCount += 1
+            }
+
+            return rowsCount
         }
 
         return 0
@@ -167,12 +190,37 @@ extension GroupsListViewController: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GroupCell.self), for: indexPath) as! GroupCell
+        if doesActiveSectionHaveRevision() && indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RevisionCell.self),
+                                                     for: indexPath) as! RevisionCell
 
-        let group = self.resultsController.object(at: indexPath)
-        cell.setup(withGroup: group)
+            let firstGroup = self.resultsController.object(at: IndexPath(row: 0, section: activeSection))
+            cell.setup(withLanguage: firstGroup.language)
 
-        return cell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GroupCell.self),
+                                                     for: indexPath) as! GroupCell
+
+            var index = indexPath
+            if doesActiveSectionHaveRevision() {
+                index = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+            }
+            let group = self.resultsController.object(at: index)
+            cell.setup(withGroup: group)
+
+            return cell
+        }
+    }
+
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        if doesActiveSectionHaveRevision() && indexPath.row == 0 {
+            return false
+        }
+
+        return true
     }
 
 
@@ -181,13 +229,16 @@ extension GroupsListViewController: UITableViewDataSource
         if editingStyle == .delete {
             let group = self.resultsController.object(at: indexPath)
             WordsDataSource.sharedInstance.delete(group: group)
-
         }
     }
 
 
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool
     {
+        if doesActiveSectionHaveRevision() && indexPath.row == 0 {
+            return false
+        }
+
         return true
     }
 
@@ -227,6 +278,10 @@ extension GroupsListViewController: UITableViewDataSource
                    toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath
     {
         if sourceIndexPath.section == proposedDestinationIndexPath.section {
+            if doesActiveSectionHaveRevision() && proposedDestinationIndexPath.row == 0 {
+                return IndexPath(row: 1, section: proposedDestinationIndexPath.section)
+            }
+
             return proposedDestinationIndexPath
         }
 
@@ -287,7 +342,11 @@ extension GroupsListViewController: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: "WordsListViewController", sender: indexPath)
+        if doesActiveSectionHaveRevision() && indexPath.row == 0 {
+            self.performSegue(withIdentifier: String(describing: RevisionWordsViewController.self), sender: indexPath)
+        } else {
+            self.performSegue(withIdentifier: String(describing: WordsListViewController.self), sender: indexPath)
+        }
     }
 }
 
@@ -327,14 +386,26 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
         switch(type) {
             case .insert:
                 if activeSection == newIndexPath!.section || self.resultsController.sections!.count <= 1 {
-                    tableView.insertRows(at: [newIndexPath!], with: .automatic)
+                    var index = newIndexPath
+                    if doesActiveSectionHaveRevision() {
+                        index = IndexPath(row: newIndexPath!.row + 1, section: newIndexPath!.section)
+                    }
+                    tableView.insertRows(at: [index!], with: .automatic)
 
                     indexToScrollTo = newIndexPath
                 }
             case .delete:
-                tableView.deleteRows(at: [indexPath!], with: .automatic)
+                var index = newIndexPath
+                if doesActiveSectionHaveRevision() {
+                    index = IndexPath(row: indexPath!.row + 1, section: indexPath!.section)
+                }
+                tableView.deleteRows(at: [index!], with: .automatic)
             case .update:
-                tableView.reloadRows(at: [indexPath!], with: .automatic)
+                var index = newIndexPath
+                if doesActiveSectionHaveRevision() {
+                    index = IndexPath(row: indexPath!.row + 1, section: indexPath!.section)
+                }
+                tableView.reloadRows(at: [index!], with: .automatic)
             default:
                 break
         }
