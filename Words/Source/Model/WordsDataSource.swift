@@ -109,11 +109,13 @@ class WordsDataSource
     // MARK: - Public Functions
     @objc func saveContext()
     {
-        if self.context.hasChanges {
-            do {
-                try context.save()
-            } catch let error {
-                fatalError("Context saving error: \(error)")
+        DispatchQueue.main.async { [weak self] in
+            if self?.context.hasChanges == true {
+                do {
+                    try self?.context.save()
+                } catch let error {
+                    fatalError("Context saving error: \(error)")
+                }
             }
         }
     }
@@ -298,9 +300,9 @@ class WordsDataSource
         let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
         fetchRequest.fetchBatchSize = 10
 
-        fetchRequest.predicate = NSPredicate(format: "group.languageCode == %@", language.code)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "group.name", ascending: false),
-                                        NSSortDescriptor(key: "order", ascending: false)]
+        fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)'")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "group.name", ascending: true),
+                                        NSSortDescriptor(key: "order", ascending: true)]
 
         return fetchRequest
     }
@@ -312,7 +314,7 @@ class WordsDataSource
         fetchRequest.fetchBatchSize = 10
 
         fetchRequest.predicate = NSPredicate(format: "group.languageCode = '\(language.code)' && isInRevision = TRUE")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
 
         return fetchRequest
     }
@@ -379,8 +381,10 @@ class WordsDataSource
 
         do {
             let results = try context.fetch(fetchRequest)
-            let resultsDict = results.first!
-            maxWordOrder = resultsDict["maxOrder"] as! Int32
+            maxWordOrder = 0
+            if let resultsDict = results.first {
+                maxWordOrder = resultsDict["maxOrder"] as! Int32
+            }
         } catch let error {
             fatalError("Context fetch error: \(error)")
         }

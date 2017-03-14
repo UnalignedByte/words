@@ -14,14 +14,14 @@ class LanguageTests: XCTestCase
 {
     func testLanguageRawValues()
     {
-        let langEn1 = Language.en
-        XCTAssertEqual(langEn1.rawValue, "en")
+        let langEn1 = Language.gn
+        XCTAssertEqual(langEn1.rawValue, "gn")
 
         let langCn1 = Language.cn
         XCTAssertEqual(langCn1.rawValue, "cn")
 
-        let langEn2 = Language(rawValue: "en")
-        XCTAssertEqual(langEn2, .en)
+        let langEn2 = Language(rawValue: "gn")
+        XCTAssertEqual(langEn2, .gn)
 
         let langCn2 = Language(rawValue: "cn")
         XCTAssertEqual(langCn2, .cn)
@@ -30,8 +30,8 @@ class LanguageTests: XCTestCase
 
     func testLangaugeCodes()
     {
-        let langEn = Language.en
-        XCTAssertEqual(langEn.code, "en")
+        let langEn = Language.gn
+        XCTAssertEqual(langEn.code, "gn")
 
         let langCn = Language.cn
         XCTAssertEqual(langCn.code, "cn")
@@ -40,13 +40,13 @@ class LanguageTests: XCTestCase
 
     func testLanguageEditWordViewController()
     {
-        let langEnController = Language.en.editWordViewController
-        XCTAssertTrue(type(of: langEnController) == EditEnglishWordViewController.self)
+        let langEnController = Language.gn.editWordControlsViewController
+        XCTAssertTrue(type(of: langEnController) == EditGenericWordViewController.self)
     }
 
     func testLanguageWordConfigCellTitles()
     {
-        XCTAssertEqual(Language.en.wordConfigCellTitles.count, 3)
+        XCTAssertEqual(Language.gn.wordConfigCellTitles.count, 3)
         XCTAssertEqual(Language.cn.wordConfigCellTitles.count, 4)
     }
 }

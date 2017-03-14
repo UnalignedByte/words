@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>languageCode</key>
-		<string>en</string>
+		<string>gn</string>
 		<key>group</key>
 		<string>Test 1</string>
 		<key>words</key>
@@ -31,7 +31,7 @@
 	</dict>
 	<dict>
 		<key>languageCode</key>
-		<string>en</string>
+		<string>gn</string>
 		<key>group</key>
 		<string>Test 2</string>
 		<key>words</key>
