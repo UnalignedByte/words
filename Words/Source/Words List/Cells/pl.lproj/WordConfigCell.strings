@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Visible Fields"; ObjectID = "3Od-vE-TLu"; */
+"3Od-vE-TLu.text" = "Widoczne Pola";
+
+/* Class = "UISegmentedControl"; 54F-sR-xRy.segmentTitles[0] = "Both"; ObjectID = "54F-sR-xRy"; */
+"54F-sR-xRy.segmentTitles[0]" = "Both";
+
+/* Class = "UISegmentedControl"; 54F-sR-xRy.segmentTitles[1] = "Word"; ObjectID = "54F-sR-xRy"; */
+"54F-sR-xRy.segmentTitles[1]" = "Word";
+
+/* Class = "UISegmentedControl"; 54F-sR-xRy.segmentTitles[2] = "Translation"; ObjectID = "54F-sR-xRy"; */
+"54F-sR-xRy.segmentTitles[2]" = "Translation";

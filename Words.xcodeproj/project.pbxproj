@@ -18,12 +18,10 @@
 		B52EAFBB1E2841B5001A46FF /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52EAFBA1E2841B5001A46FF /* GroupsListViewController.swift */; };
 		B55932CA1E63482E00234D1D /* ChineseWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */; };
 		B55932CC1E634C3300234D1D /* EditChineseWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55932CB1E634C3300234D1D /* EditChineseWordViewController.swift */; };
-		B55932CE1E634F5500234D1D /* EditChineseWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */; };
 		B55CEC091E64B829006DE745 /* UIButton+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CEC081E64B829006DE745 /* UIButton+Color.swift */; };
 		B5627A771E4D0A04000533F2 /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627A761E4D0A04000533F2 /* EditGroupViewController.swift */; };
 		B56B38C91E781BB000C82813 /* UnitTestsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B38C81E781BB000C82813 /* UnitTestsAppDelegate.swift */; };
 		B56B38CB1E781C8200C82813 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B38CA1E781C8200C82813 /* main.swift */; };
-		B578B6101E2662100028CBCF /* EditGenericWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B578B60F1E2662100028CBCF /* EditGenericWord.storyboard */; };
 		B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6121E26625B0028CBCF /* WordsListViewController.swift */; };
 		B578B6161E26647E0028CBCF /* GenericWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6151E26647E0028CBCF /* GenericWordCell.swift */; };
 		B578B6181E2664910028CBCF /* GenericWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B578B6171E2664910028CBCF /* GenericWordCell.xib */; };
@@ -46,13 +44,15 @@
 		B5C733F91E2AFD9900CB9201 /* SFUIText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5C733F81E2AFD9900CB9201 /* SFUIText-Medium.otf */; };
 		B5C733FB1E2B02A600CB9201 /* SFUIText-Ultrathin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5C733FA1E2B02A600CB9201 /* SFUIText-Ultrathin.otf */; };
 		B5C733FE1E2B079700CB9201 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5C734001E2B079700CB9201 /* Localizable.strings */; };
-		B5C734211E2C366600CB9201 /* WordConfigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C734201E2C366600CB9201 /* WordConfigCell.xib */; };
 		B5C734231E2C367B00CB9201 /* WordConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C734221E2C367B00CB9201 /* WordConfigCell.swift */; };
 		B5CF2E511E78A0D000118DC7 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B5CF2E531E78A0D000118DC7 /* Localizable.stringsdict */; };
+		B5CF2E591E78A5F600118DC7 /* EditGenericWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CF2E5B1E78A5F600118DC7 /* EditGenericWord.storyboard */; };
+		B5CF2E5F1E78A66700118DC7 /* EditChineseWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CF2E611E78A66700118DC7 /* EditChineseWord.storyboard */; };
+		B5CF2E641E78A67B00118DC7 /* WordConfigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CF2E661E78A67B00118DC7 /* WordConfigCell.xib */; };
+		B5CF2E691E78A7B700118DC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CF2E6B1E78A7B700118DC7 /* Main.storyboard */; };
 		B5D229AC1E6309B000A92632 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D229AB1E6309B000A92632 /* WordCell.swift */; };
 		B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22041C7F999F00C5D782 /* Images.xcassets */; };
 		B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */; };
-		B5EC22141C7F9A8600C5D782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22131C7F9A8600C5D782 /* Main.storyboard */; };
 		B5EC22171C7F9ACC00C5D782 /* WordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5EC22151C7F9ACC00C5D782 /* WordsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -76,12 +76,10 @@
 		B5230B271E299D48000A3819 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupCell.xib; path = "Source/Groups List/Cells/GroupCell.xib"; sourceTree = "<group>"; };
 		B52EAFBA1E2841B5001A46FF /* GroupsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsListViewController.swift; path = "Source/Groups List/GroupsListViewController.swift"; sourceTree = "<group>"; };
 		B55932CB1E634C3300234D1D /* EditChineseWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditChineseWordViewController.swift; path = "Source/Words List/Edit Word/EditChineseWordViewController.swift"; sourceTree = "<group>"; };
-		B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditChineseWord.storyboard; path = "Source/Words List/Edit Word/EditChineseWord.storyboard"; sourceTree = "<group>"; };
 		B55CEC081E64B829006DE745 /* UIButton+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Color.swift"; path = "Source/Utils/UIButton+Color.swift"; sourceTree = "<group>"; };
 		B5627A761E4D0A04000533F2 /* EditGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditGroupViewController.swift; path = "Source/Groups List/EditGroupViewController.swift"; sourceTree = "<group>"; };
 		B56B38C81E781BB000C82813 /* UnitTestsAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitTestsAppDelegate.swift; path = Source/Core/UnitTestsAppDelegate.swift; sourceTree = "<group>"; };
 		B56B38CA1E781C8200C82813 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = Source/Core/main.swift; sourceTree = "<group>"; };
-		B578B60F1E2662100028CBCF /* EditGenericWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditGenericWord.storyboard; path = "Source/Words List/Edit Word/EditGenericWord.storyboard"; sourceTree = "<group>"; };
 		B578B6121E26625B0028CBCF /* WordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsListViewController.swift; path = "Source/Words List/WordsListViewController.swift"; sourceTree = "<group>"; };
 		B578B6151E26647E0028CBCF /* GenericWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericWordCell.swift; path = "Source/Words List/Cells/GenericWordCell.swift"; sourceTree = "<group>"; };
 		B578B6171E2664910028CBCF /* GenericWordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GenericWordCell.xib; path = "Source/Words List/Cells/GenericWordCell.xib"; sourceTree = "<group>"; };
@@ -107,17 +105,23 @@
 		B5C733FA1E2B02A600CB9201 /* SFUIText-Ultrathin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFUIText-Ultrathin.otf"; path = "Words/Assets/Fonts/SFUIText-Ultrathin.otf"; sourceTree = "<group>"; };
 		B5C733FF1E2B079700CB9201 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5C734011E2B07AD00CB9201 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B5C734201E2C366600CB9201 /* WordConfigCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordConfigCell.xib; path = "Source/Words List/Cells/WordConfigCell.xib"; sourceTree = "<group>"; };
 		B5C734221E2C367B00CB9201 /* WordConfigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordConfigCell.swift; path = "Source/Words List/Cells/WordConfigCell.swift"; sourceTree = "<group>"; };
 		B5CF2E521E78A0D000118DC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		B5CF2E541E78A28C00118DC7 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = pl; path = pl.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		B5CF2E5C1E78A60000118DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EditGenericWord.storyboard; sourceTree = "<group>"; };
+		B5CF2E5E1E78A64400118DC7 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/EditGenericWord.strings; sourceTree = "<group>"; };
+		B5CF2E601E78A66700118DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EditChineseWord.storyboard; sourceTree = "<group>"; };
+		B5CF2E631E78A66A00118DC7 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/EditChineseWord.strings; sourceTree = "<group>"; };
+		B5CF2E651E78A67B00118DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WordConfigCell.xib; sourceTree = "<group>"; };
+		B5CF2E681E78A67C00118DC7 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WordConfigCell.strings; sourceTree = "<group>"; };
+		B5CF2E6A1E78A7B700118DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5CF2E6D1E78A7B900118DC7 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		B5D229AB1E6309B000A92632 /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordCell.swift; path = "Source/Words List/Cells/WordCell.swift"; sourceTree = "<group>"; };
 		B5EC21FA1C7F999F00C5D782 /* Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Source/Core/AppDelegate.swift; sourceTree = "<group>"; };
 		B5EC22041C7F999F00C5D782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Words/Assets/Images.xcassets; sourceTree = "<group>"; };
 		B5EC22091C7F999F00C5D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Words/Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Words/Assets/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B5EC22131C7F9A8600C5D782 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Source/Core/Main.storyboard; sourceTree = "<group>"; };
 		B5EC22161C7F9ACC00C5D782 /* WordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsModel.xcdatamodel; sourceTree = "<group>"; };
 		B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChineseWordCell.swift; path = "Source/Words List/Cells/ChineseWordCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,7 +201,7 @@
 				B56B38CA1E781C8200C82813 /* main.swift */,
 				B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */,
 				B56B38C81E781BB000C82813 /* UnitTestsAppDelegate.swift */,
-				B5EC22131C7F9A8600C5D782 /* Main.storyboard */,
+				B5CF2E6B1E78A7B700118DC7 /* Main.storyboard */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -206,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				B5C734221E2C367B00CB9201 /* WordConfigCell.swift */,
-				B5C734201E2C366600CB9201 /* WordConfigCell.xib */,
+				B5CF2E661E78A67B00118DC7 /* WordConfigCell.xib */,
 				B5D229AB1E6309B000A92632 /* WordCell.swift */,
 				B578B6151E26647E0028CBCF /* GenericWordCell.swift */,
 				B578B6171E2664910028CBCF /* GenericWordCell.xib */,
@@ -220,9 +224,9 @@
 			isa = PBXGroup;
 			children = (
 				B5A1CAB41E56526D004958EE /* EditWordControlsViewController.swift */,
-				B578B60F1E2662100028CBCF /* EditGenericWord.storyboard */,
+				B5CF2E5B1E78A5F600118DC7 /* EditGenericWord.storyboard */,
 				B5A1CAB61E565716004958EE /* EditGenericWordViewController.swift */,
-				B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */,
+				B5CF2E611E78A66700118DC7 /* EditChineseWord.storyboard */,
 				B55932CB1E634C3300234D1D /* EditChineseWordViewController.swift */,
 			);
 			name = "Edit Word Controls";
@@ -403,6 +407,7 @@
 			knownRegions = (
 				en,
 				pl,
+				Base,
 			);
 			mainGroup = B5EC21F11C7F999F00C5D782;
 			productRefGroup = B5EC21FB1C7F999F00C5D782 /* Products */;
@@ -429,7 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C733FE1E2B079700CB9201 /* Localizable.strings in Resources */,
-				B5C734211E2C366600CB9201 /* WordConfigCell.xib in Resources */,
+				B5CF2E641E78A67B00118DC7 /* WordConfigCell.xib in Resources */,
 				B5C733F61E2AF64D00CB9201 /* SFUIText-Light.otf in Resources */,
 				B5230B281E299D48000A3819 /* GroupCell.xib in Resources */,
 				B519BCC51E76015600838106 /* RevisionCell.xib in Resources */,
@@ -438,11 +443,11 @@
 				B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */,
 				B5C733FB1E2B02A600CB9201 /* SFUIText-Ultrathin.otf in Resources */,
 				B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */,
-				B5EC22141C7F9A8600C5D782 /* Main.storyboard in Resources */,
+				B5CF2E691E78A7B700118DC7 /* Main.storyboard in Resources */,
 				B578B6181E2664910028CBCF /* GenericWordCell.xib in Resources */,
-				B578B6101E2662100028CBCF /* EditGenericWord.storyboard in Resources */,
+				B5CF2E591E78A5F600118DC7 /* EditGenericWord.storyboard in Resources */,
 				B5C733F41E2ABB7D00CB9201 /* GroupHeader.xib in Resources */,
-				B55932CE1E634F5500234D1D /* EditChineseWord.storyboard in Resources */,
+				B5CF2E5F1E78A66700118DC7 /* EditChineseWord.storyboard in Resources */,
 				B578B61A1E266AAB0028CBCF /* ChineseWordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +528,46 @@
 			);
 			name = Localizable.stringsdict;
 			path = "Words/Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5CF2E5B1E78A5F600118DC7 /* EditGenericWord.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5CF2E5C1E78A60000118DC7 /* Base */,
+				B5CF2E5E1E78A64400118DC7 /* pl */,
+			);
+			name = EditGenericWord.storyboard;
+			path = "Source/Words List/Edit Word";
+			sourceTree = "<group>";
+		};
+		B5CF2E611E78A66700118DC7 /* EditChineseWord.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5CF2E601E78A66700118DC7 /* Base */,
+				B5CF2E631E78A66A00118DC7 /* pl */,
+			);
+			name = EditChineseWord.storyboard;
+			path = "Source/Words List/Edit Word";
+			sourceTree = "<group>";
+		};
+		B5CF2E661E78A67B00118DC7 /* WordConfigCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5CF2E651E78A67B00118DC7 /* Base */,
+				B5CF2E681E78A67C00118DC7 /* pl */,
+			);
+			name = WordConfigCell.xib;
+			path = "Source/Words List/Cells";
+			sourceTree = "<group>";
+		};
+		B5CF2E6B1E78A7B700118DC7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5CF2E6A1E78A7B700118DC7 /* Base */,
+				B5CF2E6D1E78A7B900118DC7 /* pl */,
+			);
+			name = Main.storyboard;
+			path = Source/Core;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

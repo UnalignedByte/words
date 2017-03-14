@@ -43,9 +43,11 @@ extension Language
 
         switch self {
             case .gn:
-                titles = ["Both", "Word", "Translation"]
+                titles = [NSLocalizedString("Both", comment: ""),
+                          NSLocalizedString("Word", comment: ""),
+                          NSLocalizedString("Translation", comment: "")]
             case .cn:
-                titles = ["所有", "汉字", "拼音", "Translation"]
+                titles = ["所有", "汉字", "拼音", NSLocalizedString("Translation", comment: "")]
         }
 
         return titles

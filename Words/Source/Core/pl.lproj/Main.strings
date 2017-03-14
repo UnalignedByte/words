@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "EFE-dU-13t"; */
+"EFE-dU-13t.normalTitle" = "Usuń";
+
+/* Class = "UILabel"; text = "Group Name"; ObjectID = "Efc-0L-sCo"; */
+"Efc-0L-sCo.text" = "Nazwa Grupy";
+
+/* Class = "UILabel"; text = "Group Language"; ObjectID = "M6A-K2-Zzl"; */
+"M6A-K2-Zzl.text" = "Język Grupy";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "NjC-kv-DJV"; */
+"NjC-kv-DJV.normalTitle" = "Anuluj";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "eez-7M-vaD"; */
+"eez-7M-vaD.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Add Word"; ObjectID = "gJy-Md-ik2"; */
+"gJy-Md-ik2.normalTitle" = "Dodaj Słowo";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "mzC-w1-7fl"; */
+"mzC-w1-7fl.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "p58-8T-12p"; */
+"p58-8T-12p.normalTitle" = "Anuluj";
+
+/* Class = "UIViewController"; title = "Groups"; ObjectID = "ptI-NE-n73"; */
+"ptI-NE-n73.title" = "Grupy";
+
+/* Class = "UIButton"; normalTitle = "Add Group"; ObjectID = "sPP-gj-0mt"; */
+"sPP-gj-0mt.normalTitle" = "Dodaj Grupę";

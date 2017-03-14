@@ -224,7 +224,8 @@ extension WordsListViewController: UITableViewDelegate
         revisionAction.backgroundColor = revisionBackgroundColor
 
         // Edit
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editActionPressed)
+        let editAction = UITableViewRowAction(style: .normal, title: NSLocalizedString("Edit", comment: ""),
+                                              handler: editActionPressed)
 
         return [revisionAction, editAction]
     }
@@ -257,16 +258,6 @@ extension WordsListViewController: NSFetchedResultsControllerDelegate
                 // We don't actually move rows, so technically it should be an update
                 let newIndex = IndexPath(row: newIndexPath!.row, section: 1)
                 tableView.reloadRows(at: [newIndex], with: .automatic)
-        }
-    }
-
-
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo,
-                    atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType)
-    {
-        switch(type) {
-            default:
-                break
         }
     }
 
