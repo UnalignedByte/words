@@ -24,18 +24,13 @@ class GroupCell: UITableViewCell
         gradientLayer.colors = [UIColor.lightGray.withAlphaComponent(0.1).cgColor,
                                 UIColor.lightGray.withAlphaComponent(0.25).cgColor]
         gradientLayer.locations = [0.2, 1.0]
-        self.gradientView.layer.insertSublayer(gradientLayer, at: 0)
+        gradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
 
 
     func setup(withGroup group: Group)
     {
-        self.groupLabel.text = group.name
-
-        if group.words.count == 1 {
-            self.wordsCountLabel.text = "1 Word"
-        } else {
-            self.wordsCountLabel.text = "\(group.words.count) Words"
-        }
+        groupLabel.text = group.name
+        wordsCountLabel.text = String(format: NSLocalizedString("%d Word(s)", comment: ""), group.words.count)
     }
 }

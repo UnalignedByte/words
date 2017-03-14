@@ -32,7 +32,7 @@ class RevisionCell: UITableViewCell
     {
         let count = WordsDataSource.sharedInstance.revisionWordsCount(forLanguage: language)
         let titleFront = NSLocalizedString("To Review", comment: "")
-        let titleBack = String(format: NSLocalizedString("%d Words", comment: ""), count)
+        let titleBack = String(format: NSLocalizedString("%d Word(s)", comment: ""), count)
         titleLabel.text = titleFront + ": " + titleBack
     }
 }

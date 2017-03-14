@@ -1,34 +1,25 @@
-/* 
-  Localizable.stringdict.strings
-  Words
-
-  Created by Rafal Grodzinski on 14/03/2017.
-  Copyright © 2017 UnalignedByte. All rights reserved.
-*/
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 
 <plist version="1.0">
+<dict>
+    <key>%d Word(s)</key>
     <dict>
-        <key>%d phases</key>
-        <dict>
         <key>NSStringLocalizedFormatKey</key>
-        <string>%#@phases@</string>
-        <key>phases</key>
+        <string>%#@words@</string>
+        <key>words</key>
         <dict>
             <key>NSStringFormatSpecTypeKey</key>
             <string>NSStringPluralRuleType</string>
             <key>NSStringFormatValueTypeKey</key>
             <string>d</string>
             <key>zero</key>
-            <string>No Phases</string>
+            <string>No Words</string>
             <key>one</key>
-            <string>%d Phase</string>
+            <string>%d Word</string>
             <key>other</key>
-            <string>%d Phases</string>
-            </dict>
+            <string>%d Words</string>
         </dict>
     </dict>
+</dict>
 </plist>
-
