@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -15,9 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        let libraryUrl = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).first!
-        print("Library Path: \(libraryUrl.path)")
+
+        setupAnalytics()
+        printDebugInfo()
 
         return true
+    }
+
+
+    fileprivate func setupAnalytics()
+    {
+        #if !DEBUG
+            Fabric.with([Crashlytics.self])
+        #endif
+    }
+
+
+    fileprivate func printDebugInfo()
+    {
+        #if DEBUG
+            let libraryUrl = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).first!
+            print("Library Path: \(libraryUrl.path)")
+        #endif
     }
 }

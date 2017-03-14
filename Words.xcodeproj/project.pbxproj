@@ -50,6 +50,10 @@
 		B5CF2E5F1E78A66700118DC7 /* EditChineseWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CF2E611E78A66700118DC7 /* EditChineseWord.storyboard */; };
 		B5CF2E641E78A67B00118DC7 /* WordConfigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CF2E661E78A67B00118DC7 /* WordConfigCell.xib */; };
 		B5CF2E691E78A7B700118DC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CF2E6B1E78A7B700118DC7 /* Main.storyboard */; };
+		B5CF2E711E78AB9500118DC7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF2E6F1E78AB8800118DC7 /* Crashlytics.framework */; };
+		B5CF2E721E78AB9600118DC7 /* Crashlytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF2E6F1E78AB8800118DC7 /* Crashlytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5CF2E731E78AB9600118DC7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF2E701E78AB8800118DC7 /* Fabric.framework */; };
+		B5CF2E741E78AB9600118DC7 /* Fabric.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF2E701E78AB8800118DC7 /* Fabric.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5D229AC1E6309B000A92632 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D229AB1E6309B000A92632 /* WordCell.swift */; };
 		B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22041C7F999F00C5D782 /* Images.xcassets */; };
 		B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */; };
@@ -65,6 +69,21 @@
 			remoteInfo = Words;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5CF2E751E78AB9600118DC7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5CF2E721E78AB9600118DC7 /* Crashlytics.framework in Embed Frameworks */,
+				B5CF2E741E78AB9600118DC7 /* Fabric.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B51994BC1E244856005089DF /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Test.plist; path = Words/Tests/Assets/Test.plist; sourceTree = SOURCE_ROOT; };
@@ -116,6 +135,8 @@
 		B5CF2E681E78A67C00118DC7 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WordConfigCell.strings; sourceTree = "<group>"; };
 		B5CF2E6A1E78A7B700118DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5CF2E6D1E78A7B900118DC7 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
+		B5CF2E6F1E78AB8800118DC7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Words/Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
+		B5CF2E701E78AB8800118DC7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Words/Frameworks/Fabric.framework; sourceTree = "<group>"; };
 		B5D229AB1E6309B000A92632 /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordCell.swift; path = "Source/Words List/Cells/WordCell.swift"; sourceTree = "<group>"; };
 		B5EC21FA1C7F999F00C5D782 /* Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EC21FD1C7F999F00C5D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Source/Core/AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5CF2E711E78AB9500118DC7 /* Crashlytics.framework in Frameworks */,
+				B5CF2E731E78AB9600118DC7 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,12 +308,22 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		B5CF2E6E1E78AB6000118DC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5CF2E6F1E78AB8800118DC7 /* Crashlytics.framework */,
+				B5CF2E701E78AB8800118DC7 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B5EC21F11C7F999F00C5D782 = {
 			isa = PBXGroup;
 			children = (
 				B5EC21FC1C7F999F00C5D782 /* Source */,
 				B5EC220F1C7F99AA00C5D782 /* Assets */,
 				B5EC22101C7F99AE00C5D782 /* Supporting Files */,
+				B5CF2E6E1E78AB6000118DC7 /* Frameworks */,
 				B5BC9C121E1997CD006A5CCC /* Tests */,
 				B5EC21FB1C7F999F00C5D782 /* Products */,
 			);
@@ -367,6 +400,8 @@
 				B5EC21F61C7F999F00C5D782 /* Sources */,
 				B5EC21F71C7F999F00C5D782 /* Frameworks */,
 				B5EC21F81C7F999F00C5D782 /* Resources */,
+				B5CF2E751E78AB9600118DC7 /* Embed Frameworks */,
+				B5CF2E761E78AD2600118DC7 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -453,6 +488,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5CF2E761E78AD2600118DC7 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\nfabricBuildSecretFilePath=\"${PROJECT_DIR}/../private/fabric/fabric_build_secret.txt\"\n\nif [ -e \"${fabricBuildSecretFilePath}\" ]; then\n./Words/Frameworks/Fabric.framework/run a021a108c4f7af7ac61e5074ce2ce6b5b0729c4b `cat \"${fabricBuildSecretFilePath}\"`\nfi\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5BC9C0D1E1997CD006A5CCC /* Sources */ = {
@@ -709,6 +761,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = X7G47FFC9G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Words/Frameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Words/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unalignedbyte.words;
@@ -728,6 +784,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = X7G47FFC9G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Words/Frameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Words/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unalignedbyte.words;
