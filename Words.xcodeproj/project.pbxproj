@@ -21,6 +21,7 @@
 		B55932CE1E634F5500234D1D /* EditChineseWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */; };
 		B55CEC091E64B829006DE745 /* UIButton+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CEC081E64B829006DE745 /* UIButton+Color.swift */; };
 		B5627A771E4D0A04000533F2 /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5627A761E4D0A04000533F2 /* EditGroupViewController.swift */; };
+		B56D76411E77E67A00CD1EBE /* Localizable.stringdict in Resources */ = {isa = PBXBuildFile; fileRef = B56D76401E77E67A00CD1EBE /* Localizable.stringdict */; };
 		B578B6101E2662100028CBCF /* EditGenericWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B578B60F1E2662100028CBCF /* EditGenericWord.storyboard */; };
 		B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6121E26625B0028CBCF /* WordsListViewController.swift */; };
 		B578B6161E26647E0028CBCF /* GenericWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578B6151E26647E0028CBCF /* GenericWordCell.swift */; };
@@ -76,6 +77,7 @@
 		B55932CD1E634F5500234D1D /* EditChineseWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditChineseWord.storyboard; path = "Source/Words List/Edit Word/EditChineseWord.storyboard"; sourceTree = "<group>"; };
 		B55CEC081E64B829006DE745 /* UIButton+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Color.swift"; path = "Source/Utils/UIButton+Color.swift"; sourceTree = "<group>"; };
 		B5627A761E4D0A04000533F2 /* EditGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditGroupViewController.swift; path = "Source/Groups List/EditGroupViewController.swift"; sourceTree = "<group>"; };
+		B56D76401E77E67A00CD1EBE /* Localizable.stringdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Localizable.stringdict; path = "Words/Supporting Files/Localizable.stringdict"; sourceTree = "<group>"; };
 		B578B60F1E2662100028CBCF /* EditGenericWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditGenericWord.storyboard; path = "Source/Words List/Edit Word/EditGenericWord.storyboard"; sourceTree = "<group>"; };
 		B578B6121E26625B0028CBCF /* WordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsListViewController.swift; path = "Source/Words List/WordsListViewController.swift"; sourceTree = "<group>"; };
 		B578B6151E26647E0028CBCF /* GenericWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericWordCell.swift; path = "Source/Words List/Cells/GenericWordCell.swift"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				B5EC22151C7F9ACC00C5D782 /* WordsModel.xcdatamodeld */,
 				B5C734001E2B079700CB9201 /* Localizable.strings */,
 				B5C733F71E2AF65100CB9201 /* Fonts */,
+				B56D76401E77E67A00CD1EBE /* Localizable.stringdict */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C733FE1E2B079700CB9201 /* Localizable.strings in Resources */,
+				B56D76411E77E67A00CD1EBE /* Localizable.stringdict in Resources */,
 				B5C734211E2C366600CB9201 /* WordConfigCell.xib in Resources */,
 				B5C733F61E2AF64D00CB9201 /* SFUIText-Light.otf in Resources */,
 				B5230B281E299D48000A3819 /* GroupCell.xib in Resources */,
