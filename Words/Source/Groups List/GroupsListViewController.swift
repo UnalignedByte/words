@@ -245,18 +245,26 @@ extension GroupsListViewController: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
     {
-        let endRow = sourceIndexPath.row > destinationIndexPath.row ? sourceIndexPath.row : destinationIndexPath.row
+        var sourceIndex = sourceIndexPath
+        var destinationIndex = destinationIndexPath
+
+        if doesActiveSectionHaveRevision() {
+            sourceIndex = IndexPath(row: sourceIndexPath.row - 1, section: sourceIndexPath.section)
+            destinationIndex = IndexPath(row: destinationIndexPath.row - 1, section: destinationIndexPath.section)
+        }
+
+        let endRow = sourceIndex.row > destinationIndex.row ? sourceIndex.row : destinationIndex.row
 
         var groups = [Group]()
         for i in 0...endRow {
-            let group = self.resultsController.object(at: IndexPath(row: i, section: sourceIndexPath.section))
+            let group = self.resultsController.object(at: IndexPath(row: i, section: sourceIndex.section))
             groups.append(group)
         }
 
         var groupIndex = 0
         for i in 0...endRow {
-            if i == sourceIndexPath.row {
-                if destinationIndexPath.row > sourceIndexPath.row {
+            if i == sourceIndex.row {
+                if destinationIndex.row > sourceIndex.row {
                     groupIndex += 1
                     groups[groupIndex].order = Int32(i)
                     groupIndex += 1
@@ -264,8 +272,8 @@ extension GroupsListViewController: UITableViewDataSource
                     groups[groupIndex].order = Int32(i)
                     groupIndex += 1
                 }
-            } else if i == destinationIndexPath.row {
-                groups[sourceIndexPath.row].order = Int32(i)
+            } else if i == destinationIndex.row {
+                groups[sourceIndex.row].order = Int32(i)
             } else {
                 groups[groupIndex].order = Int32(i)
                 groupIndex += 1
