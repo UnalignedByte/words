@@ -9,6 +9,8 @@
 import UIKit
 
 
+fileprivate let kLastUsedLanguage = "kLastUsedLanguage"
+
 class EditGroupViewController: UIViewController
 {
     // MARK: - Private Properties
@@ -35,6 +37,8 @@ class EditGroupViewController: UIViewController
             languageLabel.isHidden = true
             languagePicker.isHidden = true
         }
+
+        setupPickerSelection()
     }
 
 
@@ -42,6 +46,20 @@ class EditGroupViewController: UIViewController
     {
         super.viewWillAppear(animated)
         self.nameField.becomeFirstResponder()
+    }
+
+
+    fileprivate func setupPickerSelection()
+    {
+        var language: Language!
+
+        if let languageCode = UserDefaults.standard.object(forKey: kLastUsedLanguage) as? String {
+            language = Language(rawValue: languageCode)
+        } else {
+            language = .gn
+        }
+
+        languagePicker.selectRow(pickerIndex(forLanguage: language), inComponent: 0, animated: false)
     }
 
 
@@ -63,6 +81,8 @@ class EditGroupViewController: UIViewController
             let language = Language.languages[selectedRow]
             let group = WordsDataSource.sharedInstance.newGroup(forLanguage: language)
             group.name = nameField.text!
+
+            UserDefaults.standard.set(language.code, forKey: kLastUsedLanguage)
         }
 
         self.dismiss(animated: true, completion: nil)
@@ -81,6 +101,13 @@ class EditGroupViewController: UIViewController
         let noSpacesName = self.nameField.text?.replacingOccurrences(of: " ", with: "")
 
         self.addGroupButton.isEnabled = noSpacesName!.characters.count > 0
+    }
+
+
+    // MARK: - Utils
+    fileprivate func pickerIndex(forLanguage language: Language) -> Int
+    {
+        return Language.languages.index(of: language)!
     }
 }
 
