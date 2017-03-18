@@ -55,7 +55,8 @@ class WordsListViewController: UIViewController
 
     fileprivate func setupShuffleButton()
     {
-        let shuffleButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(shuffleButtonPressed(sender:)))
+        let shuffleButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self,
+                                            action: #selector(shuffleButtonPressed(sender:)))
         navigationItem.rightBarButtonItem = shuffleButton
     }
 
@@ -108,8 +109,7 @@ class WordsListViewController: UIViewController
             fatalError("Group cannot be nil")
         }
 
-        for word in group!.words
-        {
+        for word in group!.words {
             var randomNumber = Int32(0)
             arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
             (word as! Word).order = randomNumber

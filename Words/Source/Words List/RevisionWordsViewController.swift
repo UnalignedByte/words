@@ -25,6 +25,7 @@ class RevisionWordsViewController: UIViewController
         tableView.rowHeight = UITableViewAutomaticDimension
 
         registerCells()
+        setupShuffleButton()
     }
 
 
@@ -68,6 +69,14 @@ class RevisionWordsViewController: UIViewController
     }
 
 
+    fileprivate func setupShuffleButton()
+    {
+        let shuffleButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self,
+                                            action: #selector(shuffleButtonPressed(sender:)))
+        navigationItem.rightBarButtonItem = shuffleButton
+    }
+
+
     fileprivate func updateTitle()
     {
         guard language != nil else {
@@ -83,6 +92,18 @@ class RevisionWordsViewController: UIViewController
 
 
     // MARK: - Actions
+    @objc fileprivate func shuffleButtonPressed(sender: Any)
+    {
+        let words = resultsController.sections![0].objects as! [Word]
+
+        for word in words {
+            var randomNumber = Int32(0)
+            arc4random_buf(&randomNumber, MemoryLayout.size(ofValue: randomNumber))
+            word.order = randomNumber
+        }
+    }
+
+
     fileprivate func removeFromRevisionActionPressed(_ rowAction: UITableViewRowAction, _ indexPath: IndexPath)
     {
         tableView.isEditing = false
@@ -175,6 +196,13 @@ extension RevisionWordsViewController: NSFetchedResultsControllerDelegate
             case .delete:
                 let index = IndexPath(row: indexPath!.row, section: 1)
                 tableView.deleteRows(at: [index], with: .automatic)
+            case .update:
+                let newIndex = IndexPath(row: newIndexPath!.row, section: 1)
+                tableView.reloadRows(at: [newIndex], with: .automatic)
+            case .move:
+                // We don't actually move rows, so technically it should be an update
+                let newIndex = IndexPath(row: newIndexPath!.row, section: 1)
+                tableView.reloadRows(at: [newIndex], with: .automatic)
             default:
                 break
         }
