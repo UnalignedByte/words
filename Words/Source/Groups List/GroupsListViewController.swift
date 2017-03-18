@@ -20,6 +20,7 @@ class GroupsListViewController: UIViewController
     fileprivate var activeSection: Int = -1
     fileprivate var editGroup: Group?
     fileprivate var indexToScrollTo: IndexPath?
+    fileprivate var sectionThatHadRevision = -1
 
 
     // MARK: - Initialization
@@ -79,6 +80,9 @@ class GroupsListViewController: UIViewController
 
         do {
             try self.resultsController.performFetch()
+            if resultsController.sections!.count == 1 {
+                activeSection = 0
+            }
         } catch {
             fatalError("Error performing fetch")
         }
@@ -151,6 +155,15 @@ class GroupsListViewController: UIViewController
             return false
         }
 
+        if resultsController.sections!.count == 0 || resultsController.sections![activeSection].numberOfObjects == 0 {
+            return false
+        }
+
+        if sectionThatHadRevision == activeSection {
+            sectionThatHadRevision = -1
+            return true
+        }
+
         let firstGroup = self.resultsController.object(at: IndexPath(row: 0, section: activeSection))
         let revisonWordsCount = WordsDataSource.sharedInstance.revisionWordsCount(forLanguage: firstGroup.language)
 
@@ -164,9 +177,6 @@ extension GroupsListViewController: UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int
     {
         let sectionsCount = self.resultsController.sections!.count
-        if sectionsCount == 1 {
-            activeSection = 0
-        }
 
         return sectionsCount
     }
@@ -226,8 +236,14 @@ extension GroupsListViewController: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        var index = indexPath
+        if doesActiveSectionHaveRevision() {
+            index = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+            sectionThatHadRevision = indexPath.section
+        }
+
         if editingStyle == .delete {
-            let group = self.resultsController.object(at: indexPath)
+            let group = self.resultsController.object(at: index)
             WordsDataSource.sharedInstance.delete(group: group)
         }
     }
@@ -403,11 +419,18 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
                     indexToScrollTo = newIndexPath
                 }
             case .delete:
-                var index = newIndexPath
+                var indexesToDelete = [IndexPath]()
                 if doesActiveSectionHaveRevision() {
-                    index = IndexPath(row: indexPath!.row + 1, section: indexPath!.section)
+                    indexesToDelete.append(IndexPath(row: indexPath!.row + 1, section: indexPath!.section))
+                    if !doesActiveSectionHaveRevision() {
+                        indexesToDelete.append(IndexPath(row: 0, section: indexPath!.section))
+                    } else {
+                        tableView.reloadRows(at: [IndexPath(row: 0, section: indexPath!.section)], with: .fade)
+                    }
+                } else {
+                    indexesToDelete.append(indexPath!)
                 }
-                tableView.deleteRows(at: [index!], with: .automatic)
+                tableView.deleteRows(at: indexesToDelete, with: .automatic)
             case .update:
                 var index = newIndexPath
                 if doesActiveSectionHaveRevision() {
