@@ -384,6 +384,10 @@ extension EditChineseWordViewController: UITextFieldDelegate
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
+        if textField != pinyinField {
+            return true
+        }
+
         if string != "" {
             let replacedString = (textField.text! as NSString).replacingCharacters(in: range, with: string) as String
             let offset = pinyinField.offset(from: pinyinField.beginningOfDocument,

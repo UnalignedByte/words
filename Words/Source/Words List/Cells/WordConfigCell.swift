@@ -24,7 +24,7 @@ class WordConfigCell: UITableViewCell
     {
         let gradientLayer = CAGradientLayer()
         gradientLayer.cornerRadius = 8.0
-        gradientLayer.frame = self.gradientView.bounds
+        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: gradientView.bounds.height)
         gradientLayer.colors = [UIColor.clear.cgColor,
                                 UIColor.lightGray.withAlphaComponent(0.1).cgColor]
         gradientLayer.locations = [0.2, 1.0]
