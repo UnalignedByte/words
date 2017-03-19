@@ -390,8 +390,21 @@ extension EditChineseWordViewController: UITextFieldDelegate
                                             to: textField.selectedTextRange!.start) + string.unicodeScalars.count
             let character = extractTonedCharacter(fromString: replacedString, leftFromOffset: offset)
             setupToneButtons(forCharacter: character)
-        } else {
-            setupToneButtons(forCharacter: nil)
+        } else  {
+            let offset = pinyinField.offset(from: pinyinField.beginningOfDocument, to: textField.selectedTextRange!.start)
+
+            // Place cursor at the right spot
+            let count = countOfUnicodeTones(inString: textField.text!, leftFromOffset: offset)
+            let newCursorTextPosition = pinyinField.position(from: textField.beginningOfDocument,
+                                                             offset: offset - count)
+            let newCursorTextRange = pinyinField.textRange(from: newCursorTextPosition!,
+                                                           to: newCursorTextPosition!)
+            // Update the cursor position
+            textField.selectedTextRange = newCursorTextRange
+
+            // Tones buttons
+            let character = extractTonedCharacter(fromString: textField.text!, leftFromOffset: offset - count - 1)
+            setupToneButtons(forCharacter: character)
         }
 
         return true
