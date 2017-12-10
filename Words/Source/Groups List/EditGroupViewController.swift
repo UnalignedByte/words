@@ -100,7 +100,7 @@ class EditGroupViewController: UIViewController
     {
         let noSpacesName = self.nameField.text?.replacingOccurrences(of: " ", with: "")
 
-        self.addGroupButton.isEnabled = noSpacesName!.characters.count > 0
+        self.addGroupButton.isEnabled = noSpacesName!.count > 0
     }
 
 

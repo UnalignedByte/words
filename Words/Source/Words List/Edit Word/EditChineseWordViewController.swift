@@ -81,9 +81,9 @@ class EditChineseWordViewController: EditWordControlsViewController
 
     fileprivate func setupTextAccessoryView()
     {
-        let backgroundColor = UIColor(colorLiteralRed: 202.0/255.0, green: 205.0/255.0, blue: 211.0/255.0, alpha: 1.0)
-        let buttonColor = UIColor(colorLiteralRed: 179.0/255.0, green: 186.0/255.0, blue: 194.0/255.0, alpha: 1.0)
-        let pressedButtonColor = UIColor(colorLiteralRed: 232.0/255.0, green: 234.0/255.0, blue: 237.0/255.0, alpha: 1.0)
+        let backgroundColor = UIColor(red: 202.0/255.0, green: 205.0/255.0, blue: 211.0/255.0, alpha: 1.0)
+        let buttonColor = UIColor(red: 179.0/255.0, green: 186.0/255.0, blue: 194.0/255.0, alpha: 1.0)
+        let pressedButtonColor = UIColor(red: 232.0/255.0, green: 234.0/255.0, blue: 237.0/255.0, alpha: 1.0)
 
         let width = Double(UIScreen.main.bounds.width)
         let height = 36.0
@@ -268,21 +268,21 @@ class EditChineseWordViewController: EditWordControlsViewController
     @objc fileprivate func wordFieldChanged(notification: Notification)
     {
         let noSpacesWord = self.wordField.text?.replacingOccurrences(of: " ", with: "")
-        isWordFieldValid = noSpacesWord!.characters.count > 0
+        isWordFieldValid = noSpacesWord!.count > 0
     }
 
 
     @objc fileprivate func pinyinFieldChanged(notification: Notification)
     {
         let noSpacesTransaltion = self.pinyinField.text?.replacingOccurrences(of: " ", with: "")
-        isPinyinFieldValid = noSpacesTransaltion!.characters.count > 0
+        isPinyinFieldValid = noSpacesTransaltion!.count > 0
     }
 
 
     @objc fileprivate func translationFieldChanged(notification: Notification)
     {
         let noSpacesTransaltion = self.translationField.text?.replacingOccurrences(of: " ", with: "")
-        isTranslationFieldValid = noSpacesTransaltion!.characters.count > 0
+        isTranslationFieldValid = noSpacesTransaltion!.count > 0
     }
 
 
@@ -295,31 +295,31 @@ class EditChineseWordViewController: EditWordControlsViewController
 
 
     // MARK: - Actions
-    func toneOneButtonPressed(sender: UIButton)
+    @objc func toneOneButtonPressed(sender: UIButton)
     {
         appendAccent(character: "\u{0304}")
     }
 
 
-    func toneTwoButtonPressed(sender: UIButton)
+    @objc func toneTwoButtonPressed(sender: UIButton)
     {
         appendAccent(character: "\u{0341}")
     }
 
 
-    func toneThreeButtonPressed(sender: UIButton)
+    @objc func toneThreeButtonPressed(sender: UIButton)
     {
         appendAccent(character: "\u{0340}")
     }
 
 
-    func toneFourButtonPressed(sender: UIButton)
+    @objc func toneFourButtonPressed(sender: UIButton)
     {
         appendAccent(character: "\u{030c}")
     }
 
 
-    func toneFiveButtonPressed(sender: UIButton)
+    @objc func toneFiveButtonPressed(sender: UIButton)
     {
         appendAccent(character: "\u{030c}\u{0308}")
     }

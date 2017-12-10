@@ -71,14 +71,14 @@ class EditGenericWordViewController: EditWordControlsViewController
     @objc fileprivate func wordFieldChanged(notification: Notification)
     {
         let noSpacesWord = self.wordField.text?.replacingOccurrences(of: " ", with: "")
-        isWordFieldValid = noSpacesWord!.characters.count > 0
+        isWordFieldValid = noSpacesWord!.count > 0
     }
 
 
     @objc fileprivate func translationFieldChanged(notification: Notification)
     {
         let noSpacesTransaltion = self.translationField.text?.replacingOccurrences(of: " ", with: "")
-        isTranslationFieldValid = noSpacesTransaltion!.characters.count > 0
+        isTranslationFieldValid = noSpacesTransaltion!.count > 0
     }
 
 
