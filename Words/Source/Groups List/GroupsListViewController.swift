@@ -139,7 +139,14 @@ class GroupsListViewController: UIViewController
 
         let location = sender.location(in: tableView)
         if let indexPath = tableView.indexPathForRow(at: location) {
-            editGroup = resultsController.object(at: indexPath)
+            var index = indexPath
+            if doesActiveSectionHaveRevision() {
+                if indexPath.row == 0 {
+                    return
+                }
+                index = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+            }
+            editGroup = resultsController.object(at: index)
             performSegue(withIdentifier: String(describing: EditGroupViewController.self), sender: nil)
         }
     }
