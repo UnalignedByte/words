@@ -105,6 +105,10 @@ class WordsDataSource
         }
     }
 
+    func exportGroupsToSharedFiles()
+    {
+    }
+
 
     // MARK: - Public Functions
     @objc func saveContext()

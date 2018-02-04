@@ -31,9 +31,8 @@ class GroupsListViewController: UIViewController
 
         self.addGroupButton.layer.cornerRadius = self.addGroupButton.frame.size.width/2.0
 
-        setupEditButton()
+        setupUtilityButtons()
         registerCells()
-        loadData()
         setupDataSource()
     }
 
@@ -46,10 +45,13 @@ class GroupsListViewController: UIViewController
     }
 
 
-    fileprivate func setupEditButton()
+    fileprivate func setupUtilityButtons()
     {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: .plain,
-                                                                 target: self, action: #selector(editButtonPressed))
+        let editButton = UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: .plain,
+                                         target: self, action: #selector(editButtonPressed))
+        let importExportButton = UIBarButtonItem(barButtonSystemItem: .action, target: self,
+                                                 action: #selector(importExportButtonPressed(sender:)))
+        self.navigationItem.rightBarButtonItems = [editButton, importExportButton]
     }
 
 
@@ -61,12 +63,6 @@ class GroupsListViewController: UIViewController
                            forCellReuseIdentifier: String(describing: GroupCell.self))
         tableView.register(UINib(nibName: String(describing: RevisionCell.self), bundle: nil),
                            forCellReuseIdentifier: String(describing: RevisionCell.self))
-    }
-
-
-    fileprivate func loadData()
-    {
-        WordsDataSource.sharedInstance.loadAllSharedFiles()
     }
 
 
@@ -117,10 +113,38 @@ class GroupsListViewController: UIViewController
     @objc fileprivate func editButtonPressed()
     {
         self.tableView.setEditing(!self.tableView.isEditing, animated: true)
-        let title = self.tableView.isEditing ? NSLocalizedString("Done", comment: "") : NSLocalizedString("Edit", comment: "")
-        self.navigationItem.rightBarButtonItem?.title = title
         self.addGroupButton.isEnabled = !self.tableView.isEditing
         self.addGroupButton.alpha = self.addGroupButton.isEnabled ? 0.75 : 0.25
+
+        if(self.tableView.isEditing) {
+            let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain,
+                                             target: self, action: #selector(editButtonPressed))
+            self.navigationItem.rightBarButtonItems = [doneButton]
+        } else {
+            setupUtilityButtons()
+        }
+    }
+
+    @objc fileprivate func importExportButtonPressed(sender: Any)
+    {
+        let importExportAlert = UIAlertController(title: nil,
+                                                  message: NSLocalizedString("Import/Export Message", comment: ""),
+                                                  preferredStyle: .actionSheet)
+        let importAction = UIAlertAction(title: NSLocalizedString("Import", comment: ""),
+                                         style: .default) { _ in
+                                            WordsDataSource.sharedInstance.loadAllSharedFiles()
+        }
+        let exportAction = UIAlertAction(title: NSLocalizedString("Export", comment: ""),
+                                         style: .default) { _ in
+                                            WordsDataSource.sharedInstance.exportGroupsToSharedFiles()
+        }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
+                                         style: .cancel,
+                                         handler: nil)
+        importExportAlert.addAction(importAction)
+        importExportAlert.addAction(exportAction)
+        importExportAlert.addAction(cancelAction)
+        present(importExportAlert, animated: true)
     }
 
 

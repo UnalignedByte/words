@@ -21,3 +21,4 @@
 "Both" = "Both";
 "Word" = "Word";
 "Translation" = "Translation";
+"Import/Export Message" = "Would you like to import data from shared files, or export data to shared files?";
