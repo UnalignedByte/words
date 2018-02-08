@@ -26,7 +26,7 @@ class GroupsListViewController: UIViewController
     // MARK: - Initialization
     override func viewDidLoad()
     {
-        self.tableView.estimatedRowHeight = 20
+        self.tableView.estimatedRowHeight = 60
         self.tableView.rowHeight = UITableViewAutomaticDimension
 
         self.addGroupButton.layer.cornerRadius = self.addGroupButton.frame.size.width/2.0
