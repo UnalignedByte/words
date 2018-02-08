@@ -136,7 +136,7 @@ class GroupsListViewController: UIViewController
         }
         let exportAction = UIAlertAction(title: NSLocalizedString("Export", comment: ""),
                                          style: .default) { _ in
-                                            WordsDataSource.sharedInstance.exportGroupsToSharedFiles()
+                                            WordsDataSource.sharedInstance.exportToSharedFiles()
         }
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
                                          style: .cancel,
@@ -419,12 +419,9 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
     {
         switch(type) {
             case .insert:
-                if activeSection >= 0 {
-                    let activeSection = self.activeSection
-                    self.activeSection = -1
-                    self.tableView.reloadSections(IndexSet([activeSection]), with: .automatic)
+                if resultsController.sections!.count == 0 {
+                    activeSection = sectionIndex
                 }
-                self.activeSection = sectionIndex
                 self.tableView.insertSections(IndexSet([sectionIndex]), with: .automatic)
             case .delete:
                 self.activeSection = -1

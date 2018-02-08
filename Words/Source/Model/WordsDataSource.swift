@@ -105,8 +105,48 @@ class WordsDataSource
         }
     }
 
-    func exportGroupsToSharedFiles()
+    func exportToSharedFiles()
     {
+        for language in Language.languages {
+            let groups = WordsDataSource.sharedInstance.groups(forLanguage: language)
+            for group in groups {
+                exportGroupToSharedFiles(group)
+            }
+        }
+    }
+
+    private func exportGroupToSharedFiles(_ group: Group)
+    {
+        // Get filepath
+        guard let documentDirectory = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
+                                                                          FileManager.SearchPathDomainMask.userDomainMask,
+                                                                          true).first else {
+            fatalError()
+        }
+
+        let filePath = documentDirectory + "/" + group.language.code + "-" + group.name + ".xml"
+
+        // Get data array
+        var groupsArray = Array<Dictionary<String, Any>>()
+        var groupDict = Dictionary<String, Any>()
+        groupDict["languageCode"] = group.language.code
+        groupDict["group"] = group.name
+
+        var wordsArray = Array<Dictionary<String, String>>()
+        for word in group.words {
+            guard let word = word as? Word else { fatalError() }
+            var wordDict = Dictionary<String, String>()
+            wordDict["word"] = word.word
+            wordDict["translation"] = word.translation
+
+            if let word = word as? ChineseWord {
+                wordDict["pinyin"] = word.pinyin
+            }
+            wordsArray.append(wordDict)
+        }
+        groupDict["words"] = wordsArray
+        groupsArray.append(groupDict)
+        (groupsArray as NSArray).write(toFile: filePath, atomically: false)
     }
 
 
