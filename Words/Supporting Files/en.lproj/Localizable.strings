@@ -21,8 +21,9 @@
 "Both" = "Both";
 "Word" = "Word";
 "Translation" = "Translation";
+"Import" = "Import";
+"Export" = "Export";
+"Cancel" = "Cancel";
 "Import/Export Message" = "Would you like to import data from shared files, or export data to shared files?";
 "Import Alert Title" = "Import Completed";
-"Import Alert Message" = "Imported %d groups with %d words";
 "Export Alert Title" = "Export Completed";
-"Export Alert Message" = "Exported %d groups with %d words";

@@ -204,8 +204,7 @@ class GroupsListViewController: UIViewController
     }
 
     private func showImportAlert(groupsCount: Int, wordsCount: Int) {
-        let message = String(format: NSLocalizedString("Import Alert Message", comment: ""),
-                             arguments: [groupsCount, wordsCount])
+        let message = String(format: NSLocalizedString("Import Alert Message", comment: ""), groupsCount, wordsCount)
         let alert = UIAlertController(title: NSLocalizedString("Import Alert Title", comment: ""),
                                       message: message,
                                       preferredStyle: .alert)
@@ -214,8 +213,7 @@ class GroupsListViewController: UIViewController
     }
 
     private func showExportAlert(groupsCount: Int, wordsCount: Int) {
-        let message = String(format: NSLocalizedString("Export Alert Message", comment: ""),
-                             arguments: [groupsCount, wordsCount])
+        let message = String(format: NSLocalizedString("Export Alert Message", comment: ""), groupsCount, wordsCount)
         let alert = UIAlertController(title: NSLocalizedString("Export Alert Title", comment: ""),
                                       message: message,
                                       preferredStyle: .alert)

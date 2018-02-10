@@ -21,8 +21,9 @@
 "Both" = "Oba";
 "Word" = "Słowo";
 "Translation" = "Przekład";
+"Import" = "Import";
+"Export" = "Eksport";
+"Cancel" = "Anuluj";
 "Import/Export Message" = "Czy chcesz zaimportować dane z plików współdzielonych lub wyeksportować do nich dane?";
 "Import Alert Title" = "Import Zakończony";
-"Import Alert Message" = "Zaimportowano %d grup z %d słowami";
 "Export Alert Title" = "Eksport Zakończony";
-"Export Alert Message" = "Wyeksportowano %d grup z %d słowami";

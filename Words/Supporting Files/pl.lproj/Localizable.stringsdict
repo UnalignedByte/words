@@ -3,6 +3,75 @@
 
 <plist version="1.0">
 <dict>
+
+    <key>Import Alert Message</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>Zaimportowano %1$#@groups@ %2$#@words@</string>
+        <key>groups</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>0 grup</string>
+            <key>one</key>
+            <string>1 grupę</string>
+            <key>few</key>
+            <string>%d grupy</string>
+            <key>other</key>
+            <string>%d grup</string>
+        </dict>
+        <key>words</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>bez żadnych słow</string>
+            <key>one</key>
+            <string>z 1 słowem</string>
+            <key>other</key>
+            <string>z %d słowami</string>
+        </dict>
+    </dict>
+
+    <key>Export Alert Message</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>Wyeksportowano %1$#@groups@ %2$#@words@</string>
+        <key>groups</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>0 grup</string>
+            <key>one</key>
+            <string>1 grupę</string>
+            <key>few</key>
+            <string>%d grupy</string>
+            <key>other</key>
+            <string>%d grup</string>
+        </dict>
+        <key>words</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>bez żadnych słow</string>
+            <key>one</key>
+            <string>z 1 słowem</string>
+            <key>other</key>
+            <string>z %d słowami</string>
+        </dict>
+    </dict>
+
     <key>%d Word(s)</key>
     <dict>
         <key>NSStringLocalizedFormatKey</key>
@@ -23,5 +92,6 @@
             <string>%d Słów</string>
         </dict>
     </dict>
+
 </dict>
 </plist>
