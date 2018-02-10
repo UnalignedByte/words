@@ -115,7 +115,7 @@ class WordsDataSource
 
         for bundle in Bundle.allBundles {
             if let plistFilePath = bundle.path(forResource: file, ofType: "plist") {
-                loadWords(fromFilePath: plistFilePath)
+                _ = loadWords(fromFilePath: plistFilePath)
             }
         }
     }
