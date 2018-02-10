@@ -132,11 +132,13 @@ class GroupsListViewController: UIViewController
                                                   preferredStyle: .actionSheet)
         let importAction = UIAlertAction(title: NSLocalizedString("Import", comment: ""),
                                          style: .default) { _ in
-                                            WordsDataSource.sharedInstance.loadAllSharedFiles()
+                                            let count = WordsDataSource.sharedInstance.loadAllSharedFiles()
+                                            self.showImportAlert(groupsCount: count.0, wordsCount: count.1)
         }
         let exportAction = UIAlertAction(title: NSLocalizedString("Export", comment: ""),
                                          style: .default) { _ in
-                                            WordsDataSource.sharedInstance.exportToSharedFiles()
+                                            let count = WordsDataSource.sharedInstance.exportToSharedFiles()
+                                            self.showExportAlert(groupsCount: count.0, wordsCount: count.1)
         }
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
                                          style: .cancel,
@@ -199,6 +201,26 @@ class GroupsListViewController: UIViewController
         let revisonWordsCount = WordsDataSource.sharedInstance.revisionWordsCount(forLanguage: firstGroup.language)
 
         return revisonWordsCount > 0
+    }
+
+    private func showImportAlert(groupsCount: Int, wordsCount: Int) {
+        let message = String(format: NSLocalizedString("Import Alert Message", comment: ""),
+                             arguments: [groupsCount, wordsCount])
+        let alert = UIAlertController(title: NSLocalizedString("Import Alert Title", comment: ""),
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
+    private func showExportAlert(groupsCount: Int, wordsCount: Int) {
+        let message = String(format: NSLocalizedString("Export Alert Message", comment: ""),
+                             arguments: [groupsCount, wordsCount])
+        let alert = UIAlertController(title: NSLocalizedString("Export Alert Title", comment: ""),
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
     }
 }
 

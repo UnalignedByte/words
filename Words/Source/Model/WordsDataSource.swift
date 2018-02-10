@@ -42,8 +42,11 @@ class WordsDataSource
     }
 
 
-    func loadWords(fromFilePath filePath: String)
+    func loadWords(fromFilePath filePath: String) -> (Int, Int)
     {
+        var groupsCount = 0
+        var wordsCount = 0
+
         if let groups = NSArray(contentsOfFile: filePath) as? Array<Dictionary<String,Any>> {
             for groupDict in groups {
                 let languageCode = groupDict["languageCode"] as? String
@@ -60,30 +63,42 @@ class WordsDataSource
 
                 let group = newGroup(forLanguage: language!)
                 group.name = groupName!
+                groupsCount += 1
 
                 for wordDict in wordDicts! {
                     newWord(forGroup: group, wordDict: wordDict)
+                    wordsCount += 1
                 }
             }
         }
+
+        return (groupsCount, wordsCount)
     }
 
 
-    func loadAllSharedFiles()
+    func loadAllSharedFiles() -> (Int, Int)
     {
         let documentDirectories = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
                                                                       FileManager.SearchPathDomainMask.userDomainMask,
                                                                       true)
         let documentDirectoryPath = documentDirectories.first!
 
+        var groupsCount = 0
+        var wordsCount = 0
+
         if let documentFiles = try? FileManager.default.contentsOfDirectory(atPath: documentDirectoryPath) {
             for documentFile in documentFiles {
                 let filePath = documentDirectoryPath + "/" + documentFile
 
-                loadWords(fromFilePath: filePath)
+                let count = loadWords(fromFilePath: filePath)
+                groupsCount += count.0
+                wordsCount += count.1
+
                 try? FileManager.default.removeItem(atPath: filePath)
             }
         }
+
+        return (groupsCount, wordsCount)
     }
 
 
@@ -105,17 +120,21 @@ class WordsDataSource
         }
     }
 
-    func exportToSharedFiles()
+    func exportToSharedFiles() -> (Int, Int)
     {
+        var groupsCount = 0
+        var wordsCount = 0
         for language in Language.languages {
             let groups = WordsDataSource.sharedInstance.groups(forLanguage: language)
             for group in groups {
-                exportGroupToSharedFiles(group)
+                wordsCount += exportGroupToSharedFiles(group)
+                groupsCount += 1
             }
         }
+        return (groupsCount, wordsCount)
     }
 
-    private func exportGroupToSharedFiles(_ group: Group)
+    private func exportGroupToSharedFiles(_ group: Group) -> Int
     {
         // Get filepath
         guard let documentDirectory = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
@@ -147,6 +166,8 @@ class WordsDataSource
         groupDict["words"] = wordsArray
         groupsArray.append(groupDict)
         (groupsArray as NSArray).write(toFile: filePath, atomically: false)
+
+        return wordsArray.count
     }
 
 
