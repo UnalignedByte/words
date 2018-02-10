@@ -419,9 +419,12 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
     {
         switch(type) {
             case .insert:
-                if resultsController.sections!.count == 0 {
-                    activeSection = sectionIndex
+                if activeSection == sectionIndex {
+                    let activeSection = self.activeSection
+                    self.activeSection = -1
+                    self.tableView.reloadSections(IndexSet([activeSection]), with: .automatic)
                 }
+                self.activeSection = sectionIndex
                 self.tableView.insertSections(IndexSet([sectionIndex]), with: .automatic)
             case .delete:
                 self.activeSection = -1
