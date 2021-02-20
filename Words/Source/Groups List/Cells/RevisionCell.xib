@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,16 +17,12 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="36" id="qhP-u3-nSi" customClass="RevisionCell" customModule="Words" customModuleProvider="target" propertyAccessControl="all">
             <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qhP-u3-nSi" id="IPQ-94-5qc">
-                <rect key="frame" x="0.0" y="0.0" width="342" height="35.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="qhP-u3-nSi" id="IPQ-94-5qc">
+                <rect key="frame" x="0.0" y="0.0" width="348" height="36"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qt-Kf-ibd">
-                        <rect key="frame" x="0.0" y="0.0" width="342" height="35.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NI-Qw-ErJ">
-                        <rect key="frame" x="8" y="0.0" width="326" height="35"/>
+                        <rect key="frame" x="8" y="0.0" width="332" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="WXm-PP-4AJ"/>
                         </constraints>
@@ -38,18 +32,13 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="5Qt-Kf-ibd" secondAttribute="bottom" id="LIf-gF-i57"/>
-                    <constraint firstItem="5Qt-Kf-ibd" firstAttribute="top" secondItem="IPQ-94-5qc" secondAttribute="top" id="TIC-iz-dM5"/>
                     <constraint firstAttribute="bottom" secondItem="6NI-Qw-ErJ" secondAttribute="bottom" id="VMY-Ty-RFX"/>
-                    <constraint firstAttribute="trailing" secondItem="5Qt-Kf-ibd" secondAttribute="trailing" id="bh8-8e-FfH"/>
                     <constraint firstItem="6NI-Qw-ErJ" firstAttribute="leading" secondItem="IPQ-94-5qc" secondAttribute="leading" constant="8" id="dfj-E2-U0p"/>
                     <constraint firstAttribute="trailing" secondItem="6NI-Qw-ErJ" secondAttribute="trailing" constant="8" id="hcD-8t-noL"/>
                     <constraint firstItem="6NI-Qw-ErJ" firstAttribute="top" secondItem="IPQ-94-5qc" secondAttribute="top" id="hsQ-D0-0TF"/>
-                    <constraint firstItem="5Qt-Kf-ibd" firstAttribute="leading" secondItem="IPQ-94-5qc" secondAttribute="leading" id="wvr-N1-zd7"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="gradientView" destination="5Qt-Kf-ibd" id="OPK-sn-rbv"/>
                 <outlet property="titleLabel" destination="6NI-Qw-ErJ" id="7ri-ie-QkD"/>
             </connections>
             <point key="canvasLocation" x="-167.5" y="-38"/>

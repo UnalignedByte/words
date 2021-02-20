@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,15 +17,12 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GroupCell" id="KcB-Aa-cbH" customClass="GroupCell" customModule="Words" customModuleProvider="target" propertyAccessControl="all">
             <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KcB-Aa-cbH" id="4ZJ-jt-dXS">
-                <rect key="frame" x="0.0" y="0.0" width="287" height="60.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KcB-Aa-cbH" id="4ZJ-jt-dXS">
+                <rect key="frame" x="0.0" y="0.0" width="293" height="61"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJX-qw-Ot9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="60.5"/>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP3-YS-KME">
-                        <rect key="frame" x="8" y="0.0" width="279" height="60"/>
+                        <rect key="frame" x="8" y="0.0" width="285" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="s92-aF-jvh"/>
                         </constraints>
@@ -35,8 +30,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0f-Nz-Dgl">
-                        <rect key="frame" x="252.5" y="34.5" width="30.5" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0f-Nz-Dgl">
+                        <rect key="frame" x="258.5" y="34.5" width="30.5" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="xc3-Ma-RGE"/>
                         </constraints>
@@ -46,22 +41,15 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="WJX-qw-Ot9" firstAttribute="top" secondItem="4ZJ-jt-dXS" secondAttribute="top" id="1xx-9m-GlS"/>
                     <constraint firstAttribute="bottom" secondItem="h0f-Nz-Dgl" secondAttribute="bottom" constant="4" id="Bq9-54-LAI"/>
                     <constraint firstItem="pP3-YS-KME" firstAttribute="leading" secondItem="4ZJ-jt-dXS" secondAttribute="leading" constant="8" id="GYU-MW-xfT"/>
-                    <constraint firstItem="WJX-qw-Ot9" firstAttribute="leading" secondItem="4ZJ-jt-dXS" secondAttribute="leading" id="Lde-Yn-fFD"/>
                     <constraint firstItem="pP3-YS-KME" firstAttribute="top" secondItem="4ZJ-jt-dXS" secondAttribute="top" id="YRY-Au-LWs"/>
                     <constraint firstAttribute="trailing" secondItem="h0f-Nz-Dgl" secondAttribute="trailing" constant="4" id="f8N-hW-fHJ"/>
                     <constraint firstAttribute="bottom" secondItem="pP3-YS-KME" secondAttribute="bottom" id="glB-1K-y9A"/>
                     <constraint firstAttribute="trailing" secondItem="pP3-YS-KME" secondAttribute="trailing" id="iSS-if-neE"/>
-                    <constraint firstAttribute="bottom" secondItem="WJX-qw-Ot9" secondAttribute="bottom" id="ukZ-co-5L5"/>
                 </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="WJX-qw-Ot9" secondAttribute="trailing" id="LGi-7s-M90"/>
-            </constraints>
             <connections>
-                <outlet property="gradientView" destination="WJX-qw-Ot9" id="9Zr-kq-D7B"/>
                 <outlet property="groupLabel" destination="pP3-YS-KME" id="ao9-im-cJZ"/>
                 <outlet property="wordsCountLabel" destination="h0f-Nz-Dgl" id="ZTS-yA-nXa"/>
             </connections>

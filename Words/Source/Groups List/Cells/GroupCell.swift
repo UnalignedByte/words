@@ -13,20 +13,26 @@ class GroupCell: UITableViewCell
 {
     @IBOutlet private var groupLabel: UILabel!
     @IBOutlet private var wordsCountLabel: UILabel!
-    @IBOutlet private var gradientView: UIView!
 
 
     override func awakeFromNib()
     {
         let gradientLayer = CAGradientLayer()
         gradientLayer.cornerRadius = 8.0
-        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: gradientView.bounds.height)
+        gradientLayer.frame = bounds
         gradientLayer.colors = [UIColor.lightGray.withAlphaComponent(0.1).cgColor,
                                 UIColor.lightGray.withAlphaComponent(0.25).cgColor]
         gradientLayer.locations = [0.2, 1.0]
-        gradientView.layer.insertSublayer(gradientLayer, at: 0)
+        
+        backgroundView = UIView()
+        backgroundView?.layer.insertSublayer(gradientLayer, at: 0)
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let gradientLayer = backgroundView?.layer.sublayers?.first
+        gradientLayer?.frame = bounds
+    }
 
     func setup(withGroup group: Group)
     {

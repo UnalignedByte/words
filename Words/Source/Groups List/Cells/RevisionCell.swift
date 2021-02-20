@@ -11,7 +11,6 @@ import UIKit
 class RevisionCell: UITableViewCell
 {
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var gradientView: UIView!
 
 
     override func awakeFromNib()
@@ -20,13 +19,20 @@ class RevisionCell: UITableViewCell
 
         let gradientLayer = CAGradientLayer()
         gradientLayer.cornerRadius = 8.0
-        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: gradientView.bounds.height)
+        gradientLayer.frame = bounds
         gradientLayer.colors = [UIColor.clear.cgColor,
                                 UIColor.blue.withAlphaComponent(0.1).cgColor]
         gradientLayer.locations = [0.2, 1.0]
-        self.gradientView.layer.insertSublayer(gradientLayer, at: 0)
+        
+        backgroundView = UIView()
+        backgroundView?.layer.insertSublayer(gradientLayer, at: 0)
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let gradientLayer = backgroundView?.layer.sublayers?.first
+        gradientLayer?.frame = bounds
+    }
 
     func setup(withLanguage language: Language)
     {
