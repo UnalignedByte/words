@@ -768,6 +768,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Words/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.unalignedbyte.words;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7a4d0075-15db-4009-b18d-7a0667d337f5";
@@ -791,6 +792,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Words/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.unalignedbyte.words;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
