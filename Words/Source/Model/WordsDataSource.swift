@@ -414,12 +414,12 @@ class WordsDataSource
         fetchRequest.resultType = .dictionaryResultType
         fetchRequest.propertiesToFetch = [maxOrderExpDesc]
 
-        var maxGroupOrder = Int32(0)
+        var maxGroupOrder = Int32(-1)
 
         do {
             let results = try context.fetch(fetchRequest)
             let resultsDict = results.first!
-            maxGroupOrder = resultsDict["maxOrder"] as! Int32
+            maxGroupOrder = (resultsDict["maxOrder"] as? Int32) ?? -1
         } catch let error {
             fatalError("Context fetch error: \(error)")
         }
@@ -442,13 +442,12 @@ class WordsDataSource
         fetchRequest.resultType = .dictionaryResultType
         fetchRequest.propertiesToFetch = [maxOrderExpDesc]
 
-        var maxWordOrder = Int32(0)
+        var maxWordOrder = Int32(-1)
 
         do {
             let results = try context.fetch(fetchRequest)
-            maxWordOrder = 0
             if let resultsDict = results.first {
-                maxWordOrder = resultsDict["maxOrder"] as! Int32
+                maxWordOrder = resultsDict["maxOrder"] as? Int32 ?? -1
             }
         } catch let error {
             fatalError("Context fetch error: \(error)")

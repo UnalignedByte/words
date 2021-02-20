@@ -29,7 +29,7 @@ class EditGroupViewController: UIViewController
         super.viewDidLoad()
         self.backgroundView.layer.cornerRadius = 8.0
         NotificationCenter.default.addObserver(self, selector: #selector(nameFieldChanged(notification:)),
-                                               name: Notification.Name.UITextFieldTextDidChange, object: self.nameField)
+                                               name: UITextField.textDidChangeNotification, object: self.nameField)
 
         if let editGroup = editGroup {
             addGroupButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
@@ -107,7 +107,7 @@ class EditGroupViewController: UIViewController
     // MARK: - Utils
     fileprivate func pickerIndex(forLanguage language: Language) -> Int
     {
-        return Language.languages.index(of: language)!
+        return Language.languages.firstIndex(of: language)!
     }
 }
 

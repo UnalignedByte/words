@@ -27,7 +27,7 @@ class GroupsListViewController: UIViewController
     override func viewDidLoad()
     {
         self.tableView.estimatedRowHeight = 60
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
 
         self.addGroupButton.layer.cornerRadius = self.addGroupButton.frame.size.width/2.0
 
@@ -285,7 +285,7 @@ extension GroupsListViewController: UITableViewDataSource
     }
 
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
         var index = indexPath
         if doesActiveSectionHaveRevision() {

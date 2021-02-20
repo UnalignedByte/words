@@ -28,7 +28,7 @@ class WordsListViewController: UIViewController
     override func viewDidLoad()
     {
         self.tableView.estimatedRowHeight = 80.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
 
         self.addWordButton.layer.cornerRadius = self.addWordButton.frame.size.width/2.0
 
@@ -197,7 +197,7 @@ extension WordsListViewController: UITableViewDataSource
     }
 
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
     }
 }

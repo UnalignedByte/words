@@ -55,7 +55,7 @@ class EditWordViewController: UIViewController
             self?.wordValuesChanged(isValid: isValid)
         }
         viewController.editWord = editWord
-        addChildViewController(viewController)
+        addChild(viewController)
         stackView.insertArrangedSubview(viewController.view, at: 0)
         editWordControlsViewController = viewController
     }

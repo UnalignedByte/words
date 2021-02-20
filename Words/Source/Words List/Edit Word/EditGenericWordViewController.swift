@@ -33,9 +33,9 @@ class EditGenericWordViewController: EditWordControlsViewController
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(wordFieldChanged(notification:)),
-                                               name: Notification.Name.UITextFieldTextDidChange, object: self.wordField)
+                                               name: UITextField.textDidChangeNotification, object: self.wordField)
         NotificationCenter.default.addObserver(self, selector: #selector(translationFieldChanged(notification:)),
-                                               name: Notification.Name.UITextFieldTextDidChange, object: self.translationField)
+                                               name: UITextField.textDidChangeNotification, object: self.translationField)
 
         if let editWord = editWord {
             wordField.text = editWord.word

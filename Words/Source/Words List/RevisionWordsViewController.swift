@@ -22,7 +22,7 @@ class RevisionWordsViewController: UIViewController
     override func viewDidLoad()
     {
         tableView.estimatedRowHeight = 20.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
 
         registerCells()
         setupShuffleButton()
@@ -163,7 +163,7 @@ extension RevisionWordsViewController: UITableViewDataSource
     }
 
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
     }
 }
