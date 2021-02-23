@@ -49,7 +49,7 @@ extension Language
             case .cn:
                 titles = ["所有", "汉字", "拼音", NSLocalizedString("Translation", comment: "")]
             case .jp:
-                titles = ["両方", "漢字", "読み方", NSLocalizedString("Translation", comment: "")]
+                titles = ["全て", "漢字", "読み方", NSLocalizedString("Translation", comment: "")]
         }
 
         return titles

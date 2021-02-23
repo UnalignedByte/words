@@ -102,16 +102,6 @@ class RevisionWordsViewController: UIViewController
             word.order = randomNumber
         }
     }
-
-
-    fileprivate func removeFromRevisionActionPressed(_ rowAction: UITableViewRowAction, _ indexPath: IndexPath)
-    {
-        tableView.isEditing = false
-
-        let index = IndexPath(row: indexPath.row, section: 0)
-        let word = resultsController.object(at: index)
-        word.isInRevision = false
-    }
 }
 
 
@@ -171,12 +161,19 @@ extension RevisionWordsViewController: UITableViewDataSource
 
 extension RevisionWordsViewController: UITableViewDelegate
 {
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
-        let revisionAction = UITableViewRowAction(style: .normal, title: "🗒－", handler: removeFromRevisionActionPressed)
+        let index = IndexPath(row: indexPath.row, section: 0)
+        let word = resultsController.object(at: index)
+        
+        let revisionAction = UIContextualAction(style: .normal, title: nil) { _, _, completion in
+            word.isInRevision = false
+            completion(true)
+        }
         revisionAction.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-
-        return [revisionAction]
+        revisionAction.image = UIImage(systemName: "bookmark.slash", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+        
+        return UISwipeActionsConfiguration(actions: [revisionAction])
     }
 }
 
