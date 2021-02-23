@@ -56,6 +56,12 @@
 		B5D229AC1E6309B000A92632 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D229AB1E6309B000A92632 /* WordCell.swift */; };
 		B5EC22051C7F999F00C5D782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22041C7F999F00C5D782 /* Images.xcassets */; };
 		B5EC22121C7F9A7C00C5D782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */; };
+		B5EFBA8325E4C459003B48C3 /* JapaneseWord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBA8225E4C459003B48C3 /* JapaneseWord+CoreDataClass.swift */; };
+		B5EFBA8725E4C46A003B48C3 /* JapaneseWord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBA8625E4C46A003B48C3 /* JapaneseWord+CoreDataProperties.swift */; };
+		B5EFBA8B25E4C4F8003B48C3 /* JapaneseWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBA8A25E4C4F8003B48C3 /* JapaneseWordCell.swift */; };
+		B5EFBA9225E4C651003B48C3 /* EditJapaneseWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBA9125E4C651003B48C3 /* EditJapaneseWordViewController.swift */; };
+		B5EFBA9B25E4C732003B48C3 /* EditJapaneseWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EFBA9D25E4C732003B48C3 /* EditJapaneseWord.storyboard */; };
+		B5EFBAA425E4CA2E003B48C3 /* JapaneseWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EFBA8E25E4C59D003B48C3 /* JapaneseWordCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +134,13 @@
 		B5EC22091C7F999F00C5D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5EC22111C7F9A7C00C5D782 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChineseWordCell.swift; sourceTree = "<group>"; };
+		B5EFBA8225E4C459003B48C3 /* JapaneseWord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JapaneseWord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B5EFBA8625E4C46A003B48C3 /* JapaneseWord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JapaneseWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B5EFBA8A25E4C4F8003B48C3 /* JapaneseWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseWordCell.swift; sourceTree = "<group>"; };
+		B5EFBA8E25E4C59D003B48C3 /* JapaneseWordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JapaneseWordCell.xib; sourceTree = "<group>"; };
+		B5EFBA9125E4C651003B48C3 /* EditJapaneseWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJapaneseWordViewController.swift; sourceTree = "<group>"; };
+		B5EFBA9C25E4C732003B48C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EditJapaneseWord.storyboard; sourceTree = "<group>"; };
+		B5EFBAA125E4C73A003B48C3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/EditJapaneseWord.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +246,8 @@
 				B578B6171E2664910028CBCF /* GenericWordCell.xib */,
 				B5EC22241C7FC24D00C5D782 /* ChineseWordCell.swift */,
 				B578B6191E266AAB0028CBCF /* ChineseWordCell.xib */,
+				B5EFBA8A25E4C4F8003B48C3 /* JapaneseWordCell.swift */,
+				B5EFBA8E25E4C59D003B48C3 /* JapaneseWordCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -245,6 +260,8 @@
 				B5A1CAB61E565716004958EE /* EditGenericWordViewController.swift */,
 				B5CF2E611E78A66700118DC7 /* EditChineseWord.storyboard */,
 				B55932CB1E634C3300234D1D /* EditChineseWordViewController.swift */,
+				B5EFBA9D25E4C732003B48C3 /* EditJapaneseWord.storyboard */,
+				B5EFBA9125E4C651003B48C3 /* EditJapaneseWordViewController.swift */,
 			);
 			path = "Edit Word";
 			sourceTree = "<group>";
@@ -260,6 +277,8 @@
 				B5A743581E61BE2D00926A09 /* Word+CoreDataProperties.swift */,
 				B5A743591E61BE2D00926A09 /* ChineseWord+CoreDataClass.swift */,
 				B5A7435A1E61BE2D00926A09 /* ChineseWord+CoreDataProperties.swift */,
+				B5EFBA8225E4C459003B48C3 /* JapaneseWord+CoreDataClass.swift */,
+				B5EFBA8625E4C46A003B48C3 /* JapaneseWord+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,6 +480,7 @@
 				B5CF2E641E78A67B00118DC7 /* WordConfigCell.xib in Resources */,
 				B5C733F61E2AF64D00CB9201 /* SFUIText-Light.otf in Resources */,
 				B5230B281E299D48000A3819 /* GroupCell.xib in Resources */,
+				B5EFBAA425E4CA2E003B48C3 /* JapaneseWordCell.xib in Resources */,
 				B519BCC51E76015600838106 /* RevisionCell.xib in Resources */,
 				B5CF2E511E78A0D000118DC7 /* Localizable.stringsdict in Resources */,
 				B5C733F91E2AFD9900CB9201 /* SFUIText-Medium.otf in Resources */,
@@ -472,6 +492,7 @@
 				B5CF2E591E78A5F600118DC7 /* EditGenericWord.storyboard in Resources */,
 				B5C733F41E2ABB7D00CB9201 /* GroupHeader.xib in Resources */,
 				B5CF2E5F1E78A66700118DC7 /* EditChineseWord.storyboard in Resources */,
+				B5EFBA9B25E4C732003B48C3 /* EditJapaneseWord.storyboard in Resources */,
 				B578B61A1E266AAB0028CBCF /* ChineseWordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,13 +544,16 @@
 				B578B6161E26647E0028CBCF /* GenericWordCell.swift in Sources */,
 				B578B6131E26625B0028CBCF /* WordsListViewController.swift in Sources */,
 				B5A1CAB51E56526D004958EE /* EditWordControlsViewController.swift in Sources */,
+				B5EFBA8725E4C46A003B48C3 /* JapaneseWord+CoreDataProperties.swift in Sources */,
 				B5D229AC1E6309B000A92632 /* WordCell.swift in Sources */,
 				B52EAFBB1E2841B5001A46FF /* GroupsListViewController.swift in Sources */,
+				B5EFBA8B25E4C4F8003B48C3 /* JapaneseWordCell.swift in Sources */,
 				B55932CC1E634C3300234D1D /* EditChineseWordViewController.swift in Sources */,
 				B5A1CAB71E565716004958EE /* EditGenericWordViewController.swift in Sources */,
 				B5A7435E1E61BE2D00926A09 /* Word+CoreDataProperties.swift in Sources */,
 				B56B38C91E781BB000C82813 /* UnitTestsAppDelegate.swift in Sources */,
 				B5627A771E4D0A04000533F2 /* EditGroupViewController.swift in Sources */,
+				B5EFBA9225E4C651003B48C3 /* EditJapaneseWordViewController.swift in Sources */,
 				B5A7435B1E61BE2D00926A09 /* Group+CoreDataClass.swift in Sources */,
 				B5C734231E2C367B00CB9201 /* WordConfigCell.swift in Sources */,
 				B56B38CB1E781C8200C82813 /* main.swift in Sources */,
@@ -537,6 +561,7 @@
 				B5A743601E61BE2D00926A09 /* ChineseWord+CoreDataProperties.swift in Sources */,
 				B519BCC71E7748BB00838106 /* RevisionWordsViewController.swift in Sources */,
 				B51A5B781E1AC82200F6B1A8 /* AppDelegate.swift in Sources */,
+				B5EFBA8325E4C459003B48C3 /* JapaneseWord+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +628,15 @@
 				B5CF2E6D1E78A7B900118DC7 /* pl */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5EFBA9D25E4C732003B48C3 /* EditJapaneseWord.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5EFBA9C25E4C732003B48C3 /* Base */,
+				B5EFBAA125E4C73A003B48C3 /* pl */,
+			);
+			name = EditJapaneseWord.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -78,7 +78,7 @@ class EditGroupViewController: UIViewController
             editGroup.name = nameField.text!
         } else {
             let selectedRow = self.languagePicker.selectedRow(inComponent: 0)
-            let language = Language.languages[selectedRow]
+            let language = Language.allCases[selectedRow]
             let group = WordsDataSource.sharedInstance.newGroup(forLanguage: language)
             group.name = nameField.text!
 
@@ -107,7 +107,7 @@ class EditGroupViewController: UIViewController
     // MARK: - Utils
     fileprivate func pickerIndex(forLanguage language: Language) -> Int
     {
-        return Language.languages.firstIndex(of: language)!
+        return Language.allCases.firstIndex(of: language)!
     }
 }
 
@@ -122,7 +122,7 @@ extension EditGroupViewController: UIPickerViewDataSource
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return Language.languages.count
+        return Language.allCases.count
     }
 }
 
@@ -131,7 +131,7 @@ extension EditGroupViewController: UIPickerViewDelegate
 {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        let languageCode = Language.languages[row].code
+        let languageCode = Language.allCases[row].code
         return NSLocalizedString(languageCode, comment: "")
     }
 }

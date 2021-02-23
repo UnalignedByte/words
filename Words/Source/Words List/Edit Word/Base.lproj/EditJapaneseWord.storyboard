@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YSt-y7-4DB">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Light.otf">
+            <string>SFUIText-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Edit Japanese Word View Controller-->
+        <scene sceneID="FpS-iq-kaB">
+            <objects>
+                <viewController id="YSt-y7-4DB" customClass="EditJapaneseWordViewController" customModule="Words" customModuleProvider="target" propertyAccessControl="all" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0uA-IS-U79"/>
+                        <viewControllerLayoutGuide type="bottom" id="iGX-9Z-SDk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9hd-rt-4I2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漢字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEW-uH-syj" userLabel="Word Label">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="xKC-z2-klN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Csm-N4-csL">
+                                <rect key="frame" x="0.0" y="30" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Fp6-fo-eu5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YSt-y7-4DB" id="R7K-rv-i1l"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="読み方" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-51-414" userLabel="Yomikata Label">
+                                <rect key="frame" x="0.0" y="68" width="375" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Zj8-eq-AqR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-mr-yvE" userLabel="Yomikata Field">
+                                <rect key="frame" x="0.0" y="98" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CcL-CQ-jcw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YSt-y7-4DB" id="0Kj-zc-3dz"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se9-Bg-rPg">
+                                <rect key="frame" x="0.0" y="136" width="375" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="HbE-zX-M2o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTC-8b-ryC">
+                                <rect key="frame" x="0.0" y="166" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0li-8L-7oS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YSt-y7-4DB" id="0Ek-Vk-39E"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jEW-uH-syj" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="2h4-gI-ILY"/>
+                            <constraint firstItem="se9-Bg-rPg" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="82d-EE-Lev"/>
+                            <constraint firstItem="iTC-8b-ryC" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="A7k-lS-A3r"/>
+                            <constraint firstAttribute="trailing" secondItem="3Rt-mr-yvE" secondAttribute="trailing" id="Bzb-Uy-vWm"/>
+                            <constraint firstItem="Soe-51-414" firstAttribute="top" secondItem="Csm-N4-csL" secondAttribute="bottom" constant="8" id="GqF-q1-6zi"/>
+                            <constraint firstItem="Soe-51-414" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="HcB-LD-D5a"/>
+                            <constraint firstAttribute="trailing" secondItem="Csm-N4-csL" secondAttribute="trailing" id="KZw-Ah-Ef2"/>
+                            <constraint firstItem="3Rt-mr-yvE" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="MyG-Kb-vyR"/>
+                            <constraint firstItem="iGX-9Z-SDk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iTC-8b-ryC" secondAttribute="bottom" constant="8" id="Np2-Ug-kO2"/>
+                            <constraint firstItem="jEW-uH-syj" firstAttribute="top" secondItem="0uA-IS-U79" secondAttribute="bottom" id="Otu-mq-NzT"/>
+                            <constraint firstItem="Csm-N4-csL" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="SF9-wc-kA6"/>
+                            <constraint firstItem="Csm-N4-csL" firstAttribute="top" secondItem="jEW-uH-syj" secondAttribute="bottom" constant="8" id="TIa-ct-1Ow"/>
+                            <constraint firstAttribute="trailing" secondItem="jEW-uH-syj" secondAttribute="trailing" id="TQN-fa-h66"/>
+                            <constraint firstAttribute="trailing" secondItem="Soe-51-414" secondAttribute="trailing" id="Wao-yV-LYG"/>
+                            <constraint firstAttribute="trailing" secondItem="iTC-8b-ryC" secondAttribute="trailing" id="XBq-bT-VGQ"/>
+                            <constraint firstAttribute="trailing" secondItem="se9-Bg-rPg" secondAttribute="trailing" id="iWn-KY-hlb"/>
+                            <constraint firstItem="se9-Bg-rPg" firstAttribute="top" secondItem="3Rt-mr-yvE" secondAttribute="bottom" constant="8" id="jOh-Ts-OON"/>
+                            <constraint firstItem="3Rt-mr-yvE" firstAttribute="top" secondItem="Soe-51-414" secondAttribute="bottom" constant="8" id="oLy-Nl-AT9"/>
+                            <constraint firstItem="iTC-8b-ryC" firstAttribute="top" secondItem="se9-Bg-rPg" secondAttribute="bottom" constant="8" id="rFz-HT-KLk"/>
+                            <constraint firstItem="3Rt-mr-yvE" firstAttribute="leading" secondItem="9hd-rt-4I2" secondAttribute="leading" id="tYL-0m-EsM"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="translationField" destination="iTC-8b-ryC" id="eS8-Vh-K6K"/>
+                        <outlet property="wordField" destination="Csm-N4-csL" id="HDt-1Z-nBd"/>
+                        <outlet property="yomikataField" destination="3Rt-mr-yvE" id="f4Z-aW-bT0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZo-dX-GY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="668"/>
+        </scene>
+    </scenes>
+</document>

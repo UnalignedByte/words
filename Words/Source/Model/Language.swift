@@ -8,20 +8,17 @@
 
 import UIKit
 
-enum Language: String
+enum Language: String, CaseIterable
 {
     case gn = "gn"
     case cn = "cn"
+    case jp = "jp"
 }
 
 extension Language
 {
     var code: String {
         return self.rawValue
-    }
-
-    static var languages: [Language] {
-        return [.cn, .gn]
     }
 
     var editWordControlsViewController: EditWordControlsViewController {
@@ -32,6 +29,9 @@ extension Language
                 viewController = UIStoryboard(name: "EditGenericWord", bundle: nil).instantiateInitialViewController() as! EditWordControlsViewController
             case .cn:
                 viewController = UIStoryboard(name: "EditChineseWord", bundle: nil).instantiateInitialViewController() as! EditWordControlsViewController
+            case .jp:
+                viewController = UIStoryboard(name: "EditJapaneseWord", bundle: nil).instantiateInitialViewController() as! EditWordControlsViewController
+            
         }
 
         return viewController
@@ -48,6 +48,8 @@ extension Language
                           NSLocalizedString("Translation", comment: "")]
             case .cn:
                 titles = ["所有", "汉字", "拼音", NSLocalizedString("Translation", comment: "")]
+            case .jp:
+                titles = ["両方", "漢字", "読み方", NSLocalizedString("Translation", comment: "")]
         }
 
         return titles
@@ -62,6 +64,8 @@ extension Language
                     wordCellIdentifier = String(describing: GenericWordCell.self)
                 case .cn:
                     wordCellIdentifier = String(describing: ChineseWordCell.self)
+                case .jp:
+                    wordCellIdentifier = String(describing: JapaneseWordCell.self)
             }
 
             return wordCellIdentifier
@@ -77,6 +81,8 @@ extension Language
                     entity = "Word"
                 case .cn:
                     entity = "ChineseWord"
+                case .jp:
+                    entity = "JapaneseWord"
             }
 
             return entity

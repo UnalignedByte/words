@@ -176,7 +176,7 @@ class WordsDataSourceTests: XCTestCase
 
     func testLanguageCodesCount()
     {
-        XCTAssertEqual(Language.languages.count, 2)
+        XCTAssertEqual(Language.allCases.count, 3)
     }
 
 

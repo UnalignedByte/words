@@ -124,7 +124,7 @@ class WordsDataSource
     {
         var groupsCount = 0
         var wordsCount = 0
-        for language in Language.languages {
+        Language.allCases.forEach { language in
             let groups = WordsDataSource.sharedInstance.groups(forLanguage: language)
             for group in groups {
                 wordsCount += exportGroupToSharedFiles(group)

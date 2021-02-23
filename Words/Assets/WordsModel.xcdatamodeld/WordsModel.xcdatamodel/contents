@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H524" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ChineseWord" representedClassName="ChineseWord" parentEntity="Word" syncable="YES">
-        <attribute name="pinyin" attributeType="String" defaultValueString="Banana" syncable="YES"/>
+        <attribute name="pinyin" attributeType="String" defaultValueString="Banana"/>
     </entity>
     <entity name="Group" representedClassName="Group" syncable="YES">
-        <attribute name="languageCode" attributeType="String" defaultValueString="en" syncable="YES"/>
-        <attribute name="name" attributeType="String" defaultValueString="Banana" syncable="YES"/>
-        <attribute name="order" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="words" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="group" inverseEntity="Word" syncable="YES"/>
+        <attribute name="languageCode" attributeType="String" defaultValueString="en"/>
+        <attribute name="name" attributeType="String" defaultValueString="Banana"/>
+        <attribute name="order" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="words" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="group" inverseEntity="Word"/>
+    </entity>
+    <entity name="JapaneseWord" representedClassName="JapaneseWord" parentEntity="Word" syncable="YES">
+        <attribute name="yomikata" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Word" representedClassName="Word" syncable="YES">
-        <attribute name="isInRevision" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="order" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="translation" attributeType="String" defaultValueString="Banana" syncable="YES"/>
-        <attribute name="word" attributeType="String" defaultValueString="Banana" syncable="YES"/>
-        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="words" inverseEntity="Group" syncable="YES"/>
+        <attribute name="isInRevision" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="order" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="translation" attributeType="String" defaultValueString="Banana"/>
+        <attribute name="word" attributeType="String" defaultValueString="Banana"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="words" inverseEntity="Group"/>
     </entity>
     <elements>
         <element name="ChineseWord" positionX="-45" positionY="192" width="128" height="60"/>
         <element name="Group" positionX="-297" positionY="-0" width="128" height="105"/>
         <element name="Word" positionX="-65" positionY="0" width="128" height="120"/>
+        <element name="JapaneseWord" positionX="-241.015625" positionY="196.8984375" width="128" height="58"/>
     </elements>
 </model>
