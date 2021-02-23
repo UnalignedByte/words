@@ -122,26 +122,6 @@ class WordsListViewController: UIViewController
         editWord = nil
         performSegue(withIdentifier: String(describing: EditWordViewController.self), sender: nil)
     }
-
-
-    func revisionActionPressed(_ rowAction: UITableViewRowAction, _ indexPath: IndexPath)
-    {
-        tableView.isEditing = false
-
-        let index = IndexPath(row: indexPath.row, section: 0)
-        let word = resultsController.object(at: index)
-        word.isInRevision = !word.isInRevision
-    }
-
-
-    func editActionPressed(_ rowAction: UITableViewRowAction, _ indexPath: IndexPath)
-    {
-        tableView.isEditing = false
-
-        let index = IndexPath(row: indexPath.row, section: 0)
-        editWord = resultsController.object(at: index)
-        performSegue(withIdentifier: String(describing: EditWordViewController.self), sender: nil)
-    }
 }
 
 
@@ -205,29 +185,38 @@ extension WordsListViewController: UITableViewDataSource
 
 extension WordsListViewController: UITableViewDelegate
 {
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
         // Revision
         let index = IndexPath(row: indexPath.row, section: 0)
         let word = resultsController.object(at: index)
-
-        var revisionTitle: String!
+        
         var revisionBackgroundColor: UIColor!
+        var revisionImage: UIImage!
         if word.isInRevision {
-            revisionTitle = "🗒－"
             revisionBackgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            revisionImage = UIImage(systemName: "bookmark.slash", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         } else {
-            revisionTitle = "🗒✚"
             revisionBackgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            revisionImage = UIImage(systemName: "bookmark", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         }
-        let revisionAction = UITableViewRowAction(style: .normal, title: revisionTitle, handler: revisionActionPressed)
+        let revisionAction = UIContextualAction(style: .normal, title: nil) { _, _, completion in
+            tableView.isEditing = false
+            word.isInRevision = !word.isInRevision
+            completion(true)
+        }
+        revisionAction.image = revisionImage
         revisionAction.backgroundColor = revisionBackgroundColor
-
+        
         // Edit
-        let editAction = UITableViewRowAction(style: .normal, title: NSLocalizedString("Edit", comment: ""),
-                                              handler: editActionPressed)
-
-        return [revisionAction, editAction]
+        let editAction = UIContextualAction(style: .normal, title: nil) { [weak self] _, _, completion in
+            self?.editWord = word
+            self?.performSegue(withIdentifier: String(describing: EditWordViewController.self), sender: nil)
+            completion(true)
+        }
+        editAction.image = UIImage(systemName: "pencil", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+        
+        return UISwipeActionsConfiguration(actions: [revisionAction, editAction])
     }
 }
 
