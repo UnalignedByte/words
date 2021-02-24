@@ -9,24 +9,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordCell" customModule="Words" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="86" id="erQ-JF-7ep" customClass="GenericWordCell" customModule="Words" customModuleProvider="target" propertyAccessControl="all">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="erQ-JF-7ep" customClass="GenericWordCell" customModule="Words" customModuleProvider="target" propertyAccessControl="all">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erQ-JF-7ep" id="Jnd-aN-qQS">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="nj8-Ui-ATN">
-                        <rect key="frame" x="8" y="8" width="304" height="70"/>
+                        <rect key="frame" x="8" y="8" width="304" height="64"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VPP-yx-h4l">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="30.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="27.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lpW-2h-EcC">
-                                <rect key="frame" x="0.0" y="39.5" width="304" height="30.5"/>
+                                <rect key="frame" x="0.0" y="36.5" width="304" height="27.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,6 +37,7 @@
                             <constraint firstItem="lpW-2h-EcC" firstAttribute="leading" secondItem="nj8-Ui-ATN" secondAttribute="leading" id="FdB-7n-lHc"/>
                             <constraint firstAttribute="trailing" secondItem="VPP-yx-h4l" secondAttribute="trailing" id="Pgy-ss-NfJ"/>
                             <constraint firstAttribute="trailing" secondItem="lpW-2h-EcC" secondAttribute="trailing" id="hPU-LW-rOp"/>
+                            <constraint firstAttribute="height" constant="64" id="qUR-hE-nWu"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -51,7 +52,7 @@
                 <outlet property="translationLabel" destination="lpW-2h-EcC" id="TFB-Hx-1JG"/>
                 <outlet property="wordLabel" destination="VPP-yx-h4l" id="UPa-zx-W9H"/>
             </connections>
-            <point key="canvasLocation" x="-368" y="-43"/>
+            <point key="canvasLocation" x="-368" y="-45.877061469265371"/>
         </tableViewCell>
     </objects>
 </document>
