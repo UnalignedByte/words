@@ -30,8 +30,7 @@ class GroupCell: UITableViewCell
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let gradientLayer = backgroundView?.layer.sublayers?.first
-        gradientLayer?.frame = bounds
+        backgroundView?.layer.sublayers?.first?.frame = bounds
     }
 
     func setup(withGroup group: Group)

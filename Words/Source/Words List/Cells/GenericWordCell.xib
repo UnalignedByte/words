@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,15 +13,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erQ-JF-7ep" id="Jnd-aN-qQS">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uN6-e1-igw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="86" id="pjT-It-wFt"/>
-                        </constraints>
-                    </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="nj8-Ui-ATN">
                         <rect key="frame" x="8" y="8" width="304" height="70"/>
                         <subviews>
@@ -49,18 +41,13 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="uN6-e1-igw" firstAttribute="top" secondItem="Jnd-aN-qQS" secondAttribute="top" id="9gV-Xt-s2i"/>
-                    <constraint firstItem="uN6-e1-igw" firstAttribute="leading" secondItem="Jnd-aN-qQS" secondAttribute="leading" id="NA9-fk-Qz5"/>
-                    <constraint firstAttribute="trailing" secondItem="uN6-e1-igw" secondAttribute="trailing" id="QaP-xZ-jTL"/>
                     <constraint firstItem="nj8-Ui-ATN" firstAttribute="top" secondItem="Jnd-aN-qQS" secondAttribute="top" constant="8" id="XUM-v1-SI1"/>
                     <constraint firstAttribute="trailing" secondItem="nj8-Ui-ATN" secondAttribute="trailing" constant="8" id="aDs-RD-vWv"/>
                     <constraint firstItem="nj8-Ui-ATN" firstAttribute="leading" secondItem="Jnd-aN-qQS" secondAttribute="leading" constant="8" id="f5B-NQ-yop"/>
                     <constraint firstAttribute="bottom" secondItem="nj8-Ui-ATN" secondAttribute="bottom" constant="8" id="sHq-8F-GeW"/>
-                    <constraint firstAttribute="bottom" secondItem="uN6-e1-igw" secondAttribute="bottom" id="wYj-Ph-4Ib"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="gradientView" destination="uN6-e1-igw" id="sbU-w5-tpQ"/>
                 <outlet property="translationLabel" destination="lpW-2h-EcC" id="TFB-Hx-1JG"/>
                 <outlet property="wordLabel" destination="VPP-yx-h4l" id="UPa-zx-W9H"/>
             </connections>

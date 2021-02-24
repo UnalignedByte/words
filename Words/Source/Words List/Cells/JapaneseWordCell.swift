@@ -11,7 +11,6 @@ import UIKit
 class JapaneseWordCell: WordCell
 {
     // MARK: - Private Properties
-    @IBOutlet fileprivate weak var gradientView: UIView!
     @IBOutlet fileprivate weak var wordLabel: UILabel!
     @IBOutlet fileprivate weak var yomikataLabel: UILabel!
     @IBOutlet fileprivate weak var translationLabel: UILabel!
@@ -20,19 +19,6 @@ class JapaneseWordCell: WordCell
     fileprivate var config = 0
 
     
-    // MARK: - Initialization
-    override func awakeFromNib()
-    {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.cornerRadius = 8.0
-        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: gradientView.bounds.height)
-        gradientLayer.colors = [UIColor.lightGray.withAlphaComponent(0.1).cgColor,
-                                UIColor.lightGray.withAlphaComponent(0.25).cgColor]
-        gradientLayer.locations = [0.2, 1.0]
-        self.gradientView.layer.insertSublayer(gradientLayer, at: 0)
-    }
-
-
     // MARK: - Public Functions
     override func setup(withWord word: Word, config: Int)
     {
