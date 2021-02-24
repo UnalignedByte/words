@@ -34,6 +34,18 @@ class WordsListViewController: UIViewController
 
         registerCells()
         setupShuffleButton()
+        
+        addWordButton.layer.shadowColor = UIColor.label.cgColor
+        addWordButton.layer.shadowOffset = CGSize.zero
+        addWordButton.layer.shadowRadius = 4.0
+        addWordButton.layer.shadowOpacity = 0.75
+    }
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+    {
+        super.traitCollectionDidChange(previousTraitCollection)
+        addWordButton.layer.shadowColor = UIColor.label.cgColor
     }
 
 

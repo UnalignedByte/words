@@ -19,6 +19,7 @@ class EditGroupViewController: UIViewController
     @IBOutlet fileprivate weak var languageLabel: UILabel!
     @IBOutlet fileprivate weak var languagePicker: UIPickerView!
     @IBOutlet fileprivate weak var addGroupButton: UIButton!
+    @IBOutlet fileprivate weak var scrimView: UIVisualEffectView!
 
     fileprivate var editGroup: Group?
 
@@ -39,6 +40,12 @@ class EditGroupViewController: UIViewController
         }
 
         setupPickerSelection()
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            scrimView.effect = UIBlurEffect(style: .systemUltraThinMaterialLight)
+        } else {
+            scrimView.effect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        }
     }
 
 
@@ -46,6 +53,16 @@ class EditGroupViewController: UIViewController
     {
         super.viewWillAppear(animated)
         self.nameField.becomeFirstResponder()
+    }
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.userInterfaceStyle == .dark {
+            scrimView.effect = UIBlurEffect(style: .systemUltraThinMaterialLight)
+        } else {
+            scrimView.effect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        }
     }
 
 

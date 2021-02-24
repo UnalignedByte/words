@@ -34,6 +34,11 @@ class GroupsListViewController: UIViewController
         setupUtilityButtons()
         registerCells()
         setupDataSource()
+        
+        addGroupButton.layer.shadowColor = UIColor.label.cgColor
+        addGroupButton.layer.shadowOffset = CGSize.zero
+        addGroupButton.layer.shadowRadius = 4.0
+        addGroupButton.layer.shadowOpacity = 0.75
     }
 
 
@@ -42,6 +47,13 @@ class GroupsListViewController: UIViewController
         super.viewWillAppear(animated)
         self.tableView.reloadData()
         editGroup = nil
+    }
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+    {
+        super.traitCollectionDidChange(previousTraitCollection)
+        addGroupButton.layer.shadowColor = UIColor.label.cgColor
     }
 
 

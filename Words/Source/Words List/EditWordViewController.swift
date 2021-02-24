@@ -15,6 +15,7 @@ class EditWordViewController: UIViewController
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var addWordButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet fileprivate weak var scrimView: UIVisualEffectView!
 
     fileprivate weak var editWordControlsViewController: EditWordControlsViewController?
 
@@ -34,6 +35,22 @@ class EditWordViewController: UIViewController
         }
 
        setupEditView()
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            scrimView.effect = UIBlurEffect(style: .systemUltraThinMaterialLight)
+        } else {
+            scrimView.effect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        }
+    }
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.userInterfaceStyle == .dark {
+            scrimView.effect = UIBlurEffect(style: .systemUltraThinMaterialLight)
+        } else {
+            scrimView.effect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        }
     }
 
 
