@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "拼音"; ObjectID = "Soe-51-414"; */
+"Soe-51-414.text" = "拼音";
+
+/* Class = "UILabel"; text = "汉字"; ObjectID = "jEW-uH-syj"; */
+"jEW-uH-syj.text" = "汉字";
+
+/* Class = "UILabel"; text = "Translation"; ObjectID = "se9-Bg-rPg"; */
+"se9-Bg-rPg.text" = "翻訳";

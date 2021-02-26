@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "EFE-dU-13t"; */
+"EFE-dU-13t.normalTitle" = "削除";
+
+/* Class = "UILabel"; text = "Group Name"; ObjectID = "Efc-0L-sCo"; */
+"Efc-0L-sCo.text" = "グループの名";
+
+/* Class = "UILabel"; text = "Group Language"; ObjectID = "M6A-K2-Zzl"; */
+"M6A-K2-Zzl.text" = "グループの言語";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "NjC-kv-DJV"; */
+"NjC-kv-DJV.normalTitle" = "キャンセル";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "eez-7M-vaD"; */
+"eez-7M-vaD.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Add Word"; ObjectID = "gJy-Md-ik2"; */
+"gJy-Md-ik2.normalTitle" = "言葉を加える";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "mzC-w1-7fl"; */
+"mzC-w1-7fl.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "p58-8T-12p"; */
+"p58-8T-12p.normalTitle" = "キャンセル";
+
+/* Class = "UIViewController"; title = "Groups"; ObjectID = "ptI-NE-n73"; */
+"ptI-NE-n73.title" = "グループ";
+
+/* Class = "UIButton"; normalTitle = "Add Group"; ObjectID = "sPP-gj-0mt"; */
+"sPP-gj-0mt.normalTitle" = "グループを加える";

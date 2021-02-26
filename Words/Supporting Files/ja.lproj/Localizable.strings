@@ -1,0 +1,30 @@
+/* 
+  Translations.strings
+  Words
+
+  Created by Rafal Grodzinski on 15/01/2017.
+  Copyright © 2017 UnalignedByte. All rights reserved.
+*/
+
+"gn" = "一般";
+"cn" = "中国語";
+"de" = "ドイツ語";
+"en" = "英語";
+"fr" = "フランス語";
+"pl" = "ポーランド語";
+"jp" = "日本語";
+
+"Save" = "保存";
+"Edit" = "編集";
+"Done" = "完了";
+"To Review" = "復習の言葉";
+"Revision" = "復習";
+"Both" = "両方";
+"Word" = "言葉";
+"Translation" = "翻訳";
+"Import" = "輸入";
+"Export" = "輸出";
+"Cancel" = "キャンセル";
+"Import/Export Message" = "データを輸入か輸出がよろしですか？";
+"Import Alert Title" = "輸入済み";
+"Export Alert Title" = "輸出済み";

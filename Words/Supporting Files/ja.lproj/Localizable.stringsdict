@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+<dict>
+
+    <key>Import Alert Message</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%2$#@words@含む%1$#@groups@が輸入されました。</string>
+        <key>groups</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>無グループ</string>
+            <key>other</key>
+            <string>%dつグループ</string>
+        </dict>
+        <key>words</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>無言葉</string>
+            <key>other</key>
+            <string>%dつ言葉</string>
+        </dict>
+    </dict>
+
+    <key>Export Alert Message</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%2$#@words@含む%1$#@groups@が輸出されました。</string>
+        <key>groups</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>無グループ</string>
+            <key>other</key>
+            <string>%dつグループ</string>
+        </dict>
+        <key>words</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>無言葉</string>
+            <key>other</key>
+            <string>%dつ言葉</string>
+        </dict>
+    </dict>
+
+    <key>%d Word(s)</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@words@</string>
+        <key>words</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>無言葉</string>
+            <key>other</key>
+            <string>%dつ言葉</string>
+        </dict>
+    </dict>
+
+</dict>
+</plist>

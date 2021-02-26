@@ -104,6 +104,13 @@
 		B5A743581E61BE2D00926A09 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B5A743591E61BE2D00926A09 /* ChineseWord+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChineseWord+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B5A7435A1E61BE2D00926A09 /* ChineseWord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChineseWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B5B667D625E90BD300E96EC2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		B5B667D725E90BD300E96EC2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/WordConfigCell.strings; sourceTree = "<group>"; };
+		B5B667D825E90BD400E96EC2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/EditGenericWord.strings; sourceTree = "<group>"; };
+		B5B667D925E90BD400E96EC2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/EditChineseWord.strings; sourceTree = "<group>"; };
+		B5B667DA25E90BD400E96EC2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/EditJapaneseWord.strings; sourceTree = "<group>"; };
+		B5B667DB25E90BD400E96EC2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5B667DC25E90BD400E96EC2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ja; path = ja.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		B5BC9C111E1997CD006A5CCC /* WordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BC9C151E1997CD006A5CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Words/Tests/Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		B5BC9C1B1E19B6D3006A5CCC /* WordsDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordsDataSourceTests.swift; path = Words/Tests/Source/WordsDataSourceTests.swift; sourceTree = SOURCE_ROOT; };
@@ -451,6 +458,7 @@
 				en,
 				pl,
 				Base,
+				ja,
 			);
 			mainGroup = B5EC21F11C7F999F00C5D782;
 			productRefGroup = B5EC21FB1C7F999F00C5D782 /* Products */;
@@ -581,6 +589,7 @@
 			children = (
 				B5C733FF1E2B079700CB9201 /* en */,
 				B5C734011E2B07AD00CB9201 /* pl */,
+				B5B667DB25E90BD400E96EC2 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -590,6 +599,7 @@
 			children = (
 				B5CF2E521E78A0D000118DC7 /* en */,
 				B5CF2E541E78A28C00118DC7 /* pl */,
+				B5B667DC25E90BD400E96EC2 /* ja */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -599,6 +609,7 @@
 			children = (
 				B5CF2E5C1E78A60000118DC7 /* Base */,
 				B5CF2E5E1E78A64400118DC7 /* pl */,
+				B5B667D825E90BD400E96EC2 /* ja */,
 			);
 			name = EditGenericWord.storyboard;
 			sourceTree = "<group>";
@@ -608,6 +619,7 @@
 			children = (
 				B5CF2E601E78A66700118DC7 /* Base */,
 				B5CF2E631E78A66A00118DC7 /* pl */,
+				B5B667D925E90BD400E96EC2 /* ja */,
 			);
 			name = EditChineseWord.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +629,7 @@
 			children = (
 				B5CF2E651E78A67B00118DC7 /* Base */,
 				B5CF2E681E78A67C00118DC7 /* pl */,
+				B5B667D725E90BD300E96EC2 /* ja */,
 			);
 			name = WordConfigCell.xib;
 			sourceTree = "<group>";
@@ -626,6 +639,7 @@
 			children = (
 				B5CF2E6A1E78A7B700118DC7 /* Base */,
 				B5CF2E6D1E78A7B900118DC7 /* pl */,
+				B5B667D625E90BD300E96EC2 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -635,6 +649,7 @@
 			children = (
 				B5EFBA9C25E4C732003B48C3 /* Base */,
 				B5EFBAA125E4C73A003B48C3 /* pl */,
+				B5B667DA25E90BD400E96EC2 /* ja */,
 			);
 			name = EditJapaneseWord.storyboard;
 			sourceTree = "<group>";
