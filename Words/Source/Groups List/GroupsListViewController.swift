@@ -451,7 +451,7 @@ extension GroupsListViewController: NSFetchedResultsControllerDelegate
     {
         switch(type) {
             case .insert:
-                if activeSection == sectionIndex {
+                if activeSection >= 0 {
                     let activeSection = self.activeSection
                     self.activeSection = -1
                     self.tableView.reloadSections(IndexSet([activeSection]), with: .automatic)
