@@ -112,6 +112,25 @@ class WordsListViewController: UIViewController
             viewController.setup(forGroup: group!, editWord: editWord)
         }
     }
+    
+    
+    private func updateShortcutFor(language: Language) {
+        // Check if we should add or remove entry
+        let shouldAdd = WordsDataSource.sharedInstance.revisionWordsCount(forLanguage: language) > 0
+        // Remove if exists
+        var items = UIApplication.shared.shortcutItems?.filter { $0.type != language.code } ?? []
+        // And add again if required
+        if shouldAdd {
+            let shortcut = UIApplicationShortcutItem(type: language.code, localizedTitle: language.revisionTitle,
+                                                     localizedSubtitle: nil,
+                                                     icon: UIApplicationShortcutIcon(type: .bookmark),
+                                                     userInfo: nil)
+            items.append(shortcut)
+        }
+        items.sort { $0.type < $1.type }
+        // Put it all back
+        UIApplication.shared.shortcutItems = items
+    }
 
 
     // MARK: - Actions
@@ -212,9 +231,12 @@ extension WordsListViewController: UITableViewDelegate
             revisionBackgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             revisionImage = UIImage(systemName: "bookmark", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         }
-        let revisionAction = UIContextualAction(style: .normal, title: nil) { _, _, completion in
+        let revisionAction = UIContextualAction(style: .normal, title: nil) { [weak self] _, _, completion in
             tableView.isEditing = false
             word.isInRevision = !word.isInRevision
+            if let language = self?.group?.language {
+                self?.updateShortcutFor(language: language)
+            }
             completion(true)
         }
         revisionAction.image = revisionImage

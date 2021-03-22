@@ -88,6 +88,19 @@ extension Language
             return entity
         }
     }
+    
+    var revisionTitle: String {
+        get {
+            switch self {
+            case .gn:
+                return NSLocalizedString("Revision", comment: "")
+            case .cn:
+                return NSLocalizedString("Chinese Revision", comment: "")
+            case .jp:
+                return NSLocalizedString("Japanese Revision", comment: "")
+            }
+        }
+    }
 
 
     func registerWordCell(forTableView tableView: UITableView)
