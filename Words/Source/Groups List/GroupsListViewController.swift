@@ -232,6 +232,13 @@ class GroupsListViewController: UIViewController
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true)
     }
+    
+    func showRevision(forLanguage language: Language) {
+        guard let index = (resultsController.fetchedObjects?.firstIndex { $0.language == language }) else { return }
+        activeSection = index
+        tableView.reloadData()
+        self.performSegue(withIdentifier: String(describing: RevisionWordsViewController.self), sender: nil)
+    }
 }
 
 

@@ -25,8 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem,
                      completionHandler: @escaping (Bool) -> Void) {
-        if let language = Language.allCases.filter { language in language.code == shortcutItem.type }.first {
-            NSLog("Opening %@", language.code)
+        if let language = (Language.allCases.filter { language in language.code == shortcutItem.type }).first {
+            let navigation = window?.rootViewController as? UINavigationController
+            // Dismiss any popups and go back to list of groups
+            navigation?.popToRootViewController(animated: true)
+            navigation?.topViewController?.dismiss(animated: true, completion: nil)
+            let groupsList = navigation?.viewControllers.first { $0 is GroupsListViewController } as? GroupsListViewController
+            // Present the revision
+            groupsList?.showRevision(forLanguage: language)
         }
     }
     
